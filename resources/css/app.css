@@ -9,3 +9,15 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+body {
+    background-image: url('D:\GrowPath\growpath\public\images\Background.svg');
+    background-size: cover;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: "Lexend", sans-serif;
+}

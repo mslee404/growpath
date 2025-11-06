@@ -13,9 +13,13 @@ Route::get('/inventory', function () {
     return view('inventory'); 
 });
 
+Route::get('/register', function () {
+       return view('auth.register');
+   })->name('register');
+
 Route::post('/register', function (Request $request) {
     // opsional: nanti bisa ditambah validasi/simpan ke database
-    return redirect()->route('loginafter');
+    return redirect()->route('auth.loginafter');
 })->name('register.post');
 
 Route::get('/shop', function () {

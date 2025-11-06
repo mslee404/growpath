@@ -1,0 +1,5 @@
+@layer components {
+  .text-dark-green {
+    color: #5E7153; /* <-- INI DIA. Ganti kode warna ini */
+  }
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrowPath - Shop</title>
-    @vite(['resources/css/shop-style.css', 'resources/js/shop.js'])
+    @vite(['resources/css/shop-style.css', 'resources/js/shop.js', 'resources/css/app.css'])
 </head>
 
 <body>
@@ -15,9 +15,9 @@
             <nav class="navigation-bar">
                 <ul>
                     <li><a href="/dashboard">HOME</a></li>
-                    <li><a href="/habits">INVENTORY</a></li>
+                    <li><a href="/inventory">INVENTORY</a></li>
                     <li><a href="/shop">MARKET</a></li>
-                    <li><a href="/profile">LEADERBOARD</a></li>
+                    <li><a href="/leaderboard">LEADERBOARD</a></li>
                     <li><a href="/profile">PROFILE</a></li>
                 </ul>
             </nav>

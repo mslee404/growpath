@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
+body {
+    background-image: {{ asset('images/Background.svg') }};
+    background-size: cover;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: "Lexend", sans-serif;
+}
+
 .navigation-container {
     position: absolute;
     height: 11%;

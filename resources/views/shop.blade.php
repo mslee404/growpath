@@ -74,6 +74,7 @@
 
             <div class="item-preview">
             </div>
-        </div>
+
+            <button class="buy-button" role="button">BELI</button>
     </main>
 </body>

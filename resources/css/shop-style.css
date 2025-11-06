@@ -100,7 +100,7 @@ h3 {
     width: 30%;
     height: 75%;
     position: absolute;
-    background-color: #62f169;
+    /* background-color: #62f169; */
     transform: translateX(40%) translateY(0%);
     left: 50%;
     top: 120px;
@@ -143,4 +143,37 @@ h3 {
     font-size: 36px;
     font-weight: 700;
     margin: 0;
+}
+
+.buy-button {
+  background-color: #FDFDD9;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #5E7153;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Lexend", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 10%;
+  width: 25%;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.buy-button:hover,
+.buy-button:focus {
+  background-color: #d4f0b0;
 }

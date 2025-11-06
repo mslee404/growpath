@@ -21,3 +21,7 @@ Route::post('/register', function (Request $request) {
     // opsional: nanti bisa ditambah validasi/simpan ke database
     return redirect()->route('loginafter');
 })->name('register.post');
+
+Route::get('/shop', function () {
+    return view('shop');
+});

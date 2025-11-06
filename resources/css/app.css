@@ -13,7 +13,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
 body {
-    background-image: {{ asset('images/Background.svg') }};
+    background-image: url('/public/images/Background.svg');
     background-size: cover;
 
     margin: 0;

@@ -8,42 +8,23 @@
 </head>
 
 <body>
-    <nav class="bg-[#78A44C] text-white font-bold shadow-lg">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="text-3xl font-black tracking-tight">GROWPATH</a>
-            
-            <div class="flex items-center space-x-8">
-                <a href="#" class="flex items-center space-x-2 opacity-70 hover:opacity-100">
-                    <span class="text-lg">HOME</span>
-                    <svg class="w-8 h-8 p-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-                </a>
-                
-                <a href="#" class="flex items-center space-x-2">
-                    <span class="text-lg">INVENTORY</span>
-                    <div class="bg-black/30 rounded-lg">
-                        <svg class="w-8 h-8 p-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.553C8.188 13 9 13.81 9 14.857V17m8-4h-2.553C14.812 13 14 13.81 14 14.857V17"></path></svg>
-                    </div>
-                </a>
+    <header>
+        <div class="navigation-container">
+            <a class="growpath-logo">GROWPATH</a>
 
-                <a href="#" class="flex items-center space-x-2 opacity-70 hover:opacity-100">
-                    <span class="text-lg">MARKET</span>
-                    <svg class="w-8 h-8 p-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                </a>
-                
-                <a href="#" class="flex items-center space-x-2 opacity-70 hover:opacity-100">
-                    <span class="text-lg">LEADERBOARD</span>
-                    <svg class="w-8 h-8 p-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.653-.08-1.285-.23-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.653.08-1.285.23-1.857m0 0A3.004 3.004 0 007 16c0-1.657-1.343-3-3-3S1 14.343 1 16s1.343 3 3 3c.621 0 1.19-.186 1.644-.5M17 16c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3c-.621 0-1.19-.186-1.644-.5M12 8c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3zM6 8c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3z"></path></svg>
-                </a>
-                
-                <a href="#" class="flex items-center space-x-2 opacity-70 hover:opacity-100">
-                    <span class="text-lg">PROFILE</span>
-                    <svg class="w-8 h-8 p-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                </a>
-            </div>
+            <nav class="navigation-bar">
+                <ul>
+                    <li><a href="/dashboard">HOME</a></li>
+                    <li><a href="/habits">INVENTORY</a></li>
+                    <li><a href="/shop">MARKET</a></li>
+                    <li><a href="/profile">LEADERBOARD</a></li>
+                    <li><a href="/profile">PROFILE</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
+    
     <main class="container mx-auto p-8">
-        
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
             <div class="lg:col-span-1 flex flex-col items-center">

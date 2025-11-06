@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
 @import 'tailwindcss';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -6,11 +8,9 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Lexend', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+         'Segoe UI Symbol', 'Noto Color Emoji'; /* 'Instrument Sans' */
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
 body {
     background-image: url('/public/images/Background.svg');
@@ -20,4 +20,37 @@ body {
     padding: 0;
 
     font-family: "Lexend", sans-serif;
+}
+
+.navigation-container {
+    /* position: absolute; */
+    height: 11%;
+    width: 100%;
+    background-color: #78A44C;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation-bar ul {
+    list-style: none;
+    display: flex; 
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+    padding: 25px 30px;
+}
+
+.navigation-bar li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+}
+
+.growpath-logo {
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 14px;
+    margin-left: 30px;
+    color: #FDFDD9;
 }

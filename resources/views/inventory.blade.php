@@ -9,7 +9,7 @@
 
 <body>
     <nav class="bg-[#78A44C] text-white font-bold shadow-lg">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+        <div class="container mx-auto px-8 py-4 flex justify-between items-center">
             <a href="#" class="text-3xl font-black tracking-tight">GROWPATH</a>
             
             <div class="flex items-center space-x-8">

@@ -31,6 +31,18 @@ Route::post('/register', function (Request $request) {
     return redirect()->route('auth.loginafter');
 })->name('register.post');
 
+Route::get('/home', function () {
+    return view('home');
+});
+
 Route::get('/shop', function () {
     return view('shop');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/leaderboard', function () {
+    return view('leaderboard');
 });

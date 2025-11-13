@@ -35,6 +35,10 @@ Route::get('/shop', function () {
     return view('shop');
 });
 
+Route::get('/profile', function () {
+    return view('profile');
+});
+
 Route::get('/leaderboard', function () {
     return view('leaderboard');
 });

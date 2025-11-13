@@ -99,6 +99,83 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(updateButtonVisibility, 100); 
     }
 
+    /**
+     * (BARU) Fungsi untuk setup semua logika modal/pop-up
+     */
+    function setupModals() {
+        
+        // --- MODAL HABIT ---
+        const modalHabit = document.getElementById('modal-habit');
+        const contentHabit = document.getElementById('modal-content-habit'); // <-- Ambil konten
+        const btnTambahHabit = document.getElementById('btn-tambah-habit');
+        const btnCloseHabit = document.getElementById('close-habit');
+
+        // Fungsi untuk MEMBUKA modal habit
+        function openModalHabit() {
+            if (!modalHabit || !contentHabit) return;
+            // 1. Tampilkan overlay
+            modalHabit.classList.remove('invisible', 'opacity-0');
+            // 2. Tampilkan konten (animasi scale)
+            contentHabit.classList.remove('scale-95');
+        }
+
+        // Fungsi untuk MENUTUP modal habit
+        function closeModalHabit() {
+            if (!modalHabit || !contentHabit) return;
+            // 1. Mulai animasi tutup (fade out dan scale down)
+            modalHabit.classList.add('opacity-0');
+            contentHabit.classList.add('scale-95');
+            
+            // 2. Tunggu animasi selesai (300ms) baru sembunyikan
+            setTimeout(() => {
+                modalHabit.classList.add('invisible');
+            }, 300); // Durasi harus sama dengan 'duration-300'
+        }
+
+        if (btnTambahHabit) btnTambahHabit.addEventListener('click', openModalHabit);
+        if (btnCloseHabit) btnCloseHabit.addEventListener('click', closeModalHabit);
+
+
+        // --- MODAL TUGAS ---
+        const modalTugas = document.getElementById('modal-tugas');
+        const contentTugas = document.getElementById('modal-content-tugas'); // <-- Ambil konten
+        const btnTambahTugas = document.getElementById('btn-tambah-tugas');
+        const btnCloseTugas = document.getElementById('close-tugas');
+
+        // Fungsi untuk MEMBUKA modal tugas
+        function openModalTugas() {
+            if (!modalTugas || !contentTugas) return;
+            modalTugas.classList.remove('invisible', 'opacity-0');
+            contentTugas.classList.remove('scale-95');
+        }
+
+        // Fungsi untuk MENUTUP modal tugas
+        function closeModalTugas() {
+            if (!modalTugas || !contentTugas) return;
+            modalTugas.classList.add('opacity-0');
+            contentTugas.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modalTugas.classList.add('invisible');
+            }, 300);
+        }
+
+        if (btnTambahTugas) btnTambahTugas.addEventListener('click', openModalTugas);
+        if (btnCloseTugas) btnCloseTugas.addEventListener('click', closeModalTugas);
+
+
+        // --- TUTUP SAAT KLIK DI LUAR KONTEN ---
+        // (Logika ini juga diupdate untuk memanggil fungsi penutup)
+        window.addEventListener('click', (event) => {
+            if (event.target == modalHabit) {
+                closeModalHabit();
+            }
+            if (event.target == modalTugas) {
+                closeModalTugas();
+            }
+        });
+    }
+
 
     // --- INISIALISASI ---
 
@@ -121,6 +198,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setupScrollers('habit-scroller');
     setupScrollers('tugas-scroller');
 
+    // (BARU) Setup modal
+    setupModals();
+
     // Set watering can (Contoh: 25%)
     const waterLevel = document.querySelector('.watering-can-water');
     if (waterLevel) {
@@ -129,4 +209,4 @@ document.addEventListener('DOMContentLoaded', () => {
             waterLevel.style.height = '25%';
         }, 100);
     }
-}); 
+});

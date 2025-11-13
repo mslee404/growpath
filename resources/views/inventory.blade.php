@@ -8,28 +8,9 @@
 </head>
 
 <body>
-<<<<<<< HEAD
     <header>
         <div class="navigation-container">
             <a class="growpath-logo">GROWPATH</a>
-=======
-    <nav class="bg-[#78A44C] text-white font-bold shadow-lg">
-        <div class="container mx-auto px-8 py-4 flex justify-between items-center">
-            <a href="#" class="text-3xl font-black tracking-tight">GROWPATH</a>
-            
-            <div class="flex items-center space-x-8">
-                <a href="#" class="flex items-center space-x-2 opacity-70 hover:opacity-100">
-                    <span class="text-lg">HOME</span>
-                    <svg class="w-8 h-8 p-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-                </a>
-                
-                <a href="#" class="flex items-center space-x-2">
-                    <span class="text-lg">INVENTORY</span>
-                    <div class="bg-black/30 rounded-lg">
-                        <svg class="w-8 h-8 p-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.553C8.188 13 9 13.81 9 14.857V17m8-4h-2.553C14.812 13 14 13.81 14 14.857V17"></path></svg>
-                    </div>
-                </a>
->>>>>>> 1f59aa86483061f0fa11a84bcdc629b02bcaaacb
 
             <nav class="navigation-bar">
                 <ul>

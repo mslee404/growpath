@@ -13,7 +13,7 @@
 }
 
 .item-detail-card {
-    background-color: #F5F5DC; 
+    background-color: #FDFDD9; 
     padding: 2.75rem; 
     border-radius: 1rem; 
     border-width: 2px; 
@@ -49,7 +49,7 @@
 }
 
 .btn-pakai {
-    background-color: #F5F5DC; 
+    background-color: #FDFDD9; 
     border-width: 2px; 
     border-color: #5E7153; 
     padding-left: 3rem; 
@@ -84,21 +84,21 @@
     z-index: 1; 
     cursor: pointer;
     background-color: #5E7153; 
-    color: #F5F5DC; 
+    color: #FDFDD9; 
     border-bottom: none;
     border-width: 2px; 
     border-color: #5E7153;
 }
 
 .tab-button.tab-active {
-    background-color: #F5F5DC; 
+    background-color: #FDFDD9; 
     color: #5E7153; 
     z-index: 2; 
     margin-bottom: -1px; 
 }
 
 .tab-content-wrapper {
-    background-color: #F5F5DC; 
+    background-color: #FDFDD9; 
     padding: 1.5rem; 
     border-bottom-left-radius: 1rem; 
     border-bottom-right-radius: 1rem;

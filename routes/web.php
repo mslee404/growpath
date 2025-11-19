@@ -46,3 +46,7 @@ Route::get('/profile', function () {
 Route::get('/leaderboard', function () {
     return view('leaderboard');
 });
+
+Route::get('/shopnew', function () {
+    return view('shopnew');
+});

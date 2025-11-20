@@ -7,20 +7,27 @@
 
     <x-navbar activePage="shop" />
 
-    <div class="container mx-auto p-8 min-h-[calc(100vh-60px)]">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div class="container mx-auto px-0 max-w-[90%] py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-between">
             <div class="lg:col-span-1 flex flex-col items-center">
+                <div class="flex justify-between items-right w-full h-[15%] gap-6 items-center mb-6">
+                    <span class="text-[#5E7153] font-bold text-[2.5rem] leading-[2.25rem]">MARKET</span>
 
-                <h2 class="shop-title">MARKET</h2>
+                    <div class="flex bg-[#FDFDD9] rounded-[15px] py-[5px] px-[10px] h-[70%] w-1/2 justify-between items-center border-2 border-[#5E7153]">
+                        <span id="gold-amount" class="text-[#5E7153] text-lg font-bold">10000</span>
+                        <image src="/images/Gold.svg" alt="Gold Coin" class="w-[80%] h-[80%] ml-10 object-contain"/>
+                    </div>
+                </div>
 
                 <div class="item-detail-card w-full max-w-md text-center">
                     
                     <div id="item-detail-image" class="item-detail-image-wrapper mx-auto mb-6 flex items-center justify-center overflow-hidden">
-                        <span>Gambar Item</span>
+                        <span class="text-[#6B7280]">Gambar Item</span>
                     </div>
                     
                     <h2 id="item-detail-name" class="item-detail-name">[Nama Item]</h2>
                     <p id="item-detail-desc" class="item-detail-desc">Deskripsi singkat item ada di sini.</p>
+                    <span id="item-detail-price" class="text-[1.875rem] leading-[2.25rem] font-bold text-[#5E7153]">[Harga Item]</span>
 
                 </div>
 
@@ -39,9 +46,26 @@
         <!-- <div class="bg-[#FDFDD9] py-[50px] px-[40px] rounded-bl-[15px] rounded-br-[15px] flex-1"> -->
                 <div class="tab-content-wrapper w-full min-h-[500px]">
                     <div id="avatar-shop" class="tab-content">
-                        <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 p-4">
+                            <div 
+                                class="item-card"
+                                data-item='{
+                                    "name": "Dewa Petir", 
+                                    "desc": "Avatar spesial Dewa Petir (Zenitsu)", 
+                                    "image": "{{ asset('images/2.png') }}",
+                                    "price": "7500"
+                                }'>
+                                
+                                <div class="bg-[#5E7153] text-[#FDFDD9] text-center py-2 font-bold text-lg leading-7">Dewa Petir</div>
+                                
+                                <div class="p-4 justify-center items-center flex flex-col gap-3">
+                                    <img src="{{ asset('images/2.png') }}" alt="Dewa Petir" class="item-card-image">
+
+                                    <span class="text-[#FDFDD9] text-lg font-bold">7500 Gold</span>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                     <div id="frame-shop" class="tab-content hidden">
                         <p>

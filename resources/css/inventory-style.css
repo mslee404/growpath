@@ -30,10 +30,6 @@
     border-color: #265c3c99; 
 }
 
-.item-detail-image-wrapper span {
-    color: #6B7280; 
-}
-
 .item-detail-name {
     font-size: 1.875rem; 
     line-height: 2.25rem;
@@ -121,7 +117,7 @@
 
 .item-card-header {
     background-color: #5E7153; 
-    color: #FFFFFF; 
+    color: #FDFDD9; 
     text-align: center;
     padding-top: 0.5rem; 
     padding-bottom: 0.5rem;

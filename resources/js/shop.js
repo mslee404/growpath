@@ -42,38 +42,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // // ========== LOGIKA UNTUK KLIK ITEM ==========
+    // ========== LOGIKA UNTUK KLIK ITEM ==========
 
-    // // 1. Ambil elemen detail di kiri
-    // const detailImageContainer = document.getElementById('item-detail-image');
-    // const detailName = document.getElementById('item-detail-name');
-    // const detailDesc = document.getElementById('item-detail-desc');
+    // 1. Ambil elemen detail di kiri
+    const detailImageContainer = document.getElementById('item-detail-image');
+    const detailName = document.getElementById('item-detail-name');
+    const detailDesc = document.getElementById('item-detail-desc');
+    const detailPrice = document.getElementById('item-detail-price');
     
-    // // 2. Ambil semua kartu item
-    // const itemCards = document.querySelectorAll('.item-card');
+    // 2. Ambil semua kartu item
+    const itemCards = document.querySelectorAll('.item-card');
     
-    // // 3. Tambahkan event click ke setiap kartu item
-    // itemCards.forEach(card => {
-    //     card.addEventListener('click', () => {
-    //         // Ambil data JSON dari atribut data-item
-    //         const itemData = JSON.parse(card.getAttribute('data-item'));
+    // 3. Tambahkan event click ke setiap kartu item
+    itemCards.forEach(card => {
+        card.addEventListener('click', () => {
+            // Ambil data JSON dari atribut data-item
+            const itemData = JSON.parse(card.getAttribute('data-item'));
             
-    //         // Update panel detail di kiri
-    //         detailName.textContent = itemData.name;
-    //         detailDesc.textContent = itemData.desc;
+            // Update panel detail di kiri
+            detailName.textContent = itemData.name;
+            detailDesc.textContent = itemData.desc;
+            detailPrice.textContent = itemData.price;
             
-    //         // Update gambar (buat elemen img baru)
-    //         detailImageContainer.innerHTML = ''; // Kosongkan dulu
-    //         const newImage = document.createElement('img');
-    //         newImage.src = itemData.image;
-    //         newImage.alt = itemData.name;
-    //         newImage.className = 'w-full h-full object-cover'; // Atur agar pas
-    //         detailImageContainer.appendChild(newImage);
+            // Update gambar (buat elemen img baru)
+            detailImageContainer.innerHTML = ''; // Kosongkan dulu
+            const newImage = document.createElement('img');
+            newImage.src = itemData.image;
+            newImage.alt = itemData.name;
+            newImage.className = 'w-full h-full object-cover'; // Atur agar pas
+            detailImageContainer.appendChild(newImage);
             
-    //         // (Opsional) Beri tanda visual item mana yang dipilih
-    //         itemCards.forEach(c => c.classList.remove('border-green-800'));
-    //         card.classList.add('border-green-800');
-    //     });
-    // });
+            // (Opsional) Beri tanda visual item mana yang dipilih
+            itemCards.forEach(c => c.classList.remove('border-green-800'));
+            card.classList.add('border-green-800');
+        });
+    });
     
 });

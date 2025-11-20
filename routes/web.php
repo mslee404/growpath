@@ -39,6 +39,14 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
+Route::post('/logout', function (Request $request) {
+    Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+    
+    return redirect('/'); // Ganti '/' dengan '/login' kalau mau diarahkan ke login
+})->name('logout');
+
 Route::get('/leaderboard', function () {
     return view('leaderboard');
 });

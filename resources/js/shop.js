@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Ambil elemen detail di kiri
     const detailImageContainer = document.getElementById('item-detail-image');
+    const frameImageContainer = document.getElementById('item-frame');
     const detailName = document.getElementById('item-detail-name');
     const detailDesc = document.getElementById('item-detail-desc');
     const detailPrice = document.getElementById('item-detail-price');
@@ -63,14 +64,24 @@ document.addEventListener('DOMContentLoaded', () => {
             detailName.textContent = itemData.name;
             detailDesc.textContent = itemData.desc;
             detailPrice.textContent = itemData.price;
+
+            frameImageContainer.innerHTML = '';
+            detailImageContainer.innerHTML = ''; 
             
-            // Update gambar (buat elemen img baru)
-            detailImageContainer.innerHTML = ''; // Kosongkan dulu
-            const newImage = document.createElement('img');
-            newImage.src = itemData.image;
-            newImage.alt = itemData.name;
-            newImage.className = 'w-full h-full object-cover'; // Atur agar pas
-            detailImageContainer.appendChild(newImage);
+            if (itemData.type === "Frame") {
+              const newImage = document.createElement('img');
+              newImage.src = itemData.image;
+              newImage.alt = itemData.name;
+              newImage.className = 'absolute w-[100%] h-[100%] pointer-events-none'; // Atur agar pas
+              frameImageContainer.appendChild(newImage);
+
+            } else {
+              const newImage = document.createElement('img');
+              newImage.src = itemData.image;
+              newImage.alt = itemData.name;
+              newImage.className = 'w-full h-full object-cover'; // Atur agar pas
+              detailImageContainer.appendChild(newImage);
+            }
             
             // (Opsional) Beri tanda visual item mana yang dipilih
             itemCards.forEach(c => c.classList.remove('border-green-800'));

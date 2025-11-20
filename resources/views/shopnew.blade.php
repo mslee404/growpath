@@ -21,11 +21,11 @@
 
                 <div class="bg-[#FDFDD9] p-[2.75rem] rounded-[1rem] border-2 border-[#5E7153] shadow-lg w-full max-w-md items-center flex flex-col justify-center text-center">
                     
-                    <div id="item-frame" class="relative w-[17.3rem] h-[17.3rem] mx-auto mb-6 flex items-center justify-center bg=[#d1d5db] overflow-hidden rounded-[10px]">
+                    <div id="item-frame" class="relative w-[17.3rem] h-[17.3rem] mx-auto mb-6 flex items-center justify-center overflow-hidden rounded-[10px]">
 
                         <!-- <img src="/images/Apple.svg" class="absolute w-[100%] h-[100%] pointer-events-none" /> -->
 
-                        <div id="item-detail-image" class="w-[13rem] h-[13rem] overflow-hidden">
+                        <div id="item-detail-image" class="w-[13rem] h-[13rem] flex items-center justify-center overflow-hidden">
                             <!-- <img src="/images/5-myistri.svg" class="w-full h-full object-cover" /> -->
                         </div>
 

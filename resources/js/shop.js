@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
             detailDesc.textContent = itemData.desc;
             detailPrice.textContent = itemData.price;
 
-            frameImageContainer.innerHTML = '';
             detailImageContainer.innerHTML = ''; 
+            frameImageContainer.innerHTML = '';
             
             if (itemData.type === "Frame") {
               const newImage = document.createElement('img');
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
               newImage.className = 'absolute w-[100%] h-[100%] pointer-events-none'; // Atur agar pas
               frameImageContainer.appendChild(newImage);
 
-            } else {
+            } else { 
               const newImage = document.createElement('img');
               newImage.src = itemData.image;
               newImage.alt = itemData.name;

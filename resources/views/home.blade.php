@@ -318,6 +318,8 @@
         @include('popup.tambah-tugas')
         @include('popup.popup-edit-habit')
         @include('popup.confirm-delete-habit')
+        @include( 'popup.edit-tugas')
+        @include( 'popup.confirm-delete-tugas')
     </x-slot:popups>
 
 {{-- SCRIPT --}}

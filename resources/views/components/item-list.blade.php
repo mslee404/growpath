@@ -44,4 +44,17 @@
     </button>
     @endif
 
+    {{-- TITIK 3 UNTUK TUGAS --}}
+    @if($type === 'tugas')
+    <button 
+        onclick="openEditTugas()"
+        class="text-gray-500 hover:text-black p-2"
+>
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/>
+        </svg>
+    </button>
+    @endif
+
+
 </div>

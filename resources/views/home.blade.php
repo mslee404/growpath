@@ -314,7 +314,7 @@
     </div>
     
     <x-slot:popups>
-        @include('popup.tambah-habit')
+        @include('popup.popup-tambah-habit')
         @include('popup.tambah-tugas')
     </x-slot:popups>
 

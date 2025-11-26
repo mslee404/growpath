@@ -33,8 +33,6 @@ p {
     background-color: #5E7153; 
     color: #FDFDD9; 
     border-bottom: none;
-    border-width: 2px; 
-    border-color: #5E7153;
 }
 
 .tab-button.tab-active {

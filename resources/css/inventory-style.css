@@ -78,17 +78,13 @@
     line-height: 1.75rem;
     position: relative; 
     z-index: 1; 
-    cursor: pointer;
-    background-color: #5E7153; 
+    cursor: pointer; 
     color: #FDFDD9; 
     border-bottom: none;
-    border-width: 2px; 
-    border-color: #5E7153;
 }
 
 .tab-button.tab-active {
     background-color: #FDFDD9; 
-    color: #5E7153; 
     z-index: 2; 
     margin-bottom: -1px; 
 }
@@ -98,8 +94,6 @@
     padding: 1.5rem; 
     border-bottom-left-radius: 1rem; 
     border-bottom-right-radius: 1rem;
-    border-width: 2px; 
-    border-color: #5E7153;
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); 
 }
 

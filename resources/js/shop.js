@@ -65,8 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
             detailDesc.textContent = itemData.desc;
             detailPrice.textContent = itemData.price;
 
-            detailImageContainer.innerHTML = ''; 
-            frameImageContainer.innerHTML = '';
+            // Clear only frame’s image children, not the whole container
+            frameImageContainer.querySelectorAll('img').forEach(img => img.remove());
+
+            // Clear only avatar’s image children
+            detailImageContainer.querySelectorAll('img').forEach(img => img.remove());
+
             
             if (itemData.type === "Frame") {
               const newImage = document.createElement('img');

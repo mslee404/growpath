@@ -42,6 +42,25 @@
             'image' => 'images/8-wony.svg' 
         ],
     ];
+    $frame = [
+        [
+            'name' => 'Apple Frame',
+            'type' => 'Frame',
+            'desc' => 'Frame apel apel emas',
+            'image' => asset('images/Apple.svg'),
+            'price' => '7500' 
+        ]
+    ];
+    $plant = [
+        [
+            'name' => 'Buah Naga',
+            'type' => 'Plant',
+            'desc' => 'Buah naga merah yang segar dan manis (kayanya)',
+            'image' => asset('images/Dragon fruit.svg'),
+            'price' => '10000' 
+        ]
+    ];
+    $background = [];
 @endphp
 
 <x-layout>
@@ -64,7 +83,7 @@
 
                 <div class="bg-[#F5F5DC] p-11 rounded-2xl shadow-lg text-center w-full max-w-md">
                     
-                    <div id="item-detail-image" class="w-52 h-52 bg-gray-300 border-[8px] border-[#265c3c99] mx-auto mb-6 flex items-center justify-center overflow-hidden">
+                    <div id="item-detail-image" class="w-52 h-52 ] rounded-[10px] mx-auto mb-6 flex items-center justify-center overflow-hidden">
                         <span class="text-gray-500">Gambar Item</span>
                     </div>
                     
@@ -76,7 +95,7 @@
                     </p>
                 </div>
 
-                <button class="mt-8 bg-[#F5F5DC] shadow-lg px-12 py-3 rounded-lg font-bold text-xl text-[#5E7153] shadow-md hover:bg-white transition-all duration-300">
+                <button id="btn-use" class="mt-8 bg-[#F5F5DC] shadow-lg px-12 py-3 rounded-lg font-bold text-xl text-[#5E7153] shadow-md hover:bg-white transition-all duration-300">
                     Pakai
                 </button>
             </div>
@@ -101,50 +120,121 @@
                 <div class="bg-[#F5F5DC] p-6 rounded-b-2xl shadow-lg w-full min-h-[500px]">
                     
                     <div id="avatar-panel" class="tab-content">
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
-                            
-                            {{-- MULAI LOOPING: Cukup tulis kodingan card 1 kali saja --}}
-                            @foreach($my_avatars as $avatar)
-                                <div 
-                                    class="item-card bg-[#ADC698] rounded-xl shadow-md cursor-pointer overflow-hidden transition-all hover:shadow-lg"
-                                    {{-- Kita masukkan data PHP ke dalam atribut HTML agar bisa dibaca JS --}}
-                                    data-item='{{ json_encode($avatar) }}'>
-                                    
-                                    {{-- Judul --}}
-                                    <div class="bg-[#5E7153] text-white text-center py-2 font-bold text-lg leading-7">
-                                        {{ $avatar['name'] }}
+                        @if (count($my_avatars) > 0)
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+                                
+                                {{-- MULAI LOOPING: Cukup tulis kodingan card 1 kali saja --}}
+                                @foreach($my_avatars as $avatar)
+                                    <div 
+                                        class="item-card bg-[#ADC698] rounded-xl shadow-md cursor-pointer overflow-hidden transition-all hover:shadow-lg"
+                                        {{-- Kita masukkan data PHP ke dalam atribut HTML agar bisa dibaca JS --}}
+                                        data-item='{{ json_encode($avatar) }}'>
+                                        
+                                        {{-- Judul --}}
+                                        <div class="bg-[#5E7153] text-white text-center py-2 font-bold text-lg leading-7">
+                                            {{ $avatar['name'] }}
+                                        </div>
+                                        
+                                        {{-- Gambar --}}
+                                        <div class="p-4">
+                                            {{-- asset() membungkus path gambar agar link-nya benar --}}
+                                            <img src="{{ asset($avatar['image']) }}" alt="{{ $avatar['name'] }}" class="w-full h-auto object-cover rounded-lg aspect-square">
+                                        </div>
                                     </div>
-                                    
-                                    {{-- Gambar --}}
-                                    <div class="p-4">
-                                        {{-- asset() membungkus path gambar agar link-nya benar --}}
-                                        <img src="{{ asset($avatar['image']) }}" alt="{{ $avatar['name'] }}" class="w-full h-auto object-cover rounded-lg aspect-square">
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
+                                @endforeach
+                            </div>
+                        @else
+                        <p class="pt-48 text-xl text-[#5E7153] text-center">Kamu belum punya avatar custom :(</p>
+                        @endif
                     </div>
 
                     <div id="frame-panel" class="tab-content hidden">
-                        <p class="pt-48 text-xl text-[#5E7153] text-center">
-                            Kamu belum punya avatar frame :(
-                        </p>
+                        @if (count($frame) > 0)
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+                                
+                                @foreach($frame as $frame)
+                                    <div 
+                                        class="item-card bg-[#ADC698] rounded-xl shadow-md cursor-pointer overflow-hidden transition-all hover:shadow-lg"
+                                        data-item='{{ json_encode($frame) }}'>
+                                        
+                                        {{-- Judul --}}
+                                        <div class="bg-[#5E7153] text-white text-center py-2 font-bold text-lg leading-7">
+                                            {{ $frame['name'] }}
+                                        </div>
+                                        
+                                        {{-- Gambar --}}
+                                        <div class="p-4">
+                                            {{-- asset() membungkus path gambar agar link-nya benar --}}
+                                            <img src="{{ asset($frame['image']) }}" alt="{{ $frame['name'] }}" class="w-full h-auto object-cover rounded-lg aspect-square">
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @else
+                        <p class="pt-48 text-xl text-[#5E7153] text-center">Kamu belum punya frame custom :(</p>
+                        @endif
                     </div>
                     
                     <div id="tanaman-panel" class="tab-content hidden">
-                        <p class="pt-48 text-xl text-[#5E7153] text-center">
-                            Kamu belum punya tanaman custom :(
-                        </p>
+                        @if (count($plant) > 0)
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+                                
+                                @foreach($plant as $plant)
+                                    <div 
+                                        class="item-card bg-[#ADC698] rounded-xl shadow-md cursor-pointer overflow-hidden transition-all hover:shadow-lg"
+                                        data-item='{{ json_encode($plant) }}'>
+                                        
+                                        {{-- Judul --}}
+                                        <div class="bg-[#5E7153] text-white text-center py-2 font-bold text-lg leading-7">
+                                            {{ $plant['name'] }}
+                                        </div>
+                                        
+                                        {{-- Gambar --}}
+                                        <div class="p-4">
+                                            {{-- asset() membungkus path gambar agar link-nya benar --}}
+                                            <img src="{{ asset($plant['image']) }}" alt="{{ $plant['name'] }}" class="w-full h-auto object-cover rounded-lg aspect-square">
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @else
+                        <p class="pt-48 text-xl text-[#5E7153] text-center">Kamu belum punya tanaman custom :(</p>
+                        @endif
                     </div>
                     
                     <div id="background-panel" class="tab-content hidden">
-                        <p class="pt-48 text-xl text-[#5E7153] text-center">
-                            Kamu belum punya background custom :(
-                        </p>
+                        @if (count($background) > 0)
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+                                
+                                @foreach($background as $img)
+                                    <div 
+                                        class="item-card bg-[#ADC698] rounded-xl shadow-md cursor-pointer overflow-hidden transition-all hover:shadow-lg"
+                                        data-item='{{ json_encode($img) }}'>
+                                        
+                                        {{-- Judul --}}
+                                        <div class="bg-[#5E7153] text-white text-center py-2 font-bold text-lg leading-7">
+                                            {{ $img['name'] }}
+                                        </div>
+                                        
+                                        {{-- Gambar --}}
+                                        <div class="p-4">
+                                            {{-- asset() membungkus path gambar agar link-nya benar --}}
+                                            <img src="{{ asset($img['image']) }}" alt="{{ $img['name'] }}" class="w-full h-auto object-cover rounded-lg aspect-square">
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @else
+                        <p class="pt-48 text-xl text-[#5E7153] text-center">Kamu belum punya background custom :(</p>
+                        @endif
                     </div>
 
                 </div>              
             </div>
         </div>
     </main>
+    
+    <x-slot:popups>
+    @include('popup.use')
+    </x-slot:popups>
 </x-layout>

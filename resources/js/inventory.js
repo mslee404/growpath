@@ -56,4 +56,46 @@ document.addEventListener('DOMContentLoaded', () => {
             card.classList.add('ring-4', 'ring-[#5E7153]');
         });
     });
+
+// --- SETUP MODAL USE ITEM ---    
+    // YANG BENAR:
+    const modalUse = document.getElementById('modal-use'); // <--- Ganti nama variabel ini
+    const contentUse = document.getElementById('modal-content-use');
+    const btnUse = document.getElementById('btn-use');
+    const btnCloseUse = document.getElementById('close-use');
+
+    // Fungsi BUKA Modal
+    function openUseModal() {
+        // Sekarang variabel modalUse sudah dikenali
+        if (!modalUse || !contentUse) return; 
+        modalUse.classList.remove('invisible', 'opacity-0');
+        contentUse.classList.remove('scale-95');
+    }
+
+    // Fungsi TUTUP Modal
+    function closeUseModal() {
+        if (!modalUse || !contentUse) return;
+        modalUse.classList.add('opacity-0');
+        contentUse.classList.add('scale-95');
+        
+        setTimeout(() => {
+            modalUse.classList.add('invisible');
+        }, 300);
+    }
+
+    // Pasang Event Listener
+    if (btnUse) {
+        btnUse.addEventListener('click', openUseModal);
+    }
+
+    if (btnCloseUse) {
+        btnCloseUse.addEventListener('click', closeUseModal);
+    }
+
+    // Tutup kalau klik di luar kotak
+    window.addEventListener('click', (event) => {
+        if (event.target == modalUse) {
+            closeUseModal();
+        }
+    });
 });

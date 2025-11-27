@@ -1,73 +1,61 @@
-{{-- 
-    Ini adalah komponen Navbar yang reusable.
-    Kita gunakan @props untuk menerima 'activePage'.
-    Default-nya adalah 'home'.
---}}
 @props([
     'activePage' => 'home'
 ])
 
-<nav class="bg-[#8EB548] text-white font-bold shadow-lg">
-    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-        <a href="#" class="text-3xl font-bold tracking-tight text-[#FDFDD9]">GROWPATH</a>
+<nav class="w-full bg-[#78A44C] flex justify-between items-center px-8 py-3 shadow-md font-lexend z-50">
+    
+    <a href="#" class="flex items-center gap-2 text-3xl font-extrabold text-[#FDFDD9] tracking-tight hover:opacity-90 transition-opacity">
+        GROWPATH
+    </a>
+    
+    <div class="flex items-center gap-2">
         
-        <div class="flex items-center space-x-4">
+        @php
+            // Base Class: Rounded, transisi halus
+            $baseClass = "flex items-center space-x-2 px-5 py-2.5 rounded-3xl transition-all duration-200 ease-out";
             
-            {{-- 
-                Kita cek apakah $activePage == 'home'.
-                Jika ya, kita pakai style aktif (bg-[#FDFDD9] text-black).
-                Jika tidak, kita pakai style non-aktif (opacity-70).
-            --}}
+            // Active: Bg Krem, Teks Coklat, Diam di tempat (Solid)
+            $activeClass = "bg-[#FDFDD9] text-[#783D19] font-bold shadow-sm";
+            
+            // Inactive: Teks Krem, Hover: Naik sedikit (-translate-y-1) & background transparan
+            $inactiveClass = "text-[#FDFDD9] font-medium hover:bg-white/10 hover:scale-105";
+        @endphp
 
-            <!-- Home -->
-            <a href="/home" class="flex items-center space-x-2 py-2 px-4 rounded-2xl
-                {{ $activePage == 'home'
-                    ? 'bg-[#FDFDD9] text-black'
-                    : 'text-black opacity-70 hover:opacity-100' }}
-            ">
-                <span class="text-lg font-bold">HOME</span>
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14m-4-4l4 4 4-4"></path></svg>
-            </a>
-            
-            <!-- Inventory -->
-            <a href="/inventory" class="flex items-center space-x-2 py-2 px-4 rounded-2xl
-                {{ $activePage == 'inventory'
-                    ? 'bg-[#FDFDD9] text-black'
-                    : 'text-black opacity-70 hover:opacity-100' }}
-            ">
-                <span class="text-lg font-bold">INVENTORY</span>
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.553C8.188 13 9 13.81 9 14.857V17m8-4h-2.553C14.812 13 14 13.81 14 14.857V17"></path></svg>
-            </a>
+        <a href="/home" class="{{ $baseClass }} {{ $activePage == 'home' ? $activeClass : $inactiveClass }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            <span class="tracking-wide text-sm">HOME</span>
+        </a>
+        
+        <a href="/inventory" class="{{ $baseClass }} {{ $activePage == 'inventory' ? $activeClass : $inactiveClass }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+            <span class="tracking-wide text-sm">INVENTORY</span>
+        </a>
 
-            <!-- Market -->
-            <a href="/shopnew" class="flex items-center space-x-2 py-2 px-4 rounded-2xl
-                {{ $activePage == 'market'
-                    ? 'bg-[#FDFDD9] text-black'
-                    : 'text-black opacity-70 hover:opacity-100' }}
-            ">
-                <span class="text-lg font-bold">MARKET</span>
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-            </a>
-            
-            <!-- Leaderboard -->
-             <a href="/leaderboard" class="flex items-center space-x-2 py-2 px-4 rounded-2xl
-                {{ $activePage == 'leaderboard'
-                    ? 'bg-[#FDFDD9] text-black'
-                    : 'text-black opacity-70 hover:opacity-100' }}
-             ">
-                <span class="text-lg font-bold">LEADERBOARD</span>
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.653-.08-1.285-.23-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.653.08-1.285.23-1.857m0 0A3.004 3.004 0 007 16c0-1.657-1.343-3-3-3S1 14.343 1 16s1.343 3 3 3c.621 0 1.19-.186 1.644-.5M17 16c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3c-.621 0-1.19-.186-1.644-.5M12 8c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3zM6 8c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3z"></path></svg>
-            </a>
-            
-            <!-- Profil -->
-            <a href="/profile" class="flex items-center space-x-2 py-2 px-4 rounded-2xl
-                {{ $activePage == 'profile'
-                    ? 'bg-[#FDFDD9] text-black'
-                    : 'text-black opacity-70 hover:opacity-100' }}
-            ">
-                <span class="text-lg font-bold">PROFILE</span>
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-            </a>
-        </div>
+        <a href="/shop" class="{{ $baseClass }} {{ $activePage == 'shop' ? $activeClass : $inactiveClass }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                <path d="M9 15a2.5 2.5 0 005 0" /> 
+            </svg>
+            <span class="tracking-wide text-sm">SHOP</span>
+        </a>
+        
+        <a href="/leaderboard" class="{{ $baseClass }} {{ $activePage == 'leaderboard' ? $activeClass : $inactiveClass }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 3v4M3 5h4M6 17v4m-2-2h4 m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+            <span class="tracking-wide text-sm">LEADERBOARD</span>
+        </a>
+        
+        <a href="/profile" class="{{ $baseClass }} {{ $activePage == 'profile' ? $activeClass : $inactiveClass }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="tracking-wide text-sm">PROFILE</span>
+        </a>
+
     </div>
 </nav>

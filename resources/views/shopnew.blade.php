@@ -103,7 +103,7 @@
         @vite(['resources/css/shop-style-new.css', 'resources/js/shop.js', 'resources/js/app.js', 'resources/css/app.css'])
     </x-slot:assets>
 
-    <x-navbar activePage="market" />
+    <x-navbar activePage="shop" />
 
     <div class="container mx-auto px-0 max-w-[90%] py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-between">

@@ -34,8 +34,8 @@ class MonthlyHabit extends Model
         });
     }
 
-    public function userHabits()
+    public function userHabit()
     {
-        return $this->hasMany(UserHabit::class, 'id_habit', 'id_habit')->where('habit_type', 'monthly');
+        return $this->belongsTo(UserHabit::class, 'id_habit', 'id_habit');
     }
 }

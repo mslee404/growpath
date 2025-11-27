@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrowPath - Shop</title>
-    @vite(['resources/css/shop-style.css', 'resources/css/app.css'])
+    @vite(['resources/css/shop-style.css', 'resources/js/shop.js', 'resources/css/app.css'])
 </head>
 
 <body>
@@ -69,17 +69,12 @@
                 </div>
         
                 <div class="gold-display">
-                    <image src="/images/Gold.svg" alt="Gold Coin" class="gold">
                 </div>
             </div>
 
             <div class="item-preview">
-                <div class=item-image>
-                    <img src="/images/5-myistri.svg" alt="Item Preview">
-                </div>
             </div>
 
             <button class="buy-button" role="button">BELI</button>
-        </div>
     </main>
 </body>

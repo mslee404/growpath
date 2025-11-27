@@ -22,13 +22,9 @@ Route::get('/inventory', function () {
     return view('inventory'); 
 });
 
-Route::get('/register', function () {
-       return view('auth.register');
-   })->name('register');
-
 Route::post('/register', function (Request $request) {
     // opsional: nanti bisa ditambah validasi/simpan ke database
-    return redirect()->route('auth.loginafter');
+    return redirect()->route('loginafter');
 })->name('register.post');
 
 Route::get('/home', function () {
@@ -43,10 +39,14 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
+Route::post('/logout', function (Request $request) {
+    Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+    
+    return redirect('/'); // Ganti '/' dengan '/login' kalau mau diarahkan ke login
+})->name('logout');
+
 Route::get('/leaderboard', function () {
     return view('leaderboard');
-});
-
-Route::get('/shopnew', function () {
-    return view('shopnew');
 });

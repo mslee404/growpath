@@ -314,8 +314,75 @@
     </div>
     
     <x-slot:popups>
-        @include('popup.tambah-habit')
+        @include('popup.popup-tambah-habit')
         @include('popup.tambah-tugas')
+        @include('popup.popup-edit-habit')
+        @include('popup.confirm-delete-habit')
+        @include( 'popup.edit-tugas')
+        @include( 'popup.confirm-delete-tugas')
     </x-slot:popups>
+
+{{-- SCRIPT --}}
+<script>
+
+function openEditHabit() {
+    const modal = document.getElementById("modal-edit-habit");
+    const content = document.getElementById("modal-content-edit-habit");
+
+    modal.classList.remove("opacity-0", "invisible");
+    content.classList.remove("scale-95");
+
+    modal.classList.add("opacity-100");
+    content.classList.add("scale-100");
+}
+
+function closeEditHabit() {
+    const modal = document.getElementById("modal-edit-habit");
+    const content = document.getElementById("modal-content-edit-habit");
+
+    modal.classList.add("opacity-0", "invisible");
+    content.classList.add("scale-95");
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    // CLOSE BUTTON
+    document.getElementById("close-edit-habit")
+        .addEventListener("click", closeEditHabit);
+
+    // SWITCH FOOTER
+    const sections = {
+        daily: document.getElementById("edit-footer-daily"),
+        weekly: document.getElementById("edit-footer-weekly"),
+        monthly: document.getElementById("edit-footer-monthly"),
+        custom: document.getElementById("edit-footer-custom"),
+    };
+
+    document.querySelectorAll("input[name='edit_frekuensi']").forEach(radio => {
+        radio.addEventListener("change", e => {
+            let val = e.target.value;
+            Object.values(sections).forEach(s => s.classList.add("hidden"));
+            sections[val].classList.remove("hidden");
+        });
+    });
+
+    // Monthly switch
+    const monthlyTanggal = document.getElementById("edit-monthly-tanggal");
+    const monthlyMinggu = document.getElementById("edit-monthly-minggu");
+
+    document.querySelectorAll("input[name='edit_monthly_mode']").forEach(radio => {
+        radio.addEventListener("change", e => {
+            if (e.target.value === "tanggal") {
+                monthlyTanggal.classList.remove("hidden");
+                monthlyMinggu.classList.add("hidden");
+            } else {
+                monthlyTanggal.classList.add("hidden");
+                monthlyMinggu.classList.remove("hidden");
+            }
+        });
+    });
+
+});
+</script>
 
 </x-layout>

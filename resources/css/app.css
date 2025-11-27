@@ -22,7 +22,47 @@ body {
     font-family: "Lexend", sans-serif;
 }
 
+.navigation-container {
+    /* position: absolute; */
+    height: 11%;
+    width: 100%;
+    background-color: #78A44C;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation-bar ul {
+    list-style: none;
+    display: flex; 
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+    padding: 25px 30px;
+}
+
+.navigation-bar li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+}
+
+.growpath-logo {
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 14px;
+    margin-left: 30px;
+    color: #FDFDD9;
+}
 #modal-habit,
 #modal-tugas {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal-logout{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal-edit-username{
     background-color: rgba(0, 0, 0, 0.5);
 }

@@ -83,32 +83,16 @@ h3 {
     border-radius: 15px;
     padding: 20px;
     margin: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.item-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 15px;
-    background-color: #5E7153;
+    width: 90%;
 }
 
 .gold-display {
     background-color: #FDFDD9;
     border-radius: 15px;
     padding: 10px 20px;
+    font-weight: bold;
     height: 70%;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-}
-
-.gold {
-    width: 95%;
-    height: 95%;
-    transform: translateX(50%);
+    width: 40%;
 }
 
 .market {
@@ -127,8 +111,8 @@ h3 {
   cursor: pointer;
   display: inline-block;
   font-family: "Lexend", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 500;
   height: 10%;
   width: 25%;
   line-height: 20px;

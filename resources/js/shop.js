@@ -93,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Ambil elemen detail di kiri
     const detailImageContainer = document.getElementById('item-detail-image');
-    const frameImageContainer = document.getElementById('item-frame');
     const detailName = document.getElementById('item-detail-name');
     const detailDesc = document.getElementById('item-detail-desc');
     const detailPrice = document.getElementById('item-detail-price');
@@ -112,27 +111,15 @@ document.addEventListener('DOMContentLoaded', () => {
             detailDesc.textContent = itemData.desc;
             detailPrice.textContent = itemData.price;
 
-            // Clear only frame’s image children, not the whole container
-            frameImageContainer.querySelectorAll('img').forEach(img => img.remove());
-
             // Clear only avatar’s image children
             detailImageContainer.querySelectorAll('img').forEach(img => img.remove());
 
-            
-            if (itemData.type === "Frame") {
-              const newImage = document.createElement('img');
-              newImage.src = itemData.image;
-              newImage.alt = itemData.name;
-              newImage.className = 'absolute w-[100%] h-[100%] pointer-events-none'; // Atur agar pas
-              frameImageContainer.appendChild(newImage);
+            const newImage = document.createElement('img');
+            newImage.src = itemData.image;
+            newImage.alt = itemData.name;
+            newImage.className = 'w-full h-full object-cover'; // Atur agar pas
+            detailImageContainer.appendChild(newImage);
 
-            } else { 
-              const newImage = document.createElement('img');
-              newImage.src = itemData.image;
-              newImage.alt = itemData.name;
-              newImage.className = 'w-full h-full object-cover'; // Atur agar pas
-              detailImageContainer.appendChild(newImage);
-            }
             
             // (Opsional) Beri tanda visual item mana yang dipilih
             itemCards.forEach(c => c.classList.remove('border-green-800'));

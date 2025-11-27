@@ -2,7 +2,7 @@ h3 {
     background-color: #5E7153;
     color: #FDFDD9;
     text-align: center;
-    padding: 15px 0;
+    padding: 10px 0;
     cursor: pointer;
     font-weight: 600;
     margin: 0;
@@ -11,7 +11,7 @@ h3 {
 }
 
 p {
-    text-align: justify;
+    text-align: center;
     line-height: 1.9;
     letter-spacing: 0.4px;
     color: #202238;
@@ -61,10 +61,11 @@ p {
 }
 
 .item-detail-name {
-    font-size: 1.875rem; 
-    line-height: 2.25rem;
+    font-size: 1.75rem; 
+    line-height: 2rem;
     font-weight: 700; 
     color: #5E7153; 
+    margin-bottom: 0.2rem;
 }
 
 .item-card {

@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_inventories', function (Blueprint $table) {
-
+        Schema::create('gold_purchases', function (Blueprint $table) {
+            $table->string('id_transaction', 20)->primary();
+            $table->string('status', 20);
+            $table->dateTime('date');
             $table->string('id_user', 10);
-            $table->boolean('is_equipped')->default(false);
-            $table->string('id_item', 10);
-            $table->primary(['id_user', 'id_item']);
-            $table->foreign('id_user')->references('id_user')->on('user_growpaths')->onDelete('cascade');
-            $table->foreign('id_item')->references('id_item')->on('item_shops')->onDelete('cascade');
-            $table->timestamps();
+            $table->string('id_package', 10);
 
+            $table->foreign('id_user')->references('id_user')->on('user_growpaths')->onDelete('cascade');
+            $table->foreign('id_package')->references('id_package')->on('gold_shops')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_inventories');
+        Schema::dropIfExists('gold_purchases');
     }
 };

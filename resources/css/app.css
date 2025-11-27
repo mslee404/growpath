@@ -12,6 +12,8 @@
          'Segoe UI Symbol', 'Noto Color Emoji'; /* 'Instrument Sans' */
 }
 
+.font-lexend { font-family: 'Lexend', sans-serif; }
+
 body {
     background-image: url('/public/images/Background.svg');
     background-size: cover;

@@ -31,11 +31,11 @@ class CustomHabit extends Model
             $model->id_habit = 'HC' . str_pad($num, 4, '0', STR_PAD_LEFT);
         });
     }
-
-    public function userHabits()
+    public function userHabit()
     {
-        return $this->hasMany(UserHabit::class, 'id_habit', 'id_habit')->where('habit_type', 'custom');
+        return $this->belongsTo(UserHabit::class, 'id_habit', 'id_habit');
     }
+
 
 
 }

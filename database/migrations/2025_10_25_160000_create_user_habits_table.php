@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('custom_habits', function (Blueprint $table) {
+        Schema::create('user_habits', function (Blueprint $table) {
+            $table->string('id_user', 10);
             $table->string('id_habit', 10)->primary();
-            $table->string('habit_name',100);
-            $table->string('habit_description',255)->nullable();
-            $table->time('hour')->nullable();
-            $table->integer('day_count',10);
+            $table->string('habit_type', 10);
+            $table->foreign('id_user')->references('id_user')->on('user_growpaths')->onDelete('cascade');
             $table->timestamps();
-
-            $table->foreign('id_habit')->references('id_habit')->on('user_habits')->onDelete('cascade');
         });
     }
 
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('custom_habits');
+        Schema::dropIfExists('user_habits');
     }
 };

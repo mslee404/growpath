@@ -33,8 +33,8 @@ class WeeklyHabit extends Model
         });
     }
 
-    public function userHabits()
+    public function userHabit()
     {
-        return $this->hasMany(UserHabit::class, 'id_habit', 'id_habit')->where('habit_type', 'weekly');
+        return $this->belongsTo(UserHabit::class, 'id_habit', 'id_habit');
     }
 }

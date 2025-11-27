@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('type');
             $table->integer('price');
             $table->string('image')->nullable();
+            $table->timestamps();
 
             // $table->enum('type', ['skin', 'icon', 'frame']);
         });

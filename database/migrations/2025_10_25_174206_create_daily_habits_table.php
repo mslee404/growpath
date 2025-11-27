@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('habit_description')->nullable();
             $table->time('hour')->nullable();
             $table->timestamps();
+
+            $table->foreign('id_habit')->references('id_habit')->on('user_habits')->onDelete('cascade');
         });
     }
 

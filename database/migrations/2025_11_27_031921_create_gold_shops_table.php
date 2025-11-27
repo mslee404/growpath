@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_habits', function (Blueprint $table) {
-            $table->string('id_user', 10);
-            $table->string('id_habit', 10)->primary();
-            $table->string('habit_type', 10);
-            $table->foreign('id_user')->references('id_user')->on('user_growpaths')->onDelete('cascade');
+        Schema::create('gold_shops', function (Blueprint $table) {
+            
+            $table->string('id_package', 10)->primary();
+            $table->string('name');
+            $table->integer('amount');
+            $table->integer('price');
+            $table->integer('xp');
+            $table->timestamps();
         });
     }
 
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_habits');
+        Schema::dropIfExists('gold_shops');
     }
 };

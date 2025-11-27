@@ -40,7 +40,7 @@
             </a>
 
             <!-- Market -->
-            <a href="/shop" class="flex items-center space-x-2 py-2 px-4 rounded-2xl
+            <a href="/shopnew" class="flex items-center space-x-2 py-2 px-4 rounded-2xl
                 {{ $activePage == 'market'
                     ? 'bg-[#FDFDD9] text-black'
                     : 'text-black opacity-70 hover:opacity-100' }}

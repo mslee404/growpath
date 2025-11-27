@@ -1,5 +1,52 @@
 // Tunggu sampai semua konten HTML selesai dimuat
 document.addEventListener('DOMContentLoaded', () => {
+  // --- SETUP MODAL BUY ITEM ---
+
+    const modalBuy = document.getElementById('modal-buy');
+    const contentBuy = document.getElementById('modal-content-buy');
+    const btnBuy = document.getElementById('btn-buy');
+    const btnCloseBuy = document.getElementById('close-buy');
+    const btnCancelBuy = document.getElementById('btn-cancel-buy');
+
+    // Fungsi BUKA Modal
+    function openBuyModal() {
+        if (!modalBuy || !contentBuy) return;
+        modalBuy.classList.remove('invisible', 'opacity-0');
+        contentBuy.classList.remove('scale-95');
+    }
+
+    // Fungsi TUTUP Modal
+    function closeBuyModal() {
+        if (!modalBuy || !contentBuy) return;
+        modalBuy.classList.add('opacity-0');
+        contentBuy.classList.add('scale-95');
+        
+        setTimeout(() => {
+            modalBuy.classList.add('invisible');
+        }, 300);
+    }
+
+    // Pasang Event Listener
+    if (btnBuy) {
+        btnBuy.addEventListener('click', openBuyModal);
+    }
+
+    if (btnCloseBuy) {
+        btnCloseBuy.addEventListener('click', closeBuyModal);
+    }
+    
+    if (btnCancelBuy) {
+        btnCancelBuy.addEventListener('click', closeBuyModal);
+    }
+
+    // Tutup kalau klik di luar kotak
+    window.addEventListener('click', (event) => {
+        if (event.target == modalBuy) {
+            closeBuyModal();
+        }
+    });
+    
+
 
     // ========== LOGIKA UNTUK TABS ==========
     

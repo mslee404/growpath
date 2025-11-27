@@ -16,7 +16,7 @@
 
         <div class="flex flex-col md:flex-row gap-8 justify-center w-full max-w-6xl items-stretch">
             
-            <div class="bg-[#F5F5DC] p-8 rounded-xl shadow-md border-2 border-[#5C6843] flex flex-col justify-between items-center w-full md:w-[35%]">
+            <div class="bg-[#F5F5DC] p-8 rounded-xl shadow-md flex flex-col justify-between items-center w-full md:w-[35%]">
                 
                 <div class="flex items-center w-full gap-2 mb-4">
                     <div class="bg-[#5C6843] text-white text-xl font-bold px-5 py-2.5 rounded-lg w-full text-center truncate shadow-sm">
@@ -39,7 +39,7 @@
                 </button>
             </div>
 
-            <div class="bg-[#F5F5DC] p-8 rounded-xl shadow-md border-2 border-[#5C6843] w-full md:w-[65%] text-[#5C6843] flex flex-col justify-between">
+            <div class="bg-[#F5F5DC] p-8 rounded-xl shadow-md w-full md:w-[65%] text-[#5C6843] flex flex-col justify-between">
                 
                 <div class="space-y-6 text-xl font-bold w-full">
                     
@@ -69,7 +69,7 @@
 
                     <div class="flex items-end justify-between w-full">
                         <span class="flex-shrink-0">time played</span>
-                        <div class="flex-grow border-b-[3px] border-dotted border-[#5C6843] mx-3 mb-2 opacity-50"></div>
+                        <div class="flex-grow mx-3 mb-2 opacity-50"></div>
                         <span class="flex-shrink-0 text-2xl">733h 23m</span>
                     </div>
                 </div>

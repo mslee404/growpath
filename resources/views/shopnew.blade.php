@@ -44,7 +44,7 @@
         @vite(['resources/css/shop-style-new.css', 'resources/js/shop.js', 'resources/js/app.js', 'resources/css/app.css'])
     </x-slot:assets>
 
-    <x-navbar activePage="shop" />
+    <x-navbar activePage="market" />
 
     <div class="container mx-auto px-0 max-w-[90%] py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-between">
@@ -76,7 +76,7 @@
 
                 </div>
 
-                <button class="bg-[#FDFDD9] px-12 py-3 rounded-md font-bold text-xl leading-7 text-[#5E7153] shadow-md transition-all duration-300 ease-in-out cursor-pointer mt-8">Beli</button>
+                <button id="btn-buy" class="bg-[#FDFDD9] px-12 py-3 rounded-md font-bold text-xl leading-7 text-[#5E7153] shadow-md transition-all duration-300 ease-in-out cursor-pointer mt-8">Beli</button>
             </div>
 
             <!-- Shop Tabs and Items -->
@@ -236,4 +236,8 @@
             </div>
         </div>
     </div>
+
+    <x-slot:popups>
+        @include('popup.buy')
+    </x-slot:popups>
 </x-layout>

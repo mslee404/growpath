@@ -35,7 +35,7 @@
             <span class="tracking-wide text-sm">INVENTORY</span>
         </a>
 
-        <a href="/shop" class="{{ $baseClass }} {{ $activePage == 'market' ? $activeClass : $inactiveClass }}">
+        <a href="/shopnew" class="{{ $baseClass }} {{ $activePage == 'shop' ? $activeClass : $inactiveClass }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 <path d="M9 15a2.5 2.5 0 005 0" /> 

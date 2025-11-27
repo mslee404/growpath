@@ -62,7 +62,7 @@
                     INVENTORY
                 </h2>
 
-                <div class="bg-[#F5F5DC] p-11 rounded-2xl border-2 border-[#5E7153] shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)] text-center w-full max-w-md">
+                <div class="bg-[#F5F5DC] p-11 rounded-2xl shadow-lg text-center w-full max-w-md">
                     
                     <div id="item-detail-image" class="w-52 h-52 bg-gray-300 border-[8px] border-[#265c3c99] mx-auto mb-6 flex items-center justify-center overflow-hidden">
                         <span class="text-gray-500">Gambar Item</span>
@@ -76,7 +76,7 @@
                     </p>
                 </div>
 
-                <button class="mt-8 bg-[#F5F5DC] border-2 border-[#5E7153] px-12 py-3 rounded-lg font-bold text-xl text-[#5E7153] shadow-md hover:bg-white transition-all duration-300">
+                <button class="mt-8 bg-[#F5F5DC] shadow-lg px-12 py-3 rounded-lg font-bold text-xl text-[#5E7153] shadow-md hover:bg-white transition-all duration-300">
                     Pakai
                 </button>
             </div>
@@ -84,21 +84,21 @@
             <div class="lg:col-span-2">
                 
                 <div class="flex relative z-10 border-b-0">
-                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer border-2 border-b-0 border-[#5E7153] bg-[#F5F5DC] text-[#5E7153] z-20 -mb-[2px]" data-tab-target="#avatar-panel">
+                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#F5F5DC] text-[#5E7153] z-20 -mb-[2px]" data-tab-target="#avatar-panel">
                         Avatar
                     </button>
-                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer border-2 border-b-0 border-[#5E7153] bg-[#5E7153] text-[#F5F5DC] z-10" data-tab-target="#frame-panel">
+                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#F5F5DC] z-10" data-tab-target="#frame-panel">
                         Avatar Frame
                     </button>
-                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer border-2 border-b-0 border-[#5E7153] bg-[#5E7153] text-[#F5F5DC] z-10" data-tab-target="#tanaman-panel">
+                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#F5F5DC] z-10" data-tab-target="#tanaman-panel">
                         Tanaman
                     </button>
-                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer border-2 border-b-0 border-[#5E7153] bg-[#5E7153] text-[#F5F5DC] z-10" data-tab-target="#background-panel">
+                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#F5F5DC] z-10" data-tab-target="#background-panel">
                         Background
                     </button>
                 </div>
 
-                <div class="bg-[#F5F5DC] p-6 rounded-b-2xl border-2 border-[#5E7153] shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)] w-full min-h-[500px]">
+                <div class="bg-[#F5F5DC] p-6 rounded-b-2xl shadow-lg w-full min-h-[500px]">
                     
                     <div id="avatar-panel" class="tab-content">
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">

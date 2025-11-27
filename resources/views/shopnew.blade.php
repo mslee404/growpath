@@ -41,7 +41,7 @@
     <x-slot:title>Shop</x-slot:title>
 
     <x-slot:assets>
-        @vite(['resources/css/shop-style-new.css', 'resources/js/shop.js', 'resources/js/app.js', 'resources/css/app.css', 'resources/css/inventory-style.css'])
+        @vite(['resources/css/shop-style-new.css', 'resources/js/shop.js', 'resources/js/app.js', 'resources/css/app.css'])
     </x-slot:assets>
 
     <x-navbar activePage="shop" />

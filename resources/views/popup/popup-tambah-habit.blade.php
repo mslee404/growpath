@@ -12,7 +12,7 @@
     <div>
         <label class="block text-sm font-semibold mb-1">Detail Habit</label>
         <textarea name="detail_habit" rows="3"
-            class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3"
+            class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3 resize none !resize-none"
             placeholder="Ketik detail di sini"></textarea>
     </div>
 
@@ -76,52 +76,54 @@
         </div>
 
         {{-- MONTHLY --}}
-                {{-- MONTHLY --}}
-        <div id="footer-monthly" class="section-footer hidden space-y-4">
+        <div id="footer-monthly" class="section-footer hidden space-y-2">
 
-            {{-- SUB-RADIO: 2 kolom agar ringkas --}}
-            <label class="block text-sm font-semibold text-white">Setiap Apa?</label>
-
-            <div class="grid grid-cols-2 gap-4">
-                <label class="flex items-center space-x-2 cursor-pointer">
-                    <input type="radio" name="monthly_mode" value="tanggal" checked
-                        class="w-4 h-4 accent-[#783D19]">
-                    <span>Tanggal</span>
+            {{-- SUB-RADIO: HORIZONTAL --}}
+            <div class="flex items-center gap-4">
+                <label class="text-sm font-semibold text-white whitespace-nowrap">
+                    Setiap Apa?
                 </label>
 
-                <label class="flex items-center space-x-2 cursor-pointer">
-                    <input type="radio" name="monthly_mode" value="minggu"
+                <label class="flex items-center space-x-1 cursor-pointer">
+                    <input type="radio" name="monthly_mode" value="tanggal" checked
                         class="w-4 h-4 accent-[#783D19]">
-                    <span>Hari, Minggu Ke-</span>
+                    <span class="text-sm whitespace-nowrap">Tanggal</span>
+                </label>
+
+                <label class="flex items-center space-x-1 cursor-pointer">
+                    <input type="radio" name="monthly_mode" value="minggu"
+                        class="w-3.5 h-3.5 accent-[#783D19]">
+                    <span class="text-sm whitespace-nowrap">Hari, Minggu Ke-</span>
                 </label>
             </div>
 
 
+
             {{-- SECTION: MODE TANGGAL (2 kolom agar tidak panjang ke bawah) --}}
-            <div id="monthly-tanggal" class="grid grid-cols-2 gap-4">
+            <div id="monthly-tanggal" class="grid grid-cols-2 gap-2 items-center">
 
                 <div>
                     <label class="block text-sm font-semibold">Tanggal</label>
                     <input type="number" min="1" max="31" name="tanggal_monthly"
-                     class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3">
+                     class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3 text-sm">
                 </div>
 
                 <div>
                     <label class="block text-sm font-semibold">Jam</label>
                     <input type="time" name="jam_monthly_tanggal"
-                        class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3">
+                        class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3 text-sm">
                 </div>
 
             </div>
 
 
-            {{-- SECTION: MODE MINGGU KE (3 kolom ringkas) --}}
-            <div id="monthly-minggu" class="grid grid-cols-3 gap-4 hidden">
+            {{-- SECTION: MONTHLY--}}
+            <div id="monthly-minggu" class="grid grid-cols-3 gap-2 hidden">
 
                 <div>
                     <label class="block text-sm font-semibold">Hari</label>
                     <select name="hari_monthly"
-                        class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3">
+                        class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3 text-sm">
                         <option>Senin</option>
                         <option>Selasa</option>
                         <option>Rabu</option>
@@ -141,11 +143,9 @@
                 <div>
                     <label class="block text-sm font-semibold">Jam</label>
                     <input type="time" name="jam_monthly_minggu"
-                        class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3">
+                        class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3 text-sm">
                 </div>
-
             </div>
-
         </div>
 
 

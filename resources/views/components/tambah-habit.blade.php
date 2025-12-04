@@ -12,7 +12,7 @@
     <div 
         id="modal-content-habit"
         class="relative bg-[#8EB548] text-[#FDFDD9] p-6 rounded-2xl shadow-xl 
-               w-full max-w-lg min-h-[520px] max-h-[520px]
+               w-full max-w-lg min-h-[550px] max-h-[550px]
                mx-4 transform scale-95 transition-all duration-300 ease-in-out">
 
         <div class="flex justify-between items-center mb-4">

@@ -120,10 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
             newImage.className = 'w-full h-full object-cover'; // Atur agar pas
             detailImageContainer.appendChild(newImage);
 
-            
-            // (Opsional) Beri tanda visual item mana yang dipilih
-            itemCards.forEach(c => c.classList.remove('border-green-800'));
-            card.classList.add('border-green-800');
+            // Reset border active
+            itemCards.forEach(c => c.classList.remove('ring-4', 'ring-[#5E7153]'));
+            // Add active border visual (Tailwind ring)
+            card.classList.add('ring-4', 'ring-[#5E7153]');
         });
     });
     

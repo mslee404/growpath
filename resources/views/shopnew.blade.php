@@ -22,7 +22,7 @@
         [
             'name' => 'Gwejh',
             'type' => 'Avatar',
-            'desc' => 'Detektif dengan RMSE prediksi 0.001',
+            'desc' => 'Detektif',
             'image' => asset('images/6-gweh.svg'),
             'price' => '7500' ], 
         [
@@ -130,7 +130,7 @@
                     </div> -->
 
                     <div id="item-detail-image" class="w-[13rem] h-[13rem] flex items-center justify-center overflow-hidden mb-3 mt-3">
-                        <img src="/images/5-myistri.svg" class="w-full h-full object-cover" />
+                        <!-- <img src="/images/5-myistri.svg" class="w-full h-full object-cover" /> -->
                     </div>
                     
                     <p id="item-detail-name" class="item-detail-name">[Nama Item]</p>
@@ -160,7 +160,7 @@
                             <div class="grid grid-cols-2 md:grid-cols-3 gap-6 p-4">
                                 @foreach ($avatar as $item)
                                     <div 
-                                        class="item-card"
+                                        class="item-card hover:shadow-lg"
                                         data-item='{
                                             "name": "{{ $item['name'] }}", 
                                             "type": "{{ $item['type'] }}",
@@ -188,7 +188,7 @@
                             <div class="grid grid-cols-2 md:grid-cols-3 gap-6 p-4">
                                 @foreach ($frame as $item)
                                     <div 
-                                        class="item-card"
+                                        class="item-card hover:shadow-lg"
                                         data-item='{
                                             "name": "{{ $item['name'] }}", 
                                             "type": "{{ $item['type'] }}",
@@ -216,7 +216,7 @@
                             <div class="grid grid-cols-2 md:grid-cols-3 gap-6 p-4">
                                 @foreach ($plant as $item)
                                     <div 
-                                        class="item-card"
+                                        class="item-card hover:shadow-lg"
                                         data-item='{
                                             "name": "{{ $item['name'] }}", 
                                             "type": "{{ $item['type'] }}",
@@ -244,7 +244,7 @@
                             <div class="grid grid-cols-2 md:grid-cols-3 gap-6 p-4">
                                 @foreach ($background as $item)
                                     <div 
-                                        class="item-card"
+                                        class="item-card hover:shadow-lg"
                                         data-item='{
                                             "name": "{{ $item['name'] }}", 
                                             "type": "{{ $item['type'] }}",
@@ -272,7 +272,7 @@
                             <div class="grid grid-cols-2 md:grid-cols-3 gap-6 p-4">
                                 @foreach ($gold as $item)
                                     <div 
-                                        class="item-card"
+                                        class="item-card hover:shadow-lg"
                                         data-item='{
                                             "name": "{{ $item['name'] }}", 
                                             "type": "{{ $item['type'] }}",

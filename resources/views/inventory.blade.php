@@ -2,14 +2,14 @@
     // Simulasi data Avatar yang dimiliki user
     $my_avatars = [
         [
-            'name'  => 'Dewa Petir',
-            'desc'  => 'Avatar spesial Dewa Petir (Zenitsu mode tidur)',
-            'image' => 'images/2.png' // Pastikan path gambarnya sesuai
+            'name'  => 'Kakek Petani',
+            'desc'  => 'Merawat tanaman seperti cucu sendiri',
+            'image' => 'images/1-pakde.svg' // Pastikan path gambarnya sesuai
         ],
         [
-            'name'  => 'Rahmat',
-            'desc'  => 'Rahmat si jagoan neon',
-            'image' => 'images/3-rahmat.svg' 
+            'name'  => 'Bude',
+            'desc'  => 'Merawat tanaman seperti cucu sendiri',
+            'image' => 'images/4-mbokde.svg' 
         ],
         [
             'name'  => 'Anya',

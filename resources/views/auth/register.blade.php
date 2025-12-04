@@ -22,9 +22,17 @@
         <h2>Buat akun barumu</h2>
         <p>Sedikit lagi untuk memulai perjalanan kebiasaan baikmu!</p>
 
-        <form method="POST" action="{{ route('register.post') }}">
+        <form method="POST" action="{{ route('register') }}">
           @csrf
-
+            @if($errors->any())
+              <div style="color: #e74c3c; margin-bottom: 15px; font-size: 14px; text-align: center;">
+                <ul style="margin: 0; padding-left: 20px;">
+                  @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                  @endforeach
+                </ul>
+              </div>
+            @endif
           <div class="input-group">
             <div class="icon-box">
               <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -32,7 +40,7 @@
                   d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
             </div>
-            <input type="text" name="username" placeholder="Username" required />
+            <input type="text" name="username" placeholder="Username" value="{{ old('username') }}" required />
           </div>
 
           <div class="input-group">

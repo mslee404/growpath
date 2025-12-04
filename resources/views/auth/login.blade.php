@@ -30,6 +30,12 @@
         <form method="POST" action="{{ route('login') }}">
           @csrf
 
+          <!-- Tampilkan error umum -->
+          @if($errors->any())
+            <div style="color: #e74c3c; margin-bottom: 15px; font-size: 14px;">
+              {{ $errors->first() }}
+            </div>
+          @endif
           <div class="input-group">
             <div class="icon-box">
               <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -41,7 +47,13 @@
                 />
               </svg>
             </div>
-            <input type="text" name="username" placeholder="Username" required />
+              <input 
+                type="text" 
+                name="username" 
+                placeholder="Username" 
+                value="{{ old('username') }}" 
+                required 
+                autofocus />
           </div>
 
           <div class="input-group">

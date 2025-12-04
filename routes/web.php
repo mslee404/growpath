@@ -1,52 +1,27 @@
 <?php
-
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/login', function () {
-       return view('auth.login');
-   })->name('login');
+// Guest routes
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [LoginController::class, 'login']);
 
-Route::get('/register', function () {
-       return view('auth.register');
-   })->name('register');
-   
-Route::get('/loginafter', function () {
-       return view('auth.loginafter');
-   })->name('loginafter');
-
-
-Route::get('/inventory', function () {
-    return view('inventory'); 
+    Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
+    Route::post('/register', [RegisterController::class, 'register']);
 });
 
-Route::post('/register', function (Request $request) {
-    // opsional: nanti bisa ditambah validasi/simpan ke database
-    return redirect()->route('loginafter');
-})->name('register.post');
+// Authenticated routes
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/home', function () {
-    return view('home');
+    Route::get('/loginafter', fn() => view('auth.loginafter'))->name('loginafter');
+    Route::get('/home', fn() => view('home'))->name('home');
+    Route::get('/inventory', fn() => view('inventory'));
+    Route::get('/shop', fn() => view('shopnew'));
+    Route::get('/profile', fn() => view('profile'));
+    Route::get('/leaderboard', fn() => view('leaderboard'));
 });
 
-Route::get('/shop', function () {
-    return view('shopnew');
-});
-
-Route::get('/profile', function () {
-    return view('profile');
-});
-
-Route::post('/logout', function (Request $request) {
-    Auth::logout();
-    $request->session()->invalidate();
-    $request->session()->regenerateToken();
-    
-    return redirect('/'); // Ganti '/' dengan '/login' kalau mau diarahkan ke login
-})->name('logout');
-
-Route::get('/leaderboard', function () {
-    return view('leaderboard');
-});
+Route::get('/', fn() => view('welcome'));

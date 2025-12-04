@@ -7,9 +7,9 @@
             'image' => 'images/2.png' // Pastikan path gambarnya sesuai
         ],
         [
-            'name'  => 'Gak kenal',
-            'desc'  => 'Pernapasan Air teknik ke-10: Naga Perubahan',
-            'image' => 'images/3.svg' 
+            'name'  => 'Rahmat',
+            'desc'  => 'Rahmat si jagoan neon',
+            'image' => 'images/3-rahmat.svg' 
         ],
         [
             'name'  => 'Anya',
@@ -20,27 +20,7 @@
             'name'  => 'Super Idol',
             'desc'  => 'Won Forever Young',
             'image' => 'images/8-wony.svg' 
-        ],
-        [
-            'name'  => 'Dewa Petir',
-            'desc'  => 'Avatar spesial Dewa Petir (Zenitsu mode tidur)',
-            'image' => 'images/2.png' // Pastikan path gambarnya sesuai
-        ],
-        [
-            'name'  => 'Gak kenal',
-            'desc'  => 'Pernapasan Air teknik ke-10: Naga Perubahan',
-            'image' => 'images/3.svg' 
-        ],
-        [
-            'name'  => 'Anya',
-            'desc'  => 'peanut',
-            'image' => 'images/7-anya.svg' 
-        ],
-        [
-            'name'  => 'Super Idol',
-            'desc'  => 'Won Forever Young',
-            'image' => 'images/8-wony.svg' 
-        ],
+        ]
     ];
     $frame = [
         [

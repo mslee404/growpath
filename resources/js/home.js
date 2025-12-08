@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Definisikan tema
     const habitTheme = {
-        active: 'bg-[#8EB548] text-[#783D19] shadow-md',
+        active: 'bg-[#78A44C] text-[#FDFDD9] shadow-md',
         inactive: 'bg-[#FDFDD9] text-[#783D19] shadow-sm hover:bg-white'
     };
 

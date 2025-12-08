@@ -11,7 +11,7 @@
     'type' => 'habit'
 ])
 
-<div class="bg-[#FDFDD9] rounded-2xl shadow h-auto flex items-center space-x-3 p-3">
+<div class="bg-[#FDFDD9] rounded-xl shadow h-auto flex items-center space-x-3 p-3">
 
     {{-- CHECKBOX --}}
     <input type="checkbox" class="custom-checkbox-main" {{ $checked ? 'checked' : '' }}>

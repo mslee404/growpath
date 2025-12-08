@@ -13,7 +13,7 @@
     {{-- 
         Slot utama (konten halaman)
     --}}
-    <main>
+    <main class="app-screen">
         {{ $slot }}
     </main>
     

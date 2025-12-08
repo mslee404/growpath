@@ -14,14 +14,46 @@
 
 .font-lexend { font-family: 'Lexend', sans-serif; }
 
+/* Body hanya sebagai latar belakang gelap (Bioskop) */
 body {
-    background-image: url('/public/images/Background.svg');
-    background-size: cover;
-
     margin: 0;
     padding: 0;
-
+    width: 100vw;
+    height: 100vh;
+    background-color: #111; /* Warna hitam/gelap di luar area aplikasi */
+    
+    /* Posisikan aplikasi di tengah */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hilangkan scrollbar browser utama */
+    
     font-family: "Lexend", sans-serif;
+}
+
+/* Ini Layar Utama Aplikasi Kamu */
+.app-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+    /* Background ditaruh DI SINI, bukan di body */
+    background-image: url('/public/images/Background.svg');
+    background-size: cover;    /* Cover area kotak ini saja */
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Agar rapi */
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    overflow-y: auto; /* Scrollbar ada DI DALAM kotak ini */
+    
+    /* Sembunyikan scrollbar tapi tetap bisa scroll */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+.app-screen::-webkit-scrollbar { 
+    display: none; 
 }
 
 .navigation-container {

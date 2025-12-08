@@ -36,10 +36,10 @@
     <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 p-4 md:p-8 max-w-7xl mx-auto">
 
         <!-- Profil (bagian kiri) -->
-        <div class="lg:col-span-1 space-y-6">
+        <div class="lg:col-span-1 grid grid-cols-2 gap-4 lg:flex lg:flex-col lg:gap-6">
             
             <!-- Card Profile -->
-            <div class="bg-[#FDFDD9] rounded-2xl shadow-lg p-4 text-center">
+            <div class="bg-[#FDFDD9] rounded-2xl shadow-lg p-4 items-center">
                 <h2 class="font-bold text-2xl text-[#783D19] leading-tight mb-3">
                     Halo, username123!
                 </h2>
@@ -48,7 +48,7 @@
                     <img src="https://placehold.co/92x92/4A6484/B0D2FA?text=AV" alt="Avatar" class="w-16 h-16 rounded-md border-2 border-gray-300">
                     <div>
                         <p class="text-lg font-medium text-[#783D19] text-left">Level 1</p>
-                        <p class="text-sm font-medium text-[#783D19] text-left">25/100 xp</p>
+                        <p class="text-xs font-bold text-[#5E7153] text-left uppercase tracking-wider">25/100 xp</p>
                     </div>
                 </div>
 
@@ -59,8 +59,8 @@
             </div>
 
             <!-- Motivation text -->
-            <div class="bg-[#C4661F] rounded-2xl shadow-lg p-4">
-                <p class="text-xl font-bold text-[#FDFDD9] leading-snug">
+            <div class="bg-[#C4661F] rounded-2xl shadow-lg p-4 flex h-full items-center justify-center">
+                <p class="text-lg font-bold text-[#FDFDD9] leading-snug">
                     Jangan lupa sirami aku dengan menyelesaikan kebiasaanmu ya~
                 </p>
             </div>
@@ -91,7 +91,7 @@
             >
                 {{-- Ini adalah slot untuk $tabs --}}
                 <x-slot:tabs>
-                    <button data-tab-button="habit-semua" class="tab-button snap-start flex-shrink-0 bg-[#8EB548] text-[#783D19] shadow-md py-1 px-4 rounded-t-lg text-base font-semibold whitespace-nowrap">
+                    <button data-tab-button="habit-semua" class="tab-button snap-start flex-shrink-0 bg-[#78A44C] text-[#FDFDD9] shadow-md py-1 px-4 rounded-t-lg text-base font-semibold whitespace-nowrap">
                         Semua
                     </button>
                     <button data-tab-button="habit-harian" class="tab-button snap-start flex-shrink-0 bg-[#FDFDD9] text-[#783D19] shadow-sm hover:bg-white py-1 px-4 rounded-t-lg text-base font-semibold whitespace-nowrap">
@@ -113,7 +113,7 @@
                 <!-- Panel Tab Semua -->
                 <div id="habit-semua" class="tab-panel">
                     @if (count($habits_semua) > 0)
-                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller pr-2">
+                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
                             @foreach ($habits_semua as $item)
                                 <x-item-list 
                                     type="habit" {{-- <-- 3. TAMBAHKAN TYPE DI SINI --}}
@@ -136,7 +136,7 @@
                 <!-- Panel Tab Harian -->
                 <div id="habit-harian" class="tab-panel hidden">
                     @if (count($habits_harian) > 0)
-                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller pr-2">
+                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
                             @foreach ($habits_harian as $item)
                                 <x-item-list 
                                     type="habit" {{-- <-- 3. TAMBAHKAN TYPE DI SINI --}}
@@ -156,7 +156,7 @@
                 <!-- Panel Tab Mingguan -->
                 <div id="habit-mingguan" class="tab-panel hidden">
                     @if (count($habits_mingguan) > 0)
-                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller pr-2">
+                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
                             @foreach ($habits_mingguan as $item)
                                 <x-item-list 
                                     type="habit" {{-- <-- 3. TAMBAHKAN TYPE DI SINI --}}
@@ -176,7 +176,7 @@
                 <!-- Panel Tab Bulanan -->
                 <div id="habit-bulanan" class="tab-panel hidden">
                     @if (count($habits_bulanan) > 0)
-                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller pr-2">
+                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
                             @foreach ($habits_bulanan as $item)
                                 <x-item-list 
                                     type="habit" {{-- <-- 3. TAMBAHKAN TYPE DI SINI --}}
@@ -196,7 +196,7 @@
                 <!-- Panel Tab Kustom -->
                 <div id="habit-kustom" class="tab-panel hidden">
                     @if (count($habits_kustom) > 0)
-                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller pr-2">
+                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
                             @foreach ($habits_kustom as $item)
                                 <x-item-list 
                                     type="habit" {{-- <-- 3. TAMBAHKAN TYPE DI SINI --}}
@@ -241,7 +241,7 @@
                 <!-- Panel Tab Semua -->
                 <div id="tugas-semua" class="tab-panel">
                     @if (count($tugas_semua) > 0)
-                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller pr-2">
+                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
                             @foreach ($tugas_semua as $item)
                                 <x-item-list
                                     type="tugas"
@@ -266,7 +266,7 @@
                 <!-- Panel Tab Hari Ini -->
                 <div id="tugas-hari-ini" class="tab-panel hidden">
                      @if (count($tugas_hari_ini) > 0)
-                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller pr-2">
+                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
                             @foreach ($tugas_hari_ini as $item)
                                 <x-item-list 
                                     type="tugas"
@@ -288,7 +288,7 @@
                 <!-- Panel Tab Besok -->
                  <div id="tugas-besok" class="tab-panel hidden">
                      @if (count($tugas_besok) > 0)
-                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller pr-2">
+                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
                             @foreach ($tugas_besok as $item)
                                 <x-item-list 
                                     type="tugas"

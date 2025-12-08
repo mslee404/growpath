@@ -5,24 +5,38 @@
 .horizontal-scroller {
     scrollbar-width: none; /* Sembunyikan scrollbar di Firefox */
     -ms-overflow-style: none; /* Sembunyikan scrollbar di IE/Edge */
+
+    /* Membuat scrolling licin dan responsif (seperti di HP) */
+    -webkit-overflow-scrolling: touch; 
+    
+    /* Memaksa browser menggunakan GPU untuk render scrolling (Hardware Acceleration) */
+    transform: translateZ(0); 
+    will-change: scroll-position;
+    
+    /* Opsional: Scroll behavior auto agar instan mengikuti jari/mouse */
+    scroll-behavior: auto;
 }
 
 
 /* Firefox Scrollbar Styling */
+/* --- Vertical Scroller (List Habit/Tugas) --- */
 .vertical-scroller::-webkit-scrollbar {
-    width: 6px;
+    display: none; /* Sembunyikan Scrollbar di Webkit (Chrome, Safari, Edge) */
 }
-.vertical-scroller::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-.vertical-scroller::-webkit-scrollbar-thumb {
-    background-color: #A07B5F;
-    border-radius: 10px;
-}
+
 .vertical-scroller {
-    scrollbar-width: thin;
-    scrollbar-color: #A07B5F rgba(0, 0, 0, 0.1);
+    scrollbar-width: none;  /* Sembunyikan Scrollbar di Firefox */
+    -ms-overflow-style: none;  /* Sembunyikan scrollbar di IE/Edge */
+    
+    /* Membuat scrolling licin dan responsif (seperti di HP) */
+    -webkit-overflow-scrolling: touch; 
+    
+    /* Memaksa browser menggunakan GPU untuk render scrolling (Hardware Acceleration) */
+    transform: translateZ(0); 
+    will-change: scroll-position;
+    
+    /* Opsional: Scroll behavior auto agar instan mengikuti jari/mouse */
+    scroll-behavior: auto;
 }
 
 /* Checkbox Kustom */
@@ -55,31 +69,44 @@
     font-weight: bold;
 }
 
-
 /* Style untuk Watering Can XP Bar */
 .watering-can {
     position: relative;
-    border: 5px solid #783D19;
+    border: 4px solid #783D19;
     border-radius: 20px;
     width: 100%;
-    height: 80px;
+    height: 100px;
     background-color: #FDFDD9;
     overflow: hidden;
+    
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); 
 }
+
 .watering-can-water {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #67C1C7; 
+
+    background: linear-gradient(to top, #67C1C7, #88D8DD); 
     
     height: 0%; 
+    transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Animasi lebih smooth */
     
-    transition: height 0.5s ease-out;
-    
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    /* Border radius mengikuti induknya */
+    border-radius: 10px; 
 }
+
+.watering-can-water::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.4); /* Kilau permukaan air */
+}
+
 
 /* Tombol panah untuk scroller */
 .scroll-btn {

@@ -13,7 +13,7 @@
     Set variabel PHP di sini berdasarkan props.
 --}}
 @php
-    $bgColor = $type == 'habit' ? 'bg-[#8EB548]' : 'bg-[#C4661F]';
+    $bgColor = $type == 'habit' ? 'bg-[#78A44C]' : 'bg-[#C4661F]';
 @endphp
 
 {{-- 
@@ -32,7 +32,7 @@
             </button>
 
             <!-- Tab Kategori (diisi oleh $tabs) -->
-            <div id="{{ $scrollerId }}" class="flex-1 flex items-center space-x-2 overflow-x-auto horizontal-scroller snap-x scroll-smooth" data-tab-container>
+            <div id="{{ $scrollerId }}" class="flex-1 flex items-center space-x-2 overflow-x-auto horizontal-scroller snap-x" data-tab-container>
                 {{ $tabs }}
             </div>
 
@@ -43,7 +43,9 @@
         </div>
 
         <!-- Tambah -->
-        <button id="{{ $addButtonId }}" class="w-8 h-8 bg-[#783D19] text-[#FDFDD9] rounded-full text-2xl font-semibold shadow-md hover:bg-[#A07B5F] flex-shrink-0 flex items-center justify-center pb-0.5">+</button>
+        <button id="{{ $addButtonId }}" class="w-8 h-8 bg-[#783D19] text-[#FDFDD9] rounded-xl text-3xl font-bold hover:scale-[1.05] active:translate-y-[4px] active:shadow-none transition-all flex-shrink-0 flex items-center justify-center pb-1">
+            +
+        </button>
     </div>
 
     <!-- Panel Konten (diisi oleh $slot) -->

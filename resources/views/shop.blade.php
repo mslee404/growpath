@@ -206,6 +206,6 @@
     </div>
 
     <x-slot:popups>
-        @include('popup.buy')
+        @include('popup.shop-buy')
     </x-slot:popups>
 </x-layout>

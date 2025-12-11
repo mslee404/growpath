@@ -135,6 +135,6 @@
     </main>
     
     <x-slot:popups>
-        @include('popup.use')
+        @include('popup.inventory-use')
     </x-slot:popups>
 </x-layout>

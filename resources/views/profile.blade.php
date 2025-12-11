@@ -89,8 +89,8 @@
     </main>
 
     <x-slot:popups>
-        @include('popup.logout')
-        @include('popup.edit-username')
+        @include('popup.profile-logout')
+        @include('popup.profile-edit-username')
     </x-slot:popups>
 
 </x-layout>

@@ -314,12 +314,12 @@
     </div>
     
     <x-slot:popups>
-        @include('popup.popup-tambah-habit')
-        @include('popup.tambah-tugas')
-        @include('popup.popup-edit-habit')
-        @include('popup.confirm-delete-habit')
-        @include( 'popup.edit-tugas')
-        @include( 'popup.confirm-delete-tugas')
+        @include('popup.home-tambah-habit')
+        @include('popup.home-tambah-tugas')
+        @include('popup.home-edit-habit')
+        @include('popup.home-edit-tugas')
+        @include('popup.home-delete-habit')
+        @include('popup.home-delete-tugas')
     </x-slot:popups>
 
 {{-- SCRIPT --}}

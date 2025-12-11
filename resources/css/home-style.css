@@ -9,10 +9,6 @@
     /* Membuat scrolling licin dan responsif (seperti di HP) */
     -webkit-overflow-scrolling: touch; 
     
-    /* Memaksa browser menggunakan GPU untuk render scrolling (Hardware Acceleration) */
-    transform: translateZ(0); 
-    will-change: scroll-position;
-    
     /* Opsional: Scroll behavior auto agar instan mengikuti jari/mouse */
     scroll-behavior: auto;
 }
@@ -30,10 +26,6 @@
     
     /* Membuat scrolling licin dan responsif (seperti di HP) */
     -webkit-overflow-scrolling: touch; 
-    
-    /* Memaksa browser menggunakan GPU untuk render scrolling (Hardware Acceleration) */
-    transform: translateZ(0); 
-    will-change: scroll-position;
     
     /* Opsional: Scroll behavior auto agar instan mengikuti jari/mouse */
     scroll-behavior: auto;

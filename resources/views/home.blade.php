@@ -115,7 +115,7 @@
                     @if (count($habits_semua) > 0)
                         <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
                             @foreach ($habits_semua as $item)
-                                <x-item-list 
+                                <x-data-list 
                                     type="habit" {{-- <-- 3. TAMBAHKAN TYPE DI SINI --}}
                                     :title="$item['title']" 
                                     :xp="$item['xp']" 
@@ -138,7 +138,7 @@
                     @if (count($habits_harian) > 0)
                         <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
                             @foreach ($habits_harian as $item)
-                                <x-item-list 
+                                <x-data-list 
                                     type="habit" {{-- <-- 3. TAMBAHKAN TYPE DI SINI --}}
                                     :title="$item['title']" 
                                     :xp="$item['xp']" 
@@ -158,7 +158,7 @@
                     @if (count($habits_mingguan) > 0)
                         <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
                             @foreach ($habits_mingguan as $item)
-                                <x-item-list 
+                                <x-data-list 
                                     type="habit" {{-- <-- 3. TAMBAHKAN TYPE DI SINI --}}
                                     :title="$item['title']" 
                                     :xp="$item['xp']" 
@@ -178,7 +178,7 @@
                     @if (count($habits_bulanan) > 0)
                         <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
                             @foreach ($habits_bulanan as $item)
-                                <x-item-list 
+                                <x-data-list 
                                     type="habit" {{-- <-- 3. TAMBAHKAN TYPE DI SINI --}}
                                     :title="$item['title']" 
                                     :xp="$item['xp']" 
@@ -198,7 +198,7 @@
                     @if (count($habits_kustom) > 0)
                         <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
                             @foreach ($habits_kustom as $item)
-                                <x-item-list 
+                                <x-data-list 
                                     type="habit" {{-- <-- 3. TAMBAHKAN TYPE DI SINI --}}
                                     :title="$item['title']" 
                                     :xp="$item['xp']" 
@@ -243,7 +243,7 @@
                     @if (count($tugas_semua) > 0)
                         <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
                             @foreach ($tugas_semua as $item)
-                                <x-item-list
+                                <x-data-list
                                     type="tugas"
                                     :title="$item['title']"
                                     :xp="$item['xp']" 
@@ -268,7 +268,7 @@
                      @if (count($tugas_hari_ini) > 0)
                         <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
                             @foreach ($tugas_hari_ini as $item)
-                                <x-item-list 
+                                <x-data-list 
                                     type="tugas"
                                     :title="$item['title']"
                                     :xp="$item['xp']" 
@@ -290,7 +290,7 @@
                      @if (count($tugas_besok) > 0)
                         <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
                             @foreach ($tugas_besok as $item)
-                                <x-item-list 
+                                <x-data-list 
                                     type="tugas"
                                     :title="$item['title']"
                                     :xp="$item['xp']" 

@@ -101,7 +101,7 @@
 
     <x-slot:assets>
         {{-- Load CSS & JS yang sudah disatukan --}}
-        @vite(['resources/js/shop.js', 'resources/js/app.js', 'resources/css/app.css'])
+        @vite(['resources/js/shop.js', 'resources/js/item-box.js', 'resources/js/app.js', 'resources/css/app.css'])
     </x-slot:assets>
 
     <x-navbar activePage="shop" />
@@ -171,12 +171,12 @@
 
                     {{-- 
                         PENGGUNAAN COMPONENT (KUNCI PERBAIKAN)
-                        Kita panggil <x-item-grid> agar HTML yang dihasilkan SAMA PERSIS dengan Inventory.
+                        Kita panggil <x-item-box> agar HTML yang dihasilkan SAMA PERSIS dengan Inventory.
                         Component ini otomatis punya class 'ring-4', 'ring-inset', 'hover', dll.
                     --}}
 
                     <div id="avatar-shop" class="tab-content">
-                        <x-item-grid 
+                        <x-item-box 
                             :items="$avatar" 
                             cols="3" 
                             :showPrice="true" 
@@ -185,19 +185,19 @@
                     </div>
 
                     <div id="frame-shop" class="tab-content hidden">
-                        <x-item-grid :items="$frame" cols="3" :showPrice="true" emptyMessage="Item frame habis." />
+                        <x-item-box :items="$frame" cols="3" :showPrice="true" emptyMessage="Item frame habis." />
                     </div>
 
                     <div id="plant-shop" class="tab-content hidden">
-                        <x-item-grid :items="$plant" cols="3" :showPrice="true" emptyMessage="Item tanaman habis." />
+                        <x-item-box :items="$plant" cols="3" :showPrice="true" emptyMessage="Item tanaman habis." />
                     </div>
 
                     <div id="bg-shop" class="tab-content hidden">
-                        <x-item-grid :items="$background" cols="3" :showPrice="true" emptyMessage="Item background habis." />
+                        <x-item-box :items="$background" cols="3" :showPrice="true" emptyMessage="Item background habis." />
                     </div>
 
                     <div id="gold-shop" class="tab-content hidden">
-                        <x-item-grid :items="$gold" cols="3" :showPrice="true" emptyMessage="Item gold habis." />
+                        <x-item-box :items="$gold" cols="3" :showPrice="true" emptyMessage="Item gold habis." />
                     </div>
 
                 </div>

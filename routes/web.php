@@ -19,7 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/loginafter', fn() => view('auth.loginafter'))->name('loginafter');
     Route::get('/home', fn() => view('home'))->name('home');
     Route::get('/inventory', fn() => view('inventory'));
-    Route::get('/shop', fn() => view('shopnew'));
+    Route::get('/shop', fn() => view('shop'));
     Route::get('/profile', fn() => view('profile'));
     Route::get('/leaderboard', fn() => view('leaderboard'));
 });

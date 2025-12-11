@@ -52,161 +52,81 @@
 
     <x-navbar activePage="inventory" />
         
-    <main class="container mx-auto p-8 max-w-7xl mt-7">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    {{-- UBAH 1: Samakan container utama dengan Shop (max-w-[90%]) --}}
+    <main class="container mx-auto px-0 max-w-[90%] py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-between">
             
             <div class="lg:col-span-1 flex flex-col items-center">
-
-                <h2 class="text-[#5E7153] font-bold text-[2.5rem] leading-9 mb-6 text-center">
-                    INVENTORY
-                </h2>
-
-                <div class="bg-[#F5F5DC] p-11 rounded-2xl shadow-lg text-center w-full max-w-md">
-                    
-                    <div id="item-detail-image" class="w-52 h-52 ] rounded-[10px] mx-auto mb-6 flex items-center justify-center overflow-hidden">
-                        <span class="text-gray-500">Gambar Item</span>
-                    </div>
-                    
-                    <h2 id="item-detail-name" class="text-[1.875rem] leading-9 font-bold text-[#5E7153]">
-                        [Nama Item]
-                    </h2>
-                    <p id="item-detail-desc" class="text-[#5E7153] text-lg mt-2 leading-7">
-                        Deskripsi singkat item ada di sini.
-                    </p>
+                
+                {{-- Header Judul --}}
+                <div class="flex justify-center items-center max-w-md h-[3rem] mb-4 w-full px-2">
+                    <span class="text-[#5E7153] font-bold text-[2.5rem] leading-none">INVENTORY</span>
                 </div>
 
-                <button id="btn-use" class="mt-8 bg-[#F5F5DC] shadow-lg px-12 py-3 rounded-lg font-bold text-xl text-[#5E7153] shadow-md hover:bg-white transition-all duration-300">
+                {{-- Kotak Detail (Style Copy-Paste dari Shop) --}}
+                {{-- Menggunakan bg-[#FDFDD9] dan padding/rounded yang sama --}}
+                <div class="bg-[#FDFDD9] p-8 rounded-[1rem] shadow-lg w-full max-w-md flex flex-col items-center justify-between h-[430px]">
+                    
+                    {{-- Container Gambar --}}
+                    <div class="w-full flex flex-col items-center">
+                        <div id="item-detail-image" class="w-[13rem] h-[13rem] flex items-center justify-center overflow-hidden mb-4 rounded-[10px] bg-black/5">
+                            <span class="text-[#5E7153] opacity-50 font-bold">Pilih item</span>
+                        </div>
+                        
+                        {{-- Nama Item: Tinggi dikunci, teks truncate biar ga turun baris --}}
+                        <p id="item-detail-name" class="font-bold text-2xl text-[#5E7153] mb-2 text-center truncate w-full px-4 h-[2.5rem] flex items-center justify-center">
+                            [Nama Item]
+                        </p>
+                    </div>
+                    <div class="w-full h-[4.5rem] flex items-start justify-center overflow-y-auto px-2 custom-scrollbar">
+                        <span id="item-detail-desc" class="text-[1rem] leading-6 font-normal text-[#5E7153] text-center block">
+                            Deskripsi item akan muncul di sini.
+                        </span>
+                    </div>
+                    
+                </div>
+
+                {{-- Tombol Pakai --}}
+                <button id="btn-use" class="bg-[#FDFDD9] w-[125px] py-3 rounded-md font-bold text-xl leading-7 text-[#5E7153] shadow-md transition-all duration-300 ease-in-out cursor-pointer mt-4 hover:scale-105 hover:shadow-lg active:scale-95">
                     Pakai
                 </button>
             </div>
             
             <div class="lg:col-span-2">
                 
-                <div class="flex relative z-10 border-b-0">
-                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#F5F5DC] text-[#5E7153] z-20 -mb-[2px]" data-tab-target="#avatar-panel">
+                {{-- NAVIGASI TAB --}}
+                <div class="tab-nav relative z-10 flex border-b-0">
+                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer tab-active bg-[#FDFDD9] text-[#5E7153] z-20 -mb-[2px]" data-tab-target="#avatar-panel">
                         Avatar
                     </button>
-                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#F5F5DC] z-10" data-tab-target="#frame-panel">
+                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#FDFDD9] z-10" data-tab-target="#frame-panel">
                         Avatar Frame
                     </button>
-                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#F5F5DC] z-10" data-tab-target="#tanaman-panel">
+                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#FDFDD9] z-10" data-tab-target="#tanaman-panel">
                         Tanaman
                     </button>
-                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#F5F5DC] z-10" data-tab-target="#background-panel">
+                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#FDFDD9] z-10" data-tab-target="#background-panel">
                         Background
                     </button>
                 </div>
 
-                <div class="bg-[#F5F5DC] p-6 rounded-b-2xl shadow-lg w-full min-h-[500px]">
+                {{-- ISI KONTEN (Panggil Component x-item-grid) --}}
+                <div class="bg-[#FDFDD9] p-6 rounded-b-2xl shadow-lg w-full min-h-[500px]">
                     
                     <div id="avatar-panel" class="tab-content">
-                        @if (count($my_avatars) > 0)
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
-                                
-                                {{-- MULAI LOOPING: Cukup tulis kodingan card 1 kali saja --}}
-                                @foreach($my_avatars as $avatar)
-                                    <div 
-                                        class="item-card bg-[#ADC698] rounded-xl shadow-md cursor-pointer overflow-hidden transition-all hover:shadow-lg"
-                                        {{-- Kita masukkan data PHP ke dalam atribut HTML agar bisa dibaca JS --}}
-                                        data-item='{{ json_encode($avatar) }}'>
-                                        
-                                        {{-- Judul --}}
-                                        <div class="bg-[#5E7153] text-white text-center py-2 font-bold text-lg leading-7">
-                                            {{ $avatar['name'] }}
-                                        </div>
-                                        
-                                        {{-- Gambar --}}
-                                        <div class="p-4">
-                                            {{-- asset() membungkus path gambar agar link-nya benar --}}
-                                            <img src="{{ asset($avatar['image']) }}" alt="{{ $avatar['name'] }}" class="w-full h-auto object-cover rounded-lg aspect-square">
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        @else
-                        <p class="pt-48 text-xl text-[#5E7153] text-center">Kamu belum punya avatar custom :(</p>
-                        @endif
+                        <x-item-grid :items="$my_avatars" emptyMessage="Kamu belum punya avatar custom :(" />
                     </div>
 
                     <div id="frame-panel" class="tab-content hidden">
-                        @if (count($frame) > 0)
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
-                                
-                                @foreach($frame as $frame)
-                                    <div 
-                                        class="item-card bg-[#ADC698] rounded-xl shadow-md cursor-pointer overflow-hidden transition-all hover:shadow-lg"
-                                        data-item='{{ json_encode($frame) }}'>
-                                        
-                                        {{-- Judul --}}
-                                        <div class="bg-[#5E7153] text-white text-center py-2 font-bold text-lg leading-7">
-                                            {{ $frame['name'] }}
-                                        </div>
-                                        
-                                        {{-- Gambar --}}
-                                        <div class="p-4">
-                                            {{-- asset() membungkus path gambar agar link-nya benar --}}
-                                            <img src="{{ asset($frame['image']) }}" alt="{{ $frame['name'] }}" class="w-full h-auto object-cover rounded-lg aspect-square">
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        @else
-                        <p class="pt-48 text-xl text-[#5E7153] text-center">Kamu belum punya frame custom :(</p>
-                        @endif
+                        <x-item-grid :items="$frame" emptyMessage="Kamu belum punya frame custom :(" />
                     </div>
                     
                     <div id="tanaman-panel" class="tab-content hidden">
-                        @if (count($plant) > 0)
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
-                                
-                                @foreach($plant as $plant)
-                                    <div 
-                                        class="item-card bg-[#ADC698] rounded-xl shadow-md cursor-pointer overflow-hidden transition-all hover:shadow-lg"
-                                        data-item='{{ json_encode($plant) }}'>
-                                        
-                                        {{-- Judul --}}
-                                        <div class="bg-[#5E7153] text-white text-center py-2 font-bold text-lg leading-7">
-                                            {{ $plant['name'] }}
-                                        </div>
-                                        
-                                        {{-- Gambar --}}
-                                        <div class="p-4">
-                                            {{-- asset() membungkus path gambar agar link-nya benar --}}
-                                            <img src="{{ asset($plant['image']) }}" alt="{{ $plant['name'] }}" class="w-full h-auto object-cover rounded-lg aspect-square">
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        @else
-                        <p class="pt-48 text-xl text-[#5E7153] text-center">Kamu belum punya tanaman custom :(</p>
-                        @endif
+                        <x-item-grid :items="$plant" emptyMessage="Kamu belum punya tanaman custom :(" />
                     </div>
                     
                     <div id="background-panel" class="tab-content hidden">
-                        @if (count($background) > 0)
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
-                                
-                                @foreach($background as $img)
-                                    <div 
-                                        class="item-card bg-[#ADC698] rounded-xl shadow-md cursor-pointer overflow-hidden transition-all hover:shadow-lg"
-                                        data-item='{{ json_encode($img) }}'>
-                                        
-                                        {{-- Judul --}}
-                                        <div class="bg-[#5E7153] text-white text-center py-2 font-bold text-lg leading-7">
-                                            {{ $img['name'] }}
-                                        </div>
-                                        
-                                        {{-- Gambar --}}
-                                        <div class="p-4">
-                                            {{-- asset() membungkus path gambar agar link-nya benar --}}
-                                            <img src="{{ asset($img['image']) }}" alt="{{ $img['name'] }}" class="w-full h-auto object-cover rounded-lg aspect-square">
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        @else
-                        <p class="pt-48 text-xl text-[#5E7153] text-center">Kamu belum punya background custom :(</p>
-                        @endif
+                        <x-item-grid :items="$background" emptyMessage="Kamu belum punya background custom :(" />
                     </div>
 
                 </div>              
@@ -215,6 +135,6 @@
     </main>
     
     <x-slot:popups>
-    @include('popup.use')
+        @include('popup.use')
     </x-slot:popups>
 </x-layout>

@@ -6,9 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class CustomHabit extends Model
 {
-    protected $table = 'custom_habits';
-    public $incrementing = false;
-    public $timestamps = false;
 
     protected $fillable = [
         'id_habit',
@@ -18,22 +15,9 @@ class CustomHabit extends Model
         'day_count',
     ];
 
-    protected static function boot(){
-        parent::boot();
-
-        static::creating(function ($model) {
-            $last = self::orderBy('id_habit', 'desc')->first();
-            $num = 1;
-            if ($last) {
-                $lastNum = (int) substr($last->id_habit, 1);
-                $num = $lastNum + 1;
-            }
-            $model->id_habit = 'HC' . str_pad($num, 4, '0', STR_PAD_LEFT);
-        });
-    }
     public function userHabit()
     {
-        return $this->belongsTo(UserHabit::class, 'id_habit', 'id_habit');
+        return $this->belongsTo(UserHabit::class);
     }
 
 

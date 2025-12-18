@@ -12,15 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('daily_habits', function (Blueprint $table) {
-            
-            $table->string('id_habit', 10)->primary();
-            $table->string('habit_name');
-            $table->string('habit_description')->nullable();
-            $table->time('hour')->nullable();
-            $table->timestamps();
+            $table->id();
 
-            $table->foreign('id_habit')->references('id_habit')->on('user_habits')->onDelete('cascade');
+            $table->foreignId('user_habit_id')
+                ->constrained('user_habits')
+                ->cascadeOnDelete();
+
+            $table->string('habit_name');
+            $table->text('habit_description')->nullable();
+            $table->time('hour')->nullable();
+
+            $table->timestamps();
         });
+
     }
 
     /**

@@ -12,14 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('gold_purchases', function (Blueprint $table) {
-            $table->string('id_transaction', 20)->primary();
+            $table->id();   
             $table->string('status', 20);
             $table->dateTime('date');
-            $table->string('id_user', 10);
-            $table->string('id_package', 10);
+            $table->foreignId('user_id')->constrained('user_growpaths')->cascadeOnDelete();
+            $table->foreignId('package_id')->constrained('gold_shops')->cascadeOnDelete();
 
-            $table->foreign('id_user')->references('id_user')->on('user_growpaths')->onDelete('cascade');
-            $table->foreign('id_package')->references('id_package')->on('gold_shops')->onDelete('cascade');
             $table->timestamps();
         });
     }

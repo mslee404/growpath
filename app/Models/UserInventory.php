@@ -6,23 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserInventory extends Model
 {
-    protected $table = 'user_inventories';
-    public $incrementing = false;
-    public $timestamps = false;
-
     protected $fillable = [
-        'id_user',
+        'user_id',
+        'item_shop_id',
         'is_equipped',
-        'id_item',
     ];
 
-    public function userGrowpath()
+    public function user()
     {
-        return $this->belongsTo(UserGrowpath::class, 'id_user', 'id_user');
+        return $this->belongsTo(UserGrowpath::class, 'user_id');
     }
-    public function itemShop()
+
+    public function item()
     {
-        return $this->belongsTo(ItemShop::class, 'id_item', 'id_item');
+        return $this->belongsTo(ItemShop::class, 'item_shop_id');
     }
-    
 }

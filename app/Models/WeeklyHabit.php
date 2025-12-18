@@ -6,35 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class WeeklyHabit extends Model
 {
-    protected $table = 'weekly_habits';
-    protected $primaryKey = 'id_habit';
-    public $incrementing = false;
-    protected $keyType = 'string';
-
+    
     protected $fillable = [
-        'id_habit',
+        'user_habit_id',
         'habit_name',
         'habit_description',
         'hour',
         'day',
+        'week',
+        'date',
     ];
-
-    protected static function boot(){
-        parent::boot();
-
-        static::creating(function ($model) {
-            $last = self::orderBy('id_habit', 'desc')->first();
-            $num = 1;
-            if ($last) {
-                $lastNum = (int) substr($last->id_habit, 1);
-                $num = $lastNum + 1;
-            }
-            $model->id_habit = 'HW' . str_pad($num, 4, '0', STR_PAD_LEFT);
-        });
-    }
 
     public function userHabit()
     {
-        return $this->belongsTo(UserHabit::class, 'id_habit', 'id_habit');
+        return $this->belongsTo(UserHabit::class);
     }
 }

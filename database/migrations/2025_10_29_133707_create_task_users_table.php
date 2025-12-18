@@ -11,19 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('task_users', function (Blueprint $table) {
-            $table->string('id_task',10);
-            $table->string('task_name',100);
-            $table->string('task_description',255)->nullable();
-            $table->date('due_date',20)->nullable();
+        Schema::create('user_tasks', function (Blueprint $table) {
+            $table->id();
+
+            $table->foreignId('user_id')->constrained('user_growpaths')->cascadeOnDelete();
+            $table->string('task_name', 100);
+            $table->text('task_description')->nullable();
+
+            $table->date('due_date')->nullable();
             $table->time('due_time')->nullable();
-            $table->tinyInteger('is_completed')->default(0);
-            $table->string('id_user',10);
-            $table->primary(['id_task','id_user']);
-            $table->foreign('id_user')->references('id_user')->on('user_growpaths')->onDelete('cascade');   
+
+            $table->boolean('is_completed')->default(false);
+            $table->timestamp('completed_at')->nullable();
+
             $table->timestamps();
-            
         });
+
     }
 
     /**
@@ -31,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('task_users');
+        Schema::dropIfExists('user_tasks');
     }
 };

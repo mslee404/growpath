@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('gold_shops', function (Blueprint $table) {
             
-            $table->string('id_package', 10)->primary();
+            $table->id();
             $table->string('name');
             $table->integer('amount');
             $table->integer('price');

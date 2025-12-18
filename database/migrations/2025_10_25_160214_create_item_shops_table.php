@@ -12,13 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('item_shops', function (Blueprint $table) {
-            $table->string('id_item', 10)->primary();
-            $table->string('type');
-            $table->integer('price');
-            $table->string('image')->nullable();
-            $table->timestamps();
+            $table->id(); // PK utama
 
-            // $table->enum('type', ['skin', 'icon', 'frame']);
+            $table->string('code', 10)->unique(); // A0001, F0001, dst
+            $table->enum('type', ['avatar', 'avatar_frame', 'tanaman', 'background']);
+            $table->unsignedInteger('price');
+            $table->string('image')->nullable();
+
+            $table->timestamps();
         });
     }
 

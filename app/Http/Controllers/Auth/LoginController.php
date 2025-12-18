@@ -20,21 +20,24 @@ class LoginController extends Controller
             'password' => 'required|string',
         ]);
 
-        $credentials = $request->only('username', 'password');
-
-        if (Auth::guard('web')->attempt($credentials, $request->filled('remember'))) {
+        if (Auth::attempt(
+            $request->only('username', 'password'),
+            $request->boolean('remember')
+        )) {
             $request->session()->regenerate();
+
             return redirect()->intended('/home');
         }
 
-        return back()->withErrors([
-            'username' => 'Username atau password salah.',
-        ])->withInput();
+        return back()
+            ->withErrors(['password' => 'Username atau password salah.'])
+            ->withInput();
     }
 
     public function logout(Request $request)
     {
-        Auth::guard('web')->logout();
+        Auth::logout();
+
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 

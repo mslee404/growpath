@@ -12,16 +12,24 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('user_inventories', function (Blueprint $table) {
+            $table->id();
 
-            $table->string('id_user', 10);
+            $table->foreignId('user_id')
+                ->constrained('user_growpaths')
+                ->cascadeOnDelete();
+
+            $table->foreignId('item_shop_id')
+                ->constrained('item_shops')
+                ->cascadeOnDelete();
+
             $table->boolean('is_equipped')->default(false);
-            $table->string('id_item', 10);
-            $table->primary(['id_user', 'id_item']);
-            $table->foreign('id_user')->references('id_user')->on('user_growpaths')->onDelete('cascade');
-            $table->foreign('id_item')->references('id_item')->on('item_shops')->onDelete('cascade');
-            $table->timestamps();
 
+            // user tidak boleh punya item yang sama lebih dari sekali
+            $table->unique(['user_id', 'item_shop_id']);
+
+            $table->timestamps();
         });
+
     }
 
     /**

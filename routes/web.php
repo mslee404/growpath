@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 // Guest routes
@@ -17,7 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
     Route::get('/loginafter', fn() => view('auth.loginafter'))->name('loginafter');
-    Route::get('/home', fn() => view('home'))->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/inventory', fn() => view('inventory'));
     Route::get('/shop', fn() => view('shop'));
     Route::get('/profile', fn() => view('profile'));

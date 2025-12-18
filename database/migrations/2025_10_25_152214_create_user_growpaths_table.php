@@ -12,18 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('user_growpaths', function (Blueprint $table) {
-            $table->string('id_user', 10)->primary();
+            $table->id();
             $table->string('username')->unique();
             $table->string('password');
-            $table->string('diplay_name')->nullable();
-            $table->integer('total_xp')->default(0);
-            $table->integer('level')->default(1);
-            $table->integer('total_gold')->default(0);
-            $table->string('pp_id', 10)->nullable();
+            $table->string('display_name')->nullable();
+            $table->unsignedInteger('total_xp')->default(0);
+            $table->unsignedInteger('level')->default(1);
+            $table->unsignedInteger('total_gold')->default(0);
 
-            $table->foreign('pp_id')->references('id_pp')->on('pps')->onDelete('set null');
+            $table->foreignId('pp_id')->nullable()->constrained('pps')->nullOnDelete();
+
+            $table->rememberToken();
 
             $table->timestamps();
+
         });
     }
 

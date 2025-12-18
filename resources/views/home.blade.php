@@ -1,28 +1,4 @@
-@php
-    // SIMULASI DATA DARI DATABASE (Nanti ini dipindah ke Controller)
-    $habits_semua = [
-        ['title' => 'contoh harian', 'xp' => 3, 'category' => 'harian', 'checked' => false],
-        ['title' => 'contoh mingguan', 'xp' => 10, 'category' => 'mingguan', 'checked' => false],
-        ['title' => 'contoh bulanan', 'xp' => 20, 'category' => 'bulanan', 'checked' => true],
-    ];
-    $habits_harian = [
-        ['title' => 'contoh harian', 'xp' => 3, 'category' => 'harian', 'checked' => false]
-    ];
-    $habits_mingguan = [
-        ['title' => 'contoh mingguan', 'xp' => 10, 'category' => 'mingguan', 'checked' => false],
-    ];
-    $habits_bulanan = [
-         ['title' => 'contoh bulanan', 'xp' => 20, 'category' => 'bulanan', 'checked' => true],
-    ];
-    $habits_kustom = [];
-    
-    $tugas_semua = [
-        ['title' => 'Tugas DABD', 'xp' => 15, 'category' => 'Kuliah', 'date' => '20/10/2025', 'time' => '23:59', 'checked' => false],
-        ['title' => 'Tugas TCBA', 'xp' => 25, 'category' => 'Kuliah', 'date' => '20/10/2025', 'time' => '23:59', 'checked' => false],
-    ];
-    $tugas_hari_ini = [];
-    $tugas_besok = [];
-@endphp
+
 
 <x-layout>
     <x-slot:title>Home</x-slot:title>
@@ -41,11 +17,11 @@
             <!-- Card Profile -->
             <div class="bg-[#FDFDD9] rounded-2xl shadow-lg p-4 items-center">
                 <h2 class="font-bold text-2xl text-[#783D19] leading-tight mb-3">
-                    Halo, username123!
+                    Halo, {{ $user->name }}!
                 </h2>
                 
                 <div class="flex items-center space-x-3 mb-4">
-                    <img src="https://placehold.co/92x92/4A6484/B0D2FA?text=AV" alt="Avatar" class="w-16 h-16 rounded-md border-2 border-gray-300">
+                    <img src="{{ $user->avatar_url }}" alt="Avatar {{ $user->name ?? $user->username }}" class="w-16 h-16 rounded-md border-2 border-gray-300">
                     <div>
                         <p class="text-lg font-medium text-[#783D19] text-left">Level 1</p>
                         <p class="text-xs font-bold text-[#5E7153] text-left uppercase tracking-wider">25/100 xp</p>

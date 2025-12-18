@@ -12,8 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pps', function (Blueprint $table) {
-            $table->string('id_pp',10)->primary();
+            $table->id();
+            $table->string('code',10)->unique();
             $table->string('image')->nullable();
+            $table->timestamps();
+            
         });
     }
 
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('p_p_s');
+        Schema::dropIfExists('pps');
     }
 };

@@ -10,26 +10,31 @@ use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
-    public function showRegisterForm()
-    {
-        return view('auth.register');
-    }
+    public function showRegisterForm() { return view('auth.register'); }
 
     public function register(Request $request)
     {
         $request->validate([
-            'username' => 'required|string|max:255|unique:user_growpaths',
-            'password' => 'required|string|min:6|confirmed',
-            'diplay_name' => 'nullable|string|max:255',
+            'username'      => 'required|string|max:255|unique:user_growpaths,username',
+            'password'      => 'required|string|min:6|confirmed',
+            'display_name'  => 'nullable|string|max:255',
         ]);
+
+        $idUser = 'U' . str_pad(
+            UserGrowpath::count() + 1,
+            3,
+            '0',
+            STR_PAD_LEFT
+        );
 
         $user = UserGrowpath::create([
-            'username'     => $request->username,
-            'password'     => $request->password, // akan otomatis di-hash karena setPasswordAttribute
-            'diplay_name'  => $request->diplay_name,
+            'id_user'       => $idUser,
+            'username'      => $request->username,
+            'password'      => $request->password, // auto bcrypt
+            'display_name'  => $request->username,
         ]);
 
-        Auth::guard('web')->login($user);
+        Auth::login($user);
 
         return redirect()->route('loginafter');
     }

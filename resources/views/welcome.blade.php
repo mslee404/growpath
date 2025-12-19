@@ -15,7 +15,7 @@
     <div class="orange-panel">
       <div class="orange-inner"></div>
       <div class="branding">
-        <img src="{{ asset('images/GambarPot.png') }}" alt="GrowPath Logo" />
+        <img src="{{ asset('images/logo.svg') }}" alt="GrowPath Logo" />
         <h1 class="title">GROWPATH</h1>
         <p class="subtitle">Tumbuh setiap hari</p>
       </div>

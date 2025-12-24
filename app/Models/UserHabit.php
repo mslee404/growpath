@@ -15,7 +15,7 @@ class UserHabit extends Model
 
     public function userGrowpath()
     {
-        return $this->belongsTo(UserGrowpath::class);
+        return $this->belongsTo(UserGrowpath::class,'user_id');
     }
 
     public function customHabit()

@@ -50,7 +50,12 @@ class UserGrowpath extends Authenticatable
     }
     public function habits()
     {
-        return $this->hasMany(UserHabit::class);
+        return $this->hasMany(UserHabit::class,'user_id');
+    }
+    
+    public function tasks()
+    {
+        return $this->hasMany(TaskUser::class, 'user_id');
     }
 
     protected static function booted()
@@ -78,4 +83,32 @@ class UserGrowpath extends Authenticatable
         $initial = strtoupper(substr($this->username ?? 'U', 0, 2));
         return 'https://placehold.co/92x92/4A6484/B0D2FA?text=' . $initial;
     }
+       // XP yang dibutuhkan untuk naik level berikutnya (bisa diubah nanti)
+    const XP_PER_LEVEL = 100;
+
+    // Hitung level dari total_xp
+    public function getLevelAttribute()
+    {
+        $totalXp = $this->attributes['total_xp'] ?? 0;
+        return floor($totalXp / self::XP_PER_LEVEL) + 1; // mulai dari level 1
+    }
+
+    // XP saat ini di level ini (0–99)
+    public function getCurrentXpAttribute()
+    {
+        $totalXp = $this->attributes['total_xp'] ?? 0;
+        return $totalXp % self::XP_PER_LEVEL;
+    }
+
+    // Persentase untuk progress bar (0–100%)
+    public function getXpPercentageAttribute()
+    {
+        return $this->current_xp . '%';
+    }
+
+    // Teks display seperti "25/100 xp"
+    public function getXpDisplayAttribute()
+    {
+        return $this->current_xp . '/' . self::XP_PER_LEVEL . ' xp';
+    }   
 }

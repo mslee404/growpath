@@ -30,8 +30,8 @@ class RegisterController extends Controller
         $user = UserGrowpath::create([
             'id_user'       => $idUser,
             'username'      => $request->username,
-            'password'      => $request->password, // auto bcrypt
-            'display_name'  => $request->username,
+            'password'      => $request->password, 
+            'display_name' => $request->display_name ?? $request->username,
         ]);
 
         Auth::login($user);

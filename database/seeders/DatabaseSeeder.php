@@ -11,5 +11,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call(PPSeeder::class);
+        $this->call(ItemSeeder::class);
+        $this->call(UserSeeder::class);
+        $this->call(HabbitTaskSeeder::class);
     }
 }

@@ -23,14 +23,14 @@
                 <div class="flex items-center space-x-3 mb-4">
                     <img src="{{ $user->avatar_url }}" alt="Avatar {{ $user->name ?? $user->username }}" class="w-16 h-16 rounded-md border-2 border-gray-300">
                     <div>
-                        <p class="text-lg font-medium text-[#783D19] text-left">Level 1</p>
-                        <p class="text-xs font-bold text-[#5E7153] text-left uppercase tracking-wider">25/100 xp</p>
+                        <p class="text-lg font-medium text-[#783D19] text-left">Level {{ $user->level }}</p>
+                        <p class="text-xs font-bold text-[#5E7153] text-left uppercase tracking-wider">{{ $user->xp_display }}</p>
                     </div>
                 </div>
 
                 <!-- XP bar -->
                 <div class="watering-can">
-                    <div class="watering-can-water" style="height: 25%;"></div>
+                    <div class="watering-can-water" style="height:{{ $user->xp_percentage }};"></div>
                 </div>
             </div>
 

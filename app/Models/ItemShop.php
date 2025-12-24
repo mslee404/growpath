@@ -11,6 +11,8 @@ class ItemShop extends Model
         'type',
         'price',
         'image',
+        'name',
+        'desc',
     ];
 
     protected static function booted()

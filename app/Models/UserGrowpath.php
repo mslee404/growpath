@@ -111,4 +111,10 @@ class UserGrowpath extends Authenticatable
     {
         return $this->current_xp . '/' . self::XP_PER_LEVEL . ' xp';
     }   
+
+    public function addXp($amount)
+    {
+        $this->total_xp += $amount;
+        $this->save();
+    }
 }

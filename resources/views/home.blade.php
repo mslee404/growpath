@@ -30,7 +30,7 @@
 
                 <!-- XP bar -->
                 <div class="watering-can">
-                    <div class="watering-can-water" style="height:{{ $user->xp_percentage }};"></div>
+                    <div id="xp-bar" class="watering-can-water" style="height: 0%;" data-xp="{{ $user->xp_percentage }}"></div>
                 </div>
             </div>
 
@@ -97,12 +97,14 @@
                                     :xp="$item['xp']" 
                                     :category="$item['category']"
                                     :checked="$item['checked']" 
+                                    :id="$item['id']"
+                                    :raw_detail="$item['raw_detail']"
+                                    :sub_type="$item['habit_type']"
                                 />
                             @endforeach
                         </div>
                         <p class="text-center text-base text-[#783D19] font-semibold mt-3">
-                            {{-- TODO: Ganti angka ini dengan logika --}}
-                            2 belum diselesaikan
+                            {{ count($habits_semua) }} belum diselesaikan
                         </p>
                     @else
                         <p class="text-center text-[#783D19] py-8 text-lg">Belum ada habit.</p>
@@ -120,10 +122,15 @@
                                     :xp="$item['xp']" 
                                     :category="$item['category']"
                                     :checked="$item['checked']" 
+                                    :id="$item['id']"
+                                    :raw_detail="$item['raw_detail']"
+                                    :sub_type="$item['habit_type']"
                                 />
                             @endforeach
                         </div>
-                        {{-- ... (logika status count) ... --}}
+                        <p class="text-center text-base text-[#783D19] font-semibold mt-3">
+                            {{ count($habits_harian) }} belum diselesaikan
+                        </p>
                     @else
                         <p class="text-center text-[#783D19] py-8 text-lg">Belum ada habit harian.</p>
                     @endif
@@ -140,10 +147,15 @@
                                     :xp="$item['xp']" 
                                     :category="$item['category']"
                                     :checked="$item['checked']" 
+                                    :id="$item['id']"
+                                    :raw_detail="$item['raw_detail']"
+                                    :sub_type="$item['habit_type']"
                                 />
                             @endforeach
                         </div>
-                        {{-- ... (logika status count) ... --}}
+                        <p class="text-center text-base text-[#783D19] font-semibold mt-3">
+                            {{ count($habits_mingguan) }} belum diselesaikan
+                        </p>
                     @else
                         <p class="text-center text-[#783D19] py-8 text-lg">Belum ada habit mingguan.</p>
                     @endif
@@ -160,10 +172,15 @@
                                     :xp="$item['xp']" 
                                     :category="$item['category']"
                                     :checked="$item['checked']" 
+                                    :id="$item['id']"
+                                    :raw_detail="$item['raw_detail']"
+                                    :sub_type="$item['habit_type']"
                                 />
                             @endforeach
                         </div>
-                        {{-- ... (logika status count) ... --}}
+                        <p class="text-center text-base text-[#783D19] font-semibold mt-3">
+                            {{ count($habits_bulanan) }} belum diselesaikan
+                        </p>
                     @else
                         <p class="text-center text-[#783D19] py-8 text-lg">Belum ada habit bulanan.</p>
                     @endif
@@ -180,10 +197,15 @@
                                     :xp="$item['xp']" 
                                     :category="$item['category']"
                                     :checked="$item['checked']" 
+                                    :id="$item['id']"
+                                    :raw_detail="$item['raw_detail']"
+                                    :sub_type="$item['habit_type']"
                                 />
                             @endforeach
                         </div>
-                        {{-- ... (logika status count) ... --}}
+                        <p class="text-center text-base text-[#783D19] font-semibold mt-3">
+                            {{ count($habits_kustom) }} belum diselesaikan
+                        </p>
                     @else
                         <p class="text-center text-[#783D19] py-8 text-lg">Belum ada habit kustom.</p>
                     @endif
@@ -227,12 +249,13 @@
                                     :date="$item['date']" 
                                     :time="$item['time']"
                                     :checked="$item['checked']"
+                                    :id="$item['id']"
+                                    :raw_detail="$item['raw_detail']"
                                 />
                             @endforeach
                         </div>
                         <p class="text-center text-base text-[#FDFDD9] font-semibold mt-3">
-                            {{-- TODO: Ganti angka ini dengan logika --}}
-                            2 belum diselesaikan
+                            {{ count($tugas_semua) }} belum diselesaikan
                         </p>
                     @else
                         <p class="text-center text-[#FDFDD9] py-8 text-lg">Belum ada tugas.</p>
@@ -252,10 +275,14 @@
                                     :date="$item['date']" 
                                     :time="$item['time']"
                                     :checked="$item['checked']"
+                                    :id="$item['id']"
+                                    :raw_detail="$item['raw_detail']"
                                 />
                             @endforeach
                         </div>
-                        {{-- ... (logika status count) ... --}}
+                        <p class="text-center text-base text-[#FDFDD9] font-semibold mt-3">
+                            {{ count($tugas_hari_ini) }} belum diselesaikan
+                        </p>
                     @else
                         <p class="text-center text-[#FDFDD9] py-8 text-lg">Tidak ada tugas hari ini.</p>
                     @endif
@@ -274,10 +301,14 @@
                                     :date="$item['date']" 
                                     :time="$item['time']"
                                     :checked="$item['checked']"
+                                    :id="$item['id']"
+                                    :raw_detail="$item['raw_detail']"
                                 />
                             @endforeach
                         </div>
-                        {{-- ... (logika status count) ... --}}
+                        <p class="text-center text-base text-[#FDFDD9] font-semibold mt-3">
+                            {{ count($tugas_besok) }} belum diselesaikan
+                        </p>
                     @else
                         <p class="text-center text-[#FDFDD9] py-8 text-lg">Tidak ada tugas untuk besok.</p>
                     @endif
@@ -298,35 +329,200 @@
         @include('popup.home-delete-tugas')
     </x-slot:popups>
 
+
+
 {{-- SCRIPT --}}
 <script>
+// Variables to store current IDs for deletion
+let currentHabitId = null;
+let currentTaskId = null;
 
-function openEditHabit() {
+function openEditHabit(btn) {
+    const id = btn.getAttribute('data-id');
+    const type = btn.getAttribute('data-type'); // daily, weekly, etc
+    const detail = JSON.parse(btn.getAttribute('data-detail'));
+    
+    currentHabitId = id;
+
+    // Populate Form Basic
+    document.getElementById('edit_nama_habit').value = detail.habit_name || detail.title; // fallback
+    document.getElementById('edit_detail_habit').value = detail.habit_description || '';
+    
+    // Set Action
+    document.getElementById('form-edit-habit').action = `/habit/${id}`;
+
+    // Select Radio Frequency
+    const radios = document.querySelectorAll('input[name="edit_frekuensi"]');
+    radios.forEach(r => r.disabled = true); // Disable all
+
+    const radio = document.querySelector(`input[name="edit_frekuensi"][value="${type}"]`);
+    if(radio) {
+        radio.checked = true;
+    }
+    
+    // Manually show the correct footer
+    const sections = {
+        daily: document.getElementById("edit-footer-daily"),
+        weekly: document.getElementById("edit-footer-weekly"),
+        monthly: document.getElementById("edit-footer-monthly"),
+        custom: document.getElementById("edit-footer-custom"),
+    };
+    Object.values(sections).forEach(s => s.classList.add("hidden"));
+    if(sections[type]) sections[type].classList.remove("hidden");
+
+    // Populate Specific Fields
+    // Note: Field names in DB (raw_detail) might match inputs
+    if(type === 'daily') {
+        if(detail.hour) document.getElementById('edit_jam_daily').value = detail.hour.substring(0, 5);
+    }
+    if(type === 'weekly') {
+        if(detail.hour) document.getElementById('edit_jam_weekly').value = detail.hour.substring(0, 5);
+        if(detail.day) document.getElementById('edit_hari_weekly').value = capitalizeFirstLetter(detail.day);
+    }
+    if(type === 'monthly') {
+        const mode = detail.schedule_type === 'week' ? 'minggu' : 'tanggal';
+        const radioMode = document.querySelector(`input[name="edit_monthly_mode"][value="${mode}"]`);
+        if(radioMode) {
+            radioMode.checked = true;
+            radioMode.dispatchEvent(new Event('change'));
+        }
+
+        if(mode === 'tanggal') {
+            document.getElementById('edit_tanggal_monthly').value = detail.date;
+            document.getElementById('edit_jam_monthly_tanggal').value = detail.hour.substring(0, 5);
+        } else {
+            document.getElementById('edit_hari_monthly').value = capitalizeFirstLetter(detail.day);
+            document.getElementById('edit_minggu_ke').value = detail.week;
+            document.getElementById('edit_jam_monthly_minggu').value = detail.hour.substring(0, 5);
+        }
+    }
+    if(type === 'custom') {
+        document.getElementById('edit_interval_custom').value = detail.day_count;
+        document.getElementById('edit_jam_custom').value = detail.hour.substring(0, 5);
+    }
+
+    // Open Modal
     const modal = document.getElementById("modal-edit-habit");
     const content = document.getElementById("modal-content-edit-habit");
-
     modal.classList.remove("opacity-0", "invisible");
     content.classList.remove("scale-95");
-
     modal.classList.add("opacity-100");
     content.classList.add("scale-100");
 }
 
-function closeEditHabit() {
-    const modal = document.getElementById("modal-edit-habit");
-    const content = document.getElementById("modal-content-edit-habit");
+function openEditTugas(btn) {
+    const id = btn.getAttribute('data-id');
+    const detail = JSON.parse(btn.getAttribute('data-detail'));
+    currentTaskId = id;
 
+    // Populate
+    document.getElementById('edit_nama_tugas').value = detail.task_name;
+    document.getElementById('edit_detail_tugas').value = detail.task_description || '';
+    
+    // Date/Time
+    // detail.due_date might be object or string depending on cast. 
+    // Usually standard JSON from model is "YYYY-MM-DD..."
+    // Let's assume standard ISO or similar. If cast 'date' in model, it's string "YYYY-MM-DD"
+    if(detail.due_date) {
+        document.getElementById('edit_tanggal_tugas').value = detail.due_date.substring(0, 10);
+    }
+    if(detail.due_time) {
+        // "HH:MM:SS" -> "HH:MM"
+        document.getElementById('edit_jam_tugas').value = detail.due_time.substring(0, 5);
+    }
+
+    // Set Action
+    document.getElementById('form-edit-tugas').action = `/task/${id}`;
+
+    // Open Modal
+    const modal = document.getElementById("modal-edit-tugas");
+    const content = document.getElementById("modal-content-edit-tugas");
+    modal.classList.remove("opacity-0", "invisible");
+    content.classList.remove("scale-95");
+    modal.classList.add("opacity-100");
+    content.classList.add("scale-100");
+}
+
+function openDeleteHabit() {
+    // Set Action
+    document.getElementById('form-delete-habit').action = `/habit/${currentHabitId}`;
+    
+    // Open Modal
+    const modal = document.getElementById("modal-delete-habit");
+    const content = document.getElementById("modal-content-delete-habit");
+    modal.classList.remove("opacity-0", "invisible");
+    content.classList.remove("scale-95");
+    modal.classList.add("opacity-100");
+    content.classList.add("scale-100");
+}
+
+function openDeleteTugasConfirm() { // Renamed to match onclick in edit-tugas popup
+     // Set Action
+    document.getElementById('form-delete-tugas').action = `/task/${currentTaskId}`;
+
+    const modal = document.getElementById("modal-delete-tugas");
+    const content = document.getElementById("modal-content-delete-tugas");
+    modal.classList.remove("opacity-0", "invisible");
+    content.classList.remove("scale-95");
+    modal.classList.add("opacity-100");
+    content.classList.add("scale-100");
+}
+
+function closeDeleteHabit() {
+    const modal = document.getElementById("modal-delete-habit");
+    const content = document.getElementById("modal-content-delete-habit");
     modal.classList.add("opacity-0", "invisible");
     content.classList.add("scale-95");
 }
 
+function closeDeleteTugas() {
+    const modal = document.getElementById("modal-delete-tugas");
+    const content = document.getElementById("modal-content-delete-tugas");
+    modal.classList.add("opacity-0", "invisible");
+    content.classList.add("scale-95");
+}
+
+
+function closeEditHabit() {
+    const modal = document.getElementById("modal-edit-habit");
+    const content = document.getElementById("modal-content-edit-habit");
+    modal.classList.add("opacity-0", "invisible");
+    content.classList.add("scale-95");
+}
+
+function closeEditTugas() {
+    const modal = document.getElementById("modal-edit-tugas");
+    const content = document.getElementById("modal-content-edit-tugas");
+    modal.classList.add("opacity-0", "invisible");
+    content.classList.add("scale-95");
+}
+
+function capitalizeFirstLetter(string) {
+    if(!string) return '';
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 document.addEventListener('DOMContentLoaded', function () {
 
-    // CLOSE BUTTON
+    // CLOSE BUTTON EDIT HABIT
     document.getElementById("close-edit-habit")
         .addEventListener("click", closeEditHabit);
 
-    // SWITCH FOOTER
+    // CLOSE BUTTON EDIT TUGAS
+    const closeEditTugasBtn = document.querySelector("#modal-edit-tugas button[onclick='closeEditTugas()']"); // Or select by class/position since ID wasn't unique in snippet
+    // Actually, in snippet it was button with onclick, let's just make sure we define the function globally or add listener
+    // Better to define the function since the HTML uses onclick="closeEditTugas()"
+    
+    // CLOSE BUTTON DELETE HABIT
+    const closeDeleteBtn = document.getElementById("close-delete-habit");
+    if(closeDeleteBtn) closeDeleteBtn.addEventListener("click", closeDeleteHabit);
+    
+    const cancelDeleteBtn = document.getElementById("cancel-delete");
+    if(cancelDeleteBtn) cancelDeleteBtn.addEventListener("click", closeDeleteHabit);
+
+
+
+    // SWITCH FOOTER EDIT HABIT
     const sections = {
         daily: document.getElementById("edit-footer-daily"),
         weekly: document.getElementById("edit-footer-weekly"),
@@ -338,7 +534,7 @@ document.addEventListener('DOMContentLoaded', function () {
         radio.addEventListener("change", e => {
             let val = e.target.value;
             Object.values(sections).forEach(s => s.classList.add("hidden"));
-            sections[val].classList.remove("hidden");
+            if(sections[val]) sections[val].classList.remove("hidden");
         });
     });
 

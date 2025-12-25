@@ -24,42 +24,17 @@
                 Ga jadi deh
             </button>
             
-            <button class="bg-[#F0EEB1] text-red-700 font-bold py-3 px-6 rounded-xl"
-                    id="confirm-delete">
-                Yakin!
-            </button>
+            <form id="form-delete-habit" action="#" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="bg-[#F0EEB1] text-red-700 font-bold py-3 px-6 rounded-xl"
+                        id="confirm-delete">
+                    Yakin!
+                </button>
+            </form>
         </div>
 
     </div>
 </div>
 
-<script>
-function openDeleteHabit() {
-    const modal = document.getElementById("modal-delete-habit");
-    const content = document.getElementById("modal-content-delete-habit");
 
-    modal.classList.remove("opacity-0", "invisible");
-    content.classList.remove("scale-95");
-
-    modal.classList.add("opacity-100");
-    content.classList.add("scale-100");
-}
-
-function closeDeleteHabit() {
-    const modal = document.getElementById("modal-delete-habit");
-    const content = document.getElementById("modal-content-delete-habit");
-
-    modal.classList.add("opacity-0", "invisible");
-    content.classList.add("scale-95");
-}
-
-// Close buttons
-document.getElementById("close-delete-habit").addEventListener("click", closeDeleteHabit);
-document.getElementById("cancel-delete").addEventListener("click", closeDeleteHabit);
-
-// Tombol "Yakin!"
-document.getElementById("confirm-delete").addEventListener("click", () => {
-    alert("Habit dihapus (nanti sambung ke controller)");
-    closeDeleteHabit();
-});
-</script>

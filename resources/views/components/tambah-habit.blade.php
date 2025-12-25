@@ -1,5 +1,6 @@
 @props([
     'title' => 'Tambah Habit Baru?',
+    'action' => '#',
 ])
 
 <div 
@@ -25,7 +26,7 @@
             </button>
         </div>
 
-        <form method="POST" action="#">
+        <form method="POST" action="{{ $action }}">
             @csrf
 
             <div class="space-y-4">

@@ -24,33 +24,18 @@
                 Ga jadi deh
             </button>
 
-            <button
-                class="bg-[#FDEECA] text-red-700 font-bold py-3 px-6 rounded-lg shadow hover:bg-white transition">
-                Yakin!
-            </button>
+            <form id="form-delete-tugas" action="#" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit"
+                    class="bg-[#FDEECA] text-red-700 font-bold py-3 px-6 rounded-lg shadow hover:bg-white transition">
+                    Yakin!
+                </button>
+            </form>
 
         </div>
 
     </div>
 </div>
 
-<script>
-function openDeleteTugasConfirm() {
-    const modal = document.getElementById("modal-delete-tugas");
-    const content = document.getElementById("modal-content-delete-tugas");
 
-    modal.classList.remove("opacity-0", "invisible");
-    content.classList.remove("scale-95");
-
-    modal.classList.add("opacity-100");
-    content.classList.add("scale-100");
-}
-
-function closeDeleteTugas() {
-    const modal = document.getElementById("modal-delete-tugas");
-    const content = document.getElementById("modal-content-delete-tugas");
-
-    modal.classList.add("opacity-0", "invisible");
-    content.classList.add("scale-95");
-}
-</script>

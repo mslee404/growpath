@@ -9,7 +9,7 @@
             <button id="close-tugas" class="text-3xl text-white opacity-80 hover:opacity-100">&times;</button>
         </div>
         
-        <form action="#" method="POST">
+        <form action="{{ route('task.store') }}" method="POST">
             @csrf
             <div class="space-y-4">
                 <div>
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="flex justify-end pt-2">
-                    <button type="button" 
+                    <button type="submit" 
                             class="bg-[#FDEECA] text-[#783D19] font-bold py-3 px-8 rounded-lg shadow-md hover:bg-white transition duration-200">
                         Tambah!
                     </button>

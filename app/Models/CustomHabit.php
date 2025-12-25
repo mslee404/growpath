@@ -8,7 +8,7 @@ class CustomHabit extends Model
 {
 
     protected $fillable = [
-        'id_habit',
+        'user_habit_id',
         'habit_name',
         'habit_description',
         'hour',

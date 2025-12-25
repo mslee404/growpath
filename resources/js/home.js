@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const tabContainer = group.querySelector('[data-tab-container]');
         const panelContainer = group.querySelector('[data-panel-container]');
-        
+
         if (!tabContainer || !panelContainer) return;
 
         const tabButtons = tabContainer.querySelectorAll('.tab-button');
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tabButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const targetId = button.dataset.tabButton;
-                
+
                 // 1. Sembunyikan semua panel di grup ini
                 tabPanels.forEach(panel => {
                     panel.classList.add('hidden');
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.classList.remove(...theme.active.split(' '));
                     btn.classList.add(...theme.inactive.split(' '));
                 });
-                
+
                 // 4. Set tombol yang diklik ke 'active'
                 button.classList.remove(...theme.inactive.split(' '));
                 button.classList.add(...theme.active.split(' '));
@@ -60,10 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function updateButtonVisibility() {
             if (!scrollLeftBtn || !scrollRightBtn) return;
-            
+
             // +1 / -1 untuk toleransi browser
             const maxScrollLeft = scroller.scrollWidth - scroller.clientWidth;
-            
+
             // Cek kiri
             if (scroller.scrollLeft <= 1) {
                 scrollLeftBtn.classList.add('invisible');
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 button.addEventListener('click', () => {
                     const direction = parseInt(button.dataset.direction, 10);
                     // Scroll 1/3 dari lebar container
-                    const scrollAmount = (scroller.clientWidth / 3) * direction; 
+                    const scrollAmount = (scroller.clientWidth / 3) * direction;
                     scroller.scrollBy({ left: scrollAmount, behavior: 'smooth' });
                 });
             }
@@ -93,17 +93,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update visibilitas tombol saat di-scroll
         scroller.addEventListener('scroll', updateButtonVisibility);
-        
+
         // Panggil sekali saat load untuk set kondisi awal
         // Butuh delay kecil agar kalkulasi scrollWidth akurat
-        setTimeout(updateButtonVisibility, 100); 
+        setTimeout(updateButtonVisibility, 100);
     }
 
     /**
      * (BARU) Fungsi untuk setup semua logika modal/pop-up
      */
     function setupModals() {
-        
+
         // --- MODAL HABIT ---
         const modalHabit = document.getElementById('modal-habit');
         const contentHabit = document.getElementById('modal-content-habit'); // <-- Ambil konten
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // 1. Mulai animasi tutup (fade out dan scale down)
             modalHabit.classList.add('opacity-0');
             contentHabit.classList.add('scale-95');
-            
+
             // 2. Tunggu animasi selesai (300ms) baru sembunyikan
             setTimeout(() => {
                 modalHabit.classList.add('invisible');
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!modalTugas || !contentTugas) return;
             modalTugas.classList.add('opacity-0');
             contentTugas.classList.add('scale-95');
-            
+
             setTimeout(() => {
                 modalTugas.classList.add('invisible');
             }, 300);
@@ -201,12 +201,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // (BARU) Setup modal
     setupModals();
 
-    // Set watering can (Contoh: 25%)
+    // Set watering can dynamic height
     const waterLevel = document.querySelector('.watering-can-water');
     if (waterLevel) {
         // Set sedikit delay agar animasi terlihat saat load
         setTimeout(() => {
-            waterLevel.style.height = '25%';
+            const xpPercentage = waterLevel.getAttribute('data-xp') || '0%';
+            waterLevel.style.height = xpPercentage;
         }, 100);
     }
 });

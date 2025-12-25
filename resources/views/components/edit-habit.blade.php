@@ -30,8 +30,9 @@
         </div>
 
         {{-- Form --}}
-        <form method="POST" action="#">
+        <form id="form-edit-habit" method="POST" action="#">
             @csrf
+            @method('PUT')
 
             <div class="space-y-4">
                 {{ $slot }}

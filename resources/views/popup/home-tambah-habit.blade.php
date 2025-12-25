@@ -1,4 +1,5 @@
-<x-tambah-habit modalId="modal-habit" title="Tambah Habit Baru?">
+<x-tambah-habit modalId="modal-habit" title="Tambah Habit Baru?" action="{{ route('habit.store') }}">
+    @csrf
 
     {{-- INPUT NAMA HABIT --}}
     <div>

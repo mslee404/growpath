@@ -17,7 +17,54 @@ class HomeController extends Controller
         // Eager load semua kemungkinan relasi habit
         $userHabits = $user->habits()->with(['customHabit', 'dailyHabit', 'weeklyHabit', 'monthlyHabit'])->get();
 
-        $habits_semua = $userHabits->map(function ($userHabit) {
+        // Hitung persentase XP (asumsi 100 XP per level)
+        $xp_percentage = ($user->exp ?? 0) % 100;
+
+        // Filter Habit yang sudah selesai periode ini
+        $filteredHabits = $userHabits->filter(function ($habit) {
+            $today = Carbon::today();
+            
+            // Cek record penyelesaian
+            // Asumsi relation 'records' belum ada di model userHabit, kita pakai query manual dulu untuk safety
+            // Atau load relation jika sudah ditambahkan
+            
+            // Check Daily: Done today?
+            if ($habit->habit_type == 'daily') {
+                return !\App\Models\HabitRecord::where('user_habit_id', $habit->id)
+                    ->whereDate('completion_date', $today)
+                    ->exists();
+            }
+
+            // Check Weekly: Done this week (Mon-Sun)?
+            if ($habit->habit_type == 'weekly') {
+                return !\App\Models\HabitRecord::where('user_habit_id', $habit->id)
+                    ->whereBetween('completion_date', [
+                        $today->copy()->startOfWeek(), 
+                        $today->copy()->endOfWeek()
+                    ])
+                    ->exists();
+            }
+
+            // Check Monthly: Done this month?
+            if ($habit->habit_type == 'monthly') {
+                return !\App\Models\HabitRecord::where('user_habit_id', $habit->id)
+                    ->whereYear('completion_date', $today->year)
+                    ->whereMonth('completion_date', $today->month)
+                    ->exists();
+            }
+
+            // Custom: Logic bisa lebih kompleks, sementara anggap daily reset
+             if ($habit->habit_type == 'custom') {
+                 // Simplifikasi: cek hari ini saja dulu
+                 return !\App\Models\HabitRecord::where('user_habit_id', $habit->id)
+                    ->whereDate('completion_date', $today)
+                    ->exists();
+            }
+
+            return true;
+        });
+
+        $habits_semua = $filteredHabits->map(function ($userHabit) {
             // Manual resolution of 'detail' based on habit_type
             $detail = match ($userHabit->habit_type) {
                 'custom' => $userHabit->customHabit,
@@ -54,6 +101,9 @@ class HomeController extends Controller
             $checked = false;
 
             return [
+                'id'       => $userHabit->id,
+                'raw_detail' => $detail,
+                'habit_type' => $userHabit->habit_type,
                 'title'    => $detail->habit_name,
                 'xp'       => $xp,
                 'category' => $category,
@@ -67,11 +117,17 @@ class HomeController extends Controller
         $habits_bulanan  = $habits_semua->where('category', 'bulanan');
         $habits_kustom   = $habits_semua->where('category', 'kustom');
 
-        // === AMBIL TUGAS ===
-        $tasks = $user->tasks()->orderBy('due_date')->orderBy('due_time')->get();
+        // === AMBIL TUGAS === (Hanya yang belum selesai)
+        $tasks = $user->tasks()
+            ->where('is_completed', false)
+            ->orderBy('due_date')
+            ->orderBy('due_time')
+            ->get();
 
         $tugas_semua = $tasks->map(function ($task) {
             return [
+                'id'        => $task->id,
+                'raw_detail'=> $task,
                 'title'     => $task->task_name,
                 'xp'        => 20, // bisa dibuat dinamis nanti
                 'category'  => 'Kuliah', // atau tambah kolom category di task

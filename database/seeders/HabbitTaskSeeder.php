@@ -99,6 +99,15 @@ class HabbitTaskSeeder extends Seeder
             'task_description'=> 'Presentasi DABD',
             'due_date'        => '2025-12-30',
             'due_time'        => '23:59',
-        ]);//
+        ]);
+        
+        TaskUser::create([
+            'user_id'         => $user->id,
+            'task_name'       => 'Test besok',
+            'task_description'=> 'Rawr',
+            'due_date'        => '2025-12-26',
+            'due_time'        => '23:59',
+        ]);
+        //
     }
 }

@@ -9,7 +9,7 @@ class UserHabit extends Model
     protected $table = 'user_habits';
 
     protected $fillable = [
-        'id_user',
+        'user_id',
         'habit_type',
     ];
 
@@ -35,6 +35,11 @@ class UserHabit extends Model
     public function monthlyHabit()
     {
         return $this->hasOne(MonthlyHabit::class);
+    }
+
+    public function records()
+    {
+        return $this->hasMany(HabitRecord::class, 'user_habit_id');
     }
 
     public function detail()

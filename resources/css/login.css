@@ -29,10 +29,10 @@ body {
 }
 
 .logo {
-  width: 16rem;
-  height: 16rem;
+  width: 20rem;
+  height: 20rem;
   object-fit: contain;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
 }
 
 .left-panel h1 {

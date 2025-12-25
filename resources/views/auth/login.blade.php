@@ -13,7 +13,7 @@
     <div class="left-panel">
       <div class="logo-box">
         <img
-          src="{{ asset('images/GambarPot.png') }}"
+          src="{{ asset('images/logo.svg') }}"
           alt="GrowPath Logo"
           class="logo"
         />

@@ -20,11 +20,12 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/loginafter', fn() => view('auth.loginafter'))->name('loginafter');
     Route::get('/home', [HomeController::class, 'index'])->name('home');
-    Route::get('/inventory', fn() => view('inventory'));
-    Route::get('/shop', fn() => view('shop'));
+    Route::get('/inventory', [App\Http\Controllers\InventoryController::class, 'index'])->name('inventory');
+Route::post('/inventory/equip', [App\Http\Controllers\InventoryController::class, 'equip'])->name('inventory.equip');
+    Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop');
+    Route::post('/shop/buy', [App\Http\Controllers\ShopController::class, 'buy'])->name('shop.buy');
     Route::get('/profile', fn() => view('profile'));
-    Route::get('/leaderboard', fn() => view('leaderboard'));
-    Route::get('/leaderboard', fn() => view('leaderboard'));
+    Route::get('/leaderboard', [App\Http\Controllers\LeaderboardController::class, 'index'])->name('leaderboard');
 
     Route::post('/habit', [HabitController::class, 'store'])->name('habit.store');
     Route::post('/habit/{id}/check', [HabitController::class, 'check'])->name('habit.check');

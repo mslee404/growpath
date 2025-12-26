@@ -16,8 +16,22 @@ class ItemSeeder extends Seeder
     {
         $avatars = [
         [
+            'name' => 'Kakek Petani',
+            'type' => 'avatar', 
+            'desc' => 'Merawat tanaman seperti cucu sendiri',
+            'image' => 'images/1-pakde.svg',
+            'price' => '0' 
+            ],
+        [
+            'name' => 'Bude',
+            'type' => 'avatar', 
+            'desc' => 'Merawat tanaman seperti cucu sendiri',
+            'image' => 'images/4-mbokde.svg',
+            'price' => '0' 
+            ],
+        [
             'name' => 'Dewa Petir',
-            'type' => 'avatar', // Corrected type
+            'type' => 'avatar', 
             'desc' => 'Avatar spesial Dewa Petir (Zenitsu)',
             'image' => 'images/2-senitsu.svg',
             'price' => '7500' 

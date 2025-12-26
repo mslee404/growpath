@@ -46,7 +46,7 @@ class UserGrowpath extends Authenticatable
     }
     public function inventories()
     {
-        return $this->hasMany(UserInventory::class);
+        return $this->hasMany(UserInventory::class, 'user_id');
     }
     public function habits()
     {
@@ -65,6 +65,18 @@ class UserGrowpath extends Authenticatable
                 $user->pp_id = 1; // Default PP ID
             }
         });
+
+        static::created(function ($user) {
+            $defaultItems = ItemShop::whereIn('name', ['Kakek Petani', 'Bude'])->get();
+
+            foreach ($defaultItems as $item) {
+                UserInventory::create([
+                    'user_id' => $user->id,
+                    'item_shop_id' => $item->id,
+                    'is_equipped' => false,
+                ]);
+            }
+        });
     }
 
     public function getNameAttribute()
@@ -74,14 +86,58 @@ class UserGrowpath extends Authenticatable
 
     public function getAvatarUrlAttribute()
     {
+        // 1. Cek inventory yang is_equipped = true dan type = 'avatar'
+        $equippedAvatar = $this->inventories()
+            ->where('is_equipped', true)
+            ->whereHas('item', fn($q) => $q->where('type', 'avatar'))
+            ->with('item')
+            ->first();
+
+        if ($equippedAvatar && $equippedAvatar->item) {
+            return asset($equippedAvatar->item->image);
+        }
+
+        // 2. Fallback ke PP lama (jika masih digunakan)
         if ($this->pp && $this->pp->image) {
-            // Karena file di public/images/, gunakan asset() untuk full URL
             return asset($this->pp->image);
         }
 
-        // Fallback kalau pp null atau image kosong: placeholder dengan inisial username
+        // 3. Fallback default
         $initial = strtoupper(substr($this->username ?? 'U', 0, 2));
         return 'https://placehold.co/92x92/4A6484/B0D2FA?text=' . $initial;
+    }
+
+    public function getFrameUrlAttribute()
+    {
+        $equipped = $this->inventories()
+            ->where('is_equipped', true)
+            ->whereHas('item', fn($q) => $q->where('type', 'avatar_frame'))
+            ->with('item')
+            ->first();
+
+        return $equipped ? asset($equipped->item->image) : null;
+    }
+
+    public function getPlantUrlAttribute()
+    {
+        $equipped = $this->inventories()
+            ->where('is_equipped', true)
+            ->whereHas('item', fn($q) => $q->where('type', 'tanaman'))
+            ->with('item')
+            ->first();
+
+        return $equipped ? asset($equipped->item->image) : null;
+    }
+
+    public function getBackgroundUrlAttribute()
+    {
+        $equipped = $this->inventories()
+            ->where('is_equipped', true)
+            ->whereHas('item', fn($q) => $q->where('type', 'background'))
+            ->with('item')
+            ->first();
+
+        return $equipped ? asset($equipped->item->image) : null;
     }
        // XP yang dibutuhkan untuk naik level berikutnya (bisa diubah nanti)
     const XP_PER_LEVEL = 100;

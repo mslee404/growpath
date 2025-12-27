@@ -71,19 +71,19 @@
                 <div class="bg-[#FDFDD9] p-6 rounded-b-2xl shadow-lg w-full min-h-[500px]">
                     
                     <div id="avatar-panel" class="tab-content">
-                        <x-item-box :items="$my_avatars" emptyMessage="Kamu belum punya avatar custom :(" />
+                        <x-item-box :items="$my_avatars" cols="4" emptyMessage="Kamu belum punya avatar custom :(" />
                     </div>
 
                     <div id="frame-panel" class="tab-content hidden">
-                        <x-item-box :items="$frame" emptyMessage="Kamu belum punya frame custom :(" />
+                        <x-item-box :items="$frame" cols="4" emptyMessage="Kamu belum punya frame custom :(" />
                     </div>
                     
                     <div id="tanaman-panel" class="tab-content hidden">
-                        <x-item-box :items="$plant" emptyMessage="Kamu belum punya tanaman custom :(" />
+                        <x-item-box :items="$plant" cols="4" emptyMessage="Kamu belum punya tanaman custom :(" />
                     </div>
                     
                     <div id="background-panel" class="tab-content hidden">
-                        <x-item-box :items="$background" emptyMessage="Kamu belum punya background custom :(" />
+                        <x-item-box :items="$background" cols="4" emptyMessage="Kamu belum punya background custom :(" />
                     </div>
 
                 </div>              

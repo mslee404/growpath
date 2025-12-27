@@ -25,7 +25,7 @@
                     </div>
     
                     {{-- Tombol Edit --}}
-                    <button id="btn-edit-username" class="bg-[#5E7153] p-2 rounded-lg hover:bg-[#4e5e45] transition flex-shrink-0 shadow-sm" title="Edit Username">
+                    <button id="btn-edit-username" class="bg-[#5E7153] p-2 rounded-lg hover:bg-[#4e5e45] cursor-pointer transition flex-shrink-0 shadow-sm" title="Edit Username">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="#FDFDD9" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487a2.25 2.25 0 0 1 3.182 3.182L7.125 20.586a4.5 4.5 0 0 1-1.591.995l-2.934.977.977-2.934a4.5 4.5 0 0 1 .995-1.591L16.862 4.487z" />
                         </svg>
@@ -87,7 +87,7 @@
                 </div>
 
                 <div class="flex justify-end pt-8">
-                    <button id="btn-logout" class="bg-transparent border-2 border-[#5E7153] text-[#5E7153] text-lg font-bold px-8 py-2.5 rounded-lg hover:bg-[#5E7153] hover:text-[#FDFDD9] transition shadow-sm">
+                    <button id="btn-logout" class="bg-transparent border-2 border-[#5E7153] text-[#5E7153] text-lg font-bold px-8 py-2.5 rounded-lg hover:bg-[#5E7153] hover:text-[#FDFDD9] cursor-pointer transition shadow-sm">
                         Logout
                     </button>
                 </div>

@@ -25,6 +25,7 @@ Route::post('/inventory/equip', [App\Http\Controllers\InventoryController::class
     Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop');
     Route::post('/shop/buy', [App\Http\Controllers\ShopController::class, 'buy'])->name('shop.buy');
     Route::get('/profile', fn() => view('profile'));
+    Route::post('/profile/update', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
     Route::get('/leaderboard', [App\Http\Controllers\LeaderboardController::class, 'index'])->name('leaderboard');
 
     Route::post('/habit', [HabitController::class, 'store'])->name('habit.store');

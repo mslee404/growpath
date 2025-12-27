@@ -1,47 +1,4 @@
-@php
-    // Simulasi data Avatar yang dimiliki user
-    $my_avatars = [
-        [
-            'name'  => 'Kakek Petani',
-            'desc'  => 'Merawat tanaman seperti cucu sendiri',
-            'image' => 'images/1-pakde.svg' // Pastikan path gambarnya sesuai
-        ],
-        [
-            'name'  => 'Bude',
-            'desc'  => 'Merawat tanaman seperti cucu sendiri',
-            'image' => 'images/4-mbokde.svg' 
-        ],
-        [
-            'name'  => 'Anya',
-            'desc'  => 'peanut',
-            'image' => 'images/7-anya.svg' 
-        ],
-        [
-            'name'  => 'Super Idol',
-            'desc'  => 'Won Forever Young',
-            'image' => 'images/8-wony.svg' 
-        ]
-    ];
-    $frame = [
-        [
-            'name' => 'Apple Frame',
-            'type' => 'Frame',
-            'desc' => 'Frame apel apel emas',
-            'image' => asset('images/Apple.svg'),
-            'price' => '7500' 
-        ]
-    ];
-    $plant = [
-        [
-            'name' => 'Buah Naga',
-            'type' => 'Plant',
-            'desc' => 'Buah naga merah yang segar dan manis (kayanya)',
-            'image' => asset('images/Dragon fruit.svg'),
-            'price' => '10000' 
-        ]
-    ];
-    $background = [];
-@endphp
+
 
 <x-layout>
     <x-slot:title>Inventory</x-slot:title>
@@ -114,19 +71,19 @@
                 <div class="bg-[#FDFDD9] p-6 rounded-b-2xl shadow-lg w-full min-h-[500px]">
                     
                     <div id="avatar-panel" class="tab-content">
-                        <x-item-box :items="$my_avatars" emptyMessage="Kamu belum punya avatar custom :(" />
+                        <x-item-box :items="$my_avatars" cols="4" emptyMessage="Kamu belum punya avatar custom :(" />
                     </div>
 
                     <div id="frame-panel" class="tab-content hidden">
-                        <x-item-box :items="$frame" emptyMessage="Kamu belum punya frame custom :(" />
+                        <x-item-box :items="$frame" cols="4" emptyMessage="Kamu belum punya frame custom :(" />
                     </div>
                     
                     <div id="tanaman-panel" class="tab-content hidden">
-                        <x-item-box :items="$plant" emptyMessage="Kamu belum punya tanaman custom :(" />
+                        <x-item-box :items="$plant" cols="4" emptyMessage="Kamu belum punya tanaman custom :(" />
                     </div>
                     
                     <div id="background-panel" class="tab-content hidden">
-                        <x-item-box :items="$background" emptyMessage="Kamu belum punya background custom :(" />
+                        <x-item-box :items="$background" cols="4" emptyMessage="Kamu belum punya background custom :(" />
                     </div>
 
                 </div>              

@@ -6,8 +6,17 @@
 ])
 
 @if (count($items) > 0)
+    @php
+        $gridClass = match($cols) {
+            3 => 'md:grid-cols-3',
+            '3' => 'md:grid-cols-3',
+            4 => 'md:grid-cols-4',
+            '4' => 'md:grid-cols-4',
+            default => 'md:grid-cols-4',
+        };
+    @endphp
     {{-- Grid Layout --}}
-    <div class="grid grid-cols-2 md:grid-cols-{{ $cols }} gap-4 p-4">
+    <div class="grid grid-cols-2 {{ $gridClass }} gap-4 p-4">
         
         @foreach ($items as $item)
             {{-- PANGGIL COMPONENT ANAK --}}

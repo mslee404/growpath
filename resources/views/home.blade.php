@@ -20,8 +20,17 @@
                     Halo, {{ $user->name }}!
                 </h2>
                 
-                <div class="flex items-center space-x-3 mb-4">
-                    <img src="{{ $user->avatar_url }}" alt="Avatar {{ $user->name ?? $user->username }}" class="w-16 h-16 rounded-md border-2 border-gray-300">
+                <div class="flex items-center space-x-3 mb-4 relative">
+                    <div class="relative w-16 h-16">
+                        <!-- Avatar -->
+                        <img src="{{ $user->avatar_url }}" alt="Avatar {{ $user->name }}" class="w-full h-full rounded-md object-cover border-2 border-gray-300">
+                        
+                        <!-- Frame -->
+                        @if($user->frame_url)
+                            <img src="{{ $user->frame_url }}" alt="Frame" class="absolute -top-1 -left-1 w-[4.5rem] h-[4.5rem] pointer-events-none z-10" style="max-width: none;">
+                        @endif
+                    </div>
+
                     <div>
                         <p class="text-lg font-medium text-[#783D19] text-left">Level {{ $user->level }}</p>
                         <p class="text-xs font-bold text-[#5E7153] text-left uppercase tracking-wider">{{ $user->xp_display }}</p>
@@ -45,9 +54,15 @@
 
         <!-- Pertumbuhan tanaman -->
         <div class="lg:col-span-2 flex items-center justify-center min-h-[500px]">
-            <div class="w-full h-[600px] bg-[#FDFDD9]/80 rounded-2xl border-8 border-[#A85319] shadow-inner flex flex-col justify-between items-center p-6">
+            <div class="w-full h-[600px] bg-[#FDFDD9]/80 rounded-2xl border-8 border-[#A85319] shadow-inner flex flex-col justify-between items-center p-6"
+                 style="{{ $user->background_url ? 'background-image: url('.$user->background_url.'); background-size: cover; background-position: center;' : '' }}">
+                
                 <div class="flex-1 flex items-center justify-center">
-                    <img src="https://placehold.co/117x115/C4661F/A85319?text=Biji" alt="Tanaman" class="w-24 h-24">
+                    @if($user->plant_url)
+                         <img src="{{ $user->plant_url }}" alt="Tanaman" class="w-48 h-48 object-contain drop-shadow-lg">
+                    @else
+                         <img src="https://placehold.co/117x115/C4661F/A85319?text=Biji" alt="Tanaman" class="w-24 h-24">
+                    @endif
                 </div>
                 <div class="w-full h-48 bg-[#FDFDD9] rounded-2xl shadow-md">
                 </div>

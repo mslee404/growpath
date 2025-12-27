@@ -11,13 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
     //     button.addEventListener('click', () => {
     //         const targetId = button.getAttribute('data-tab-target');
     //         const targetPanel = document.querySelector(targetId);
-            
+
     //         // Sembunyikan semua panel
     //         tabContents.forEach(panel => panel.classList.add('hidden'));
-            
+
     //         // Tampilkan panel target
     //         if (targetPanel) targetPanel.classList.remove('hidden');
-            
+
     //         // Reset semua tombol ke state inactive
     //         tabButtons.forEach(btn => {
     //             btn.classList.remove(...activeClasses);
@@ -35,21 +35,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // const detailName = document.getElementById('item-detail-name');
     // const detailDesc = document.getElementById('item-detail-desc');
     // const itemCards = document.querySelectorAll('.item-card');
-    
+
     // itemCards.forEach(card => {
     //     card.addEventListener('click', () => {
     //         const itemData = JSON.parse(card.getAttribute('data-item'));
-            
+
     //         detailName.textContent = itemData.name;
     //         detailDesc.textContent = itemData.desc;
-            
+
     //         detailImageContainer.innerHTML = ''; 
     //         const newImage = document.createElement('img');
     //         newImage.src = itemData.image;
     //         newImage.alt = itemData.name;
     //         newImage.className = 'w-full h-full object-cover'; 
     //         detailImageContainer.appendChild(newImage);
-            
+
     //         // Reset border active
     //         itemCards.forEach(c => c.classList.remove('ring-4', 'ring-[#5E7153]'));
     //         // Add active border visual (Tailwind ring)
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //     });
     // });
 
-// --- SETUP MODAL USE ITEM ---    
+    // --- SETUP MODAL USE ITEM ---    
     // YANG BENAR:
     const modalUse = document.getElementById('modal-use'); // <--- Ganti nama variabel ini
     const contentUse = document.getElementById('modal-content-use');
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fungsi BUKA Modal
     function openUseModal() {
         // Sekarang variabel modalUse sudah dikenali
-        if (!modalUse || !contentUse) return; 
+        if (!modalUse || !contentUse) return;
         modalUse.classList.remove('invisible', 'opacity-0');
         contentUse.classList.remove('scale-95');
     }
@@ -77,15 +77,44 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!modalUse || !contentUse) return;
         modalUse.classList.add('opacity-0');
         contentUse.classList.add('scale-95');
-        
+
         setTimeout(() => {
             modalUse.classList.add('invisible');
         }, 300);
     }
 
     // Pasang Event Listener
+    // Pasang Event Listener
     if (btnUse) {
-        btnUse.addEventListener('click', openUseModal);
+        btnUse.addEventListener('click', () => {
+            const itemId = btnUse.getAttribute('data-selected-id');
+            if (!itemId) {
+                alert("Silakan pilih item terlebih dahulu!");
+                return;
+            }
+
+            // AJAX Request
+            fetch('/inventory/equip', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify({ item_id: itemId })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message) {
+                        // Update pesan modal jika perlu, atau biarkan default "Item sudah terpasang!"
+                        // Open Modal
+                        openUseModal();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("Terjadi kesalahan saat memasang item.");
+                });
+        });
     }
 
     if (btnCloseUse) {
@@ -98,4 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
             closeUseModal();
         }
     });
+
+    // ========== CSRF TOKEN ==========
+    // Pastikan ada meta tag csrf-token di layout utama
 });

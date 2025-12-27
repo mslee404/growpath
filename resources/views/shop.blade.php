@@ -1,101 +1,3 @@
-@php
-    $avatar = [
-        [
-            'name' => 'Dewa Petir',
-            'type' => 'Avatar',
-            'desc' => 'Avatar spesial Dewa Petir (Zenitsu)',
-            'image' => asset('images/2-senitsu.svg'),
-            'price' => '7500' 
-            ],
-        [
-            'name' => 'My Istri',
-            'type' => 'Avatar',
-            'desc' => 'Bukankah ini (Waguri-chan)',
-            'image' => asset('images/5-myistri.svg'),
-            'price' => '7500' ],
-        [
-            'name' => 'Rahmat',
-            'type' => 'Avatar',
-            'desc' => 'Rahmat si jagoan neon',
-            'image' => asset('images/3-rahmat.svg'),
-            'price' => '7500' ],
-        [
-            'name' => 'Gwejh',
-            'type' => 'Avatar',
-            'desc' => 'Detektif',
-            'image' => asset('images/6-gweh.svg'),
-            'price' => '7500' ], 
-        [
-            'name' => 'Anya',
-            'type' => 'Avatar',
-            'desc' => 'Spy mission waku waku',
-            'image' => asset('images/7-anya.svg'),
-            'price' => '7500' ],
-        [
-            'name' => 'Super Idol',
-            'type' => 'Avatar',
-            'desc' => 'Won Forever Young',
-            'image' => asset('images/8-wony.svg'),
-            'price' => '7500' ]
-    ];
-    $frame = [
-        [
-            'name' => 'Apple Frame',
-            'type' => 'Frame',
-            'desc' => 'Frame apel apel emas',
-            'image' => asset('images/Apple.svg'),
-            'price' => '7500' 
-        ],
-        [
-            'name' => 'Sea Frame',
-            'type' => 'Frame',
-            'desc' => 'Frame laut ubur ubur kerang cute kawaii',
-            'image' => asset('images/Laut.svg'),
-            'price' => '7500' 
-        ],
-        [
-            'name' => 'Night Sky Frame',
-            'type' => 'Frame',
-            'desc' => 'Terdengar burung hantu suaranya merdu',
-            'image' => asset('images/Malam.svg'),
-            'price' => '7500' 
-        ],
-    ];
-    $plant = [
-        [
-            'name' => 'Buah Naga',
-            'type' => 'Plant',
-            'desc' => 'Buah naga merah yang segar dan manis (kayanya)',
-            'image' => asset('images/Dragon fruit.svg'),
-            'price' => '10000' 
-        ],
-        [
-            'name' => 'Buah Jeruk',
-            'type' => 'Plant',
-            'desc' => 'Jeruk makan jeruk',
-            'image' => asset('images/Plant-Orange.svg'),
-            'price' => '10000' 
-        ],
-        [
-            'name' => 'Buah Pepaya',
-            'type' => 'Plant',
-            'desc' => 'Pepaya California yang dirawat seperti anak sendiri',
-            'image' => asset('images/Plant-Papaya.svg'),
-            'price' => '10000' 
-        ],
-        [
-            'name' => 'Terong',
-            'type' => 'Plant',
-            'desc' => 'Ayam penyet dan terong goreng',
-            'image' => asset('images/Plant-Eggplant.svg'),
-            'price' => '10000' 
-        ]
-    ];
-    $background = [];
-    $gold = [];
-    $userGold = 10000;
-@endphp
-
 <x-layout>
     <x-slot:title>Shop</x-slot:title>
 
@@ -160,8 +62,8 @@
                 {{-- NAVIGASI TAB (Manual HTML sesuai request) --}}
                 <div class="tab-nav relative z-10 flex border-b-0">
                     <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer tab-active bg-[#FDFDD9] text-[#5E7153] z-20 -mb-[2px]" data-tab-target="#avatar-shop">Avatar</button>
-                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#FDFDD9] z-10" data-tab-target="#frame-shop">Frame</button>
-                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#FDFDD9] z-10" data-tab-target="#plant-shop">Plant</button>
+                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#FDFDD9] z-10" data-tab-target="#frame-shop">Avatar Frame</button>
+                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#FDFDD9] z-10" data-tab-target="#plant-shop">Tanaman</button>
                     <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#FDFDD9] z-10" data-tab-target="#bg-shop">Background</button>
                     <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#FDFDD9] z-10" data-tab-target="#gold-shop">Gold</button>
                 </div>
@@ -178,26 +80,26 @@
                     <div id="avatar-shop" class="tab-content">
                         <x-item-box 
                             :items="$avatar" 
-                            cols="3" 
+                            cols="4" 
                             :showPrice="true" 
                             emptyMessage="Item avatar habis." 
                         />
                     </div>
 
                     <div id="frame-shop" class="tab-content hidden">
-                        <x-item-box :items="$frame" cols="3" :showPrice="true" emptyMessage="Item frame habis." />
+                        <x-item-box :items="$frame" cols="4" :showPrice="true" emptyMessage="Item frame habis." />
                     </div>
 
                     <div id="plant-shop" class="tab-content hidden">
-                        <x-item-box :items="$plant" cols="3" :showPrice="true" emptyMessage="Item tanaman habis." />
+                        <x-item-box :items="$plant" cols="4" :showPrice="true" emptyMessage="Item tanaman habis." />
                     </div>
 
                     <div id="bg-shop" class="tab-content hidden">
-                        <x-item-box :items="$background" cols="3" :showPrice="true" emptyMessage="Item background habis." />
+                        <x-item-box :items="$background" cols="4" :showPrice="true" emptyMessage="Item background habis." />
                     </div>
 
                     <div id="gold-shop" class="tab-content hidden">
-                        <x-item-box :items="$gold" cols="3" :showPrice="true" emptyMessage="Item gold habis." />
+                        <x-item-box :items="$gold" cols="4" :showPrice="true" emptyMessage="Item gold habis." />
                     </div>
 
                 </div>

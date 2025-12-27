@@ -16,19 +16,19 @@
             Ganti username?
         </h2>
 
-        <form action="#" method="POST">
+        <form action="{{ route('profile.update') }}" method="POST">
             @csrf
             <div class="mb-8 flex justify-center">
-                <input type="text" name="username" value="Username123" 
+                <input type="text" name="display_name" value="{{ auth()->user()->display_name ?? auth()->user()->username }}" 
                     class="w-full bg-[#FDFDE0] text-[#5C6843] text-2xl font-bold text-center py-4 px-6 rounded-xl shadow-inner focus:outline-none focus:ring-4 focus:ring-[#783D19]/20 placeholder-[#5C6843]/50">
             </div>
 
             <div class="flex justify-center gap-6">
-                <button type="button" id="btn-batal-edit-username" class="bg-[#FDFDE0] text-[#5C6843] font-bold text-lg px-6 py-3 rounded-xl shadow-md hover:bg-white transition transform hover:-translate-y-1">
+                <button type="button" id="btn-batal-edit-username" class="bg-[#FDFDE0] text-[#5C6843] font-bold text-lg px-6 py-3 rounded-xl shadow-md hover:bg-white transition cursor-pointer transform hover:-translate-y-1">
                     Ga jadi deh
                 </button>
 
-                <button type="submit" class="bg-[#FDFDE0] text-[#5C6843] font-bold text-lg px-10 py-3 rounded-xl shadow-md hover:bg-white transition transform hover:-translate-y-1">
+                <button type="submit" class="bg-[#FDFDE0] text-[#5C6843] font-bold text-lg px-10 py-3 rounded-xl shadow-md hover:bg-white transition cursor-pointer transform hover:-translate-y-1">
                     Simpan!
                 </button>
             </div>

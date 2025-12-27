@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // ==========================================
     // 1. LOGIKA TAB NAVIGATION
     // ==========================================
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Class untuk State Active (Krem #FDFDD9, Teks Hijau, Z-Index tinggi, Margin minus)
     const activeClasses = ['tab-active', 'bg-[#FDFDD9]', 'text-[#5E7153]', 'z-20', '-mb-[2px]'];
-    
+
     // Class untuk State Inactive (Hijau #5E7153, Teks Krem, Z-Index rendah)
     const inactiveClasses = ['bg-[#5E7153]', 'text-[#FDFDD9]', 'z-10'];
 
@@ -16,13 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             const targetId = button.getAttribute('data-tab-target');
             const targetPanel = document.querySelector(targetId);
-            
+
             // 1. Sembunyikan semua panel
             tabContents.forEach(panel => panel.classList.add('hidden'));
-            
+
             // 2. Tampilkan panel target
             if (targetPanel) targetPanel.classList.remove('hidden');
-            
+
             // 3. Reset semua tombol ke state inactive
             tabButtons.forEach(btn => {
                 btn.classList.remove(...activeClasses);
@@ -53,14 +53,30 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = JSON.parse(card.getAttribute('data-item'));
 
             // B. Update Detail
-            if(detailName) detailName.textContent = data.name;
-            if(detailDesc) detailDesc.textContent = data.desc || '-';
-            
-            if(detailImg) {
+            if (detailName) detailName.textContent = data.name;
+            if (detailDesc) detailDesc.textContent = data.desc || '-';
+
+            const btnUse = document.getElementById('btn-use');
+            if (btnUse) {
+                btnUse.setAttribute('data-selected-id', data.id);
+
+                // Update Button State Logic
+                if (data.is_equipped) {
+                    btnUse.textContent = "Terpasang";
+                    btnUse.disabled = true;
+                    btnUse.classList.add('opacity-50', 'cursor-not-allowed');
+                } else {
+                    btnUse.textContent = "Pakai";
+                    btnUse.disabled = false;
+                    btnUse.classList.remove('opacity-50', 'cursor-not-allowed');
+                }
+            }
+
+            if (detailImg) {
                 detailImg.innerHTML = '';
                 const img = document.createElement('img');
                 // Menggunakan link langsung dari data (karena di komponen sudah di-asset())
-                img.src = data.image; 
+                img.src = data.image;
                 img.className = 'w-full h-full object-cover';
                 detailImg.appendChild(img);
             }

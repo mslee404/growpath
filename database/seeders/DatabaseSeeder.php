@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(PPSeeder::class);
         $this->call(ItemSeeder::class);
+        $this->call(GoldShopSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(HabbitTaskSeeder::class);
         $this->call(UserInventorySeeder::class);

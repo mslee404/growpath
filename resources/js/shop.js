@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const itemCards = document.querySelectorAll('.item-card');
     let selectedItemId = null;
     let selectedItemPrice = 0;
+    let selectedItemType = null; // Track item type for gold vs regular
 
     // 3. Tambahkan event click ke setiap kartu item
     itemCards.forEach(card => {
@@ -83,20 +84,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             selectedItemId = itemData.id;
             selectedItemPrice = parseInt(itemData.price);
+            selectedItemType = itemData.type || null; // Store type
 
             // Update panel detail di kiri
             if (detailName) detailName.textContent = itemData.name;
             if (detailDesc) detailDesc.textContent = itemData.desc || '-';
             if (detailPrice) detailPrice.textContent = itemData.price + ' G';
 
-            // Clear only avatar’s image children
+            // Clear only avatar's image children
             if (detailImageContainer) {
                 detailImageContainer.querySelectorAll('img,.text-placeholder').forEach(el => el.remove());
                 const newImage = document.createElement('img');
                 // Handle different image path sources
                 newImage.src = itemData.image;
                 newImage.alt = itemData.name;
-                newImage.className = 'w-full h-full object-cover rounded-[10px]';
+                newImage.className = 'w-full h-full object-cover rounded-2xl';
                 detailImageContainer.appendChild(newImage);
             }
 
@@ -151,13 +153,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Klik "Yakin!" -> Proses Beli
     if (btnConfirmBuy) {
         btnConfirmBuy.addEventListener('click', () => {
-            fetch('/shop/buy', {
+            // Determine endpoint and payload based on item type
+            let endpoint = '/shop/buy';
+            let payload = { item_id: selectedItemId };
+
+            if (selectedItemType === 'gold') {
+                endpoint = '/shop/buy-gold';
+                payload = { package_id: selectedItemId };
+            }
+
+            fetch(endpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
                 },
-                body: JSON.stringify({ item_id: selectedItemId })
+                body: JSON.stringify(payload)
             })
                 .then(response => response.json().then(data => ({ status: response.status, body: data })))
                 .then(res => {

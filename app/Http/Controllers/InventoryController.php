@@ -81,4 +81,38 @@ class InventoryController extends Controller
 
         return response()->json(['message' => 'Item berhasil dipasang!', 'type' => $type]);
     }
+    public function harvest()
+    {
+        /** @var \App\Models\UserGrowpath $user */
+        $user = Auth::user();
+
+        // Cari tanaman yang sedang dipakai
+        $equippedPlant = $user->inventories()
+            ->where('is_equipped', true)
+            ->whereHas('item', fn($q) => $q->where('type', 'tanaman'))
+            ->first();
+
+        if (!$equippedPlant) {
+            return response()->json(['message' => 'Tidak ada tanaman yang dipasang.'], 404);
+        }
+
+        if ($equippedPlant->level < 10) {
+            return response()->json(['message' => 'Tanaman belum siap panen! Butuh level 10.'], 400);
+        }
+
+        // Proses Panen
+        // 1. Tambah Gold User
+        $user->total_gold += 500;
+        $user->save();
+
+        // 2. Reset Level Tanaman
+        $equippedPlant->level = 1;
+        $equippedPlant->save();
+
+        return response()->json([
+            'message' => 'Panen berhasil! Kamu mendapatkan 500 Gold.',
+            'new_gold' => $user->total_gold,
+            'new_plant_url' => $user->plant_url // Agar frontend bisa update gambar real-time jika mau
+        ]);
+    }
 }

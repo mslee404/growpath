@@ -22,8 +22,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/inventory', [App\Http\Controllers\InventoryController::class, 'index'])->name('inventory');
 Route::post('/inventory/equip', [App\Http\Controllers\InventoryController::class, 'equip'])->name('inventory.equip');
+    Route::post('/harvest', [App\Http\Controllers\InventoryController::class, 'harvest'])->name('harvest');
     Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop');
     Route::post('/shop/buy', [App\Http\Controllers\ShopController::class, 'buy'])->name('shop.buy');
+    Route::post('/shop/buy-gold', [App\Http\Controllers\ShopController::class, 'buyGold'])->name('shop.buyGold');
     Route::get('/profile', fn() => view('profile'));
     Route::post('/profile/update', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
     Route::get('/leaderboard', [App\Http\Controllers\LeaderboardController::class, 'index'])->name('leaderboard');

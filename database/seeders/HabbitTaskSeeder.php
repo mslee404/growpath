@@ -108,6 +108,75 @@ class HabbitTaskSeeder extends Seeder
             'due_date'        => '2025-12-26',
             'due_time'        => '23:59',
         ]);
-        //
+        TaskUser::create([
+            'user_id'         => $user->id,
+            'task_name'       => 'Test tanaman1',
+            'task_description'=> 'Rawr',
+            'due_date'        => '2025-12-26',
+            'due_time'        => '23:59',
+        ]);
+        TaskUser::create([
+            'user_id'         => $user->id,
+            'task_name'       => 'Test tanaman2',
+            'task_description'=> 'Rawr',
+            'due_date'        => '2025-12-26',
+            'due_time'        => '23:59',
+        ]);
+        TaskUser::create([
+            'user_id'         => $user->id,
+            'task_name'       => 'Test tanaman3',
+            'task_description'=> 'Rawr',
+            'due_date'        => '2025-12-26',
+            'due_time'        => '23:59',
+        ]);
+        TaskUser::create([
+            'user_id'         => $user->id,
+            'task_name'       => 'Test tanaman4',
+            'task_description'=> 'Rawr',
+            'due_date'        => '2025-12-26',
+            'due_time'        => '23:59',
+        ]);
+        TaskUser::create([
+            'user_id'         => $user->id,
+            'task_name'       => 'Test tanaman5',
+            'task_description'=> 'Rawr',
+            'due_date'        => '2025-12-26',
+            'due_time'        => '23:59',
+        ]);
+        TaskUser::create([
+            'user_id'         => $user->id,
+            'task_name'       => 'Test tanaman6',
+            'task_description'=> 'Rawr',
+            'due_date'        => '2025-12-26',
+            'due_time'        => '23:59',
+        ]);
+        TaskUser::create([
+            'user_id'         => $user->id,
+            'task_name'       => 'Test tanaman7',
+            'task_description'=> 'Rawr',
+            'due_date'        => '2025-12-26',
+            'due_time'        => '23:59',
+        ]);
+        TaskUser::create([
+            'user_id'         => $user->id,
+            'task_name'       => 'Test tanaman8',
+            'task_description'=> 'Rawr',
+            'due_date'        => '2025-12-26',
+            'due_time'        => '23:59',
+        ]);
+        TaskUser::create([
+            'user_id'         => $user->id,
+            'task_name'       => 'Test tanaman9',
+            'task_description'=> 'Rawr',
+            'due_date'        => '2025-12-26',
+            'due_time'        => '23:59',
+        ]);
+        TaskUser::create([
+            'user_id'         => $user->id,
+            'task_name'       => 'Test tanaman10',
+            'task_description'=> 'Rawr',
+            'due_date'        => '2025-12-26',
+            'due_time'        => '23:59',
+        ]);
     }
 }

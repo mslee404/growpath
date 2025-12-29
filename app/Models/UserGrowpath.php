@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
+use Illuminate\Support\Str;
+
 class UserGrowpath extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -67,13 +69,13 @@ class UserGrowpath extends Authenticatable
         });
 
         static::created(function ($user) {
-            $defaultItems = ItemShop::whereIn('name', ['Kakek Petani', 'Bude'])->get();
+            $defaultItems = ItemShop::whereIn('name', ['Kakek Petani', 'Bude', 'Buah Apel'])->get();
 
             foreach ($defaultItems as $item) {
                 UserInventory::create([
                     'user_id' => $user->id,
                     'item_shop_id' => $item->id,
-                    'is_equipped' => false,
+                    'is_equipped' => $item->name === 'Buah Apel', 
                 ]);
             }
         });
@@ -126,7 +128,16 @@ class UserGrowpath extends Authenticatable
             ->with('item')
             ->first();
 
-        return $equipped ? asset($equipped->item->image) : null;
+        if ($equipped && $equipped->item) {
+            // Path: public/images/Tanaman/nama-item-slug/Level X.svg
+            // Menggunakan level dari inventory (agar bisa di-reset saat panen)
+            $level = $equipped->level;
+            $slug = Str::slug($equipped->item->name);
+            
+            return asset("images/Tanaman/{$slug}/Level {$level}.svg");
+        }
+        
+        return null;
     }
 
     public function getBackgroundUrlAttribute()
@@ -170,7 +181,25 @@ class UserGrowpath extends Authenticatable
 
     public function addXp($amount)
     {
+        $oldLevel = $this->level;
         $this->total_xp += $amount;
         $this->save();
+        $newLevel = $this->level;
+
+        // Jika naik level, naikkan juga level tanaman yang sedang dipakai
+        if ($newLevel > $oldLevel) {
+            $equippedPlant = $this->inventories()
+                ->where('is_equipped', true)
+                ->whereHas('item', fn($q) => $q->where('type', 'tanaman'))
+                ->first();
+
+            if ($equippedPlant && $equippedPlant->level < 10) {
+                // Naikkan level tanaman sebanyak kenaikan level user
+                // Tapi batasi max 10
+                $levelsGained = $newLevel - $oldLevel;
+                $equippedPlant->level = min($equippedPlant->level + $levelsGained, 10);
+                $equippedPlant->save();
+            }
+        }
     }
 }

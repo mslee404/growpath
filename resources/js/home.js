@@ -201,6 +201,84 @@ document.addEventListener('DOMContentLoaded', () => {
     // (BARU) Setup modal
     setupModals();
 
+    // (BARU) Setup Harvest with Modal
+    const btnHarvest = document.getElementById('btn-harvest');
+    const modalHarvest = document.getElementById('modal-harvest');
+    const modalContentHarvest = document.getElementById('modal-content-harvest');
+    const modalHarvestTitle = document.getElementById('modal-harvest-title');
+    const modalHarvestMessage = document.getElementById('modal-harvest-message');
+    const modalHarvestActions = document.getElementById('modal-harvest-actions');
+    const modalHarvestResultActions = document.getElementById('modal-harvest-result-actions');
+    const btnConfirmHarvest = document.getElementById('btn-confirm-harvest');
+
+    // Open Harvest Modal
+    window.openHarvestModal = function () {
+        if (!modalHarvest || !modalContentHarvest) return;
+        // Reset to confirmation state
+        if (modalHarvestTitle) modalHarvestTitle.textContent = '🌾 Panen Tanaman?';
+        if (modalHarvestMessage) modalHarvestMessage.innerHTML = 'Tanaman akan kembali ke Level 1 dan kamu akan mendapatkan <span class="font-bold text-yellow-300">500 Gold</span>!';
+        if (modalHarvestActions) modalHarvestActions.classList.remove('hidden');
+        if (modalHarvestResultActions) modalHarvestResultActions.classList.add('hidden');
+
+        modalHarvest.classList.remove('invisible', 'opacity-0');
+        modalContentHarvest.classList.remove('scale-95');
+    };
+
+    // Close Harvest Modal
+    window.closeHarvestModal = function () {
+        if (!modalHarvest || !modalContentHarvest) return;
+        modalHarvest.classList.add('opacity-0');
+        modalContentHarvest.classList.add('scale-95');
+        setTimeout(() => {
+            modalHarvest.classList.add('invisible');
+        }, 300);
+    };
+
+    // Open modal when harvest button clicked
+    if (btnHarvest) {
+        btnHarvest.addEventListener('click', openHarvestModal);
+    }
+
+    // Confirm Harvest
+    if (btnConfirmHarvest) {
+        btnConfirmHarvest.addEventListener('click', () => {
+            fetch('/harvest', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    // Switch to result state
+                    if (modalHarvestActions) modalHarvestActions.classList.add('hidden');
+                    if (modalHarvestResultActions) modalHarvestResultActions.classList.remove('hidden');
+
+                    if (data.message) {
+                        if (modalHarvestTitle) modalHarvestTitle.textContent = '🎉 Berhasil!';
+                        if (modalHarvestMessage) modalHarvestMessage.textContent = data.message;
+
+                        // Update UI
+                        if (data.new_plant_url) {
+                            const img = document.getElementById('plant-image');
+                            if (img) img.src = data.new_plant_url;
+                        }
+
+                        // Hilangkan tombol panen di homepage
+                        if (btnHarvest) btnHarvest.remove();
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    if (modalHarvestActions) modalHarvestActions.classList.add('hidden');
+                    if (modalHarvestResultActions) modalHarvestResultActions.classList.remove('hidden');
+                    if (modalHarvestTitle) modalHarvestTitle.textContent = 'Error';
+                    if (modalHarvestMessage) modalHarvestMessage.textContent = 'Terjadi kesalahan saat memanen.';
+                });
+        });
+    }
+
     // Set watering can dynamic height
     const waterLevel = document.querySelector('.watering-can-water');
     if (waterLevel) {
@@ -209,5 +287,45 @@ document.addEventListener('DOMContentLoaded', () => {
             const xpPercentage = waterLevel.getAttribute('data-xp') || '0%';
             waterLevel.style.height = xpPercentage;
         }, 100);
+    }
+
+    // ========== ROTATING MOTIVATION QUOTES ==========
+    const motivationText = document.getElementById('motivation-text');
+    if (motivationText) {
+        const motivationQuotes = [
+            "Jangan lupa sirami aku dengan menyelesaikan kebiasaanmu ya~",
+            "Satu langkah kecil hari ini, satu lompatan besar esok hari! ",
+            "Konsistensi adalah kunci pertumbuhan. Tetap semangat! ",
+            "Setiap kebiasaan baik adalah investasi untuk masa depanmu! ",
+            "Aku percaya kamu bisa melakukannya! Ayo mulai sekarang! ",
+            "Jangan menyerah, aku butuh air dari usahamu~ ",
+            "Kamu lebih kuat dari yang kamu kira! ",
+            "Hari ini adalah hari yang sempurna untuk mulai! ",
+            "Setiap progress kecil tetap progress. Keep going! ",
+            "Rawat aku dengan kebiasaan baikmu ya~ ",
+            "Kamu sudah sampai sejauh ini, jangan berhenti sekarang! ",
+            "Waktu terbaik untuk memulai adalah SEKARANG! "
+        ];
+
+        let currentIndex = 0;
+
+        // Pick random quote on load
+        currentIndex = Math.floor(Math.random() * motivationQuotes.length);
+        motivationText.textContent = motivationQuotes[currentIndex];
+
+        // Rotate quotes every 8 seconds with fade effect
+        setInterval(() => {
+            // Fade out
+            motivationText.style.opacity = '0';
+
+            setTimeout(() => {
+                // Change text
+                currentIndex = (currentIndex + 1) % motivationQuotes.length;
+                motivationText.textContent = motivationQuotes[currentIndex];
+
+                // Fade in
+                motivationText.style.opacity = '1';
+            }, 500); // Wait for fade out to complete
+        }, 8000);
     }
 });

@@ -94,10 +94,17 @@ class ItemSeeder extends Seeder
 
     $plants = [
         [
+            'name' => 'Buah Apel',
+            'type' => 'tanaman', // Corrected from Plant to tanaman
+            'desc' => 'Apakah ini gravitasi?',
+            'image' => 'images/Plant-Apple.svg',
+            'price' => '0' 
+        ],
+        [
             'name' => 'Buah Naga',
             'type' => 'tanaman', // Corrected from Plant to tanaman
             'desc' => 'Buah naga merah yang segar dan manis (kayanya)',
-            'image' => 'images/Dragon fruit.svg',
+            'image' => 'images/Plant-Dragon-fruit.svg',
             'price' => '10000' 
         ],
         [

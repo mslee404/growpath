@@ -10,6 +10,7 @@ class UserInventory extends Model
         'user_id',
         'item_shop_id',
         'is_equipped',
+        'level'
     ];
 
     public function user()

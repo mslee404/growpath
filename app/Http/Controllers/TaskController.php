@@ -13,8 +13,8 @@ class TaskController extends Controller
     {
         $request->validate([
             'nama_tugas' => 'required|string|max:255',
-            'tgl_deadline' => 'nullable|date',
-            'waktu_deadline' => 'nullable',
+            'tgl_deadline' => 'required|date',
+            'waktu_deadline' => 'required',
         ]);
 
         TaskUser::create([

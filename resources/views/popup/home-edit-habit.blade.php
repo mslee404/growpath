@@ -5,7 +5,7 @@
     {{-- INPUT NAMA --}}
     <div>
         <label class="block text-sm font-semibold mb-1">Nama Habit*</label>
-        <input type="text" id="edit_nama_habit" name="nama_habit"
+        <input type="text" id="edit_nama_habit" name="nama_habit" required
             class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3"
             placeholder="Nama Habit">
     </div>
@@ -54,7 +54,7 @@
         {{-- DAILY --}}
         <div id="edit-footer-daily" class="section-footer hidden">
             <label class="block text-sm font-semibold mb-1">Setiap jam berapa?</label>
-            <input type="time" id="edit_jam_daily" name="jam_daily"
+            <input type="time" id="edit_jam_daily" name="jam_daily" required
                 class="w-1/2 bg-[#F0EEB1] text-[#783D19] rounded-lg p-3">
         </div>
 
@@ -64,9 +64,9 @@
 
                 <div>
                     <label class="block text-sm font-semibold mb-1">Setiap Hari Apa?</label>
-                    <select id="edit_hari_weekly" name="hari_weekly"
+                    <select id="edit_hari_weekly" name="hari_weekly" required
                         class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3">
-                        <option value="" disabled>Pilih hari disini</option>
+                        <option value="" disabled selected>Pilih hari disini</option>
                         <option>Senin</option>
                         <option>Selasa</option>
                         <option>Rabu</option>
@@ -79,7 +79,7 @@
 
                 <div>
                     <label class="block text-sm font-semibold mb-1">Jam Berapa?</label>
-                    <input type="time" id="edit_jam_weekly" name="jam_weekly"
+                    <input type="time" id="edit_jam_weekly" name="jam_weekly" required
                         class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3">
                 </div>
 
@@ -113,13 +113,13 @@
 
                 <div>
                     <label class="block text-sm font-semibold">Tanggal</label>
-                    <input type="number" min="1" max="31" id="edit_tanggal_monthly" name="tanggal_monthly"
+                    <input type="number" min="1" max="31" id="edit_tanggal_monthly" name="tanggal_monthly" required
                         class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3 text-sm">
                 </div>
 
                 <div>
                     <label class="block text-sm font-semibold">Jam</label>
-                    <input type="time" id="edit_jam_monthly_tanggal" name="jam_monthly_tanggal"
+                    <input type="time" id="edit_jam_monthly_tanggal" name="jam_monthly_tanggal" required
                         class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3 text-sm">
                 </div>
 
@@ -130,8 +130,9 @@
 
                 <div>
                     <label class="block text-sm font-semibold">Hari</label>
-                    <select id="edit_hari_monthly" name="hari_monthly"
+                    <select id="edit_hari_monthly" name="hari_monthly" required
                         class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3 text-sm">
+                        <option value="" disabled selected>Pilih hari disini</option>
                         <option>Senin</option>
                         <option>Selasa</option>
                         <option>Rabu</option>
@@ -144,13 +145,13 @@
 
                 <div>
                     <label class="block text-sm font-semibold">Minggu Ke</label>
-                    <input type="number" min="1" max="5" id="edit_minggu_ke" name="minggu_ke"
+                    <input type="number" min="1" max="5" id="edit_minggu_ke" name="minggu_ke" required
                         class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3">
                 </div>
 
                 <div>
                     <label class="block text-sm font-semibold">Jam</label>
-                    <input type="time" id="edit_jam_monthly_minggu" name="jam_monthly_minggu"
+                    <input type="time" id="edit_jam_monthly_minggu" name="jam_monthly_minggu" required
                         class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3 text-sm">
                 </div>
 
@@ -165,14 +166,14 @@
 
                 <div>
                     <label class="block text-sm font-semibold mb-1">Setiap Berapa Hari?</label>
-                    <input type="number" id="edit_interval_custom" min="1" name="interval_custom"
+                    <input type="number" id="edit_interval_custom" min="1" name="interval_custom" required
                         class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3"
                         placeholder="Setiap ... hari">
                 </div>
 
                 <div>
                     <label class="block text-sm font-semibold mb-1">Jam Berapa?</label>
-                    <input type="time" id="edit_jam_custom" name="jam_custom"
+                    <input type="time" id="edit_jam_custom" name="jam_custom" required
                         class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3">
                 </div>
             </div>

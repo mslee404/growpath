@@ -4,7 +4,7 @@
     {{-- INPUT NAMA HABIT --}}
     <div>
         <label class="block text-sm font-semibold mb-1">Nama Habit*</label>
-        <input type="text" name="nama_habit"
+        <input type="text" name="nama_habit" required
             class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3"
             placeholder="Nama Habit">
     </div>
@@ -46,7 +46,7 @@
         {{-- DAILY --}}
         <div id="footer-daily" class="section-footer">
             <label class="block text-sm font-semibold mb-1">Setiap Jam Berapa?</label>
-            <input type="time" name="jam_daily"
+            <input type="time" name="jam_daily" required
                 class="w-1/2 bg-[#F0EEB1] text-[#783D19] rounded-lg p-3">
         </div>
 
@@ -55,9 +55,9 @@
             <div class="grid grid-cols-2 gap-4">
                 <div>
                     <label class="block text-sm font-semibold mb-1">Setiap Hari Apa?</label>
-                    <select name="hari_weekly"
+                    <select name="hari_weekly" required
                         class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3">
-                        <option value="">Pilih hari disini</option>
+                        <option value="" disabled selected>Pilih hari disini</option>
                         <option>Senin</option>
                         <option>Selasa</option>
                         <option>Rabu</option>
@@ -70,7 +70,7 @@
 
                 <div>
                     <label class="block text-sm font-semibold mb-1">Jam Berapa?</label>
-                    <input type="time" name="jam_weekly"
+                    <input type="time" name="jam_weekly" required
                         class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3">
                 </div>
             </div>
@@ -105,13 +105,13 @@
 
                 <div>
                     <label class="block text-sm font-semibold">Tanggal</label>
-                    <input type="number" min="1" max="31" name="tanggal_monthly"
+                    <input type="number" min="1" max="31" name="tanggal_monthly" required
                      class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3 text-sm">
                 </div>
 
                 <div>
                     <label class="block text-sm font-semibold">Jam</label>
-                    <input type="time" name="jam_monthly_tanggal"
+                    <input type="time" name="jam_monthly_tanggal" required
                         class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3 text-sm">
                 </div>
 
@@ -123,8 +123,9 @@
 
                 <div>
                     <label class="block text-sm font-semibold">Hari</label>
-                    <select name="hari_monthly"
+                    <select name="hari_monthly" required
                         class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3 text-sm">
+                        <option value="" disabled selected>Pilih hari disini</option>
                         <option>Senin</option>
                         <option>Selasa</option>
                         <option>Rabu</option>
@@ -137,13 +138,13 @@
 
                 <div>
                     <label class="block text-sm font-semibold">Minggu Ke</label>
-                    <input type="number" min="1" max="5" name="minggu_ke"
+                    <input type="number" min="1" max="5" name="minggu_ke" required
                         class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3">
                 </div>
 
                 <div>
                     <label class="block text-sm font-semibold">Jam</label>
-                    <input type="time" name="jam_monthly_minggu"
+                    <input type="time" name="jam_monthly_minggu" required
                         class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3 text-sm">
                 </div>
             </div>
@@ -156,14 +157,14 @@
 
                  <div>
                     <label class="block text-sm font-semibold mb-1">Setiap Berapa Hari?</label>
-                    <input type="number" min="1" name="interval_custom"
+                    <input type="number" min="1" name="interval_custom" required
                         class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3"
                         placeholder="Setiap ... hari">
                 </div>
 
                 <div>
                     <label class="block text-sm font-semibold mb-1">Jam Berapa?</label>
-                    <input type="time" name="jam_custom"
+                    <input type="time" name="jam_custom" required
                         class="w-full bg-[#F0EEB1] text-[#783D19] rounded-lg p-3">
                 </div>
 
@@ -196,20 +197,40 @@ document.addEventListener('DOMContentLoaded', function () {
         custom: document.getElementById("footer-custom"),
     };
 
+    // Fungsi untuk mengatur atribut required hanya pada bagian yang terlihat
+    function updateRequiredFields(activeVal) {
+        Object.keys(sections).forEach(key => {
+            const inputs = sections[key].querySelectorAll('input, select');
+            inputs.forEach(input => {
+                // Jika section aktif, aktifkan required. Jika tersembunyi, matikan required.
+                input.required = (key === activeVal);
+            });
+        });
+
+        // Khusus Monthly, sesuaikan required berdasarkan sub-mode (tanggal/minggu)
+        if (activeVal === 'monthly') {
+            const isTanggal = document.querySelector("input[name='monthly_mode']:checked").value === 'tanggal';
+            
+            document.querySelectorAll('#monthly-tanggal input').forEach(i => i.required = isTanggal);
+            document.querySelectorAll('#monthly-minggu input, #monthly-minggu select').forEach(i => i.required = !isTanggal);
+        }
+    }
+
     document.querySelectorAll("input[name='frekuensi']").forEach(radio => {
         radio.addEventListener("change", e => {
             const val = e.target.value;
 
             Object.values(sections).forEach(s => s.classList.add("hidden"));
             sections[val].classList.remove("hidden");
+            updateRequiredFields(val);
         });
     });
 
-    const monthlyTanggal = document.getElementById("monthly-tanggal");
-    const monthlyMinggu = document.getElementById("monthly-minggu");
-
     document.querySelectorAll("input[name='monthly_mode']").forEach(radio => {
         radio.addEventListener("change", e => {
+            const monthlyTanggal = document.getElementById("monthly-tanggal");
+            const monthlyMinggu = document.getElementById("monthly-minggu");
+
             if (e.target.value === "tanggal") {
                 monthlyTanggal.classList.remove("hidden");
                 monthlyMinggu.classList.add("hidden");
@@ -217,8 +238,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 monthlyTanggal.classList.add("hidden");
                 monthlyMinggu.classList.remove("hidden");
             }
+            updateRequiredFields('monthly'); // Update required saat pindah mode bulanan
         });
     });
+
+    updateRequiredFields('daily');
 
 });
 </script>

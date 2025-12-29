@@ -22,7 +22,7 @@
 
                 <div>
                     <label class="block text-sm font-semibold mb-1">Tugas*</label>
-                    <input id="edit_nama_tugas" name="nama_tugas" type="text"
+                    <input id="edit_nama_tugas" name="nama_tugas" type="text" required
                            class="w-full bg-[#FDEECA] text-[#783D19] rounded-lg p-3"
                            placeholder="Nama tugas">
                 </div>
@@ -37,9 +37,9 @@
                 <div>
                     <label class="block text-sm font-semibold mb-1">Deadline</label>
                     <div class="flex gap-2">
-                        <input id="edit_tanggal_tugas" name="tgl_deadline" type="date"
+                        <input id="edit_tanggal_tugas" name="tgl_deadline" type="date" required
                                class="bg-[#FDEECA] text-[#783D19] rounded-lg p-3 flex-grow">
-                        <input id="edit_jam_tugas" name="waktu_deadline" type="time"
+                        <input id="edit_jam_tugas" name="waktu_deadline" type="time" required
                                class="bg-[#FDEECA] text-[#783D19] rounded-lg p-3 w-auto">
                     </div>
                 </div>

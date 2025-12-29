@@ -14,7 +14,7 @@
             <div class="space-y-4">
                 <div>
                     <label for="nama_tugas" class="block text-sm font-semibold mb-1">Tugas*</label>
-                    <input type="text" id="nama_tugas" name="nama_tugas" placeholder="Nama tugas"
+                    <input type="text" id="nama_tugas" name="nama_tugas" placeholder="Nama tugas" required
                            class="w-full bg-[#FDEECA] text-[#783D19] rounded-lg p-3 placeholder-[#C9BFA8]">
                 </div>
                 
@@ -27,9 +27,9 @@
                 <div>
                     <label class="block text-sm font-semibold mb-1">Deadline</label>
                     <div class="flex gap-2">
-                        <input type="date" id="tgl_deadline" name="tgl_deadline"
+                        <input type="date" id="tgl_deadline" name="tgl_deadline" required
                                class="bg-[#FDEECA] text-[#783D19] rounded-lg p-3 flex-grow">
-                        <input type="time" id="waktu_deadline" name="waktu_deadline"
+                        <input type="time" id="waktu_deadline" name="waktu_deadline" required
                                class="bg-[#FDEECA] text-[#783D19] rounded-lg p-3 w-auto">
                     </div>
                 </div>

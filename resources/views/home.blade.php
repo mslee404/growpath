@@ -352,6 +352,39 @@
 let currentHabitId = null;
 let currentTaskId = null;
 
+/**
+ * FUNGSI BARU: Mengatur atribut 'required' secara dinamis
+ * agar tidak terjadi error validasi pada input yang tersembunyi.
+ */
+function updateEditRequiredFields(activeType) {
+    const sections = {
+        daily: document.getElementById("edit-footer-daily"),
+        weekly: document.getElementById("edit-footer-weekly"),
+        monthly: document.getElementById("edit-footer-monthly"),
+        custom: document.getElementById("edit-footer-custom"),
+    };
+
+    // 1. Loop semua section footer
+    Object.keys(sections).forEach(key => {
+        if (sections[key]) {
+            const inputs = sections[key].querySelectorAll('input, select');
+            inputs.forEach(input => {
+                // Aktifkan required HANYA jika section tersebut sedang aktif/tampak
+                input.required = (key === activeType);
+            });
+        }
+    });
+
+    // 2. Logika khusus untuk sub-mode Monthly (Tanggal vs Minggu Ke-)
+    if (activeType === 'monthly') {
+        const modeRadio = document.querySelector("input[name='edit_monthly_mode']:checked");
+        const isTanggal = modeRadio ? modeRadio.value === 'tanggal' : true;
+        
+        document.querySelectorAll('#edit-monthly-tanggal input').forEach(i => i.required = isTanggal);
+        document.querySelectorAll('#edit-monthly-minggu input, #edit-monthly-minggu select').forEach(i => i.required = !isTanggal);
+    }
+}
+
 function openEditHabit(btn) {
     const id = btn.getAttribute('data-id');
     const type = btn.getAttribute('data-type'); // daily, weekly, etc
@@ -360,7 +393,8 @@ function openEditHabit(btn) {
     currentHabitId = id;
 
     // Populate Form Basic
-    document.getElementById('edit_nama_habit').value = detail.habit_name || detail.title; // fallback
+    document.getElementById('edit_nama_habit').value = detail.habit_name || detail.title; // 
+    document.getElementById('edit_nama_habit').required = true;
     document.getElementById('edit_detail_habit').value = detail.habit_description || '';
     
     // Set Action
@@ -384,6 +418,8 @@ function openEditHabit(btn) {
     };
     Object.values(sections).forEach(s => s.classList.add("hidden"));
     if(sections[type]) sections[type].classList.remove("hidden");
+
+    updateEditRequiredFields(type);
 
     // Populate Specific Fields
     // Note: Field names in DB (raw_detail) might match inputs
@@ -433,7 +469,7 @@ function openEditTugas(btn) {
     // Populate
     document.getElementById('edit_nama_tugas').value = detail.task_name;
     document.getElementById('edit_detail_tugas').value = detail.task_description || '';
-    
+
     // Date/Time
     // detail.due_date might be object or string depending on cast. 
     // Usually standard JSON from model is "YYYY-MM-DD..."
@@ -538,27 +574,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // SWITCH FOOTER EDIT HABIT
-    const sections = {
-        daily: document.getElementById("edit-footer-daily"),
-        weekly: document.getElementById("edit-footer-weekly"),
-        monthly: document.getElementById("edit-footer-monthly"),
-        custom: document.getElementById("edit-footer-custom"),
-    };
-
     document.querySelectorAll("input[name='edit_frekuensi']").forEach(radio => {
         radio.addEventListener("change", e => {
-            let val = e.target.value;
+            const val = e.target.value;
+            const sections = {
+                daily: document.getElementById("edit-footer-daily"),
+                weekly: document.getElementById("edit-footer-weekly"),
+                monthly: document.getElementById("edit-footer-monthly"),
+                custom: document.getElementById("edit-footer-custom"),
+            };
             Object.values(sections).forEach(s => s.classList.add("hidden"));
             if(sections[val]) sections[val].classList.remove("hidden");
+            
+            // Update required setiap kali frekuensi berubah
+            updateEditRequiredFields(val);
         });
     });
 
     // Monthly switch
-    const monthlyTanggal = document.getElementById("edit-monthly-tanggal");
-    const monthlyMinggu = document.getElementById("edit-monthly-minggu");
-
     document.querySelectorAll("input[name='edit_monthly_mode']").forEach(radio => {
         radio.addEventListener("change", e => {
+            const monthlyTanggal = document.getElementById("edit-monthly-tanggal");
+            const monthlyMinggu = document.getElementById("edit-monthly-minggu");
+
             if (e.target.value === "tanggal") {
                 monthlyTanggal.classList.remove("hidden");
                 monthlyMinggu.classList.add("hidden");
@@ -566,6 +604,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 monthlyTanggal.classList.add("hidden");
                 monthlyMinggu.classList.remove("hidden");
             }
+            // Update required setiap kali sub-mode bulanan berubah
+            updateEditRequiredFields('monthly');
         });
     });
 

@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //         const newImage = document.createElement('img');
     //         newImage.src = itemData.image;
     //         newImage.alt = itemData.name;
-    //         newImage.className = 'w-full h-full object-cover'; 
+    //         newImage.className = 'w-full h-full object-cover rounded-2xl'; 
     //         detailImageContainer.appendChild(newImage);
 
     //         // Reset border active

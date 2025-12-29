@@ -45,7 +45,7 @@
 
             <!-- Motivation text -->
             <div class="bg-[#C4661F] rounded-2xl shadow-lg p-4 flex h-full items-center justify-center">
-                <p class="text-lg font-bold text-[#FDFDD9] leading-snug">
+                <p id="motivation-text" class="text-lg font-bold text-[#FDFDD9] leading-snug text-center transition-opacity duration-500">
                     Jangan lupa sirami aku dengan menyelesaikan kebiasaanmu ya~
                 </p>
             </div>
@@ -53,18 +53,31 @@
         </div>
 
         <!-- Pertumbuhan tanaman -->
-        <div class="lg:col-span-2 flex items-center justify-center min-h-[500px]">
-            <div class="w-full h-[600px] bg-[#FDFDD9]/80 rounded-2xl border-8 border-[#A85319] shadow-inner flex flex-col justify-between items-center p-6"
+        <div class="lg:col-span-2 flex items-center justify-center min-h-[500px] relative">
+            <div class="w-full h-full bg-[#FDFDD9]/80 rounded-2xl border-8 border-[#A85319] shadow-inner flex flex-col justify-end items-center overflow-hidden relative p-4"
                  style="{{ $user->background_url ? 'background-image: url('.$user->background_url.'); background-size: cover; background-position: center;' : '' }}">
                 
-                <div class="flex-1 flex items-center justify-center">
+                @php
+                    $equippedPlant = $user->inventories->first(fn($i) => $i->is_equipped && $i->item->type === 'tanaman');
+                    $plantLevel = $equippedPlant ? $equippedPlant->level : 0;
+                @endphp
+
+                {{-- Container Tanaman (Penuh) --}}
+                <div class="flex-1 w-full flex items-center justify-center relative">
+                    
                     @if($user->plant_url)
-                         <img src="{{ $user->plant_url }}" alt="Tanaman" class="w-48 h-48 object-contain drop-shadow-lg">
+                        <img id="plant-image" src="{{ $user->plant_url }}" alt="Tanaman" 
+                             class="w-full h-full object-cover drop-shadow-lg rounded-b-2xl">
                     @else
-                         <img src="https://placehold.co/117x115/C4661F/A85319?text=Biji" alt="Tanaman" class="w-24 h-24">
+                        <img id="plant-image" src="https://placehold.co/117x115/C4661F/A85319?text=Biji" alt="Tanaman" 
+                             class="w-24 h-24 rounded-2xl">
                     @endif
-                </div>
-                <div class="w-full h-48 bg-[#FDFDD9] rounded-2xl shadow-md">
+
+                    @if($plantLevel >= 10)
+                        <button id="btn-harvest" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#FFD700] hover:bg-[#FFC107] text-[#783D19] font-bold py-3 px-8 rounded-full shadow-lg border-2 border-[#783D19] transition hover:scale-105 animate-bounce z-20 cursor-pointer">
+                            🌾 Panen (500 G)
+                        </button>
+                    @endif
                 </div>
             </div>
         </div>
@@ -342,6 +355,7 @@
         @include('popup.home-edit-tugas')
         @include('popup.home-delete-habit')
         @include('popup.home-delete-tugas')
+        @include('popup.home-harvest')
     </x-slot:popups>
 
 

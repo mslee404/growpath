@@ -14,7 +14,6 @@ class HomeController extends Controller
         $user = Auth::user()->load('pp');
 
         // === AMBIL HABITS ===
-        // Eager load semua kemungkinan relasi habit
         $userHabits = $user->habits()->with(['customHabit', 'dailyHabit', 'weeklyHabit', 'monthlyHabit'])->get();
 
         // Hitung persentase XP (asumsi 100 XP per level)
@@ -23,10 +22,6 @@ class HomeController extends Controller
         // Filter Habit yang sudah selesai periode ini
         $filteredHabits = $userHabits->filter(function ($habit) {
             $today = Carbon::today();
-            
-            // Cek record penyelesaian
-            // Asumsi relation 'records' belum ada di model userHabit, kita pakai query manual dulu untuk safety
-            // Atau load relation jika sudah ditambahkan
             
             // Check Daily: Done today?
             if ($habit->habit_type == 'daily') {

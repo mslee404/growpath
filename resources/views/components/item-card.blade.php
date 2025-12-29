@@ -22,7 +22,7 @@
         <img 
             src="{{ Str::startsWith($item['image'], ['http', '/']) ? $item['image'] : asset($item['image']) }}" 
             alt="{{ $item['name'] }}" 
-            class="w-full h-auto object-cover rounded-lg aspect-square"
+            class="w-full h-auto object-cover rounded-xl aspect-square"
         >
 
         {{-- Harga (Opsional untuk Shop) --}}

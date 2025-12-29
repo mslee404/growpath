@@ -22,6 +22,7 @@ return new class extends Migration {
                 ->cascadeOnDelete();
 
             $table->boolean('is_equipped')->default(false);
+            $table->integer('level')->default(1);
 
             // user tidak boleh punya item yang sama lebih dari sekali
             $table->unique(['user_id', 'item_shop_id']);

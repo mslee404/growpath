@@ -100,3 +100,12 @@ body {
 #modal-edit-username{
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar {
+    -ms-overflow-style: none;  /* Sembunyikan scrollbar di IE/Edge */
+    scrollbar-width: none;  /* Sembunyikan Scrollbar di Firefox */
+}
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

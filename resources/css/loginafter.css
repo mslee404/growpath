@@ -1,16 +1,16 @@
-
 body {
   margin: 0;
   min-height: 100vh;
   width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   font-family: 'Inter', sans-serif;
 }
 
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
 }
 
@@ -53,6 +53,7 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 0 6rem;
+  animation: fadeIn 0.5s ease-in;
 }
 
 .login-box {
@@ -121,6 +122,7 @@ input::placeholder {
   font-weight: 500;
 }
 
+/* --- Tombol Login --- */
 button {
   width: 100%;
   background-color: #D97642;
@@ -166,21 +168,91 @@ button:active {
   border: 2px solid #e63946 !important;
 }
 
+/* --- Responsif Mobile & Tablet --- */
 @media (max-width: 1024px) {
+  body {
+    overflow-y: auto; /* Izinkan scroll ke bawah */
+    overflow-x: hidden;
+    background-color: #FFF8F0; /* Pastikan background sama dengan right-panel */
+  }
+
   .container {
-    grid-template-columns: 1fr;
+    display: block; /* Gunakan block agar elemen mengalir ke bawah */
+    height: auto;
+    min-height: 100vh;
+    animation: fadeIn 0.5s ease-in;
   }
 
+  /* Bagian Atas: Oranye */
   .left-panel {
-    border-radius: 0;
-    height: 40vh;
+    border-radius: 0 0 2rem 2rem;
+    height: 40vh; /* Tinggi tetap agar konsisten */
+    width: 100%;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
   }
 
+  .logo {
+    height: 9rem; /* Ukuran tetap yang pas */
+    width: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  .left-panel h1 {
+    font-size: 2.2rem;
+    margin: 0.3rem 0;
+  }
+
+  .left-panel p {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+  /* Bagian Bawah: Putih */
   .right-panel {
-    padding: 3rem 2rem;
+    min-height: 80vh; /* Lebih tinggi dari sisa layar agar bisa di-scroll */
+    padding: 3rem 1.5rem 5rem 1.5rem; /* Padding bawah extra untuk kenyamanan */
+    background-color: #FFF8F0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .login-box, .register-box {
+    max-width: 28rem;
+    width: 100%;
   }
 
   .login-box h2 {
-    font-size: 2.25rem;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
   }
+
+  .login-box p {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  /* Elemen Form tetap rapi mengikuti container */
+  .input-group {
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  button {
+    padding: 1.1rem 0;
+    font-size: 1.2rem;
+  }
+}
+
+/* Penyesuaian Transisi Fade agar Mulus */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

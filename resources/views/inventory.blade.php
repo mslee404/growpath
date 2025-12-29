@@ -52,17 +52,23 @@
             <div class="lg:col-span-2">
                 
                 {{-- NAVIGASI TAB --}}
-                <div class="tab-nav relative z-10 flex border-b-0">
-                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer tab-active bg-[#FDFDD9] text-[#5E7153] z-20 -mb-[2px]" data-tab-target="#avatar-panel">
+                {{-- Tambahkan overflow-x-auto dan whitespace-nowrap agar bisa scroll di HP --}}
+                <div class="tab-nav relative z-10 flex border-b-0 rounded-t-lg overflow-x-auto no-scrollbar whitespace-nowrap">
+
+                    {{-- Tambahkan min-w-[120px] atau min-w-max agar tombol tidak gepeng saat discroll --}}
+                    <button class="tab-button flex-1 min-w-max py-3 px-6 rounded-t-lg font-bold text-lg relative cursor-pointer tab-active bg-[#FDFDD9] text-[#5E7153] z-20 -mb-[2px]" data-tab-target="#avatar-panel">
                         Avatar
                     </button>
-                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#FDFDD9] z-10" data-tab-target="#frame-panel">
+
+                    <button class="tab-button flex-1 min-w-max py-3 px-6 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#FDFDD9] z-10" data-tab-target="#frame-panel">
                         Avatar Frame
                     </button>
-                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#FDFDD9] z-10" data-tab-target="#tanaman-panel">
+
+                    <button class="tab-button flex-1 min-w-max py-3 px-6 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#FDFDD9] z-10" data-tab-target="#tanaman-panel">
                         Tanaman
                     </button>
-                    <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#FDFDD9] z-10" data-tab-target="#background-panel">
+
+                    <button class="tab-button flex-1 min-w-max py-3 px-6 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#FDFDD9] z-10" data-tab-target="#background-panel">
                         Background
                     </button>
                 </div>

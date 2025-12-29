@@ -60,7 +60,7 @@
             <div class="lg:col-span-2">
 
                 {{-- NAVIGASI TAB (Manual HTML sesuai request) --}}
-                <div class="tab-nav relative z-10 flex border-b-0">
+                <div class="tab-nav relative z-10 flex border-b-0 rounded-t-lg overflow-x-auto no-scrollbar whitespace-nowrap">
                     <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer tab-active bg-[#FDFDD9] text-[#5E7153] z-20 -mb-[2px]" data-tab-target="#avatar-shop">Avatar</button>
                     <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#FDFDD9] z-10" data-tab-target="#frame-shop">Avatar Frame</button>
                     <button class="tab-button flex-1 py-3 px-4 rounded-t-lg font-bold text-lg relative cursor-pointer bg-[#5E7153] text-[#FDFDD9] z-10" data-tab-target="#plant-shop">Tanaman</button>

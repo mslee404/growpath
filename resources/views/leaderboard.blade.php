@@ -3,7 +3,7 @@
     <x-slot:title>Leaderboard</x-slot:title>
     
     <x-slot:assets>
-        @vite(['resources/css/app.css', 'resources/css/leaderboard-style.css', 'resources/js/app.js', 'resources/js/leaderboard.js']) 
+        @vite(['resources/css/app.css', 'resources/js/app.js']) 
     </x-slot:assets>
 
     <x-navbar activePage="leaderboard" />

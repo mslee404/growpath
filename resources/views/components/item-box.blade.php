@@ -2,7 +2,8 @@
     'items',              
     'cols' => 4,          
     'emptyMessage' => 'Item tidak tersedia.',
-    'showPrice' => false  
+    'showPrice' => false,
+    'isGold' => false
 ])
 
 @if (count($items) > 0)
@@ -20,7 +21,7 @@
         
         @foreach ($items as $item)
             {{-- PANGGIL COMPONENT ANAK --}}
-            <x-item-card :item="$item" :showPrice="$showPrice" />
+            <x-item-card :item="$item" :showPrice="$showPrice" :isGold="$isGold" />
         @endforeach
 
     </div>

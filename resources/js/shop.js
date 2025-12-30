@@ -89,7 +89,17 @@ document.addEventListener('DOMContentLoaded', () => {
             // Update panel detail di kiri
             if (detailName) detailName.textContent = itemData.name;
             if (detailDesc) detailDesc.textContent = itemData.desc || '-';
-            if (detailPrice) detailPrice.textContent = itemData.price + ' G';
+
+            if (detailPrice) {
+                if (itemData.type === 'gold') {
+                    // Gunakan format Rupiah
+                    const formattedRp = new Intl.NumberFormat('id-ID').format(itemData.price);
+                    detailPrice.textContent = 'Rp. ' + formattedRp;
+                } else {
+                    // Gunakan format Gold bawaan
+                    detailPrice.textContent = itemData.price + ' G';
+                }
+            }
 
             // Clear only avatar's image children
             if (detailImageContainer) {

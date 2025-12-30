@@ -82,24 +82,25 @@
                             :items="$avatar" 
                             cols="4" 
                             :showPrice="true" 
+                            :isGold="false"
                             emptyMessage="Item avatar habis." 
                         />
                     </div>
 
                     <div id="frame-shop" class="tab-content hidden">
-                        <x-item-box :items="$frame" cols="4" :showPrice="true" emptyMessage="Item frame habis." />
+                        <x-item-box :items="$frame" cols="4" :showPrice="true" :isGold="false" emptyMessage="Item frame habis." />
                     </div>
 
                     <div id="plant-shop" class="tab-content hidden">
-                        <x-item-box :items="$plant" cols="4" :showPrice="true" emptyMessage="Item tanaman habis." />
+                        <x-item-box :items="$plant" cols="4" :showPrice="true" :isGold="false" emptyMessage="Item tanaman habis." />
                     </div>
 
                     <div id="bg-shop" class="tab-content hidden">
-                        <x-item-box :items="$background" cols="4" :showPrice="true" emptyMessage="Item background habis." />
+                        <x-item-box :items="$background" cols="4" :showPrice="true" :isGold="false" emptyMessage="Item background habis." />
                     </div>
 
                     <div id="gold-shop" class="tab-content hidden">
-                        <x-item-box :items="$gold" cols="4" :showPrice="true" emptyMessage="Item gold habis." />
+                        <x-item-box :items="$gold" cols="4" :showPrice="true" :isGold="true" emptyMessage="Item gold habis." />
                     </div>
 
                 </div>

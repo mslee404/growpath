@@ -1,6 +1,7 @@
 @props([
     'item', 
-    'showPrice' => false
+    'showPrice' => false,
+    'isGold' => false
 ])
 
 <div 
@@ -28,7 +29,11 @@
         {{-- Harga (Opsional untuk Shop) --}}
         @if($showPrice && isset($item['price']))
             <span class="text-[#FDFDD9] text-lg font-bold bg-[#5E7153]/20 px-2 rounded mt-1">
-                {{ $item['price'] }} G
+                @if($isGold)
+                    Rp. {{ number_format($item['price'], 0, ',', '.') }}
+                @else
+                    {{ $item['price'] }} G
+                @endif
             </span>
         @endif
     </div>

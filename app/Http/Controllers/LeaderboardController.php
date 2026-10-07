@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\UserGrowpath;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,19 +9,20 @@ class LeaderboardController extends Controller
 {
     public function index()
     {
-        // Ambil top 8 user berdasarkan total_xp tertinggi
-        $users = UserGrowpath::orderByDesc('total_xp')
+        $users = UserGrowpath::with(['equipped', 'pp'])
+            ->orderByDesc('total_xp')
+            ->orderBy('id')
             ->take(8)
-            ->get();
+            ->get()
+            ->each(fn ($u, $i) => $u->rank = $i + 1);
 
-        $currentUser = Auth::user();
-
-        // Jika user tidak ada di Top 8
-        if (!$users->contains('id', $currentUser->id)) {
-            // Hapus element terakhir (Rank 8)
+        // User yang login selalu tampil di baris terakhir, dengan peringkat aslinya
+        $me = Auth::user();
+        if (!$users->contains('id', $me->id)) {
+            $me->load(['equipped', 'pp']);
+            $me->rank = UserGrowpath::where('total_xp', '>', $me->total_xp)->count() + 1;
             $users->pop();
-            // Masukkan current user menggantikan posisi ke-8 (meski rank aslinya mungkin jauh)
-            $users->push($currentUser);
+            $users->push($me);
         }
 
         return view('leaderboard', compact('users'));

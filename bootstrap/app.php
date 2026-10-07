@@ -11,7 +11,9 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // Render/hosting lain menaruh app di balik proxy HTTPS
+        $middleware->trustProxies(at: '*');
+        $middleware->validateCsrfTokens(except: ['midtrans/notification']);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

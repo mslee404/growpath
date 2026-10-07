@@ -1,72 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // // ========== LOGIKA UNTUK TABS ==========
-    // const tabButtons = document.querySelectorAll('.tab-button');
-    // const tabContents = document.querySelectorAll('.tab-content');
-
-    // // Class untuk state Aktif vs Tidak Aktif
-    // const activeClasses = ['bg-[#F5F5DC]', 'text-[#5E7153]', 'z-20', '-mb-[2px]'];
-    // const inactiveClasses = ['bg-[#5E7153]', 'text-[#F5F5DC]', 'z-10'];
-
-    // tabButtons.forEach(button => {
-    //     button.addEventListener('click', () => {
-    //         const targetId = button.getAttribute('data-tab-target');
-    //         const targetPanel = document.querySelector(targetId);
-
-    //         // Sembunyikan semua panel
-    //         tabContents.forEach(panel => panel.classList.add('hidden'));
-
-    //         // Tampilkan panel target
-    //         if (targetPanel) targetPanel.classList.remove('hidden');
-
-    //         // Reset semua tombol ke state inactive
-    //         tabButtons.forEach(btn => {
-    //             btn.classList.remove(...activeClasses);
-    //             btn.classList.add(...inactiveClasses);
-    //         });
-
-    //         // Set tombol yang diklik ke state active
-    //         button.classList.remove(...inactiveClasses);
-    //         button.classList.add(...activeClasses);
-    //     });
-    // });
-
-    // // ========== LOGIKA UNTUK KLIK ITEM ==========
-    // const detailImageContainer = document.getElementById('item-detail-image');
-    // const detailName = document.getElementById('item-detail-name');
-    // const detailDesc = document.getElementById('item-detail-desc');
-    // const itemCards = document.querySelectorAll('.item-card');
-
-    // itemCards.forEach(card => {
-    //     card.addEventListener('click', () => {
-    //         const itemData = JSON.parse(card.getAttribute('data-item'));
-
-    //         detailName.textContent = itemData.name;
-    //         detailDesc.textContent = itemData.desc;
-
-    //         detailImageContainer.innerHTML = ''; 
-    //         const newImage = document.createElement('img');
-    //         newImage.src = itemData.image;
-    //         newImage.alt = itemData.name;
-    //         newImage.className = 'w-full h-full object-cover rounded-2xl'; 
-    //         detailImageContainer.appendChild(newImage);
-
-    //         // Reset border active
-    //         itemCards.forEach(c => c.classList.remove('ring-4', 'ring-[#5E7153]'));
-    //         // Add active border visual (Tailwind ring)
-    //         card.classList.add('ring-4', 'ring-[#5E7153]');
-    //     });
-    // });
-
-    // --- SETUP MODAL USE ITEM ---    
-    // YANG BENAR:
-    const modalUse = document.getElementById('modal-use'); // <--- Ganti nama variabel ini
+    // --- SETUP MODAL USE ITEM ---
+    const modalUse = document.getElementById('modal-use');
     const contentUse = document.getElementById('modal-content-use');
     const btnUse = document.getElementById('btn-use');
     const btnCloseUse = document.getElementById('close-use');
 
     // Fungsi BUKA Modal
     function openUseModal() {
-        // Sekarang variabel modalUse sudah dikenali
         if (!modalUse || !contentUse) return;
         modalUse.classList.remove('invisible', 'opacity-0');
         contentUse.classList.remove('scale-95');
@@ -83,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300);
     }
 
-    // Pasang Event Listener
     // Pasang Event Listener
     if (btnUse) {
         btnUse.addEventListener('click', () => {
@@ -102,13 +41,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 body: JSON.stringify({ item_id: itemId })
             })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.message) {
-                        // Update pesan modal jika perlu, atau biarkan default "Item sudah terpasang!"
-                        // Open Modal
-                        openUseModal();
+                .then(response => response.json().then(data => ({ ok: response.ok, data })))
+                .then(({ ok, data }) => {
+                    if (!ok) {
+                        alert(data.message || 'Gagal memasang item.');
+                        return;
                     }
+                    // Perbarui status "terpasang" di data kartu bertipe sama, tanpa reload
+                    document.querySelectorAll('.item-card').forEach(card => {
+                        const item = JSON.parse(card.dataset.item);
+                        if (item.type !== data.type) return;
+                        item.is_equipped = String(item.id) === String(itemId);
+                        card.dataset.item = JSON.stringify(item);
+                    });
+                    btnUse.textContent = 'Terpasang';
+                    btnUse.disabled = true;
+                    btnUse.classList.add('opacity-50', 'cursor-not-allowed');
+                    openUseModal();
                 })
                 .catch(error => {
                     console.error('Error:', error);
@@ -128,6 +77,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ========== CSRF TOKEN ==========
-    // Pastikan ada meta tag csrf-token di layout utama
 });

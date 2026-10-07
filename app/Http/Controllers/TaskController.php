@@ -5,74 +5,59 @@ namespace App\Http\Controllers;
 use App\Models\TaskUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
 
 class TaskController extends Controller
 {
     public function store(Request $request)
     {
-        $request->validate([
-            'nama_tugas' => 'required|string|max:255',
-            'tgl_deadline' => 'required|date',
-            'waktu_deadline' => 'required',
-        ]);
+        Auth::user()->tasks()->create($this->validated($request));
 
-        TaskUser::create([
-            'user_id' => Auth::id(),
-            'task_name' => $request->nama_tugas,
-            'task_description' => $request->detail_tugas,
-            'due_date' => $request->tgl_deadline,
-            'due_time' => $request->waktu_deadline,
-        ]);
-
-        return redirect()->back()->with('success', 'Tugas berhasil ditambahkan!');
+        return back()->with('success', 'Tugas berhasil ditambahkan!');
     }
 
     public function update(Request $request, $id)
     {
-        $task = TaskUser::where('id', $id)->where('user_id', Auth::id())->firstOrFail();
+        Auth::user()->tasks()->findOrFail($id)->update($this->validated($request));
 
-        $request->validate([
-            'nama_tugas' => 'required|string|max:255',
-            'tgl_deadline' => 'nullable|date',
-            'waktu_deadline' => 'nullable',
-        ]);
-
-        $task->update([
-            'task_name' => $request->nama_tugas,
-            'task_description' => $request->detail_tugas,
-            'due_date' => $request->tgl_deadline,
-            'due_time' => $request->waktu_deadline,
-        ]);
-
-        return redirect()->back()->with('success', 'Tugas berhasil diperbarui!');
+        return back()->with('success', 'Tugas berhasil diperbarui!');
     }
 
     public function destroy($id)
     {
-        $task = TaskUser::where('id', $id)->where('user_id', Auth::id())->firstOrFail();
-        $task->delete();
+        Auth::user()->tasks()->findOrFail($id)->delete();
 
-        return redirect()->back()->with('success', 'Tugas berhasil dihapus!');
+        return back()->with('success', 'Tugas berhasil dihapus!');
     }
 
     public function check($id)
     {
-        $task = TaskUser::where('id', $id)->where('user_id', Auth::id())->firstOrFail();
+        // Update bersyarat = atomik, jadi klik ganda tidak memberi XP dua kali
+        $updated = Auth::user()->tasks()
+            ->whereKey($id)
+            ->where('is_completed', false)
+            ->update(['is_completed' => true, 'completed_at' => now()]);
 
-        if (!$task->is_completed) {
-            $task->update([
-                'is_completed' => true,
-                'completed_at' => Carbon::now(),
-            ]);
-
-            // Tambah XP ke user
-            // Asumsi 20 XP per tugas selesai (bisa disesuaikan)
-            /** @var \App\Models\UserGrowpath $user */
-            $user = Auth::user();
-            $user->addXp(20);
+        if ($updated) {
+            $this->flashSiram(TaskUser::XP, Auth::user()->addXp(TaskUser::XP));
         }
 
-        return redirect()->back()->with('success', 'Tugas selesai! +20 XP');
+        return back();
+    }
+
+    private function validated(Request $request): array
+    {
+        $request->validate([
+            'nama_tugas'     => 'required|string|max:100',
+            'detail_tugas'   => 'nullable|string|max:1000',
+            'tgl_deadline'   => 'required|date',
+            'waktu_deadline' => 'required|date_format:H:i,H:i:s',
+        ]);
+
+        return [
+            'task_name'        => $request->nama_tugas,
+            'task_description' => $request->detail_tugas,
+            'due_date'         => $request->tgl_deadline,
+            'due_time'         => $request->waktu_deadline,
+        ];
     }
 }

@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Khusus Monthly, sesuaikan required berdasarkan sub-mode (tanggal/minggu)
         if (activeVal === 'monthly') {
-            const isTanggal = document.querySelector("input[name='monthly_mode']:checked").value === 'tanggal';
+            const isTanggal = document.querySelector("#form-tambah-habit input[name='monthly_mode']:checked").value === 'tanggal';
             
             document.querySelectorAll('#monthly-tanggal input').forEach(i => i.required = isTanggal);
             document.querySelectorAll('#monthly-minggu input, #monthly-minggu select').forEach(i => i.required = !isTanggal);
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    document.querySelectorAll("input[name='monthly_mode']").forEach(radio => {
+    document.querySelectorAll("#form-tambah-habit input[name='monthly_mode']").forEach(radio => {
         radio.addEventListener("change", e => {
             const monthlyTanggal = document.getElementById("monthly-tanggal");
             const monthlyMinggu = document.getElementById("monthly-minggu");

@@ -2,12 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-use Illuminate\Foundation\Auth\User as Authenticatable;  
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
 
 class UserGrowpath extends Authenticatable
@@ -21,15 +18,14 @@ class UserGrowpath extends Authenticatable
         'password',
         'display_name',
         'total_xp',
-        'level',
         'total_gold',
         'pp_id',
     ];
 
     protected $casts = [
         'total_xp'   => 'integer',
-        'level'      => 'integer',
         'total_gold' => 'integer',
+        'password'   => 'hashed',
     ];
 
     protected $hidden = [
@@ -37,48 +33,56 @@ class UserGrowpath extends Authenticatable
         'remember_token',
     ];
 
-    public function setPasswordAttribute($value)
+    const XP_PER_LEVEL = 100;
+    const MAX_PLANT_LEVEL = 10;
+    const DEFAULT_ITEMS = ['Kakek Petani', 'Bude', 'Buah Apel'];
+
+    protected static function booted()
     {
-        $this->attributes['password'] = bcrypt($value);
+        static::creating(function ($user) {
+            $user->pp_id ??= PP::value('id');
+        });
+
+        static::created(function ($user) {
+            foreach (ItemShop::whereIn('name', self::DEFAULT_ITEMS)->get() as $item) {
+                UserInventory::create([
+                    'user_id'      => $user->id,
+                    'item_shop_id' => $item->id,
+                    'is_equipped'  => $item->name === 'Buah Apel',
+                ]);
+            }
+        });
     }
 
     public function pp()
     {
         return $this->belongsTo(PP::class);
     }
+
     public function inventories()
     {
         return $this->hasMany(UserInventory::class, 'user_id');
     }
+
+    // Item yang sedang dipakai; dimuat sekali per request lalu dipakai semua accessor gambar
+    public function equipped()
+    {
+        return $this->hasMany(UserInventory::class, 'user_id')->where('is_equipped', true)->with('item');
+    }
+
     public function habits()
     {
-        return $this->hasMany(UserHabit::class,'user_id');
+        return $this->hasMany(UserHabit::class, 'user_id');
     }
-    
+
     public function tasks()
     {
         return $this->hasMany(TaskUser::class, 'user_id');
     }
 
-    protected static function booted()
-        {
-        static::creating(function ($user) {
-            if (is_null($user->pp_id)) {
-                $user->pp_id = 1; // Default PP ID
-            }
-        });
-
-        static::created(function ($user) {
-            $defaultItems = ItemShop::whereIn('name', ['Kakek Petani', 'Bude', 'Buah Apel'])->get();
-
-            foreach ($defaultItems as $item) {
-                UserInventory::create([
-                    'user_id' => $user->id,
-                    'item_shop_id' => $item->id,
-                    'is_equipped' => $item->name === 'Buah Apel', 
-                ]);
-            }
-        });
+    public function equippedOf(string $type): ?UserInventory
+    {
+        return $this->equipped->first(fn ($inv) => $inv->item?->type === $type);
     }
 
     public function getNameAttribute()
@@ -88,118 +92,91 @@ class UserGrowpath extends Authenticatable
 
     public function getAvatarUrlAttribute()
     {
-        // 1. Cek inventory yang is_equipped = true dan type = 'avatar'
-        $equippedAvatar = $this->inventories()
-            ->where('is_equipped', true)
-            ->whereHas('item', fn($q) => $q->where('type', 'avatar'))
-            ->with('item')
-            ->first();
-
-        if ($equippedAvatar && $equippedAvatar->item) {
-            return asset($equippedAvatar->item->image);
+        if ($avatar = $this->equippedOf('avatar')) {
+            return asset($avatar->item->image);
         }
 
-        // 2. Fallback ke PP lama (jika masih digunakan)
-        if ($this->pp && $this->pp->image) {
+        if ($this->pp?->image) {
             return asset($this->pp->image);
         }
 
-        // 3. Fallback default
         $initial = strtoupper(substr($this->username ?? 'U', 0, 2));
         return 'https://placehold.co/92x92/4A6484/B0D2FA?text=' . $initial;
     }
 
     public function getFrameUrlAttribute()
     {
-        $equipped = $this->inventories()
-            ->where('is_equipped', true)
-            ->whereHas('item', fn($q) => $q->where('type', 'avatar_frame'))
-            ->with('item')
-            ->first();
-
-        return $equipped ? asset($equipped->item->image) : null;
-    }
-
-    public function getPlantUrlAttribute()
-    {
-        $equipped = $this->inventories()
-            ->where('is_equipped', true)
-            ->whereHas('item', fn($q) => $q->where('type', 'tanaman'))
-            ->with('item')
-            ->first();
-
-        if ($equipped && $equipped->item) {
-            // Path: public/images/Tanaman/nama-item-slug/Level X.svg
-            // Menggunakan level dari inventory (agar bisa di-reset saat panen)
-            $level = $equipped->level;
-            $slug = Str::slug($equipped->item->name);
-            
-            return asset("images/Tanaman/{$slug}/Level {$level}.svg");
-        }
-        
-        return null;
+        $frame = $this->equippedOf('avatar_frame');
+        return $frame ? asset($frame->item->image) : null;
     }
 
     public function getBackgroundUrlAttribute()
     {
-        $equipped = $this->inventories()
-            ->where('is_equipped', true)
-            ->whereHas('item', fn($q) => $q->where('type', 'background'))
-            ->with('item')
-            ->first();
-
-        return $equipped ? asset($equipped->item->image) : null;
+        $bg = $this->equippedOf('background');
+        return $bg ? asset($bg->item->image) : null;
     }
-       // XP yang dibutuhkan untuk naik level berikutnya (bisa diubah nanti)
-    const XP_PER_LEVEL = 100;
 
-    // Hitung level dari total_xp
+    public function getPlantUrlAttribute()
+    {
+        $plant = $this->equippedOf('tanaman');
+        return $plant ? self::plantStageUrl($plant->item->name, $plant->level) : null;
+    }
+
+    // Path: public/images/Tanaman/<slug nama item>/Level N.svg
+    public static function plantStageUrl(string $plantName, int $level): string
+    {
+        return asset('images/Tanaman/' . Str::slug($plantName) . '/' . rawurlencode("Level {$level}.svg"));
+    }
+
     public function getLevelAttribute()
     {
-        $totalXp = $this->attributes['total_xp'] ?? 0;
-        return floor($totalXp / self::XP_PER_LEVEL) + 1; // mulai dari level 1
+        return intdiv($this->total_xp ?? 0, self::XP_PER_LEVEL) + 1;
     }
 
-    // XP saat ini di level ini (0–99)
     public function getCurrentXpAttribute()
     {
-        $totalXp = $this->attributes['total_xp'] ?? 0;
-        return $totalXp % self::XP_PER_LEVEL;
+        return ($this->total_xp ?? 0) % self::XP_PER_LEVEL;
     }
 
-    // Persentase untuk progress bar (0–100%)
     public function getXpPercentageAttribute()
     {
         return $this->current_xp . '%';
     }
 
-    // Teks display seperti "25/100 xp"
     public function getXpDisplayAttribute()
     {
         return $this->current_xp . '/' . self::XP_PER_LEVEL . ' xp';
-    }   
+    }
 
-    public function addXp($amount)
+    /**
+     * Tambah XP secara atomik. Setiap naik level user, tanaman yang dipakai naik satu stage (maks 10).
+     *
+     * @return array{name:string, from:int, to:int}|null perubahan stage tanaman, null kalau tidak berubah
+     */
+    public function addXp(int $amount): ?array
     {
         $oldLevel = $this->level;
-        $this->total_xp += $amount;
-        $this->save();
-        $newLevel = $this->level;
+        $this->increment('total_xp', $amount);
+        $gained = $this->level - $oldLevel;
 
-        // Jika naik level, naikkan juga level tanaman yang sedang dipakai
-        if ($newLevel > $oldLevel) {
-            $equippedPlant = $this->inventories()
-                ->where('is_equipped', true)
-                ->whereHas('item', fn($q) => $q->where('type', 'tanaman'))
-                ->first();
-
-            if ($equippedPlant && $equippedPlant->level < 10) {
-                // Naikkan level tanaman sebanyak kenaikan level user
-                // Tapi batasi max 10
-                $levelsGained = $newLevel - $oldLevel;
-                $equippedPlant->level = min($equippedPlant->level + $levelsGained, 10);
-                $equippedPlant->save();
-            }
+        if ($gained <= 0) {
+            return null;
         }
+
+        $plant = $this->inventories()
+            ->where('is_equipped', true)
+            ->whereHas('item', fn ($q) => $q->where('type', 'tanaman'))
+            ->with('item')
+            ->first();
+
+        if (!$plant || $plant->level >= self::MAX_PLANT_LEVEL) {
+            return null;
+        }
+
+        $from = $plant->level;
+        $plant->update(['level' => min($from + $gained, self::MAX_PLANT_LEVEL)]);
+        $this->unsetRelation('equipped');
+
+        return ['name' => $plant->item->name, 'from' => $from, 'to' => $plant->level];
     }
 }

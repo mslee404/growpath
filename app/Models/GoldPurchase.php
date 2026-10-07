@@ -11,6 +11,7 @@ class GoldPurchase extends Model
     protected $fillable = [
         'user_id',
         'package_id',
+        'order_id',
         'status',
         'date',
     ];

@@ -26,7 +26,7 @@
             </button>
         </div>
 
-        <form method="POST" action="{{ $action }}">
+        <form id="form-tambah-habit" method="POST" action="{{ $action }}">
             @csrf
 
             <div class="space-y-4">

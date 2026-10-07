@@ -23,6 +23,6 @@ class PPSeeder extends Seeder
             ['code' => 'PP007', 'image' => 'images/7-anya.svg'],
             ['code' => 'PP008', 'image' => 'images/8-wony.svg'],
         ];
-        PP::insert($pps);
+        PP::upsert($pps, ['code'], ['image']);
     }
 }

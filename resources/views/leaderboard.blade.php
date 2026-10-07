@@ -74,12 +74,9 @@
                 <div class="w-full lg:w-1/2 flex flex-col gap-4 order-2 lg:order-none">
                     
                     @foreach ($users->slice(3) as $user)
-                    @php
-                        $rank = \App\Models\UserGrowpath::where('total_xp', '>', $user->total_xp)->count() + 1;
-                    @endphp
                     <div class="flex items-center justify-between rounded-xl shadow-sm border p-3 {{ $user->id === Auth::id() ? 'bg-[#F0F7E6] border-[#5E7153] border-2' : 'bg-[#FEFEF9] border-gray-200' }}">
                         <div class="flex items-center gap-4">
-                            <span class="text-xl font-bold text-gray-500 w-8 text-center">{{ $rank }}</span>
+                            <span class="text-xl font-bold text-gray-500 w-8 text-center">{{ $user->rank }}</span>
                             <img src="{{ $user->avatar_url }}" alt="Avatar" class="w-12 h-12 rounded-full border-2 border-gray-300 object-cover">
                             <span class="font-semibold text-lg text-gray-800 truncate">{{ $user->display_name }}</span>
                         </div>

@@ -1,0 +1,70 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clipPath id="go-b"><path clip-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z"/></clipPath>
+<path id="go-f" d="M0 0C16 -14 42 -10 54 10C46 6 40 6 34 8C30 4 24 4 18 6C14 2 8 1 0 0Z"/>
+</defs>
+
+<!-- pita pasir -->
+<g clip-path="url(#go-b)">
+<rect x="20" y="20" width="360" height="360" fill="#FBE2A8"/>
+<path d="M90 34C110 28 130 40 150 34M220 44C240 38 262 48 284 42M30 120C36 136 28 150 36 166M366 110C360 128 370 140 362 158" stroke="#F2CD84" stroke-width="3" stroke-linecap="round"/>
+<!-- bukit pasir -->
+<path d="M0 400V200C30 210 50 260 70 300C110 330 150 322 200 330S300 320 330 296C350 260 370 220 400 210V400Z" fill="#F1C77A"/>
+<path d="M0 400V270C30 280 60 320 100 340C150 356 190 338 240 344S320 360 400 300V400Z" fill="#E6AE5C"/>
+<path d="M100 340C150 356 190 338 240 344" stroke="#F7D592" stroke-width="3" stroke-linecap="round"/>
+<path d="M0 400V350C60 352 110 372 170 368S280 356 400 360V400Z" fill="#D9984A"/>
+<g fill="#C9873C"><circle cx="150" cy="374" r="2"/><circle cx="210" cy="366" r="2"/><circle cx="260" cy="372" r="2"/></g>
+</g>
+<path fill-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z" stroke="#D99A4A" stroke-width="4"/>
+
+<!-- matahari -->
+<g stroke="#FFB02E" stroke-width="5" stroke-linecap="round">
+<path d="M356 2V8M356 80V86M314 44H320M392 44H398M326 14L330 18M382 70L386 74M386 14L382 18M330 70L326 74"/>
+</g>
+<circle cx="356" cy="44" r="28" fill="#FFB52E"/>
+<circle cx="356" cy="44" r="20" fill="#FFD56A"/>
+<circle cx="348" cy="36" r="6" fill="#FFF0B8"/>
+
+<!-- kaktus kiri bawah -->
+<path d="M-6 404C-4 376 20 360 46 362C74 364 92 384 96 404Z" fill="#E6AE5C"/>
+<g transform="translate(42 380)">
+<path d="M-10 -44H-22C-28 -44 -32 -48 -32 -54V-72" stroke="#4F9F4C" stroke-width="14" stroke-linecap="round"/>
+<path d="M10 -60H20C26 -60 30 -64 30 -70V-84" stroke="#5DAE5A" stroke-width="12" stroke-linecap="round"/>
+<rect x="-13" y="-104" width="26" height="108" rx="13" fill="#5DAE5A"/>
+<path d="M-5 -94V-4M5 -94V-4M-32 -70V-56M30 -82V-70" stroke="#3F8A3F" stroke-width="2" stroke-linecap="round"/>
+<path d="M-8 -96V-10" stroke="#86CE79" stroke-width="3" stroke-linecap="round"/>
+<g fill="#FF7FA8">
+<ellipse cx="0" cy="-110" rx="5" ry="7"/><ellipse cx="-6" cy="-106" rx="5" ry="6" transform="rotate(-50 -6 -106)"/><ellipse cx="6" cy="-106" rx="5" ry="6" transform="rotate(50 6 -106)"/>
+</g>
+<circle cx="0" cy="-105" r="3" fill="#FFD23F"/>
+</g>
+<path d="M-6 404C6 390 30 382 56 386C78 390 90 398 94 404Z" fill="#D9984A"/>
+
+<!-- oase kanan bawah -->
+<path d="M266 404C270 380 300 364 340 364C376 364 404 378 404 404Z" fill="#E6AE5C"/>
+<ellipse cx="334" cy="384" rx="46" ry="13" fill="#3FB4E0"/>
+<ellipse cx="330" cy="382" rx="36" ry="8" fill="#6FD0F2"/>
+<path d="M312 382H326M338 386H352" stroke="#D4F4FF" stroke-width="3" stroke-linecap="round"/>
+<g fill="#6CC35E">
+<path d="M286 384C284 374 288 368 292 366C292 372 292 378 296 384Z"/>
+<path d="M376 386C378 374 384 370 388 368C386 376 386 382 384 388Z"/>
+</g>
+<!-- palem -->
+<path d="M376 380C378 350 372 318 352 296" stroke="#A8693A" stroke-width="10" stroke-linecap="round"/>
+<path d="M376 380C378 350 372 318 352 296" stroke="#8A5530" stroke-width="10" stroke-dasharray="2 10"/>
+<g transform="translate(352 296)">
+<use href="#go-f" fill="#4DA84A" transform="rotate(-20)"/>
+<use href="#go-f" fill="#6CC35E" transform="rotate(30) scale(0.95)"/>
+<use href="#go-f" fill="#4DA84A" transform="rotate(-150) scale(1 -1) scale(0.8)"/>
+<use href="#go-f" fill="#6CC35E" transform="rotate(-100) scale(0.85)"/>
+<use href="#go-f" fill="#5DB653" transform="rotate(-60) scale(0.9)"/>
+<circle cx="-4" cy="6" r="5" fill="#8A5530"/><circle cx="4" cy="8" r="5" fill="#A8693A"/>
+</g>
+
+<!-- kilau -->
+<circle cx="70" cy="36" r="4" fill="#FFFFFF"/>
+<circle cx="200" cy="30" r="3" fill="#FFFFFF"/>
+<circle cx="34" cy="230" r="4" fill="#FFFFFF"/>
+<circle cx="366" cy="170" r="4" fill="#FFFFFF"/>
+<circle cx="200" cy="370" r="3" fill="#FFF3D6"/>
+</svg>

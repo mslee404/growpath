@@ -1,0 +1,60 @@
+<svg width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs><clipPath id="c"><rect width="440" height="440" rx="24"/></clipPath><clipPath id="m"><path d="M208 321Q222 338 236 321Q222 326 208 321Z"/></clipPath></defs>
+<g clip-path="url(#c)">
+<rect width="440" height="440" fill="#E2D8F7"/>
+<circle cx="64" cy="70" r="9" fill="#FFFFFF" opacity="0.55"/>
+<circle cx="384" cy="110" r="6" fill="#FFFFFF" opacity="0.55"/>
+<circle cx="360" cy="52" r="4" fill="#FFFFFF" opacity="0.55"/>
+
+<!-- rambut belakang -->
+<path d="M88 250C80 150 138 94 222 94C306 94 364 150 356 250L350 296H94Z" fill="#6AAEDF"/>
+
+<!-- blazer akademi -->
+<path d="M56 470C62 396 138 362 222 362C306 362 382 396 388 470Z" fill="#2B3A69"/>
+<path d="M184 362L222 424L260 362Z" fill="#FFFFFF"/>
+<path d="M214 370H230L228 384H216Z" fill="#4E8E3C"/>
+<path d="M216 384H228L236 436L222 452L208 436Z" fill="#5FA54A"/>
+<path d="M184 362L160 372L196 470H206L222 424Z" fill="#3A4C86"/>
+<path d="M260 362L284 372L248 470H238L222 424Z" fill="#3A4C86"/>
+<circle cx="306" cy="426" r="10" fill="#E9C24C"/>
+<circle cx="306" cy="426" r="4.5" fill="#2B3A69"/>
+
+<!-- leher, telinga, wajah -->
+<path d="M196 326H248V372C240 380 204 380 196 372Z" fill="#F3CDA1"/>
+<ellipse cx="100" cy="268" rx="20" ry="28" fill="#FFE6C9"/>
+<ellipse cx="344" cy="268" rx="20" ry="28" fill="#FFE6C9"/>
+<ellipse cx="102" cy="270" rx="9" ry="14" fill="#F3CDA1"/>
+<ellipse cx="342" cy="270" rx="9" ry="14" fill="#F3CDA1"/>
+<path d="M98 230C98 160 150 122 222 122C294 122 346 160 346 230C346 300 320 345 268 372C246 383 198 383 176 372C124 345 98 300 98 230Z" fill="#FFE6C9"/>
+<!-- mata anime -->
+<ellipse cx="168" cy="270" rx="22" ry="28" fill="#3F87D8"/>
+<ellipse cx="168" cy="275" rx="12" ry="17" fill="#1E4B94"/>
+<circle cx="160" cy="260" r="7" fill="#FFFFFF"/>
+<circle cx="177" cy="281" r="3.5" fill="#FFFFFF"/>
+<path d="M142 254Q168 232 194 250" stroke="#24304A" stroke-width="7" stroke-linecap="round"/>
+<path d="M142 254L133 247" stroke="#24304A" stroke-width="5" stroke-linecap="round"/>
+<ellipse cx="276" cy="270" rx="22" ry="28" fill="#3F87D8"/>
+<ellipse cx="276" cy="275" rx="12" ry="17" fill="#1E4B94"/>
+<circle cx="268" cy="260" r="7" fill="#FFFFFF"/>
+<circle cx="285" cy="281" r="3.5" fill="#FFFFFF"/>
+<path d="M250 250Q276 232 302 254" stroke="#24304A" stroke-width="7" stroke-linecap="round"/>
+<path d="M302 254L311 247" stroke="#24304A" stroke-width="5" stroke-linecap="round"/>
+<path d="M150 218Q168 210 186 216M258 216Q276 210 294 218" stroke="#5B8DB8" stroke-width="5" stroke-linecap="round"/>
+
+<!-- kacamata bulat -->
+<circle cx="168" cy="272" r="35" fill="#FFFFFF" fill-opacity="0.12" stroke="#2F3247" stroke-width="5"/>
+<circle cx="276" cy="272" r="35" fill="#FFFFFF" fill-opacity="0.12" stroke="#2F3247" stroke-width="5"/>
+<path d="M203 268Q222 258 241 268M133 264L106 256M311 264L338 256" stroke="#2F3247" stroke-width="5" stroke-linecap="round"/>
+
+<!-- hidung, pipi, mulut -->
+<path d="M219 302Q222 306 226 302" stroke="#E0A784" stroke-width="3" stroke-linecap="round"/>
+<ellipse cx="146" cy="306" rx="18" ry="9" fill="#F7A7A0" opacity="0.6"/>
+<ellipse cx="298" cy="306" rx="18" ry="9" fill="#F7A7A0" opacity="0.6"/>
+<path d="M208 321Q222 338 236 321Q222 326 208 321Z" fill="#C2524A"/>
+
+<!-- rambut depan (berantakan) -->
+<path d="M86 248C70 230 66 206 76 186C70 170 74 154 86 142C84 120 100 104 120 98C122 82 136 70 156 66C164 76 168 82 172 88C188 74 210 64 236 66C246 56 262 48 280 50C276 62 274 70 276 78C306 84 334 104 346 132C364 136 376 146 380 160C368 162 360 168 356 176C366 196 368 222 358 250C350 236 344 228 336 222L332 244C318 226 304 214 290 208L288 232C274 214 258 206 240 202L234 226C222 210 206 204 190 204L182 228C176 212 164 204 150 204L140 226C134 214 124 208 114 210L104 236C98 238 92 242 86 248Z" fill="#8FCBEF"/>
+<path d="M126 128C156 106 196 98 232 100" stroke="#C6E7FA" stroke-width="9" stroke-linecap="round"/>
+<path d="M300 120C316 132 326 146 332 162" stroke="#6AAEDF" stroke-width="4" stroke-linecap="round"/>
+</g>
+</svg>

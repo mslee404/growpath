@@ -1,0 +1,26 @@
+<svg width="317" height="463" viewBox="0 0 317 463" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="291" width="317" height="172" fill="#E3AD6F"/>
+<path d="M153.5 299.8Q152.3 372.1 160 440.1A1 1 0 0 0 162 439.9Q157.7 371.9 162.5 300.2Z" fill="#F9ECC9"/>
+<path d="M155.5 320Q137.4 334.5 113.9 339.3A0.7 0.7 0 0 0 114.1 340.7Q138.6 337.5 158.5 324Z" fill="#F9ECC9"/>
+<path d="M156.7 338.1Q179.6 351.5 204.1 348.7A0.7 0.7 0 0 0 203.9 347.3Q180.4 348.5 159.3 333.9Z" fill="#F9ECC9"/>
+<path d="M155.6 360.3Q136.8 377.2 127.4 403.8A0.7 0.7 0 0 0 128.6 404.2Q139.2 378.8 158.4 363.7Z" fill="#F9ECC9"/>
+<path d="M157.6 381.7Q176.8 396.8 183.4 420.2A0.7 0.7 0 0 0 184.6 419.8Q179.2 395.2 160.4 378.3Z" fill="#F9ECC9"/>
+<path d="M131.3 337.1Q121.3 345.5 117.5 357.8A0.5 0.5 0 0 0 118.5 358.2Q122.7 346.5 132.7 338.9Z" fill="#F9ECC9"/>
+<path d="M189.3 349.8Q197.3 356.4 198.5 366A0.5 0.5 0 0 0 199.5 366Q198.7 355.6 190.7 348.2Z" fill="#F9ECC9"/>
+<path d="M157 402.8Q145.2 413.4 141.5 427.9A0.5 0.5 0 0 0 142.5 428.1Q146.8 414.6 159 405.2Z" fill="#F9ECC9"/>
+<path d="M135.6 387.1Q125.9 391.3 120.1 389.6A0.5 0.5 0 0 0 119.9 390.4Q126.1 392.7 136.4 388.9Z" fill="#F9ECC9"/>
+<path d="M165 299.7Q158.2 175 161.5 50.1A3.5 3.5 0 0 0 154.5 49.9Q147.8 175 151 300.3Z" fill="#8FB04A"/>
+<path d="M156.5 295.9Q151.3 175 157.3 56A0.7 0.7 0 0 0 155.9 56Q149.1 175 153.4 296.1Z" fill="#AECB66"/>
+<use href="#lf" transform="translate(153.8 278) scale(-0.8 0.8) rotate(14)"/>
+<use href="#lf" transform="translate(158.9 262) scale(0.9) rotate(10)"/>
+<use href="#lf" transform="translate(151.6 232) scale(-0.9 0.9) rotate(4)"/>
+<use href="#lf" transform="translate(156.9 208) scale(0.9) rotate(0)"/>
+<use href="#lf" transform="translate(150.5 176) scale(-0.9 0.9) rotate(-6)"/>
+<use href="#lf" transform="translate(156.7 152) scale(0.8) rotate(-10)"/>
+<use href="#lf" transform="translate(151.3 126) scale(-0.7 0.7) rotate(-16)"/>
+<use href="#lf" transform="translate(158.2 104) scale(0.7) rotate(-22)"/>
+<use href="#lf" transform="translate(153 86) scale(-0.5 0.5) rotate(-28)"/>
+<use href="#lf" transform="translate(159.6 76) scale(0.5) rotate(-32)"/>
+<g transform="translate(158 46) scale(1.1)"><use href="#bt" transform="rotate(0) translate(0 -6) scale(1.05)" fill="#7E9C3A"/><use href="#bt" transform="rotate(30) translate(0 -6) scale(1.05)" fill="#7E9C3A"/><use href="#bt" transform="rotate(60) translate(0 -6) scale(1.05)" fill="#7E9C3A"/><use href="#bt" transform="rotate(90) translate(0 -6) scale(1.05)" fill="#7E9C3A"/><use href="#bt" transform="rotate(120) translate(0 -6) scale(1.05)" fill="#7E9C3A"/><use href="#bt" transform="rotate(150) translate(0 -6) scale(1.05)" fill="#7E9C3A"/><use href="#bt" transform="rotate(180) translate(0 -6) scale(1.05)" fill="#7E9C3A"/><use href="#bt" transform="rotate(210) translate(0 -6) scale(1.05)" fill="#7E9C3A"/><use href="#bt" transform="rotate(240) translate(0 -6) scale(1.05)" fill="#7E9C3A"/><use href="#bt" transform="rotate(270) translate(0 -6) scale(1.05)" fill="#7E9C3A"/><use href="#bt" transform="rotate(300) translate(0 -6) scale(1.05)" fill="#7E9C3A"/><use href="#bt" transform="rotate(330) translate(0 -6) scale(1.05)" fill="#7E9C3A"/><circle r="15" fill="#93AE48"/><use href="#bt" transform="rotate(22) translate(0 2) scale(0.8)" fill="#A9C45E"/><use href="#bt" transform="rotate(67) translate(0 2) scale(0.8)" fill="#A9C45E"/><use href="#bt" transform="rotate(112) translate(0 2) scale(0.8)" fill="#A9C45E"/><use href="#bt" transform="rotate(157) translate(0 2) scale(0.8)" fill="#A9C45E"/><use href="#bt" transform="rotate(202) translate(0 2) scale(0.8)" fill="#A9C45E"/><use href="#bt" transform="rotate(247) translate(0 2) scale(0.8)" fill="#A9C45E"/><use href="#bt" transform="rotate(292) translate(0 2) scale(0.8)" fill="#A9C45E"/><use href="#bt" transform="rotate(337) translate(0 2) scale(0.8)" fill="#A9C45E"/><circle r="7" fill="#AEC767"/><circle cx="-3" cy="-3" r="2.5" fill="#C9DE8C"/></g>
+<defs><g id="lf"><path d="M-9 3Q-3 1 3 0" stroke="#93AE48" stroke-width="3.4" stroke-linecap="round"/><path d="M2 0C-3 -15 14 -27 34 -25C54 -23 70 -10 80 1C68 11 54 24 34 25C14 26 -3 15 2 0Z" fill="#86A43E"/><path d="M2 0C-3 -15 14 -27 34 -25C54 -23 70 -10 80 1Z" fill="#A3C25B"/><path d="M3 0C26 -1 52 0 78 1M30 -1L40 -14M50 0L58 -10M30 0L40 13M50 1L58 11" stroke="#C3DA82" stroke-width="1.6" stroke-linecap="round"/></g><g id="co"><path d="M0 0C3 -8 18 -11 27 -5C31 -1 27 6 18 7C9 8 2 5 0 0Z" fill="#93AE48"/><path d="M0 0C3 -8 18 -11 27 -5C29 -3 29 -1 28 0Z" fill="#AEC767"/></g><path id="pb" d="M0 0C7 -9 8 -30 0 -46C-8 -30 -7 -9 0 0Z" fill="#F2A922"/><path id="pf" d="M0 0C6 -9 7 -27 0 -40C-7 -27 -6 -9 0 0Z" fill="#FFCF33"/><path id="ph" d="M0 -8C2 -16 2 -26 0 -34" stroke="#FFE07A" stroke-width="2.2" stroke-linecap="round"/><path id="bt" d="M0 0C5 -6 4 -15 0 -22C-4 -15 -5 -6 0 0Z"/></defs>
+</svg>

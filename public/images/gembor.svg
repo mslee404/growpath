@@ -1,0 +1,32 @@
+<svg width="200" height="160" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clipPath id="gembor-body"><path d="M86 56H158Q172 56 172 70V130Q172 144 158 144H86Q72 144 72 130V70Q72 56 86 56Z"/></clipPath>
+</defs>
+<path d="M100 60C100 18 172 14 168 84" stroke="#66913E" stroke-width="11" stroke-linecap="round"/>
+<path d="M108 42C114 30 136 26 150 34" stroke="#A4C97A" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M80 80C64 86 46 94 30 100L33 113C48 108 64 105 80 104Z" fill="#78A44C"/>
+<path d="M80 97C64 100 48 104 32 109L33 113C48 108 64 105 80 104Z" fill="#5E7153"/>
+<path d="M29 99.5L12.5 100.5L19.5 121.5L34 112.5Z" fill="#5E7153"/>
+<ellipse cx="16" cy="111" rx="4.5" ry="11.5" transform="rotate(-20 16 111)" fill="#A4C97A"/>
+<circle cx="13.5" cy="104" r="1.3" fill="#5E7153"/>
+<circle cx="15.5" cy="109" r="1.3" fill="#5E7153"/>
+<circle cx="17.3" cy="114" r="1.3" fill="#5E7153"/>
+<circle cx="19" cy="118.5" r="1.1" fill="#5E7153"/>
+<circle cx="12.5" cy="109.5" r="1.1" fill="#5E7153"/>
+<circle cx="14.5" cy="114.5" r="1.1" fill="#5E7153"/>
+<g clip-path="url(#gembor-body)">
+<rect x="72" y="56" width="100" height="88" fill="#78A44C"/>
+<rect x="154" y="56" width="18" height="88" fill="#66913E"/>
+<rect x="76" y="104" width="92" height="18" fill="#FDFDD9"/>
+<rect x="154" y="104" width="14" height="18" fill="#EDEDC4"/>
+<rect x="72" y="136" width="100" height="8" fill="#5E7153"/>
+</g>
+<rect x="80" y="66" width="7" height="30" rx="3.5" fill="white" fill-opacity=".3"/>
+<path d="M72 80Q66 92 72 104Z" fill="#5E7153"/>
+<rect x="80" y="126" width="7" height="6" rx="3" fill="white" fill-opacity=".3"/>
+<path d="M122 120C122 115 122 112 122 109" stroke="#5E7153" stroke-width="2" stroke-linecap="round"/>
+<path d="M122 112C117 112 113 109 112 105C117 105 121 107 122 112Z" fill="#78A44C"/>
+<path d="M122 110C127 110 131 107 132 103C127 103 123 105 122 110Z" fill="#78A44C"/>
+<rect x="80" y="48" width="30" height="11" rx="5.5" fill="#5E7153"/>
+<rect x="84" y="48" width="22" height="5" rx="2.5" fill="#8DB862"/>
+</svg>

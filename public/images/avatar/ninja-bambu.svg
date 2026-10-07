@@ -1,0 +1,63 @@
+<svg width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs><clipPath id="nin-c"><rect width="440" height="440" rx="24"/></clipPath></defs>
+<g clip-path="url(#nin-c)">
+<rect width="440" height="440" fill="#98C77C"/>
+<rect x="27" width="14" height="440" fill="#B9DD9E"/>
+<path d="M27 70H41" stroke="#8DBB72" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27 180H41" stroke="#8DBB72" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27 290H41" stroke="#8DBB72" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27 400H41" stroke="#8DBB72" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="395" width="14" height="440" fill="#B9DD9E"/>
+<path d="M395 70H409" stroke="#8DBB72" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M395 180H409" stroke="#8DBB72" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M395 290H409" stroke="#8DBB72" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M395 400H409" stroke="#8DBB72" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M40 180Q68.6 184.6 84 160Q55.4 155.4 40 180Z" fill="#B9DD9E"/>
+<path d="M40 186Q50.7 211.3 78 214Q67.3 188.7 40 186Z" fill="#B9DD9E"/>
+<path d="M396 70Q382.6 46.4 356 52Q369.4 75.6 396 70Z" fill="#B9DD9E"/>
+<circle cx="90" cy="60" r="7" fill="#FFFFFF" opacity="0.55"/>
+<circle cx="330" cy="40" r="5" fill="#FFFFFF" opacity="0.55"/>
+<circle cx="380" cy="150" r="4" fill="#FFFFFF" opacity="0.55"/>
+<!-- rambut belakang -->
+<path d="M222 92C138 92 86 140 86 204L54 216L86 238L52 262L96 274H348L392 262L358 238L390 216L358 204C358 140 306 92 222 92Z" fill="#1E5560"/>
+<!-- bambu di punggung -->
+<path d="M300 470L420 176" stroke="#7CB65A" stroke-width="26" stroke-linecap="butt" stroke-linejoin="round"/>
+<path d="M296 466L412 182" stroke="#A6D684" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<path d="M354 303.3L378 313.3" stroke="#4F8A3A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M386.4 223.9L410.4 233.9" stroke="#4F8A3A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="420" cy="176" rx="13" ry="6" fill="#CFE8A8" transform="rotate(22 420 176)"/>
+<path d="M398 230Q427.7 224.9 436 196Q406.3 201.1 398 230Z" fill="#5E9A4A"/><path d="M398 230L428.4 202.8" stroke="#7CB65A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- badan -->
+<path d="M50 470C56 398 132 364 222 364C312 364 388 398 394 470Z" fill="#2F3B48"/>
+<path d="M150 372L226 470M294 372L218 470" stroke="#455566" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M166 338H278V398C252 414 192 414 166 398Z" fill="#2E5A3A"/>
+<path d="M178 390C152 404 132 432 124 470H164C168 442 178 418 194 404Z" fill="#234A2E"/>
+<ellipse cx="100" cy="268" rx="20" ry="28" fill="#FFE6C9"/>
+<ellipse cx="344" cy="268" rx="20" ry="28" fill="#FFE6C9"/>
+<ellipse cx="102" cy="270" rx="9" ry="14" fill="#F3CDA1"/>
+<ellipse cx="342" cy="270" rx="9" ry="14" fill="#F3CDA1"/>
+<path d="M98 230C98 160 150 122 222 122C294 122 346 160 346 230C346 300 320 345 268 372C246 383 198 383 176 372C124 345 98 300 98 230Z" fill="#FFE6C9"/>
+<ellipse cx="168" cy="270" rx="22" ry="28" fill="#E9A53A"/>
+<ellipse cx="168" cy="285" rx="16" ry="11" fill="#FFD27A"/>
+<ellipse cx="168" cy="274" rx="12" ry="17" fill="#7A4A0E"/>
+<circle cx="160" cy="260" r="7" fill="#FFFFFF"/>
+<circle cx="177" cy="281" r="3.5" fill="#FFFFFF"/>
+<ellipse cx="276" cy="270" rx="22" ry="28" fill="#E9A53A"/>
+<ellipse cx="276" cy="285" rx="16" ry="11" fill="#FFD27A"/>
+<ellipse cx="276" cy="274" rx="12" ry="17" fill="#7A4A0E"/>
+<circle cx="268" cy="260" r="7" fill="#FFFFFF"/>
+<circle cx="285" cy="281" r="3.5" fill="#FFFFFF"/>
+<path d="M142 254Q168 232 194 250" stroke="#1B3036" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M142 254L133 247" stroke="#1B3036" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M302 254Q276 232 250 250" stroke="#1B3036" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M302 254L311 247" stroke="#1B3036" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M146 224Q168 220 190 232M254 232Q276 220 298 224" stroke="#1E5560" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- masker -->
+<path d="M96 290C150 302 294 302 348 290C346 320 330 352 276 377C252 389 192 389 168 377C114 352 98 320 96 290Z" fill="#2E5A3A"/>
+<path d="M98 292C150 304 294 304 346 292" stroke="#3F7550" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M150 336Q222 352 294 336M180 362Q222 372 264 362" stroke="#234A2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- rambut depan runcing -->
+<path d="M90 244C80 170 110 122 150 104L130 66L182 90L196 46L230 86L262 48L272 92L318 70L304 112C342 134 364 180 354 244C346 220 336 206 324 196L314 236L292 190L270 232L250 182L226 230L204 182L184 232L162 190L140 236L128 198C112 212 100 226 90 244Z" fill="#1E5560"/>
+<path d="M160 120L178 100M210 112L222 92M262 114L268 96" stroke="#2F7682" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

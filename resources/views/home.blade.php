@@ -56,20 +56,19 @@
         <div class="lg:col-span-2 flex items-center justify-center min-h-[500px] relative">
             <div class="w-full h-full bg-[#FDFDD9]/80 rounded-2xl border-8 border-[#A85319] shadow-inner flex flex-col justify-end items-center overflow-hidden relative p-4"
                  style="{{ $user->background_url ? 'background-image: url('.$user->background_url.'); background-size: cover; background-position: center;' : '' }}">
-                
-                @php
-                    $equippedPlant = $user->inventories->first(fn($i) => $i->is_equipped && $i->item->type === 'tanaman');
-                    $plantLevel = $equippedPlant ? $equippedPlant->level : 0;
-                @endphp
 
-                {{-- Container Tanaman (Penuh) --}}
-                <div class="flex-1 w-full flex items-center justify-center relative">
-                    
+                @php $plantLevel = $user->equippedOf('tanaman')?->level ?? 0; @endphp
+
+                {{-- data-siram (dari flash session) memicu animasi siram di home.js --}}
+                <div id="plant-stage" class="flex-1 w-full flex items-center justify-center relative"
+                     data-gembor="{{ asset('images/gembor.svg') }}"
+                     @if (session('siram')) data-siram="{{ json_encode(session('siram')) }}" @endif>
+
                     @if($user->plant_url)
-                        <img id="plant-image" src="{{ $user->plant_url }}" alt="Tanaman" 
+                        <img id="plant-image" src="{{ $user->plant_url }}" alt="Tanaman stage {{ $plantLevel }}"
                              class="w-full h-full object-cover drop-shadow-lg rounded-b-2xl">
                     @else
-                        <img id="plant-image" src="https://placehold.co/117x115/C4661F/A85319?text=Biji" alt="Tanaman" 
+                        <img id="plant-image" src="https://placehold.co/117x115/C4661F/A85319?text=Biji" alt="Tanaman"
                              class="w-24 h-24 rounded-2xl">
                     @endif
 
@@ -84,270 +83,57 @@
 
         <!-- List Habit dan Tugas -->
         <div class="lg:col-span-2 space-y-8">
+            @foreach ([
+                ['habit', 'Habit', $habitPanels, 'bg-[#78A44C]', 'text-[#783D19]'],
+                ['tugas', 'Tugas', $taskPanels, 'bg-[#C4661F]', 'text-[#FDFDD9]'],
+            ] as [$type, $boxTitle, $panels, $activeBg, $textColor])
+                <x-data-box
+                    :title="$boxTitle"
+                    :tabGroup="$type"
+                    :scrollerId="$type . '-scroller'"
+                    :addButtonId="'btn-tambah-' . $type"
+                    :type="$type"
+                >
+                    <x-slot:tabs>
+                        @foreach ($panels as $panelId => [$label])
+                            <button data-tab-button="{{ $panelId }}" class="tab-button snap-start flex-shrink-0 {{ $loop->first ? $activeBg . ' text-[#FDFDD9] shadow-md' : 'bg-[#FDFDD9] text-[#783D19] shadow-sm hover:bg-white' }} py-1 px-4 rounded-t-lg text-base font-semibold whitespace-nowrap">
+                                {{ $label }}
+                            </button>
+                        @endforeach
+                    </x-slot:tabs>
 
-            {{-- Box Habit: Menggunakan komponen <x-data-box> --}}
-            <x-data-box 
-                title="Habit" 
-                tabGroup="habit" 
-                scrollerId="habit-scroller" 
-                addButtonId="btn-tambah-habit" 
-                type="habit"
-            >
-                {{-- Ini adalah slot untuk $tabs --}}
-                <x-slot:tabs>
-                    <button data-tab-button="habit-semua" class="tab-button snap-start flex-shrink-0 bg-[#78A44C] text-[#FDFDD9] shadow-md py-1 px-4 rounded-t-lg text-base font-semibold whitespace-nowrap">
-                        Semua
-                    </button>
-                    <button data-tab-button="habit-harian" class="tab-button snap-start flex-shrink-0 bg-[#FDFDD9] text-[#783D19] shadow-sm hover:bg-white py-1 px-4 rounded-t-lg text-base font-semibold whitespace-nowrap">
-                        Harian
-                    </button>
-                    <button data-tab-button="habit-mingguan" class="tab-button snap-start flex-shrink-0 bg-[#FDFDD9] text-[#783D19] shadow-sm hover:bg-white py-1 px-4 rounded-t-lg text-base font-semibold whitespace-nowrap">
-                        Mingguan
-                    </button>
-                    <button data-tab-button="habit-bulanan" class="tab-button snap-start flex-shrink-0 bg-[#FDFDD9] text-[#783D19] shadow-sm hover:bg-white py-1 px-4 rounded-t-lg text-base font-semibold whitespace-nowrap">
-                        Bulanan
-                    </button>
-                     <button data-tab-button="habit-kustom" class="tab-button snap-start flex-shrink-0 bg-[#FDFDD9] text-[#783D19] shadow-sm hover:bg-white py-1 px-4 rounded-t-lg text-base font-semibold whitespace-nowrap">
-                        Kustom
-                    </button>
-                </x-slot:tabs>
-
-                {{-- Ini adalah $slot utama untuk panel konten --}}
-                
-                <!-- Panel Tab Semua -->
-                <div id="habit-semua" class="tab-panel">
-                    @if (count($habits_semua) > 0)
-                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
-                            @foreach ($habits_semua as $item)
-                                <x-data-list 
-                                    type="habit" {{-- <-- 3. TAMBAHKAN TYPE DI SINI --}}
-                                    :title="$item['title']" 
-                                    :xp="$item['xp']" 
-                                    :category="$item['category']"
-                                    :checked="$item['checked']" 
-                                    :id="$item['id']"
-                                    :raw_detail="$item['raw_detail']"
-                                    :sub_type="$item['habit_type']"
-                                />
-                            @endforeach
+                    @foreach ($panels as $panelId => [$label, $items, $emptyMessage])
+                        <div id="{{ $panelId }}" class="tab-panel {{ $loop->first ? '' : 'hidden' }}">
+                            @if ($items->isNotEmpty())
+                                <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
+                                    @foreach ($items as $item)
+                                        <x-data-list
+                                            :type="$type"
+                                            :title="$item['title']"
+                                            :xp="$item['xp']"
+                                            :category="$item['category'] ?? null"
+                                            :date="$item['date'] ?? null"
+                                            :time="$item['time'] ?? null"
+                                            :id="$item['id']"
+                                            :raw_detail="$item['raw_detail']"
+                                            :sub_type="$item['habit_type'] ?? null"
+                                        />
+                                    @endforeach
+                                </div>
+                                <p class="text-center text-base {{ $textColor }} font-semibold mt-3">
+                                    {{ $items->count() }} belum diselesaikan
+                                </p>
+                            @else
+                                <p class="text-center {{ $textColor }} py-8 text-lg">{{ $emptyMessage }}</p>
+                            @endif
                         </div>
-                        <p class="text-center text-base text-[#783D19] font-semibold mt-3">
-                            {{ count($habits_semua) }} belum diselesaikan
-                        </p>
-                    @else
-                        <p class="text-center text-[#783D19] py-8 text-lg">Belum ada habit.</p>
-                    @endif
-                </div>
-
-                <!-- Panel Tab Harian -->
-                <div id="habit-harian" class="tab-panel hidden">
-                    @if (count($habits_harian) > 0)
-                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
-                            @foreach ($habits_harian as $item)
-                                <x-data-list 
-                                    type="habit" {{-- <-- 3. TAMBAHKAN TYPE DI SINI --}}
-                                    :title="$item['title']" 
-                                    :xp="$item['xp']" 
-                                    :category="$item['category']"
-                                    :checked="$item['checked']" 
-                                    :id="$item['id']"
-                                    :raw_detail="$item['raw_detail']"
-                                    :sub_type="$item['habit_type']"
-                                />
-                            @endforeach
-                        </div>
-                        <p class="text-center text-base text-[#783D19] font-semibold mt-3">
-                            {{ count($habits_harian) }} belum diselesaikan
-                        </p>
-                    @else
-                        <p class="text-center text-[#783D19] py-8 text-lg">Belum ada habit harian.</p>
-                    @endif
-                </div>
-                
-                <!-- Panel Tab Mingguan -->
-                <div id="habit-mingguan" class="tab-panel hidden">
-                    @if (count($habits_mingguan) > 0)
-                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
-                            @foreach ($habits_mingguan as $item)
-                                <x-data-list 
-                                    type="habit" {{-- <-- 3. TAMBAHKAN TYPE DI SINI --}}
-                                    :title="$item['title']" 
-                                    :xp="$item['xp']" 
-                                    :category="$item['category']"
-                                    :checked="$item['checked']" 
-                                    :id="$item['id']"
-                                    :raw_detail="$item['raw_detail']"
-                                    :sub_type="$item['habit_type']"
-                                />
-                            @endforeach
-                        </div>
-                        <p class="text-center text-base text-[#783D19] font-semibold mt-3">
-                            {{ count($habits_mingguan) }} belum diselesaikan
-                        </p>
-                    @else
-                        <p class="text-center text-[#783D19] py-8 text-lg">Belum ada habit mingguan.</p>
-                    @endif
-                </div>
-
-                <!-- Panel Tab Bulanan -->
-                <div id="habit-bulanan" class="tab-panel hidden">
-                    @if (count($habits_bulanan) > 0)
-                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
-                            @foreach ($habits_bulanan as $item)
-                                <x-data-list 
-                                    type="habit" {{-- <-- 3. TAMBAHKAN TYPE DI SINI --}}
-                                    :title="$item['title']" 
-                                    :xp="$item['xp']" 
-                                    :category="$item['category']"
-                                    :checked="$item['checked']" 
-                                    :id="$item['id']"
-                                    :raw_detail="$item['raw_detail']"
-                                    :sub_type="$item['habit_type']"
-                                />
-                            @endforeach
-                        </div>
-                        <p class="text-center text-base text-[#783D19] font-semibold mt-3">
-                            {{ count($habits_bulanan) }} belum diselesaikan
-                        </p>
-                    @else
-                        <p class="text-center text-[#783D19] py-8 text-lg">Belum ada habit bulanan.</p>
-                    @endif
-                </div>
-
-                <!-- Panel Tab Kustom -->
-                <div id="habit-kustom" class="tab-panel hidden">
-                    @if (count($habits_kustom) > 0)
-                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
-                            @foreach ($habits_kustom as $item)
-                                <x-data-list 
-                                    type="habit" {{-- <-- 3. TAMBAHKAN TYPE DI SINI --}}
-                                    :title="$item['title']" 
-                                    :xp="$item['xp']" 
-                                    :category="$item['category']"
-                                    :checked="$item['checked']" 
-                                    :id="$item['id']"
-                                    :raw_detail="$item['raw_detail']"
-                                    :sub_type="$item['habit_type']"
-                                />
-                            @endforeach
-                        </div>
-                        <p class="text-center text-base text-[#783D19] font-semibold mt-3">
-                            {{ count($habits_kustom) }} belum diselesaikan
-                        </p>
-                    @else
-                        <p class="text-center text-[#783D19] py-8 text-lg">Belum ada habit kustom.</p>
-                    @endif
-                </div>
-                
-            </x-data-box>
-
-            {{-- Box Tugas: Menggunakan komponen <x-data-box> yang SAMA --}}
-            <x-data-box 
-                title="Tugas" 
-                tabGroup="tugas" 
-                scrollerId="tugas-scroller" 
-                addButtonId="btn-tambah-tugas" 
-                type="tugas"
-            >
-                {{-- Ini adalah slot untuk $tabs --}}
-                <x-slot:tabs>
-                    <button data-tab-button="tugas-semua" class="tab-button snap-start flex-shrink-0 bg-[#C4661F] text-[#FDFDD9] shadow-md py-1 px-4 rounded-t-lg text-base font-semibold whitespace-nowrap">
-                        Semua
-                    </button>
-                    <button data-tab-button="tugas-hari-ini" class="tab-button snap-start flex-shrink-0 bg-[#FDFDD9] text-[#783D19] shadow-sm hover:bg-white py-1 px-4 rounded-t-lg text-base font-semibold whitespace-nowrap">
-                        Hari Ini
-                    </button>
-                    <button data-tab-button="tugas-besok" class="tab-button snap-start flex-shrink-0 bg-[#FDFDD9] text-[#783D19] shadow-sm hover:bg-white py-1 px-4 rounded-t-lg text-base font-semibold whitespace-nowrap">
-                        Besok
-                    </button>
-                </x-slot:tabs>
-
-                {{-- Ini adalah $slot utama untuk panel konten --}}
-                
-                <!-- Panel Tab Semua -->
-                <div id="tugas-semua" class="tab-panel">
-                    @if (count($tugas_semua) > 0)
-                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
-                            @foreach ($tugas_semua as $item)
-                                <x-data-list
-                                    type="tugas"
-                                    :title="$item['title']"
-                                    :xp="$item['xp']" 
-                                    :category="$item['category']"
-                                    :date="$item['date']" 
-                                    :time="$item['time']"
-                                    :checked="$item['checked']"
-                                    :id="$item['id']"
-                                    :raw_detail="$item['raw_detail']"
-                                />
-                            @endforeach
-                        </div>
-                        <p class="text-center text-base text-[#FDFDD9] font-semibold mt-3">
-                            {{ count($tugas_semua) }} belum diselesaikan
-                        </p>
-                    @else
-                        <p class="text-center text-[#FDFDD9] py-8 text-lg">Belum ada tugas.</p>
-                    @endif
-                </div>
-                
-                <!-- Panel Tab Hari Ini -->
-                <div id="tugas-hari-ini" class="tab-panel hidden">
-                     @if (count($tugas_hari_ini) > 0)
-                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
-                            @foreach ($tugas_hari_ini as $item)
-                                <x-data-list 
-                                    type="tugas"
-                                    :title="$item['title']"
-                                    :xp="$item['xp']" 
-                                    :category="$item['category']"
-                                    :date="$item['date']" 
-                                    :time="$item['time']"
-                                    :checked="$item['checked']"
-                                    :id="$item['id']"
-                                    :raw_detail="$item['raw_detail']"
-                                />
-                            @endforeach
-                        </div>
-                        <p class="text-center text-base text-[#FDFDD9] font-semibold mt-3">
-                            {{ count($tugas_hari_ini) }} belum diselesaikan
-                        </p>
-                    @else
-                        <p class="text-center text-[#FDFDD9] py-8 text-lg">Tidak ada tugas hari ini.</p>
-                    @endif
-                </div>
-                
-                <!-- Panel Tab Besok -->
-                 <div id="tugas-besok" class="tab-panel hidden">
-                     @if (count($tugas_besok) > 0)
-                        <div class="space-y-2 h-[200px] overflow-y-auto vertical-scroller">
-                            @foreach ($tugas_besok as $item)
-                                <x-data-list 
-                                    type="tugas"
-                                    :title="$item['title']"
-                                    :xp="$item['xp']" 
-                                    :category="$item['category']"
-                                    :date="$item['date']" 
-                                    :time="$item['time']"
-                                    :checked="$item['checked']"
-                                    :id="$item['id']"
-                                    :raw_detail="$item['raw_detail']"
-                                />
-                            @endforeach
-                        </div>
-                        <p class="text-center text-base text-[#FDFDD9] font-semibold mt-3">
-                            {{ count($tugas_besok) }} belum diselesaikan
-                        </p>
-                    @else
-                        <p class="text-center text-[#FDFDD9] py-8 text-lg">Tidak ada tugas untuk besok.</p>
-                    @endif
-                </div>
-                
-            </x-data-box>
-
+                    @endforeach
+                </x-data-box>
+            @endforeach
         </div>
 
     </div>
-    
+
     <x-slot:popups>
         @include('popup.home-tambah-habit')
         @include('popup.home-tambah-tugas')
@@ -391,7 +177,7 @@ function updateEditRequiredFields(activeType) {
 
     // 2. Logika khusus untuk sub-mode Monthly (Tanggal vs Minggu Ke-)
     if (activeType === 'monthly') {
-        const modeRadio = document.querySelector("input[name='edit_monthly_mode']:checked");
+        const modeRadio = document.querySelector("#form-edit-habit input[name='monthly_mode']:checked");
         const isTanggal = modeRadio ? modeRadio.value === 'tanggal' : true;
         
         document.querySelectorAll('#edit-monthly-tanggal input').forEach(i => i.required = isTanggal);
@@ -446,7 +232,7 @@ function openEditHabit(btn) {
     }
     if(type === 'monthly') {
         const mode = detail.schedule_type === 'week' ? 'minggu' : 'tanggal';
-        const radioMode = document.querySelector(`input[name="edit_monthly_mode"][value="${mode}"]`);
+        const radioMode = document.querySelector(`#form-edit-habit input[name="monthly_mode"][value="${mode}"]`);
         if(radioMode) {
             radioMode.checked = true;
             radioMode.dispatchEvent(new Event('change'));
@@ -606,7 +392,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Monthly switch
-    document.querySelectorAll("input[name='edit_monthly_mode']").forEach(radio => {
+    document.querySelectorAll("#form-edit-habit input[name='monthly_mode']").forEach(radio => {
         radio.addEventListener("change", e => {
             const monthlyTanggal = document.getElementById("edit-monthly-tanggal");
             const monthlyMinggu = document.getElementById("edit-monthly-minggu");

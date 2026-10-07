@@ -1,0 +1,60 @@
+<svg width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs><clipPath id="c"><rect width="440" height="440" rx="24"/></clipPath><linearGradient id="gb" x1="0" y1="250" x2="0" y2="392" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#EEF4FB"/><stop offset="1" stop-color="#86C6EE"/></linearGradient><linearGradient id="gt" x1="0" y1="200" x2="0" y2="226" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#86C8EF" stop-opacity="0"/><stop offset="1" stop-color="#86C8EF"/></linearGradient><linearGradient id="gs" x1="0" y1="290" x2="0" y2="358" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#9ED4F2" stop-opacity="0"/><stop offset="1" stop-color="#9ED4F2"/></linearGradient><clipPath id="fh"><path d="M84 356C72 280 74 200 92 160C110 120 160 100 222 100C284 100 334 120 352 160C370 200 372 280 360 356L348 338L336 358C340 300 336 250 326 222Q318 206 304 200Q298 218 286 230Q282 210 270 198Q262 218 250 232Q244 212 234 198Q226 216 214 230Q208 210 198 198Q190 216 178 230Q172 210 162 200Q150 212 140 230Q134 216 128 214C110 250 104 300 108 358L96 338Z"/></clipPath></defs>
+<g clip-path="url(#c)">
+<rect width="440" height="440" fill="#C7EAF9"/>
+
+<path d="M0 -10V10M-8.7 -5L8.7 5M-8.7 5L8.7 -5" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" transform="translate(62 74)"/>
+<path d="M0 -10V10M-8.7 -5L8.7 5M-8.7 5L8.7 -5" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" transform="translate(386 104) scale(0.8)"/>
+<path d="M0 -10V10M-8.7 -5L8.7 5M-8.7 5L8.7 -5" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" transform="translate(44 168) scale(0.7)"/>
+<circle cx="360" cy="46" r="4" fill="#FFFFFF" opacity="0.8"/>
+
+<!-- rambut belakang -->
+<path d="M78 236C70 140 140 92 222 92C304 92 374 140 366 236C368 290 372 340 380 386L356 372L344 390L322 366H122L100 390L88 372L64 386C72 340 76 290 78 236Z" fill="url(#gb)"/>
+
+<!-- mantel + syal biru bergaris -->
+<path d="M56 470C62 396 138 362 222 362C306 362 382 396 388 470Z" fill="#6A7FB3"/>
+<circle cx="200" cy="446" r="6" fill="#4F6296"/>
+<path d="M250 392H292L302 470H258Z" fill="#2F78CF"/>
+<path d="M254 414H295M256 434H298M257 454H300" stroke="#FFFFFF" stroke-width="6"/>
+<path d="M148 350C170 338 198 334 222 334C246 334 274 338 296 350C302 368 300 386 292 398C268 408 246 410 222 410C198 410 176 408 152 398C144 386 142 368 148 350Z" fill="#2F78CF"/>
+<path d="M146 370C178 382 266 382 298 370M150 390C182 400 262 400 294 390" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+
+<!-- leher, telinga, wajah -->
+<path d="M196 326H248V372C240 380 204 380 196 372Z" fill="#F3CDA1"/>
+<ellipse cx="100" cy="268" rx="20" ry="28" fill="#FFE6C9"/>
+<ellipse cx="344" cy="268" rx="20" ry="28" fill="#FFE6C9"/>
+<ellipse cx="102" cy="270" rx="9" ry="14" fill="#F3CDA1"/>
+<ellipse cx="342" cy="270" rx="9" ry="14" fill="#F3CDA1"/>
+<path d="M98 230C98 160 150 122 222 122C294 122 346 160 346 230C346 300 320 345 268 372C246 383 198 383 176 372C124 345 98 300 98 230Z" fill="#FFE6C9"/>
+<!-- mata anime -->
+<ellipse cx="168" cy="270" rx="22" ry="28" fill="#5BB4E6"/>
+<ellipse cx="168" cy="275" rx="12" ry="17" fill="#2A76AE"/>
+<circle cx="160" cy="260" r="7" fill="#FFFFFF"/>
+<circle cx="177" cy="281" r="3.5" fill="#FFFFFF"/>
+<path d="M142 254Q168 232 194 250" stroke="#34465F" stroke-width="7" stroke-linecap="round"/>
+<path d="M142 254L133 247" stroke="#34465F" stroke-width="5" stroke-linecap="round"/>
+<ellipse cx="276" cy="270" rx="22" ry="28" fill="#5BB4E6"/>
+<ellipse cx="276" cy="275" rx="12" ry="17" fill="#2A76AE"/>
+<circle cx="268" cy="260" r="7" fill="#FFFFFF"/>
+<circle cx="285" cy="281" r="3.5" fill="#FFFFFF"/>
+<path d="M250 250Q276 232 302 254" stroke="#34465F" stroke-width="7" stroke-linecap="round"/>
+<path d="M302 254L311 247" stroke="#34465F" stroke-width="5" stroke-linecap="round"/>
+<path d="M150 222Q168 216 186 220M258 220Q276 216 294 222" stroke="#8AA6C4" stroke-width="5" stroke-linecap="round"/>
+
+<!-- hidung, pipi, mulut -->
+<path d="M219 302Q222 306 226 302" stroke="#E0A784" stroke-width="3" stroke-linecap="round"/>
+<ellipse cx="146" cy="306" rx="18" ry="9" fill="#F7A7A0" opacity="0.5"/>
+<ellipse cx="298" cy="306" rx="18" ry="9" fill="#F7A7A0" opacity="0.5"/>
+<path d="M212 326Q222 332 232 326" stroke="#B0625E" stroke-width="4" stroke-linecap="round"/>
+
+<!-- rambut depan putih, ujung biru es -->
+<g clip-path="url(#fh)">
+<rect width="440" height="440" fill="#F7FAFE"/>
+<rect x="130" y="196" width="194" height="40" fill="url(#gt)"/>
+<rect y="280" width="124" height="90" fill="url(#gs)"/>
+<rect x="320" y="280" width="120" height="90" fill="url(#gs)"/>
+<path d="M150 132C178 114 214 108 248 114" stroke="#DCE8F4" stroke-width="9" stroke-linecap="round"/>
+<path d="M100 220C96 260 96 300 100 340M344 220C348 260 348 300 344 340" stroke="#D6E3F0" stroke-width="4" stroke-linecap="round"/>
+</g>
+</g>
+</svg>

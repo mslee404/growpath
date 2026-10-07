@@ -1,0 +1,110 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clipPath id="hh-b"><path clip-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z"/></clipPath>
+<path id="hh-sl" d="M0 0C6 -10 18 -12 28 -8C22 2 10 4 0 0Z"/>
+<mask id="hh-mm" maskUnits="userSpaceOnUse" x="-80" y="-130" width="160" height="170">
+<path d="M0 -8C-20 6 -56 -4 -60 -44C-64 -86 -34 -112 0 -110C34 -112 64 -86 60 -44C56 -4 20 6 0 -8Z" fill="#FFFFFF"/>
+<g stroke="#000000" stroke-width="7" stroke-linecap="round">
+<path d="M-70 -24L-16 -34M-72 -58L-14 -62M-56 -96L-12 -88M70 -24L16 -34M72 -58L14 -62M56 -96L12 -88"/>
+</g>
+<g fill="#000000"><ellipse cx="-26" cy="-48" rx="4" ry="6"/><ellipse cx="26" cy="-48" rx="4" ry="6"/><ellipse cx="-24" cy="-76" rx="3" ry="5"/><ellipse cx="24" cy="-76" rx="3" ry="5"/></g>
+</mask>
+<g id="hh-mon">
+<path d="M0 -6V40" stroke="#2F8A3E" stroke-width="6" stroke-linecap="round"/>
+<g mask="url(#hh-mm)">
+<path d="M0 -8C-20 6 -56 -4 -60 -44C-64 -86 -34 -112 0 -110V-8Z" fill="#4DB356"/>
+<path d="M0 -8C20 6 56 -4 60 -44C64 -86 34 -112 0 -110V-8Z" fill="#3A9A46"/>
+</g>
+<path d="M0 -8V-100" stroke="#8ED48A" stroke-width="3" stroke-linecap="round"/>
+</g>
+<mask id="hh-bm" maskUnits="userSpaceOnUse" x="-40" y="-170" width="80" height="180">
+<path d="M0 0C-26 -30 -28 -112 0 -164C28 -112 26 -30 0 0Z" fill="#FFFFFF"/>
+<g stroke="#000000" stroke-width="4" stroke-linecap="round"><path d="M-34 -40L-4 -60M-34 -92L-4 -112M34 -64L4 -84M30 -118L4 -136"/></g>
+</mask>
+<g id="hh-ban">
+<path d="M0 0V40" stroke="#5DA33A" stroke-width="7" stroke-linecap="round"/>
+<g mask="url(#hh-bm)">
+<path d="M0 0C-26 -30 -28 -112 0 -164Z" fill="#8BD15A"/>
+<path d="M0 0C26 -30 28 -112 0 -164Z" fill="#6DBA45"/>
+</g>
+<path d="M0 0V-156" stroke="#D2EE96" stroke-width="3" stroke-linecap="round"/>
+</g>
+</defs>
+
+<!-- pita hutan -->
+<g clip-path="url(#hh-b)">
+<rect x="20" y="20" width="360" height="360" fill="#2C6A3B"/>
+<g fill="#3B8049">
+<use href="#hh-sl" transform="translate(110 30) rotate(10)"/>
+<use href="#hh-sl" transform="translate(168 44) rotate(-20)"/>
+<use href="#hh-sl" transform="translate(236 28) rotate(25)"/>
+<use href="#hh-sl" transform="translate(30 150) rotate(70)"/>
+<use href="#hh-sl" transform="translate(44 230) rotate(-60)"/>
+<use href="#hh-sl" transform="translate(354 140) rotate(110)"/>
+<use href="#hh-sl" transform="translate(370 220) rotate(-120)"/>
+<use href="#hh-sl" transform="translate(150 360) rotate(-10)"/>
+<use href="#hh-sl" transform="translate(220 352) rotate(30)"/>
+</g>
+<g fill="#235532">
+<use href="#hh-sl" transform="translate(140 50) rotate(-160)"/>
+<use href="#hh-sl" transform="translate(30 290) rotate(50)"/>
+<use href="#hh-sl" transform="translate(360 280) rotate(-100)"/>
+<use href="#hh-sl" transform="translate(190 372) rotate(-170)"/>
+</g>
+<!-- sulur -->
+<path d="M90 20C120 44 160 44 196 30S260 20 300 40" stroke="#5DA33A" stroke-width="3" stroke-linecap="round"/>
+<g fill="#7CC655">
+<ellipse cx="120" cy="38" rx="6" ry="4" transform="rotate(30 120 38)"/>
+<ellipse cx="160" cy="40" rx="6" ry="4" transform="rotate(-20 160 40)"/>
+<ellipse cx="210" cy="26" rx="6" ry="4" transform="rotate(20 210 26)"/>
+<ellipse cx="256" cy="28" rx="6" ry="4" transform="rotate(-30 256 28)"/>
+</g>
+</g>
+<path fill-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z" stroke="#1F4D2B" stroke-width="4"/>
+
+<!-- daun pisang kanan bawah -->
+<use href="#hh-ban" transform="translate(404 404) rotate(-12) scale(0.72)"/>
+<use href="#hh-ban" transform="translate(404 404) rotate(-78) scale(0.72)"/>
+<use href="#hh-ban" transform="translate(404 404) rotate(-45) scale(0.76)"/>
+<!-- monstera -->
+<use href="#hh-mon" transform="translate(-6 50) rotate(105) scale(0.75)"/>
+<use href="#hh-mon" transform="translate(6 6) rotate(140) scale(0.9)"/>
+<use href="#hh-mon" transform="translate(-4 404) rotate(40) scale(0.72)"/>
+<use href="#hh-mon" transform="translate(404 -4) rotate(220) scale(0.62)"/>
+
+<!-- bunga sepatu -->
+<g transform="translate(78 360)">
+<g fill="#FF5A6E">
+<ellipse cx="0" cy="-11" rx="8" ry="11"/>
+<ellipse cx="0" cy="-11" rx="8" ry="11" transform="rotate(72)"/>
+<ellipse cx="0" cy="-11" rx="8" ry="11" transform="rotate(144)"/>
+<ellipse cx="0" cy="-11" rx="8" ry="11" transform="rotate(216)"/>
+<ellipse cx="0" cy="-11" rx="8" ry="11" transform="rotate(288)"/>
+</g>
+<circle r="5" fill="#C42A45"/>
+<path d="M0 0L10 -14" stroke="#FFD23F" stroke-width="2.5" stroke-linecap="round"/>
+<circle cx="10" cy="-14" r="2.5" fill="#FFD23F"/>
+</g>
+
+<!-- burung -->
+<g transform="translate(342 52)">
+<path d="M6 8L26 40L18 42L0 14Z" fill="#2F6FD8"/>
+<path d="M10 12L30 36L26 40L8 16Z" fill="#2FB37A"/>
+<ellipse cx="0" cy="2" rx="14" ry="17" fill="#E8453C"/>
+<ellipse cx="-4" cy="8" rx="8" ry="10" fill="#FFC93C"/>
+<path d="M4 -6C16 -4 22 10 14 22C6 16 0 6 4 -6Z" fill="#2FB37A"/>
+<path d="M10 12C14 14 16 18 14 22C10 19 9 15 10 12Z" fill="#2F6FD8"/>
+<circle cx="-4" cy="-14" r="11" fill="#E8453C"/>
+<path d="M-14 -16C-22 -16 -24 -8 -19 -4C-17 -9 -14 -11 -12 -11Z" fill="#FFB43B"/>
+<circle cx="-7" cy="-16" r="3.4" fill="#FFFFFF"/>
+<circle cx="-8" cy="-16" r="2" fill="#222222"/>
+<path d="M-4 19V24M3 18V24" stroke="#5A3A2A" stroke-width="2.5" stroke-linecap="round"/>
+</g>
+
+<!-- kilau -->
+<circle cx="200" cy="12" r="3" fill="#FFFFFF"/>
+<circle cx="388" cy="170" r="4" fill="#FFFFFF"/>
+<circle cx="12" cy="200" r="4" fill="#FFFFFF"/>
+<circle cx="200" cy="390" r="3" fill="#FFFFFF"/>
+<circle cx="372" cy="250" r="3" fill="#C8F0A8"/>
+</svg>

@@ -1,0 +1,86 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clipPath id="st-b"><path clip-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z"/></clipPath>
+<linearGradient id="st-sky" x1="0" y1="20" x2="0" y2="150" gradientUnits="userSpaceOnUse">
+<stop stop-color="#AEE0F7"/><stop offset="0.55" stop-color="#FFE9C2"/><stop offset="1" stop-color="#FFD39A"/>
+</linearGradient>
+<g id="st-cl" fill="#FFFFFF"><ellipse cx="0" cy="0" rx="16" ry="7"/><circle cx="-5" cy="-5" r="7"/><circle cx="5" cy="-4" r="5"/></g>
+<g id="st-padi">
+<path d="M0 0C0 -40 4 -70 16 -86" stroke="#8A9A3A" stroke-width="3.5" stroke-linecap="round"/>
+<g fill="#F2C14E">
+<ellipse cx="16" cy="-82" rx="3.6" ry="6" transform="rotate(30 16 -82)"/>
+<ellipse cx="21" cy="-76" rx="3.6" ry="6" transform="rotate(40 21 -76)"/>
+<ellipse cx="24" cy="-69" rx="3.6" ry="6" transform="rotate(10 24 -69)"/>
+<ellipse cx="25" cy="-61" rx="3.6" ry="6"/>
+<ellipse cx="12" cy="-76" rx="3.6" ry="6" transform="rotate(-20 12 -76)"/>
+<ellipse cx="17" cy="-66" rx="3.6" ry="6" transform="rotate(-10 17 -66)"/>
+<ellipse cx="19" cy="-57" rx="3.6" ry="6"/>
+</g>
+</g>
+</defs>
+
+<!-- pita: langit pagi + sawah berundak -->
+<g clip-path="url(#st-b)">
+<rect x="20" y="20" width="360" height="360" fill="url(#st-sky)"/>
+<use href="#st-cl" transform="translate(130 36)"/>
+<use href="#st-cl" transform="translate(262 42) scale(0.8)"/>
+<path d="M200 28C206 24 210 24 214 28M220 34C224 30 228 30 232 34" stroke="#6A7A8C" stroke-width="2" stroke-linecap="round"/>
+<path d="M-10 108C16 108 34 94 62 100C120 100 120 328 200 328S280 100 338 100C366 106 384 92 410 92V410H-10Z" fill="#B5DC6E"/>
+<path d="M-10 108C16 108 34 94 62 100C120 100 120 328 200 328S280 100 338 100C366 106 384 92 410 92" stroke="#6E9F3A" stroke-width="3" transform="translate(0 3)"/>
+<path d="M-10 108C16 108 34 94 62 100C120 100 120 328 200 328S280 100 338 100C366 106 384 92 410 92" stroke="#D6F1FF" stroke-width="3"/>
+<path d="M-10 108C16 108 34 94 62 100C120 100 120 328 200 328S280 100 338 100C366 106 384 92 410 92" stroke="#6E9F3A" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 10" transform="translate(0 22)"/>
+<path d="M-10 158C16 158 34 144 62 150C120 150 120 342 200 342S280 150 338 150C366 156 384 142 410 142V410H-10Z" fill="#95C850"/>
+<path d="M-10 158C16 158 34 144 62 150C120 150 120 342 200 342S280 150 338 150C366 156 384 142 410 142" stroke="#6E9F3A" stroke-width="3" transform="translate(0 3)"/>
+<path d="M-10 158C16 158 34 144 62 150C120 150 120 342 200 342S280 150 338 150C366 156 384 142 410 142" stroke="#D6F1FF" stroke-width="3"/>
+<path d="M-10 158C16 158 34 144 62 150C120 150 120 342 200 342S280 150 338 150C366 156 384 142 410 142" stroke="#6E9F3A" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 10" transform="translate(0 22)"/>
+<path d="M-10 208C16 208 34 194 62 200C120 200 120 352 200 352S280 200 338 200C366 206 384 192 410 192V410H-10Z" fill="#ADD866"/>
+<path d="M-10 208C16 208 34 194 62 200C120 200 120 352 200 352S280 200 338 200C366 206 384 192 410 192" stroke="#6E9F3A" stroke-width="3" transform="translate(0 3)"/>
+<path d="M-10 208C16 208 34 194 62 200C120 200 120 352 200 352S280 200 338 200C366 206 384 192 410 192" stroke="#D6F1FF" stroke-width="3"/>
+<path d="M-10 208C16 208 34 194 62 200C120 200 120 352 200 352S280 200 338 200C366 206 384 192 410 192" stroke="#6E9F3A" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 10" transform="translate(0 22)"/>
+<path d="M-10 258C16 258 34 244 62 250C120 250 120 362 200 362S280 250 338 250C366 256 384 242 410 242V410H-10Z" fill="#86BC45"/>
+<path d="M-10 258C16 258 34 244 62 250C120 250 120 362 200 362S280 250 338 250C366 256 384 242 410 242" stroke="#6E9F3A" stroke-width="3" transform="translate(0 3)"/>
+<path d="M-10 258C16 258 34 244 62 250C120 250 120 362 200 362S280 250 338 250C366 256 384 242 410 242" stroke="#D6F1FF" stroke-width="3"/>
+<path d="M-10 258C16 258 34 244 62 250C120 250 120 362 200 362S280 250 338 250C366 256 384 242 410 242" stroke="#6E9F3A" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 10" transform="translate(0 22)"/>
+<path d="M-10 308C16 308 34 294 62 300C120 300 120 371 200 371S280 300 338 300C366 306 384 292 410 292V410H-10Z" fill="#A2D25C"/>
+<path d="M-10 308C16 308 34 294 62 300C120 300 120 371 200 371S280 300 338 300C366 306 384 292 410 292" stroke="#6E9F3A" stroke-width="3" transform="translate(0 3)"/>
+<path d="M-10 308C16 308 34 294 62 300C120 300 120 371 200 371S280 300 338 300C366 306 384 292 410 292" stroke="#D6F1FF" stroke-width="3"/>
+<path d="M-10 308C16 308 34 294 62 300C120 300 120 371 200 371S280 300 338 300C366 306 384 292 410 292" stroke="#6E9F3A" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 10" transform="translate(0 22)"/>
+<path d="M-10 353C16 353 34 339 62 345C120 345 120 381 200 381S280 345 338 345C366 351 384 337 410 337V410H-10Z" fill="#8BC34A"/>
+<path d="M-10 353C16 353 34 339 62 345C120 345 120 381 200 381S280 345 338 345C366 351 384 337 410 337" stroke="#6E9F3A" stroke-width="3" transform="translate(0 3)"/>
+<path d="M-10 353C16 353 34 339 62 345C120 345 120 381 200 381S280 345 338 345C366 351 384 337 410 337" stroke="#D6F1FF" stroke-width="3"/>
+</g>
+<path fill-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z" stroke="#6E9F3A" stroke-width="4"/>
+
+<!-- matahari pagi -->
+<circle cx="50" cy="48" r="34" fill="#FFE08A" opacity="0.6"/>
+<circle cx="50" cy="48" r="24" fill="#FFB84D"/>
+<circle cx="44" cy="42" r="7" fill="#FFD98A"/>
+
+<!-- padi kiri bawah -->
+<g fill="#5E9A35">
+<path d="M14 398C10 366 20 330 40 304C30 336 26 366 24 398Z"/>
+<path d="M30 398C34 372 50 348 76 336C58 354 44 374 40 398Z"/>
+</g>
+<use href="#st-padi" transform="translate(24 398) scale(1.35)"/>
+<use href="#st-padi" transform="translate(42 398) rotate(14) scale(1.15)"/>
+<use href="#st-padi" transform="translate(8 398) rotate(-12) scale(1.05)"/>
+<g fill="#78A44C">
+<path d="M2 398C-2 374 2 350 12 330C10 352 10 376 12 398Z"/>
+<path d="M36 398C42 380 58 366 84 358C66 372 52 384 46 398Z"/>
+</g>
+
+<!-- caping kanan bawah -->
+<g transform="translate(344 360) rotate(-12) scale(1.18)">
+<path d="M-48 6L0 -30L48 6C22 14 -22 14 -48 6Z" fill="#EBC77E"/>
+<path d="M0 -30L48 6C34 10 18 12 6 12Z" fill="#D7AC5E"/>
+<path d="M0 -30L-30 9M0 -30L-12 11M0 -30L12 11M0 -30L30 9" stroke="#B88A3E" stroke-width="2"/>
+<path d="M-48 6C-22 14 22 14 48 6" stroke="#A8763A" stroke-width="3" stroke-linecap="round"/>
+<path d="M-26 -4C-8 0 8 0 26 -4" stroke="#C4661F" stroke-width="3"/>
+</g>
+
+<!-- kilau -->
+<circle cx="366" cy="40" r="4" fill="#FFFFFF"/>
+<circle cx="330" cy="30" r="3" fill="#FFFFFF"/>
+<circle cx="364" cy="130" r="4" fill="#FFFFFF"/>
+<circle cx="200" cy="12" r="3" fill="#FFFFFF"/>
+</svg>

@@ -1,0 +1,57 @@
+<svg width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs><clipPath id="c"><rect width="440" height="440" rx="24"/></clipPath></defs>
+<g clip-path="url(#c)">
+<rect width="440" height="440" fill="#B5DBF5"/>
+<circle cx="64" cy="70" r="9" fill="#FFFFFF" opacity="0.55"/>
+<circle cx="384" cy="110" r="6" fill="#FFFFFF" opacity="0.55"/>
+<circle cx="360" cy="52" r="4" fill="#FFFFFF" opacity="0.55"/>
+
+<!-- rambut belakang -->
+<path d="M90 250C82 150 140 96 222 96C304 96 362 150 354 250L350 300C340 312 330 314 322 306H122C114 314 104 312 94 300Z" fill="#1D1D27"/>
+
+<!-- hoodie navy + headphone -->
+<path d="M56 470C62 396 138 362 222 362C306 362 382 396 388 470Z" fill="#2F3F6E"/>
+<path d="M128 382C148 354 188 346 222 346C256 346 296 354 316 382C296 394 260 388 222 388C184 388 148 394 128 382Z" fill="#24325A"/>
+<path d="M206 390L202 436M238 390L242 436" stroke="#E9EDF5" stroke-width="5" stroke-linecap="round"/>
+<path d="M152 398C140 350 176 328 222 328C268 328 304 350 292 398" stroke="#E9EDF5" stroke-width="12" stroke-linecap="round"/>
+
+<!-- leher, telinga, wajah -->
+<path d="M196 326H248V372C240 380 204 380 196 372Z" fill="#F3CDA1"/>
+<ellipse cx="100" cy="268" rx="20" ry="28" fill="#FFE6C9"/>
+<ellipse cx="344" cy="268" rx="20" ry="28" fill="#FFE6C9"/>
+<ellipse cx="102" cy="270" rx="9" ry="14" fill="#F3CDA1"/>
+<ellipse cx="342" cy="270" rx="9" ry="14" fill="#F3CDA1"/>
+<path d="M98 230C98 160 150 122 222 122C294 122 346 160 346 230C346 300 320 345 268 372C246 383 198 383 176 372C124 345 98 300 98 230Z" fill="#FFE6C9"/>
+
+<g transform="rotate(-16 148 404)"><ellipse cx="148" cy="404" rx="22" ry="29" fill="#E9EDF5"/><ellipse cx="150" cy="404" rx="12" ry="18" fill="#5FB0E6"/></g>
+<g transform="rotate(16 296 404)"><ellipse cx="296" cy="404" rx="22" ry="29" fill="#E9EDF5"/><ellipse cx="294" cy="404" rx="12" ry="18" fill="#5FB0E6"/></g>
+
+<!-- mata anime -->
+<ellipse cx="168" cy="270" rx="22" ry="28" fill="#5E6474"/>
+<ellipse cx="168" cy="275" rx="12" ry="17" fill="#262932"/>
+<circle cx="160" cy="272" r="6.5" fill="#FFFFFF"/>
+<circle cx="177" cy="283" r="3.5" fill="#FFFFFF"/>
+<path d="M141 263Q168 255 195 263L195 236L141 236Z" fill="#FFE6C9"/>
+<path d="M141 263Q168 255 195 263" stroke="#1C1C26" stroke-width="7" stroke-linecap="round"/>
+<path d="M141 263L132 257" stroke="#1C1C26" stroke-width="5" stroke-linecap="round"/>
+<ellipse cx="276" cy="270" rx="22" ry="28" fill="#5E6474"/>
+<ellipse cx="276" cy="275" rx="12" ry="17" fill="#262932"/>
+<circle cx="268" cy="272" r="6.5" fill="#FFFFFF"/>
+<circle cx="285" cy="283" r="3.5" fill="#FFFFFF"/>
+<path d="M303 263Q276 255 249 263L249 236L303 236Z" fill="#FFE6C9"/>
+<path d="M303 263Q276 255 249 263" stroke="#1C1C26" stroke-width="7" stroke-linecap="round"/>
+<path d="M303 263L312 257" stroke="#1C1C26" stroke-width="5" stroke-linecap="round"/>
+<path d="M150 230Q168 224 186 228M258 228Q276 224 294 230" stroke="#2B2B38" stroke-width="5" stroke-linecap="round"/>
+
+<!-- hidung, pipi, mulut -->
+<path d="M219 302Q222 306 226 302" stroke="#E0A784" stroke-width="3" stroke-linecap="round"/>
+<ellipse cx="146" cy="306" rx="18" ry="9" fill="#F7A7A0" opacity="0.45"/>
+<ellipse cx="298" cy="306" rx="18" ry="9" fill="#F7A7A0" opacity="0.45"/>
+<path d="M208 324Q222 333 236 324" stroke="#A85A52" stroke-width="4" stroke-linecap="round"/>
+
+<!-- rambut depan (poni miring) -->
+<path d="M88 254C78 196 84 150 112 124C140 98 180 90 222 92C270 92 316 108 342 140C358 160 366 196 362 230C362 244 360 256 354 268C346 254 340 242 334 234L330 268C320 248 310 234 296 224L294 252C282 234 266 222 248 214L246 238C234 222 216 210 194 204C182 202 172 202 162 206L168 188C150 194 132 206 122 222L120 202C106 216 94 234 88 254Z" fill="#2B2B38"/>
+<path d="M146 130C176 110 216 104 252 110" stroke="#4C5068" stroke-width="9" stroke-linecap="round"/>
+<path d="M206 176C246 184 286 204 314 240M236 160C276 168 314 192 340 230" stroke="#3C3F52" stroke-width="4" stroke-linecap="round"/>
+</g>
+</svg>

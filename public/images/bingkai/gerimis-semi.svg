@@ -1,0 +1,84 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<g id="drop">
+<path d="M0 -10C3 -5 6 -1 6 3C6 7 3 9 0 9C-3 9 -6 7 -6 3C-6 -1 -3 -5 0 -10Z" fill="#5BAED6"/>
+<ellipse cx="-2" cy="3" rx="1.5" ry="2.5" fill="#FFFFFF" opacity="0.8"/>
+</g>
+<g id="dew">
+<circle r="5" fill="#BFE6F7" stroke="#7CC3E3" stroke-width="1.5"/>
+<circle cx="-1.5" cy="-1.5" r="1.5" fill="#FFFFFF"/>
+</g>
+<path id="leaf" d="M0 0C8 -20 30 -30 50 -24C42 -4 20 6 0 0Z"/>
+</defs>
+
+<!-- pita bingkai -->
+<path fill-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z" fill="#BFE5D8" stroke="#86C2AE" stroke-width="4"/>
+<path d="M30 180V320M370 230V330M200 30H300" stroke="#E2F5EE" stroke-width="5" stroke-linecap="round"/>
+
+<!-- genangan + riak di bawah -->
+<ellipse cx="210" cy="363" rx="70" ry="10" fill="#8FCFE6"/>
+<g stroke="#FFFFFF" stroke-width="2.5" fill="none">
+<ellipse cx="190" cy="363" rx="22" ry="5"/>
+<ellipse cx="190" cy="363" rx="10" ry="2.5"/>
+<ellipse cx="246" cy="365" rx="14" ry="3.5"/>
+<ellipse cx="120" cy="368" rx="12" ry="3"/>
+<ellipse cx="310" cy="366" rx="10" ry="2.5" opacity="0.8"/>
+</g>
+
+<!-- gerimis -->
+<g stroke="#8CCBE6" stroke-width="3" stroke-linecap="round">
+<path d="M150 30L146 42M240 40L236 52M366 140L362 152M366 300L362 312M34 290L30 302M180 386L177 396M384 210L381 222M10 220L7 232"/>
+</g>
+<use href="#drop" transform="translate(178 36)"/>
+<use href="#drop" transform="translate(280 30) scale(0.8)"/>
+<use href="#drop" transform="translate(212 46) scale(0.7)"/>
+<use href="#drop" transform="translate(364 172) scale(0.9)"/>
+<use href="#drop" transform="translate(370 250)"/>
+<use href="#drop" transform="translate(34 196) scale(0.9)"/>
+<use href="#drop" transform="translate(30 246) scale(0.7)"/>
+<use href="#drop" transform="translate(150 362) scale(0.8)"/>
+<use href="#drop" transform="translate(392 120) scale(0.7)"/>
+<use href="#drop" transform="translate(110 8) scale(0.7)"/>
+
+<!-- awan + hujan kiri atas -->
+<g fill="#C6DCE8">
+<circle cx="30" cy="58" r="20"/><circle cx="60" cy="50" r="28"/><circle cx="96" cy="58" r="20"/>
+<rect x="12" y="56" width="104" height="22" rx="11"/>
+</g>
+<g fill="#F3F8FB">
+<circle cx="30" cy="52" r="18"/><circle cx="60" cy="42" r="26"/><circle cx="94" cy="52" r="18"/>
+<rect x="14" y="50" width="98" height="20" rx="10"/>
+</g>
+<circle cx="50" cy="32" r="5" fill="#FFFFFF" opacity="0.9"/>
+<use href="#drop" transform="translate(28 100) scale(0.9)"/>
+<use href="#drop" transform="translate(50 92) scale(0.8)"/>
+<use href="#drop" transform="translate(40 130) scale(0.75)"/>
+<use href="#drop" transform="translate(76 92) scale(0.7)"/>
+
+<!-- payung daun kanan atas -->
+<g transform="translate(346 52) rotate(14)">
+<path d="M0 -36V36C0 46 -12 46 -12 38" stroke="#6B4A2B" stroke-width="4.5" stroke-linecap="round"/>
+<path d="M-44 0C-40 -28 -20 -42 0 -42C20 -42 40 -28 44 0C34 -7 24 -7 15 0C8 -7 -8 -7 -15 0C-24 -7 -34 -7 -44 0Z" fill="#78A44C"/>
+<path d="M-44 0C-40 -28 -20 -42 0 -42C-12 -30 -18 -14 -15 0C-24 -7 -34 -7 -44 0Z" fill="#8FBC5E"/>
+<path d="M0 -42V-2M0 -30L-22 -10M0 -30L22 -10M0 -18L-10 -4M0 -18L10 -4" stroke="#5E8A3A" stroke-width="2" stroke-linecap="round"/>
+<path d="M0 -42C2 -48 6 -50 9 -50" stroke="#5E8A3A" stroke-width="3" stroke-linecap="round"/>
+</g>
+<use href="#drop" transform="translate(308 70) scale(0.7)"/>
+<use href="#drop" transform="translate(386 86) scale(0.8)"/>
+
+<!-- daun berembun kiri bawah -->
+<use href="#leaf" fill="#6FA54A" transform="translate(16 384) rotate(-70) scale(1.2)"/>
+<use href="#leaf" fill="#8CC063" transform="translate(20 384) rotate(-25) scale(1.25)"/>
+<use href="#leaf" fill="#78A44C" transform="translate(22 386) rotate(10) scale(0.9)"/>
+<path d="M18 386C30 360 50 344 76 340M16 386C14 360 20 340 36 326" stroke="#5E8A3A" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+<use href="#dew" transform="translate(50 352)"/>
+<use href="#dew" transform="translate(30 336) scale(0.7)"/>
+<use href="#dew" transform="translate(70 344) scale(0.6)"/>
+<use href="#dew" transform="translate(52 372) scale(0.6)"/>
+
+<!-- kilau -->
+<circle cx="130" cy="32" r="3" fill="#FFFFFF"/>
+<circle cx="370" cy="200" r="4" fill="#FFFFFF"/>
+<circle cx="32" cy="160" r="3" fill="#FFFFFF"/>
+<circle cx="350" cy="368" r="4" fill="#FFFFFF"/>
+</svg>

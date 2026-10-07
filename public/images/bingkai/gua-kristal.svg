@@ -1,0 +1,82 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clipPath id="gk-b"><path clip-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z"/></clipPath>
+<path id="gk-in" d="M70 55H330C338 55 345 62 345 70V330C345 338 338 345 330 345H70C62 345 55 338 55 330V70C55 62 62 55 70 55Z"/>
+<g id="gk-c"><path d="M-9 0V-40L0 -54V0Z" fill="#8FF4FF"/><path d="M0 0V-54L9 -40V0Z" fill="#2FB9D9"/><path d="M-5 -6V-38" stroke="#E6FDFF" stroke-width="2.5" stroke-linecap="round"/></g>
+<g id="gk-p"><path d="M-9 0V-40L0 -54V0Z" fill="#FFA6E4"/><path d="M0 0V-54L9 -40V0Z" fill="#E255B8"/><path d="M-5 -6V-38" stroke="#FFE6F7" stroke-width="2.5" stroke-linecap="round"/></g>
+<g id="gk-v"><path d="M-9 0V-40L0 -54V0Z" fill="#C9A6FF"/><path d="M0 0V-54L9 -40V0Z" fill="#8457E0"/><path d="M-5 -6V-38" stroke="#F1E8FF" stroke-width="2.5" stroke-linecap="round"/></g>
+<radialGradient id="gk-gc"><stop stop-color="#7FF3FF" stop-opacity="0.7"/><stop offset="1" stop-color="#7FF3FF" stop-opacity="0"/></radialGradient>
+<radialGradient id="gk-gp"><stop stop-color="#FF8AD8" stop-opacity="0.7"/><stop offset="1" stop-color="#FF8AD8" stop-opacity="0"/></radialGradient>
+<radialGradient id="gk-gv"><stop stop-color="#B98CFF" stop-opacity="0.7"/><stop offset="1" stop-color="#B98CFF" stop-opacity="0"/></radialGradient>
+<path id="gk-s" d="M0 -10C1 -3 3 -1 10 0C3 1 1 3 0 10C-1 3 -3 1 -10 0C-3 -1 -1 -3 0 -10Z"/>
+</defs>
+
+<!-- pita batu gua -->
+<g clip-path="url(#gk-b)">
+<rect x="20" y="20" width="360" height="360" fill="#5A4F6E"/>
+<g fill="#463C5A">
+<path d="M100 20L124 40L110 55H84Z"/><path d="M200 20L226 38L250 20Z"/><path d="M280 55L300 34L322 55Z"/>
+<path d="M20 130L42 150L20 176Z"/><path d="M55 220L34 246L55 268Z"/><path d="M380 120L356 146L380 170Z"/>
+<path d="M345 210L366 236L345 262Z"/><path d="M120 380L140 356L166 380Z"/><path d="M230 345L250 366L270 345Z"/>
+</g>
+<g fill="#6C6184">
+<path d="M150 20L168 34L184 20Z"/><path d="M20 290L36 306L20 324Z"/><path d="M380 290L364 306L380 322Z"/><path d="M190 380L206 364L224 380Z"/><path d="M55 120L40 134L55 150Z"/>
+</g>
+<!-- serpihan kristal kecil -->
+<use href="#gk-c" transform="translate(160 56) rotate(10) scale(0.3)"/>
+<use href="#gk-p" transform="translate(236 56) rotate(-12) scale(0.28)"/>
+<use href="#gk-v" transform="translate(30 200) rotate(60) scale(0.3)"/>
+<use href="#gk-c" transform="translate(372 196) rotate(-70) scale(0.3)"/>
+<use href="#gk-p" transform="translate(180 378) scale(0.3)"/>
+</g>
+<path fill-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z" stroke="#3A314C" stroke-width="4"/>
+<use href="#gk-in" stroke="#7FF3FF" stroke-width="7" opacity="0.3"/>
+<use href="#gk-in" stroke="#B8F8FF" stroke-width="2.5"/>
+
+<!-- stalaktit + stalagmit -->
+<g fill="#5A4F6E">
+<path d="M112 53L120 74L128 53Z"/><path d="M138 53L143 66L148 53Z"/><path d="M262 53L270 78L278 53Z"/><path d="M288 53L292 64L296 53Z"/>
+<path d="M120 347L126 330L132 347Z"/><path d="M262 347L270 326L278 347Z"/>
+</g>
+<path d="M112 53L120 74L120 53Z" fill="#6C6184"/><path d="M262 53L270 78L270 53Z" fill="#6C6184"/>
+
+<!-- kluster kiri atas -->
+<circle cx="44" cy="44" r="56" fill="url(#gk-gc)"/>
+<use href="#gk-v" transform="translate(52 60) rotate(-80) scale(0.85)"/>
+<use href="#gk-c" transform="translate(54 58) rotate(-45) scale(1.2)"/>
+<use href="#gk-p" transform="translate(56 56) rotate(-15) scale(0.8)"/>
+<use href="#gk-c" transform="translate(50 64) rotate(-110) scale(0.7)"/>
+<use href="#gk-v" transform="translate(60 56) rotate(10) scale(0.6)"/>
+
+<!-- kluster kanan atas -->
+<circle cx="360" cy="40" r="40" fill="url(#gk-gp)"/>
+<use href="#gk-p" transform="translate(344 52) rotate(40) scale(0.9)"/>
+<use href="#gk-v" transform="translate(344 50) rotate(70) scale(0.6)"/>
+<use href="#gk-p" transform="translate(346 54) rotate(15) scale(0.55)"/>
+
+<!-- kluster kiri bawah -->
+<circle cx="42" cy="358" r="50" fill="url(#gk-gv)"/>
+<use href="#gk-c" transform="translate(56 346) rotate(-170) scale(0.6)"/>
+<use href="#gk-v" transform="translate(54 346) rotate(-135) scale(1.1)"/>
+<use href="#gk-v" transform="translate(52 344) rotate(-100) scale(0.75)"/>
+<use href="#gk-c" transform="translate(56 348) rotate(-150) scale(0.8)"/>
+<use href="#gk-p" transform="translate(54 350) rotate(-115) scale(0.5)"/>
+
+<!-- kluster kanan bawah -->
+<circle cx="356" cy="356" r="58" fill="url(#gk-gp)"/>
+<use href="#gk-c" transform="translate(344 346) rotate(150) scale(0.65)"/>
+<use href="#gk-v" transform="translate(342 346) rotate(110) scale(0.8)"/>
+<use href="#gk-p" transform="translate(344 344) rotate(135) scale(1.25)"/>
+<use href="#gk-c" transform="translate(348 342) rotate(170) scale(0.85)"/>
+<use href="#gk-p" transform="translate(342 348) rotate(90) scale(0.6)"/>
+
+<!-- kilau -->
+<use href="#gk-s" transform="translate(98 22) scale(0.9)" fill="#FFFFFF"/>
+<use href="#gk-s" transform="translate(16 110) scale(0.8)" fill="#B8F8FF"/>
+<use href="#gk-s" transform="translate(386 130) scale(0.9)" fill="#FFFFFF"/>
+<use href="#gk-s" transform="translate(300 386) scale(0.8)" fill="#FFC6EE"/>
+<use href="#gk-s" transform="translate(22 300) scale(0.7)" fill="#FFFFFF"/>
+<circle cx="200" cy="34" r="3" fill="#FFFFFF"/>
+<circle cx="364" cy="250" r="3" fill="#FFFFFF"/>
+<circle cx="110" cy="368" r="3" fill="#FFFFFF"/>
+</svg>

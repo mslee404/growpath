@@ -1,0 +1,73 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clipPath id="bc"><path clip-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z"/></clipPath>
+<g id="pine">
+<rect x="-5" y="-14" width="10" height="16" rx="2" fill="#6B4A2B"/>
+<g stroke-width="6" stroke-linejoin="round">
+<path d="M-32 -10L0 -52L32 -10Z"/>
+<path d="M-26 -36L0 -74L26 -36Z"/>
+<path d="M-19 -60L0 -94L19 -60Z"/>
+</g>
+<g fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round">
+<path d="M0 -52L18 -28C14 -24 10 -30 6 -26C2 -30 -2 -24 -6 -28C-10 -24 -14 -30 -18 -28Z"/>
+<path d="M0 -74L14 -53C11 -49 8 -55 4 -51C1 -55 -3 -49 -6 -53C-9 -49 -11 -55 -14 -53Z"/>
+<path d="M0 -96L9 -79C7 -75 4 -81 1 -77C-2 -81 -5 -75 -9 -79Z"/>
+</g>
+</g>
+</defs>
+
+<!-- pita hijau tua -->
+<path fill-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z" fill="#24503D"/>
+<g clip-path="url(#bc)">
+<path d="M0 364C40 354 80 362 120 358C170 352 220 364 270 358C320 352 360 360 400 354V400H0Z" fill="#EAF5FB"/>
+<path d="M0 20C60 34 120 26 200 32C280 38 340 26 400 34V0H0Z" fill="#EAF5FB"/>
+<path d="M120 40H280" stroke="#2F6650" stroke-width="5" stroke-linecap="round"/>
+</g>
+<path fill-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z" stroke="#173A2B" stroke-width="4"/>
+
+<!-- cemara kiri -->
+<use href="#pine" fill="#3F8C66" stroke="#3F8C66" transform="translate(42 150) scale(0.72)"/>
+<use href="#pine" fill="#5AA878" stroke="#5AA878" transform="translate(40 262)"/>
+<use href="#pine" fill="#4E9C70" stroke="#4E9C70" transform="translate(36 382) scale(1.05)"/>
+<use href="#pine" fill="#5AA878" stroke="#5AA878" transform="translate(78 392) scale(0.66)"/>
+
+<!-- cemara kanan -->
+<use href="#pine" fill="#3F8C66" stroke="#3F8C66" transform="translate(364 124) scale(0.66)"/>
+<use href="#pine" fill="#5AA878" stroke="#5AA878" transform="translate(362 236)"/>
+<use href="#pine" fill="#4E9C70" stroke="#4E9C70" transform="translate(376 330) scale(0.82)"/>
+
+<!-- pondok hangat -->
+<circle cx="334" cy="360" r="40" fill="#FFD66B" opacity="0.18"/>
+<circle cx="334" cy="360" r="26" fill="#FFD66B" opacity="0.25"/>
+<g transform="translate(332 354)">
+<circle cx="22" cy="-46" r="5" fill="#E8F1F5" opacity="0.8"/>
+<circle cx="28" cy="-58" r="6.5" fill="#E8F1F5" opacity="0.7"/>
+<circle cx="24" cy="-72" r="5.5" fill="#E8F1F5" opacity="0.55"/>
+<rect x="14" y="-36" width="10" height="18" fill="#7E5232"/>
+<rect x="-26" y="-10" width="52" height="38" rx="2" fill="#9B6A43"/>
+<path d="M-26 0H26M-26 10H26M-26 20H26" stroke="#7E5232" stroke-width="2"/>
+<path d="M-34 -4L0 -32L34 -4Z" fill="#6B3F24" stroke="#6B3F24" stroke-width="4" stroke-linejoin="round"/>
+<path d="M-38 -8L0 -40L38 -8C32 -4 26 -10 20 -6C14 -10 8 -4 2 -8C-4 -4 -10 -10 -16 -6C-22 -10 -30 -4 -38 -8Z" fill="#FFFFFF"/>
+<ellipse cx="19" cy="-36" rx="7" ry="3" fill="#FFFFFF"/>
+<circle cx="-11" cy="9" r="15" fill="#FFE08A" opacity="0.45"/>
+<rect x="-19" y="2" width="16" height="14" rx="2" fill="#FFD66B"/>
+<path d="M-11 2V16M-19 9H-3" stroke="#C98A2E" stroke-width="2"/>
+<rect x="6" y="4" width="13" height="24" rx="2" fill="#5A341C"/>
+<circle cx="16" cy="17" r="1.6" fill="#FFD66B"/>
+</g>
+
+<!-- gundukan salju -->
+<path d="M0 384C14 374 40 376 58 386C66 390 70 396 72 400H0Z" fill="#FFFFFF"/>
+<path d="M270 400C280 386 300 380 320 384C340 378 380 376 400 382V400Z" fill="#FFFFFF"/>
+
+<!-- butir salju -->
+<g fill="#FFFFFF">
+<circle cx="100" cy="40" r="3"/><circle cx="150" cy="46" r="2.5"/><circle cx="210" cy="44" r="3"/><circle cx="300" cy="46" r="2.5"/><circle cx="250" cy="48" r="2"/>
+<circle cx="24" cy="30" r="3"/><circle cx="374" cy="30" r="3.5"/><circle cx="340" cy="40" r="2.5"/><circle cx="60" cy="46" r="2"/>
+<circle cx="30" cy="196" r="2.5"/><circle cx="46" cy="310" r="2.5"/><circle cx="30" cy="84" r="2.5"/>
+<circle cx="372" cy="176" r="2.5"/><circle cx="352" cy="290" r="2"/><circle cx="370" cy="66" r="2"/>
+<circle cx="140" cy="370" r="2.5"/><circle cx="210" cy="372" r="2"/><circle cx="250" cy="368" r="2.5"/>
+<circle cx="8" cy="120" r="3"/><circle cx="392" cy="200" r="3"/><circle cx="200" cy="8" r="3"/><circle cx="120" cy="392" r="2.5"/>
+<circle cx="10" cy="240" r="2.5"/><circle cx="390" cy="96" r="2.5"/><circle cx="290" cy="10" r="2.5"/>
+</g>
+</svg>

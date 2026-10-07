@@ -1,0 +1,67 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clipPath id="gb-b"><path clip-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z"/></clipPath>
+<path id="gb-in" d="M70 55H330C338 55 345 62 345 70V330C345 338 338 345 330 345H70C62 345 55 338 55 330V70C55 62 62 55 70 55Z"/>
+<path id="gb-lava" d="M30 96C40 120 26 140 38 166S30 210 40 236S28 284 40 306S58 340 80 356C110 368 130 352 160 362S210 352 240 364S300 352 330 362M362 64C352 96 368 120 356 150S366 200 356 230S364 270 358 300M134 40C160 30 180 46 210 36S260 30 290 42S326 34 336 38M38 166L24 178M240 364L250 378M356 150L372 162M210 36L218 22M40 236L52 246"/>
+<g id="gb-rock"><path d="M-22 0L-16 -18L-2 -26L14 -20L22 0Z" fill="#4A3B3E"/><path d="M-2 -26L14 -20L22 0H4Z" fill="#33282B"/></g>
+</defs>
+
+<!-- pita batu gelap -->
+<g clip-path="url(#gb-b)">
+<rect x="20" y="20" width="360" height="360" fill="#3A2E31"/>
+<g fill="#2A2124">
+<path d="M80 20L100 40L90 55H60Z"/><path d="M200 55L214 34L236 55Z"/><path d="M300 20L320 36L344 20Z"/>
+<path d="M20 120L40 140L20 170Z"/><path d="M55 210L36 236L55 254Z"/><path d="M380 110L358 130L380 160Z"/>
+<path d="M345 220L366 240L345 270Z"/><path d="M110 380L130 356L156 380Z"/><path d="M250 345L268 364L284 345Z"/>
+</g>
+<g fill="#4B3D40">
+<path d="M150 20L170 30L186 20Z"/><path d="M20 280L32 300L20 320Z"/><path d="M380 310L366 330L380 346Z"/><path d="M190 380L206 368L224 380Z"/>
+</g>
+<!-- retakan lava -->
+<use href="#gb-lava" stroke="#FF5A14" stroke-width="12" stroke-linejoin="round" stroke-linecap="round" opacity="0.3"/>
+<use href="#gb-lava" stroke="#FF7A1A" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<use href="#gb-lava" stroke="#FFE07A" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<path fill-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z" stroke="#1F181A" stroke-width="4"/>
+<use href="#gb-in" stroke="#FF6A1A" stroke-width="7" opacity="0.35"/>
+<use href="#gb-in" stroke="#FFA235" stroke-width="2.5"/>
+
+<!-- asap -->
+<g fill="#9C9499">
+<circle cx="46" cy="16" r="10"/><circle cx="62" cy="8" r="13"/><circle cx="86" cy="8" r="15"/><circle cx="112" cy="5" r="14"/><circle cx="136" cy="10" r="10"/><circle cx="156" cy="6" r="7"/>
+</g>
+<g fill="#CFC9CC">
+<circle cx="58" cy="4" r="8"/><circle cx="84" cy="2" r="10"/><circle cx="110" cy="-1" r="9"/><circle cx="134" cy="5" r="6"/>
+</g>
+
+<!-- gunung berapi kiri atas -->
+<path d="M-10 94L30 30C38 22 62 22 70 30L124 78C96 85 40 94 -10 94Z" fill="#7A5A55"/>
+<path d="M50 26C58 25 66 26 70 30L124 78C110 82 92 86 74 88C80 66 68 44 50 26Z" fill="#5A4240"/>
+<path d="M24 46L10 68M32 56L22 80" stroke="#9A7A72" stroke-width="4" stroke-linecap="round"/>
+<ellipse cx="50" cy="28" rx="21" ry="5.5" fill="#FF7A1A"/>
+<ellipse cx="50" cy="27" rx="13" ry="2.8" fill="#FFE07A"/>
+<path d="M41 31C39 44 47 52 41 64C37 74 43 84 39 94M59 31C63 42 57 50 65 60C71 68 67 76 72 86" stroke="#FF5A14" stroke-width="9" stroke-linecap="round" opacity="0.35"/>
+<path d="M41 31C39 44 47 52 41 64C37 74 43 84 39 94M59 31C63 42 57 50 65 60C71 68 67 76 72 86" stroke="#FF8A1F" stroke-width="4.5" stroke-linecap="round"/>
+<path d="M41 34C40 44 45 50 42 60M59 34C61 42 58 48 63 56" stroke="#FFE07A" stroke-width="1.8" stroke-linecap="round"/>
+
+<!-- batu + kolam magma kanan bawah -->
+<ellipse cx="350" cy="372" rx="40" ry="14" fill="#FF7A1A" opacity="0.35"/>
+<ellipse cx="350" cy="372" rx="30" ry="9" fill="#FF8A1F"/>
+<ellipse cx="346" cy="370" rx="16" ry="4" fill="#FFE07A"/>
+<use href="#gb-rock" transform="translate(316 386) scale(1.2)"/>
+<use href="#gb-rock" transform="translate(382 384) scale(1.4)"/>
+<use href="#gb-rock" transform="translate(350 396) scale(0.9)"/>
+<path d="M344 352C340 344 346 338 344 330C352 336 354 344 350 352Z" fill="#FF8A1F"/>
+<path d="M360 356C358 350 362 346 362 340C366 346 366 352 364 356Z" fill="#FFC23B"/>
+<!-- batu kiri bawah -->
+<use href="#gb-rock" transform="translate(30 392) scale(1.5)"/>
+<use href="#gb-rock" transform="translate(64 398) scale(1)"/>
+
+<!-- bara -->
+<g fill="#FFB43B">
+<circle cx="170" cy="14" r="3"/><circle cx="388" cy="200" r="3"/><circle cx="12" cy="240" r="3"/><circle cx="330" cy="330" r="2.5"/>
+</g>
+<g fill="#FF6A1A">
+<circle cx="372" cy="12" r="4"/><circle cx="392" cy="100" r="2.5"/><circle cx="8" cy="150" r="3"/><circle cx="220" cy="392" r="3"/><circle cx="374" cy="334" r="3"/>
+</g>
+</svg>

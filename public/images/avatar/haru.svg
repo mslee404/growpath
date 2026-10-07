@@ -1,0 +1,59 @@
+<svg width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs><clipPath id="c"><rect width="440" height="440" rx="24"/></clipPath><clipPath id="m"><path d="M208 321Q222 337 236 321Q222 326 208 321Z"/></clipPath></defs>
+<g clip-path="url(#c)">
+<rect width="440" height="440" fill="#FDE1EA"/>
+
+<path d="M0 -8C6 -6 7 4 0 8C-7 4 -6 -6 0 -8Z" fill="#F59BB8" transform="translate(58 76) rotate(-30) scale(1.2)"/>
+<path d="M0 -8C6 -6 7 4 0 8C-7 4 -6 -6 0 -8Z" fill="#F7AFC6" transform="translate(386 96) rotate(40)"/>
+<path d="M0 -8C6 -6 7 4 0 8C-7 4 -6 -6 0 -8Z" fill="#F59BB8" transform="translate(44 176) rotate(70) scale(0.9)"/>
+<circle cx="360" cy="40" r="5" fill="#FFFFFF" opacity="0.7"/>
+
+<!-- rambut belakang panjang -->
+<path d="M80 236C72 140 140 90 222 90C304 90 372 140 364 236C366 300 380 380 392 470H52C64 380 78 300 80 236Z" fill="#E68FAF"/>
+
+<!-- kardigan putih -->
+<path d="M56 470C62 396 138 362 222 362C306 362 382 396 388 470Z" fill="#FFFFFF"/>
+<path d="M188 364L222 432L256 364Z" fill="#F7B9CD"/>
+<path d="M188 364L222 432L256 364" stroke="#F0E2EA" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="236" cy="448" r="5" fill="#F29DBB"/>
+
+<!-- leher, telinga, wajah -->
+<path d="M196 326H248V372C240 380 204 380 196 372Z" fill="#F3CDA1"/>
+<ellipse cx="100" cy="268" rx="20" ry="28" fill="#FFE6C9"/>
+<ellipse cx="344" cy="268" rx="20" ry="28" fill="#FFE6C9"/>
+<ellipse cx="102" cy="270" rx="9" ry="14" fill="#F3CDA1"/>
+<ellipse cx="342" cy="270" rx="9" ry="14" fill="#F3CDA1"/>
+<path d="M98 230C98 160 150 122 222 122C294 122 346 160 346 230C346 300 320 345 268 372C246 383 198 383 176 372C124 345 98 300 98 230Z" fill="#FFE6C9"/>
+<!-- mata anime -->
+<ellipse cx="168" cy="270" rx="22" ry="28" fill="#9A69D4"/>
+<ellipse cx="168" cy="275" rx="12" ry="17" fill="#583592"/>
+<circle cx="160" cy="260" r="7" fill="#FFFFFF"/>
+<circle cx="177" cy="281" r="3.5" fill="#FFFFFF"/>
+<path d="M142 254Q168 232 194 250" stroke="#4A2C4C" stroke-width="7" stroke-linecap="round"/>
+<path d="M142 254L133 247" stroke="#4A2C4C" stroke-width="5" stroke-linecap="round"/>
+<ellipse cx="276" cy="270" rx="22" ry="28" fill="#9A69D4"/>
+<ellipse cx="276" cy="275" rx="12" ry="17" fill="#583592"/>
+<circle cx="268" cy="260" r="7" fill="#FFFFFF"/>
+<circle cx="285" cy="281" r="3.5" fill="#FFFFFF"/>
+<path d="M250 250Q276 232 302 254" stroke="#4A2C4C" stroke-width="7" stroke-linecap="round"/>
+<path d="M302 254L311 247" stroke="#4A2C4C" stroke-width="5" stroke-linecap="round"/>
+<path d="M150 220Q168 212 186 218M258 218Q276 212 294 220" stroke="#D486A4" stroke-width="5" stroke-linecap="round"/>
+
+<!-- hidung, pipi, mulut -->
+<path d="M219 302Q222 306 226 302" stroke="#E0A784" stroke-width="3" stroke-linecap="round"/>
+<ellipse cx="146" cy="306" rx="18" ry="9" fill="#F7A7A0" opacity="0.65"/>
+<ellipse cx="298" cy="306" rx="18" ry="9" fill="#F7A7A0" opacity="0.65"/>
+<path d="M208 321Q222 337 236 321Q222 326 208 321Z" fill="#D0646A"/>
+
+<!-- rambut depan (poni belah tengah + rambut samping panjang) -->
+<path d="M80 440C76 360 70 300 78 240C80 150 136 100 222 100C308 100 364 150 366 240C374 300 368 360 364 440C352 448 336 448 326 440C330 380 336 320 326 262C320 236 312 218 300 206Q298 222 288 234Q284 210 270 196Q266 214 254 224Q252 196 238 172Q230 196 210 214Q214 196 208 184Q190 204 168 220Q174 204 172 194Q150 208 134 226Q136 212 140 200Q124 220 118 262C108 320 114 380 118 440C108 448 92 448 80 440Z" fill="#F5AFC6"/>
+<path d="M150 134C178 114 214 108 248 114" stroke="#FCD4E2" stroke-width="9" stroke-linecap="round"/>
+<path d="M96 290C92 340 96 390 100 430M348 290C352 340 348 390 344 430" stroke="#E68FAF" stroke-width="4" stroke-linecap="round"/>
+
+<!-- bunga di rambut -->
+<circle cx="318.0" cy="140.1" r="9" fill="#FFFFFF"/><circle cx="327.4" cy="146.9" r="9" fill="#FFFFFF"/><circle cx="323.8" cy="158.0" r="9" fill="#FFFFFF"/><circle cx="312.2" cy="158.0" r="9" fill="#FFFFFF"/><circle cx="308.6" cy="146.9" r="9" fill="#FFFFFF"/><circle cx="318" cy="150" r="5.0" fill="#F2789F"/>
+<circle cx="344.0" cy="167.2" r="8" fill="#FFE3EC"/><circle cx="352.4" cy="173.3" r="8" fill="#FFE3EC"/><circle cx="349.2" cy="183.1" r="8" fill="#FFE3EC"/><circle cx="338.8" cy="183.1" r="8" fill="#FFE3EC"/><circle cx="335.6" cy="173.3" r="8" fill="#FFE3EC"/><circle cx="344" cy="176" r="4.4" fill="#F2789F"/>
+<circle cx="316.0" cy="178.8" r="6.5" fill="#FFFFFF"/><circle cx="322.8" cy="183.8" r="6.5" fill="#FFFFFF"/><circle cx="320.2" cy="191.8" r="6.5" fill="#FFFFFF"/><circle cx="311.8" cy="191.8" r="6.5" fill="#FFFFFF"/><circle cx="309.2" cy="183.8" r="6.5" fill="#FFFFFF"/><circle cx="316" cy="186" r="3.6" fill="#F2789F"/>
+
+</g>
+</svg>

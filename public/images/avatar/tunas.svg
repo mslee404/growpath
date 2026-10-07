@@ -1,0 +1,55 @@
+<svg width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs><clipPath id="c"><rect width="440" height="440" rx="24"/></clipPath></defs>
+<g clip-path="url(#c)">
+<rect width="440" height="440" fill="#BFE3A8"/>
+<circle cx="64" cy="70" r="9" fill="#FFFFFF" opacity="0.55"/>
+<circle cx="384" cy="110" r="6" fill="#FFFFFF" opacity="0.55"/>
+<circle cx="360" cy="52" r="4" fill="#FFFFFF" opacity="0.55"/>
+
+<!-- badan -->
+<path d="M56 470C62 396 138 362 222 362C306 362 382 396 388 470Z" fill="#FDFDD9"/>
+<path d="M118 470L136 418H308L326 470Z" fill="#78A44C"/>
+<rect x="152" y="394" width="140" height="56" rx="14" fill="#78A44C"/>
+<path d="M152 404L130 368L149 362L172 402Z" fill="#78A44C"/>
+<path d="M292 404L314 368L295 362L272 402Z" fill="#78A44C"/>
+<circle cx="168" cy="412" r="7" fill="#FDFDD9"/>
+<circle cx="276" cy="412" r="7" fill="#FDFDD9"/>
+
+<!-- leher, telinga, wajah -->
+<path d="M196 326H248V372C240 380 204 380 196 372Z" fill="#F3CDA1"/>
+<ellipse cx="100" cy="268" rx="20" ry="28" fill="#FFE6C9"/>
+<ellipse cx="344" cy="268" rx="20" ry="28" fill="#FFE6C9"/>
+<ellipse cx="102" cy="270" rx="9" ry="14" fill="#F3CDA1"/>
+<ellipse cx="342" cy="270" rx="9" ry="14" fill="#F3CDA1"/>
+<path d="M98 230C98 160 150 122 222 122C294 122 346 160 346 230C346 300 320 345 268 372C246 383 198 383 176 372C124 345 98 300 98 230Z" fill="#FFE6C9"/>
+
+<!-- mata anime -->
+<ellipse cx="168" cy="270" rx="22" ry="28" fill="#4E8A3E"/>
+<ellipse cx="168" cy="275" rx="12" ry="17" fill="#2F5A26"/>
+<circle cx="160" cy="260" r="7" fill="#FFFFFF"/>
+<circle cx="177" cy="281" r="3.5" fill="#FFFFFF"/>
+<ellipse cx="276" cy="270" rx="22" ry="28" fill="#4E8A3E"/>
+<ellipse cx="276" cy="275" rx="12" ry="17" fill="#2F5A26"/>
+<circle cx="268" cy="260" r="7" fill="#FFFFFF"/>
+<circle cx="285" cy="281" r="3.5" fill="#FFFFFF"/>
+<path d="M142 254Q168 232 194 250" stroke="#3B2A20" stroke-width="7" stroke-linecap="round"/>
+<path d="M250 250Q276 232 302 254" stroke="#3B2A20" stroke-width="7" stroke-linecap="round"/>
+<path d="M142 254L133 247M302 254L311 247" stroke="#3B2A20" stroke-width="5" stroke-linecap="round"/>
+<path d="M150 224Q168 214 186 220M258 220Q276 214 294 224" stroke="#6B4430" stroke-width="5" stroke-linecap="round"/>
+
+<!-- hidung, pipi, mulut -->
+<path d="M219 302Q222 306 226 302" stroke="#E0A784" stroke-width="3" stroke-linecap="round"/>
+<ellipse cx="146" cy="306" rx="18" ry="9" fill="#F7A7A0" opacity="0.6"/>
+<ellipse cx="298" cy="306" rx="18" ry="9" fill="#F7A7A0" opacity="0.6"/>
+<path d="M204 322Q222 344 240 322Q222 329 204 322Z" fill="#C2524A"/>
+
+<!-- rambut depan -->
+<path d="M90 240C82 150 140 102 222 102C304 102 362 150 354 240C344 214 332 198 320 188L308 226L286 180L264 218L244 174L224 214L204 174L184 218L162 182L142 226L128 192C112 206 100 222 90 240Z" fill="#6B4430"/>
+<path d="M150 140C176 120 206 114 234 116" stroke="#8A5A3E" stroke-width="8" stroke-linecap="round"/>
+
+<!-- tunas -->
+<path d="M222 106C222 90 223 76 226 64" stroke="#4E7A2E" stroke-width="8" stroke-linecap="round"/>
+<path d="M224 76C200 50 168 52 156 64C170 88 202 92 224 76Z" fill="#8BC34A"/>
+<path d="M225 68C244 36 280 34 294 46C282 74 248 84 225 68Z" fill="#78A44C"/>
+</g>
+</svg>

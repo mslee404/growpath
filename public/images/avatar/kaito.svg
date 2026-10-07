@@ -1,0 +1,62 @@
+<svg width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs><clipPath id="c"><rect width="440" height="440" rx="24"/></clipPath></defs>
+<g clip-path="url(#c)">
+<rect width="440" height="440" fill="#25244F"/>
+
+<path d="M0 -9Q1 -1 9 0Q1 1 0 9Q-1 1 -9 0Q-1 -1 0 -9Z" fill="#FFF3C4" transform="translate(58 66)"/>
+<path d="M0 -9Q1 -1 9 0Q1 1 0 9Q-1 1 -9 0Q-1 -1 0 -9Z" fill="#FFF3C4" transform="translate(388 86) scale(0.8)"/>
+<path d="M0 -9Q1 -1 9 0Q1 1 0 9Q-1 1 -9 0Q-1 -1 0 -9Z" fill="#FFFFFF" transform="translate(46 196) scale(0.55)"/>
+<circle cx="102" cy="40" r="3" fill="#FFFFFF" opacity="0.8"/>
+<circle cx="356" cy="40" r="2.5" fill="#FFFFFF" opacity="0.8"/>
+<circle cx="404" cy="170" r="3" fill="#FFFFFF" opacity="0.7"/>
+<circle cx="30" cy="130" r="2.5" fill="#FFFFFF" opacity="0.7"/>
+
+<!-- rambut belakang -->
+<path d="M84 240C76 140 140 92 222 92C304 92 368 140 360 240L366 330L346 316L340 344L320 320H124L104 344L98 316L78 330Z" fill="#4D3683"/>
+
+<!-- jubah ungu + kerah tinggi + bros perak -->
+<path d="M56 470C62 396 138 362 222 362C306 362 382 396 388 470Z" fill="#3B2659"/>
+<path d="M190 380L222 400L254 380L250 470H194Z" fill="#241834"/>
+<path d="M108 420C112 380 120 344 134 318C152 350 180 370 210 384L200 470H118Z" fill="#553A82"/>
+<path d="M336 420C332 380 324 344 310 318C292 350 264 370 234 384L244 470H326Z" fill="#553A82"/>
+<path d="M134 318C152 350 180 370 210 384M310 318C292 350 264 370 234 384" stroke="#7A5BB0" stroke-width="5" stroke-linecap="round"/>
+<path d="M200 400H244" stroke="#C9CFDA" stroke-width="4" stroke-linecap="round"/>
+<path d="M222 384L236 400L222 416L208 400Z" fill="#DDE2EA" stroke="#9AA2B4" stroke-width="3" stroke-linejoin="round"/>
+
+<!-- leher, telinga, wajah -->
+<path d="M196 326H248V372C240 380 204 380 196 372Z" fill="#F3CDA1"/>
+<ellipse cx="100" cy="268" rx="20" ry="28" fill="#FFE6C9"/>
+<ellipse cx="344" cy="268" rx="20" ry="28" fill="#FFE6C9"/>
+<ellipse cx="102" cy="270" rx="9" ry="14" fill="#F3CDA1"/>
+<ellipse cx="342" cy="270" rx="9" ry="14" fill="#F3CDA1"/>
+<path d="M98 230C98 160 150 122 222 122C294 122 346 160 346 230C346 300 320 345 268 372C246 383 198 383 176 372C124 345 98 300 98 230Z" fill="#FFE6C9"/>
+<!-- mata anime -->
+<ellipse cx="168" cy="270" rx="22" ry="28" fill="#F2C02E"/>
+<ellipse cx="168" cy="275" rx="12" ry="17" fill="#9E6A0A"/>
+<circle cx="160" cy="274" r="6.5" fill="#FFFFFF"/>
+<circle cx="177" cy="283" r="3.5" fill="#FFFFFF"/>
+<path d="M141 255Q168 252 195 265L195 236L141 236Z" fill="#FFE6C9"/>
+<path d="M141 255Q168 252 195 265" stroke="#24172F" stroke-width="7" stroke-linecap="round"/>
+<path d="M141 255L132 249" stroke="#24172F" stroke-width="5" stroke-linecap="round"/>
+<ellipse cx="276" cy="270" rx="22" ry="28" fill="#F2C02E"/>
+<ellipse cx="276" cy="275" rx="12" ry="17" fill="#9E6A0A"/>
+<circle cx="268" cy="274" r="6.5" fill="#FFFFFF"/>
+<circle cx="285" cy="283" r="3.5" fill="#FFFFFF"/>
+<path d="M303 255Q276 252 249 265L249 236L303 236Z" fill="#FFE6C9"/>
+<path d="M303 255Q276 252 249 265" stroke="#24172F" stroke-width="7" stroke-linecap="round"/>
+<path d="M303 255L312 249" stroke="#24172F" stroke-width="5" stroke-linecap="round"/>
+<path d="M148 222L188 230M256 230L296 222" stroke="#4D3683" stroke-width="5" stroke-linecap="round"/>
+
+<!-- hidung, pipi, mulut -->
+<path d="M219 302Q222 306 226 302" stroke="#E0A784" stroke-width="3" stroke-linecap="round"/>
+<ellipse cx="146" cy="306" rx="18" ry="9" fill="#F7A7A0" opacity="0.4"/>
+<ellipse cx="298" cy="306" rx="18" ry="9" fill="#F7A7A0" opacity="0.4"/>
+<path d="M206 328Q224 334 238 322" stroke="#8E4A56" stroke-width="4" stroke-linecap="round"/>
+<path d="M238 322L242 318" stroke="#8E4A56" stroke-width="3" stroke-linecap="round"/>
+
+<!-- rambut depan (poni panjang) -->
+<path d="M86 250C74 150 138 96 222 96C306 96 370 150 358 250C352 236 344 224 334 216L332 248C322 228 312 216 300 208L296 232C282 214 264 202 246 196C238 216 232 240 228 286C222 254 214 228 200 210C184 222 170 234 158 252L156 224C142 234 130 252 122 274L118 238C104 244 94 254 86 250Z" fill="#7556B0"/>
+<path d="M150 130C180 112 220 108 256 116" stroke="#9C80D6" stroke-width="9" stroke-linecap="round"/>
+<path d="M238 200C234 226 232 250 230 270" stroke="#5E4496" stroke-width="3" stroke-linecap="round"/>
+</g>
+</svg>

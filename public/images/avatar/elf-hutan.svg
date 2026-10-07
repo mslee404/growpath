@@ -1,0 +1,71 @@
+<svg width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs><clipPath id="elf-c"><rect width="440" height="440" rx="24"/></clipPath></defs>
+<g clip-path="url(#elf-c)">
+<rect width="440" height="440" fill="#5A9758"/>
+<circle cx="52" cy="70" r="8" fill="#E8F7C8" opacity="0.55"/>
+<circle cx="96" cy="40" r="4" fill="#E8F7C8" opacity="0.55"/>
+<circle cx="388" cy="64" r="6" fill="#E8F7C8" opacity="0.55"/>
+<circle cx="404" cy="130" r="4" fill="#E8F7C8" opacity="0.55"/>
+<circle cx="40" cy="170" r="4" fill="#E8F7C8" opacity="0.55"/>
+<circle cx="400" cy="230" r="7" fill="#E8F7C8" opacity="0.55"/>
+<circle cx="36" cy="300" r="6" fill="#E8F7C8" opacity="0.55"/>
+<circle cx="410" cy="340" r="4" fill="#E8F7C8" opacity="0.55"/>
+<circle cx="70" cy="420" r="5" fill="#E8F7C8" opacity="0.55"/>
+<circle cx="370" cy="420" r="6" fill="#E8F7C8" opacity="0.55"/>
+<circle cx="330" cy="30" r="3" fill="#E8F7C8" opacity="0.55"/>
+<!-- rambut belakang panjang -->
+<path d="M90 240C80 150 140 98 222 98C304 98 364 150 354 240C362 320 376 400 388 470H56C68 400 82 320 90 240Z" fill="#CBE89E"/>
+<path d="M96 320C90 370 84 420 80 460M348 320C354 370 360 420 364 460" stroke="#A8D374" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- tunik + mantel -->
+<path d="M50 470C56 398 132 364 222 364C312 364 388 398 394 470Z" fill="#F3EAD2"/>
+<path d="M50 470C56 398 132 364 222 364C312 364 388 398 394 470H316C314 430 290 400 250 386H194C154 400 130 430 128 470Z" fill="#7A5634"/>
+<path d="M180 372L222 414L264 372" stroke="#E3D6B4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M196 326H248V372C240 380 204 380 196 372Z" fill="#F3CDA1"/>
+<path d="M178 392Q197.5 398.9 206 380Q186.5 373.1 178 392Z" fill="#78A44C"/>
+<path d="M266 392Q257.5 373.1 238 380Q246.5 398.9 266 392Z" fill="#78A44C"/>
+<circle cx="204" cy="386" r="4" fill="#D9B44A"/>
+<circle cx="240" cy="386" r="4" fill="#D9B44A"/>
+<path d="M98 230C98 160 150 122 222 122C294 122 346 160 346 230C346 300 320 345 268 372C246 383 198 383 176 372C124 345 98 300 98 230Z" fill="#FFE6C9"/>
+<ellipse cx="168" cy="270" rx="22" ry="28" fill="#1E9A96"/>
+<ellipse cx="168" cy="285" rx="16" ry="11" fill="#6FD6CF"/>
+<ellipse cx="168" cy="274" rx="12" ry="17" fill="#0D5A58"/>
+<circle cx="160" cy="266" r="7" fill="#FFFFFF"/>
+<circle cx="177" cy="281" r="3.5" fill="#FFFFFF"/>
+<ellipse cx="276" cy="270" rx="22" ry="28" fill="#1E9A96"/>
+<ellipse cx="276" cy="285" rx="16" ry="11" fill="#6FD6CF"/>
+<ellipse cx="276" cy="274" rx="12" ry="17" fill="#0D5A58"/>
+<circle cx="268" cy="266" r="7" fill="#FFFFFF"/>
+<circle cx="285" cy="281" r="3.5" fill="#FFFFFF"/>
+<path d="M140 236H196V264Q168 244 140 264Z" fill="#FFE6C9"/>
+<path d="M141 264Q168 244 195 262" stroke="#2E4A3A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M141 264L131 256" stroke="#2E4A3A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M248 236H304V264Q276 244 248 264Z" fill="#FFE6C9"/>
+<path d="M303 264Q276 244 249 262" stroke="#2E4A3A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M303 264L313 256" stroke="#2E4A3A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M150 222Q168 216 186 220M258 220Q276 216 294 222" stroke="#8DBF5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M219 302Q222 306 226 302" stroke="#E0A784" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="146" cy="306" rx="18" ry="9" fill="#F7A7A0" opacity="0.5"/>
+<ellipse cx="298" cy="306" rx="18" ry="9" fill="#F7A7A0" opacity="0.5"/>
+<path d="M208 326Q222 334 236 326" stroke="#C2524A" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- rambut depan -->
+<path d="M88 260C80 160 140 104 222 104C304 104 364 160 356 260L360 400L338 430L320 396L322 260C312 230 290 206 252 190C262 210 266 226 262 240C250 214 236 196 222 186C208 196 194 214 182 240C178 226 182 210 192 190C154 206 132 230 122 260L124 396L106 430L84 400Z" fill="#CBE89E"/>
+<path d="M106 290V400M338 290V400" stroke="#A8D374" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M150 142C180 124 220 118 252 122" stroke="#E9F8CF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- telinga runcing -->
+<path d="M116 244C88 234 58 212 30 182C38 222 64 270 110 306Z" fill="#FFE6C9"/>
+<path d="M110 256C88 246 68 230 50 208C60 236 80 266 106 290Z" fill="#F3CDA1"/>
+<path d="M328 244C356 234 386 212 414 182C406 222 380 270 334 306Z" fill="#FFE6C9"/>
+<path d="M334 256C356 246 376 230 394 208C384 236 364 266 338 290Z" fill="#F3CDA1"/>
+<!-- mahkota daun -->
+<path d="M106 214C146 180 298 180 338 214" stroke="#D9B44A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M222 192Q224.4 166.3 200 158Q197.6 183.7 222 192Z" fill="#3E7A34"/><path d="M222 192L204.4 164.8" stroke="#78A44C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M222 192Q246.4 183.7 244 158Q219.6 166.3 222 192Z" fill="#3E7A34"/><path d="M222 192L239.6 164.8" stroke="#78A44C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M222 192Q238 170 222 148Q206 170 222 192Z" fill="#4E8A3E"/><path d="M222 192L222 156.8" stroke="#8CC152" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M160 194Q152 175.6 132 178Q140 196.4 160 194Z" fill="#4E8A3E"/>
+<path d="M284 194Q304 196.4 312 178Q292 175.6 284 194Z" fill="#4E8A3E"/>
+<path d="M134 204Q128.5 190.1 114 194Q119.5 207.9 134 204Z" fill="#3E7A34"/>
+<path d="M310 204Q324.5 207.9 330 194Q315.5 190.1 310 204Z" fill="#3E7A34"/>
+<circle cx="222" cy="192" r="7" fill="#6FD6CF"/>
+<circle cx="220" cy="190" r="2.5" fill="#FFFFFF"/>
+</g>
+</svg>

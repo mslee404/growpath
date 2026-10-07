@@ -2,117 +2,85 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\UserGrowpath;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class InventoryController extends Controller
 {
+    const HARVEST_GOLD = 500;
+
     public function index()
     {
-        /** @var \App\Models\UserGrowpath $user */
-        $user = Auth::user();
+        $items = Auth::user()->inventories()->with('item')->get()
+            ->map(function ($inv) {
+                $inv->item->is_equipped = $inv->is_equipped;
+                return $inv->item;
+            })
+            ->groupBy('type');
 
-        // Ambil inventory user beserta detail itemnya
-        $inventories = $user->inventories()->with('item')->get();
-
-        // Group by item type
-        // Perhatikan type di database: 'avatar', 'avatar_frame', 'tanaman', 'background'
-        
-        $my_avatars = $inventories->filter(fn($inv) => $inv->item->type === 'avatar')->map(function($inv) {
-            $inv->item->is_equipped = $inv->is_equipped;
-            return $inv->item;
-        });
-
-        $frame = $inventories->filter(fn($inv) => $inv->item->type === 'avatar_frame')->map(function($inv) {
-            $inv->item->is_equipped = $inv->is_equipped;
-            return $inv->item;
-        });
-
-        $plant = $inventories->filter(fn($inv) => $inv->item->type === 'tanaman')->map(function($inv) {
-            $inv->item->is_equipped = $inv->is_equipped;
-            return $inv->item;
-        });
-
-        $background = $inventories->filter(fn($inv) => $inv->item->type === 'background')->map(function($inv) {
-            $inv->item->is_equipped = $inv->is_equipped;
-            return $inv->item;
-        });
-
-        return view('inventory', compact('my_avatars', 'frame', 'plant', 'background'));
+        return view('inventory', [
+            'my_avatars' => $items->get('avatar', collect()),
+            'frame'      => $items->get('avatar_frame', collect()),
+            'plant'      => $items->get('tanaman', collect()),
+            'background' => $items->get('background', collect()),
+        ]);
     }
 
     public function equip(Request $request)
     {
-        $request->validate([
-            'item_id' => 'required|exists:item_shops,id',
-        ]);
+        $request->validate(['item_id' => 'required|integer']);
 
         $user = Auth::user();
-        $itemToCheck = \App\Models\ItemShop::find($request->item_id);
+        $inventory = $user->inventories()->with('item')->where('item_shop_id', $request->item_id)->first();
 
-        if (!$itemToCheck) {
-            return response()->json(['message' => 'Item tidak ditemukan'], 404);
-        }
-
-        // Pastikan user memilikinya dalam inventory
-        $userInventory = $user->inventories()
-            ->where('item_shop_id', $request->item_id)
-            ->first();
-
-        if (!$userInventory) {
+        if (!$inventory) {
             return response()->json(['message' => 'Kamu tidak memiliki item ini'], 403);
         }
 
-        // Unequip semua item dengan tipe sama milik user ini
-        // Kita cari ID item lain yang tipenya sama
-        $type = $itemToCheck->type;
+        $type = $inventory->item->type;
 
-        // Ambil semua inventory user, filter berdasarkan item.type via relationship
-        // Cara efisien: whereHas item.
-        $user->inventories()
-            ->whereHas('item', function($q) use ($type) {
-                $q->where('type', $type);
-            })
-            ->update(['is_equipped' => false]);
-
-        // Equip item yang dipilih
-        $userInventory->is_equipped = true;
-        $userInventory->save();
+        // Hanya satu item per tipe yang boleh terpasang
+        DB::transaction(function () use ($user, $inventory, $type) {
+            $user->inventories()
+                ->whereHas('item', fn ($q) => $q->where('type', $type))
+                ->update(['is_equipped' => false]);
+            $inventory->update(['is_equipped' => true]);
+        });
 
         return response()->json(['message' => 'Item berhasil dipasang!', 'type' => $type]);
     }
+
     public function harvest()
     {
-        /** @var \App\Models\UserGrowpath $user */
         $user = Auth::user();
 
-        // Cari tanaman yang sedang dipakai
-        $equippedPlant = $user->inventories()
-            ->where('is_equipped', true)
-            ->whereHas('item', fn($q) => $q->where('type', 'tanaman'))
-            ->first();
+        // Kunci baris tanaman supaya panen ganda (klik dua kali) hanya dibayar sekali
+        return DB::transaction(function () use ($user) {
+            $plant = $user->inventories()
+                ->where('is_equipped', true)
+                ->whereHas('item', fn ($q) => $q->where('type', 'tanaman'))
+                ->lockForUpdate()
+                ->first();
 
-        if (!$equippedPlant) {
-            return response()->json(['message' => 'Tidak ada tanaman yang dipasang.'], 404);
-        }
+            if (!$plant) {
+                return response()->json(['message' => 'Tidak ada tanaman yang dipasang.'], 404);
+            }
 
-        if ($equippedPlant->level < 10) {
-            return response()->json(['message' => 'Tanaman belum siap panen! Butuh level 10.'], 400);
-        }
+            if ($plant->level < UserGrowpath::MAX_PLANT_LEVEL) {
+                return response()->json(['message' => 'Tanaman belum siap panen! Butuh stage 10.'], 400);
+            }
 
-        // Proses Panen
-        // 1. Tambah Gold User
-        $user->total_gold += 500;
-        $user->save();
+            $plant->update(['level' => 1]);
+            $user->increment('total_gold', self::HARVEST_GOLD);
+            $user->unsetRelation('equipped');
 
-        // 2. Reset Level Tanaman
-        $equippedPlant->level = 1;
-        $equippedPlant->save();
-
-        return response()->json([
-            'message' => 'Panen berhasil! Kamu mendapatkan 500 Gold.',
-            'new_gold' => $user->total_gold,
-            'new_plant_url' => $user->plant_url // Agar frontend bisa update gambar real-time jika mau
-        ]);
+            return response()->json([
+                'message'       => 'Panen berhasil! Kamu mendapatkan ' . self::HARVEST_GOLD . ' Gold.',
+                'new_gold'      => $user->total_gold,
+                'new_plant_url' => $user->plant_url,
+            ]);
+        });
     }
 }

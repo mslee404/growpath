@@ -8,6 +8,8 @@ class TaskUser extends Model
 {
     protected $table = 'user_tasks';
 
+    const XP = 20;
+
     protected $fillable = [
         'user_id',
         'task_name',
@@ -21,7 +23,7 @@ class TaskUser extends Model
     protected $casts = [
         'is_completed' => 'boolean',
         'completed_at' => 'datetime',
-        'due_date' => 'date',
+        'due_date' => 'date:Y-m-d', // format tetap saat di-JSON-kan (tanpa geser zona waktu)
         'due_time' => 'datetime:H:i',
     ];
 

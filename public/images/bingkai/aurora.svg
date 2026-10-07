@@ -1,0 +1,81 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clipPath id="au-b"><path clip-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z"/></clipPath>
+<linearGradient id="au-sky" x1="0" y1="20" x2="0" y2="380" gradientUnits="userSpaceOnUse">
+<stop stop-color="#0D1240"/><stop offset="0.6" stop-color="#1E2466"/><stop offset="1" stop-color="#34307A"/>
+</linearGradient>
+<linearGradient id="au-r" x1="20" y1="0" x2="380" y2="0" gradientUnits="userSpaceOnUse">
+<stop stop-color="#5CF5A6"/><stop offset="0.5" stop-color="#3EE0DA"/><stop offset="1" stop-color="#A47CFF"/>
+</linearGradient>
+<linearGradient id="au-r2" x1="20" y1="0" x2="380" y2="0" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B07DFF"/><stop offset="0.5" stop-color="#47D9F0"/><stop offset="1" stop-color="#6AF7B0"/>
+</linearGradient>
+<linearGradient id="au-v" x1="0" y1="20" x2="0" y2="330" gradientUnits="userSpaceOnUse">
+<stop stop-color="#5CF5A6"/><stop offset="0.5" stop-color="#3EE0DA"/><stop offset="1" stop-color="#A47CFF" stop-opacity="0"/>
+</linearGradient>
+<path id="au-s" d="M0 -10C1 -3 3 -1 10 0C3 1 1 3 0 10C-1 3 -3 1 -10 0C-3 -1 -1 -3 0 -10Z"/>
+<g id="au-pine">
+<path d="M0 -44L14 -22H8L20 -2H-20L-8 -22H-14Z" fill="#1E4E63"/>
+<path d="M0 -44L8 -31C4 -28 -4 -28 -8 -31Z" fill="#F4F8FF"/>
+<path d="M-11 -20C-4 -16 4 -16 11 -20L14 -14C5 -10 -5 -10 -14 -14Z" fill="#F4F8FF"/>
+<rect x="-3" y="-2" width="6" height="8" fill="#5A3A2A"/>
+</g>
+</defs>
+
+<!-- pita langit malam -->
+<g clip-path="url(#au-b)">
+<rect x="20" y="20" width="360" height="360" fill="url(#au-sky)"/>
+<!-- tirai cahaya -->
+<path d="M64 24V50M80 22V54M96 26V50M228 22V48M244 20V44M260 24V48M276 22V46" stroke="#7FF5D0" stroke-width="3" stroke-linecap="round" opacity="0.3"/>
+<path d="M-10 48C40 20 90 52 140 34S240 16 290 36S360 52 410 28" stroke="url(#au-r)" stroke-width="24" stroke-linecap="round" opacity="0.3"/>
+<path d="M-10 48C40 20 90 52 140 34S240 16 290 36S360 52 410 28" stroke="url(#au-r)" stroke-width="9" stroke-linecap="round" opacity="0.95"/>
+<path d="M-10 28C50 46 100 22 160 42S260 54 320 30S380 22 410 44" stroke="url(#au-r2)" stroke-width="14" stroke-linecap="round" opacity="0.3"/>
+<path d="M-10 28C50 46 100 22 160 42S260 54 320 30S380 22 410 44" stroke="url(#au-r2)" stroke-width="5" stroke-linecap="round" opacity="0.85"/>
+<path d="M40 20C26 70 52 110 34 160S28 240 46 300" stroke="url(#au-v)" stroke-width="18" stroke-linecap="round" opacity="0.35"/>
+<path d="M40 20C26 70 52 110 34 160S28 240 46 300" stroke="url(#au-v)" stroke-width="6" stroke-linecap="round"/>
+<path d="M360 20C374 66 348 116 366 166S372 246 354 300" stroke="url(#au-v)" stroke-width="18" stroke-linecap="round" opacity="0.35"/>
+<path d="M360 20C374 66 348 116 366 166S372 246 354 300" stroke="url(#au-v)" stroke-width="6" stroke-linecap="round"/>
+<!-- bukit salju -->
+<path d="M0 400V290C30 300 52 326 80 342C130 332 170 352 214 346S300 330 336 342C352 320 372 302 400 292V400Z" fill="#B9C9EE"/>
+<path d="M0 400V336C40 344 72 362 114 360S190 348 240 356S334 364 400 334V400Z" fill="#EEF4FF"/>
+<path d="M150 366C180 360 214 362 240 368" stroke="#CDDAF5" stroke-width="4" stroke-linecap="round"/>
+<!-- bintang kecil -->
+<g fill="#FFFFFF">
+<circle cx="120" cy="30" r="2"/><circle cx="190" cy="48" r="2"/><circle cx="310" cy="46" r="2"/>
+<circle cx="30" cy="110" r="2"/><circle cx="46" cy="200" r="2.5"/><circle cx="368" cy="120" r="2"/><circle cx="352" cy="230" r="2.5"/>
+</g>
+</g>
+<path fill-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z" stroke="#4A3FB0" stroke-width="4"/>
+<path d="M70 55H330C338 55 345 62 345 70V330C345 338 338 345 330 345H70C62 345 55 338 55 330V70C55 62 62 55 70 55Z" stroke="#FFD86B" stroke-width="3"/>
+
+<!-- gundukan salju + cemara kiri bawah -->
+<path d="M-4 404C-4 372 18 346 52 348C84 350 102 374 108 404Z" fill="#CBD9F4"/>
+<use href="#au-pine" transform="translate(30 362) scale(1.25)"/>
+<use href="#au-pine" transform="translate(68 372) scale(0.9)"/>
+<path d="M-4 404C6 380 30 368 58 372C80 376 96 390 100 404Z" fill="#F4F8FF"/>
+<!-- gundukan salju kanan bawah -->
+<path d="M300 404C304 378 326 360 356 362C384 364 404 380 404 404Z" fill="#CBD9F4"/>
+<use href="#au-pine" transform="translate(360 368) scale(1.1)"/>
+<path d="M312 404C320 386 340 376 364 380C384 384 398 394 404 404Z" fill="#F4F8FF"/>
+
+<!-- bulan sabit kanan atas -->
+<mask id="au-m"><circle cx="358" cy="44" r="26" fill="#FFFFFF"/><circle cx="372" cy="34" r="22" fill="#000000"/></mask>
+<circle cx="358" cy="44" r="26" fill="#FFF3B8" mask="url(#au-m)"/>
+
+<!-- lencana kepingan salju -->
+<circle cx="200" cy="28" r="20" fill="#2A2F80" stroke="#FFD86B" stroke-width="3"/>
+<g stroke="#FFFFFF" stroke-width="3" stroke-linecap="round">
+<path d="M200 15V41M189 21.5L211 34.5M189 34.5L211 21.5"/>
+<path d="M196 17L200 21L204 17M196 39L200 35L204 39" stroke-width="2"/>
+</g>
+
+<!-- bintang besar -->
+<use href="#au-s" transform="translate(46 46) scale(2.2)" fill="#FFF6C8"/>
+<use href="#au-s" transform="translate(46 46) scale(0.9)" fill="#FFFFFF"/>
+<use href="#au-s" transform="translate(84 18) scale(1.1)" fill="#FFFFFF"/>
+<use href="#au-s" transform="translate(16 92) scale(0.9)" fill="#C9B8FF"/>
+<use href="#au-s" transform="translate(318 22) scale(1)" fill="#FFFFFF"/>
+<use href="#au-s" transform="translate(386 110) scale(1.2)" fill="#9EF5D6"/>
+<use href="#au-s" transform="translate(14 250) scale(1)" fill="#FFFFFF"/>
+<use href="#au-s" transform="translate(384 250) scale(0.8)" fill="#FFFFFF"/>
+</svg>

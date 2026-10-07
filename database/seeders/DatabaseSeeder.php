@@ -2,19 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\UserGrowpath;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        $this->call(PPSeeder::class);
-        $this->call(ItemSeeder::class);
-        $this->call(GoldShopSeeder::class);
-        $this->call(UserSeeder::class);
-        $this->call(HabbitTaskSeeder::class);
-        $this->call(UserInventorySeeder::class);
+        // Katalog: aman dijalankan berulang, juga di production
+        $this->call([PPSeeder::class, ItemSeeder::class, GoldShopSeeder::class]);
+
+        // Akun & data demo (password lemah) hanya untuk lokal
+        if (!app()->isProduction()) {
+            $this->call([UserSeeder::class, HabbitTaskSeeder::class, UserInventorySeeder::class]);
+        }
     }
 }

@@ -3,204 +3,110 @@
 namespace App\Http\Controllers;
 
 use App\Models\UserHabit;
-use App\Models\DailyHabit;
-use App\Models\WeeklyHabit;
-use App\Models\MonthlyHabit;
-use App\Models\CustomHabit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HabitController extends Controller
 {
+    private const DAYS = 'in:senin,selasa,rabu,kamis,jumat,sabtu,minggu';
+    private const TIME = 'required|date_format:H:i,H:i:s';
+
     public function store(Request $request)
     {
-        $request->validate([
-            'nama_habit' => 'required|string|max:255',
-            'frekuensi'  => 'required|in:daily,weekly,monthly,custom',
-        ]);
+        $request->validate(['frekuensi' => 'required|in:daily,weekly,monthly,custom']);
+        $type = $request->frekuensi;
+        $this->validateHabit($request, $type);
 
-        $user = Auth::user();
+        // Induk + detail harus tersimpan bersama, atau tidak sama sekali
+        DB::transaction(function () use ($request, $type) {
+            $habit = Auth::user()->habits()->create(['habit_type' => $type]);
+            $habit->{"{$type}Habit"}()->create($this->detailData($request, $type));
+        });
 
-        // 1. Buat Parent Record (UserHabit)
-        $userHabit = UserHabit::create([
-            'user_id'    => $user->id,
-            'habit_type' => $request->frekuensi,
-        ]);
-
-        // 2. Buat Child Record sesuai tipe
-        switch ($request->frekuensi) {
-            case 'daily':
-                // Validasi input khusus daily
-                $request->validate([
-                    'jam_daily' => 'required',
-                ]);
-
-                DailyHabit::create([
-                    'user_habit_id'     => $userHabit->id,
-                    'habit_name'        => $request->nama_habit,
-                    'habit_description' => $request->detail_habit,
-                    'hour'              => $request->jam_daily,
-                ]);
-                break;
-
-            case 'weekly':
-                $request->validate([
-                    'jam_weekly'  => 'required',
-                    'hari_weekly' => 'required',
-                ]);
-
-                WeeklyHabit::create([
-                    'user_habit_id'     => $userHabit->id,
-                    'habit_name'        => $request->nama_habit,
-                    'habit_description' => $request->detail_habit,
-                    'hour'              => $request->jam_weekly,
-                    'day'               => strtolower($request->hari_weekly),
-
-                ]);
-                break;
-
-            case 'monthly':
-                $request->validate([
-                    'monthly_mode' => 'required|in:tanggal,minggu',
-                ]);
-
-                if ($request->monthly_mode == 'tanggal') {
-                    $request->validate(['tanggal_monthly' => 'required', 'jam_monthly_tanggal' => 'required']);
-                    
-                    MonthlyHabit::create([
-                        'user_habit_id'     => $userHabit->id,
-                        'habit_name'        => $request->nama_habit,
-                        'habit_description' => $request->detail_habit,
-                        'hour'              => $request->jam_monthly_tanggal,
-                        'schedule_type'     => 'date',
-                        'date'              => $request->tanggal_monthly,
-                    ]);
-
-                } else {
-                    $request->validate(['hari_monthly' => 'required', 'minggu_ke' => 'required', 'jam_monthly_minggu' => 'required']);
-
-                    MonthlyHabit::create([
-                        'user_habit_id'     => $userHabit->id,
-                        'habit_name'        => $request->nama_habit,
-                        'habit_description' => $request->detail_habit,
-                        'hour'              => $request->jam_monthly_minggu,
-                        'schedule_type'     => 'week', 
-                        'day'               => strtolower($request->hari_monthly),
-                        'week'              => $request->minggu_ke,
-                    ]);
-                }
-                break;
-
-            case 'custom':
-                $request->validate([
-                    'interval_custom' => 'required|integer|min:1',
-                    'jam_custom'      => 'required',
-                ]);
-
-                CustomHabit::create([
-                    'user_habit_id'     => $userHabit->id,
-                    'habit_name'        => $request->nama_habit,
-                    'habit_description' => $request->detail_habit,
-                    'hour'              => $request->jam_custom,
-                    'day_count'         => $request->interval_custom,
-                ]);
-                break;
-        }
-
-        return redirect()->back()->with('success', 'Habit berhasil ditambahkan!');
-    }
-
-    public function destroy($id)
-    {
-        $habit = UserHabit::where('id', $id)->where('user_id', Auth::id())->firstOrFail();
-        $habit->delete();
-
-        return redirect()->back()->with('success', 'Habit berhasil dihapus!');
-    }
-
-    public function check($id)
-    {
-        $habit = UserHabit::where('id', $id)->where('user_id', Auth::id())->firstOrFail();
-
-        // Cek apakah sudah dicek hari ini (atau periode ini)
-        // Sederhananya cek apakah ada record hari ini
-        $today = now()->format('Y-m-d');
-        
-        // Menggunakan relasi 'records' yang sudah ditambahkan di UserHabit
-        $exists = $habit->records()
-                    ->whereDate('completion_date', $today)
-                    ->exists();
-
-        if (!$exists) {
-            // Tentukan XP berdasarkan habit_type
-            $xpEarned = match($habit->habit_type) {
-                'daily' => 3,
-                'weekly' => 10,
-                'monthly' => 20,
-                'custom' => 5,
-                default => 10,
-            };
-
-            $habit->records()->create([
-                'completion_date' => $today,
-                'xp_earned' => $xpEarned,
-            ]);
-
-            Auth::user()->addXp($xpEarned);
-        }
-
-        return redirect()->back()->with('success', 'Habit terlaksana! +10 XP');
+        return back()->with('success', 'Habit berhasil ditambahkan!');
     }
 
     public function update(Request $request, $id)
     {
-        /** @var \App\Models\UserGrowpath $user */
-        $user = Auth::user();
-        $habit = UserHabit::where('id', $id)->where('user_id', $user->id)->firstOrFail();
-        
-        $detail = $habit->detail();
+        $habit = $this->findHabit($id);
+        $this->validateHabit($request, $habit->habit_type);
 
-        if ($detail) {
-            $data = [
-                'habit_name' => $request->nama_habit ?? $detail->habit_name,
-                'habit_description' => $request->detail_habit ?? $detail->habit_description,
-            ];
+        $habit->detail()?->update($this->detailData($request, $habit->habit_type));
 
-            // Update specific fields based on habit_type
-            if ($habit->habit_type === 'daily') {
-                if ($request->jam_daily) $data['hour'] = $request->jam_daily;
-            }
-            elseif ($habit->habit_type === 'weekly') {
-                if ($request->jam_weekly) $data['hour'] = $request->jam_weekly;
-                
-                $validDays = ['senin', 'selasa', 'rabu', 'kamis', 'jumat', 'sabtu', 'minggu'];
-                if ($request->hari_weekly && in_array(strtolower($request->hari_weekly), $validDays)) {
-                    $data['day'] = strtolower($request->hari_weekly);
-                }
-            }
-            elseif ($habit->habit_type === 'monthly') {
-                if ($request->monthly_mode === 'tanggal') {
-                    $data['schedule_type'] = 'date';
-                    $data['date'] = $request->tanggal_monthly;
-                    $data['hour'] = $request->jam_monthly_tanggal;
-                    $data['day'] = null;
-                    $data['week'] = null;
-                } elseif ($request->monthly_mode === 'minggu') {
-                    $data['schedule_type'] = 'week';
-                    $data['day'] = strtolower($request->hari_monthly);
-                    $data['week'] = $request->minggu_ke;
-                    $data['hour'] = $request->jam_monthly_minggu;
-                    $data['date'] = null;
-                }
-            }
-            elseif ($habit->habit_type === 'custom') {
-                if ($request->interval_custom) $data['day_count'] = $request->interval_custom;
-                if ($request->jam_custom) $data['hour'] = $request->jam_custom;
-            }
+        return back()->with('success', 'Habit diperbarui!');
+    }
 
-            $detail->update($data);
+    public function destroy($id)
+    {
+        $this->findHabit($id)->delete();
+
+        return back()->with('success', 'Habit berhasil dihapus!');
+    }
+
+    public function check($id)
+    {
+        $habit = $this->findHabit($id)->load('customHabit');
+
+        if ($habit->isDoneThisPeriod($habit->records()->max('completion_date'))) {
+            return back()->with('success', 'Habit ini sudah selesai untuk periode ini.');
         }
 
-        return redirect()->back()->with('success', 'Habit diperbarui!');
+        $xp = $habit->xp();
+        // createOrFirst aman dari klik ganda (unique user_habit_id + completion_date)
+        $record = $habit->records()->createOrFirst(
+            ['completion_date' => today()->toDateString()],
+            ['xp_earned' => $xp],
+        );
+
+        if ($record?->wasRecentlyCreated) {
+            $this->flashSiram($xp, Auth::user()->addXp($xp));
+        }
+
+        return back();
+    }
+
+    private function findHabit($id): UserHabit
+    {
+        return Auth::user()->habits()->findOrFail($id);
+    }
+
+    private function validateHabit(Request $request, string $type): void
+    {
+        // Dropdown hari mengirim "Senin", database menyimpan "senin"
+        foreach (['hari_weekly', 'hari_monthly'] as $field) {
+            if ($request->filled($field)) {
+                $request->merge([$field => strtolower($request->input($field))]);
+            }
+        }
+
+        $byType = match ($type) {
+            'daily'   => ['jam_daily' => self::TIME],
+            'weekly'  => ['jam_weekly' => self::TIME, 'hari_weekly' => 'required|' . self::DAYS],
+            'monthly' => ['monthly_mode' => 'required|in:tanggal,minggu'] + ($request->monthly_mode === 'minggu'
+                ? ['hari_monthly' => 'required|' . self::DAYS, 'minggu_ke' => 'required|integer|between:1,5', 'jam_monthly_minggu' => self::TIME]
+                : ['tanggal_monthly' => 'required|integer|between:1,31', 'jam_monthly_tanggal' => self::TIME]),
+            'custom'  => ['interval_custom' => 'required|integer|between:1,365', 'jam_custom' => self::TIME],
+        };
+
+        $request->validate([
+            'nama_habit'   => 'required|string|max:100',
+            'detail_habit' => 'nullable|string|max:255',
+        ] + $byType);
+    }
+
+    private function detailData(Request $r, string $type): array
+    {
+        return [
+            'habit_name'        => $r->nama_habit,
+            'habit_description' => $r->detail_habit,
+        ] + match ($type) {
+            'daily'   => ['hour' => $r->jam_daily],
+            'weekly'  => ['hour' => $r->jam_weekly, 'day' => $r->hari_weekly],
+            'monthly' => $r->monthly_mode === 'minggu'
+                ? ['schedule_type' => 'week', 'day' => $r->hari_monthly, 'week' => $r->minggu_ke, 'date' => null, 'hour' => $r->jam_monthly_minggu]
+                : ['schedule_type' => 'date', 'date' => $r->tanggal_monthly, 'day' => null, 'week' => null, 'hour' => $r->jam_monthly_tanggal],
+            'custom'  => ['hour' => $r->jam_custom, 'day_count' => $r->interval_custom],
+        };
     }
 }

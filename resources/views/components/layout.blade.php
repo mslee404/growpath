@@ -21,5 +21,12 @@
     {{-- Slot untuk popups --}}
     {{ $popups ?? '' }}
 
+    {{-- Notifikasi singkat dari redirect (sukses / error validasi) --}}
+    @if (session('success') || $errors->any())
+        <div role="status" class="toast {{ $errors->any() ? 'toast-error' : '' }}">
+            {{ $errors->any() ? $errors->first() : session('success') }}
+        </div>
+    @endif
+
 </body>
 </html>

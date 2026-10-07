@@ -1,0 +1,77 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clipPath id="bc"><path clip-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z"/></clipPath>
+<g id="frond">
+<path d="M0 0C18 -16 42 -16 58 0L50 -1L50 6L42 1L40 8L32 2L28 9L20 3L14 8L8 2Z"/>
+<path d="M2 -1C18 -11 40 -10 56 -1" stroke="#2E7D3A" stroke-width="2" stroke-linecap="round"/>
+</g>
+<path id="wave" d="M0 0C3 -5 9 -5 12 0C14 -3 18 -3 20 0" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+</defs>
+
+<!-- pita: langit / laut / pasir -->
+<g clip-path="url(#bc)">
+<rect width="400" height="400" fill="#A6DDF7"/>
+<path d="M0 232C30 226 50 240 80 234C120 226 160 242 200 234C240 226 280 242 320 234C350 228 370 238 400 232V400H0Z" fill="#43BDD6"/>
+<path d="M0 262C40 256 70 268 110 262C160 254 220 270 280 262C330 256 370 266 400 260V400H0Z" fill="#6FD3E3"/>
+<path d="M0 296C40 288 80 304 130 296C180 288 230 304 280 296C330 288 370 302 400 294V400H0Z" fill="#F6DCA4"/>
+<path d="M0 296C40 288 80 304 130 296C180 288 230 304 280 296C330 288 370 302 400 294" stroke="#FFFFFF" stroke-width="4"/>
+<path d="M0 312C50 306 100 318 160 312" stroke="#EBC88A" stroke-width="3" opacity="0.6"/>
+<path d="M150 30H260M372 80V180" stroke="#D3F0FD" stroke-width="5" stroke-linecap="round"/>
+<g fill="#E8C584"><circle cx="160" cy="368" r="2"/><circle cx="196" cy="360" r="1.6"/><circle cx="230" cy="372" r="2"/><circle cx="120" cy="356" r="1.6"/><circle cx="270" cy="362" r="1.6"/><circle cx="32" cy="330" r="1.6"/><circle cx="366" cy="318" r="2"/></g>
+</g>
+<path fill-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z" stroke="#5FB3D6" stroke-width="4"/>
+
+<!-- ombak kecil -->
+<use href="#wave" transform="translate(354 250)"/>
+<use href="#wave" transform="translate(360 276) scale(0.8)"/>
+<use href="#wave" transform="translate(26 268) scale(0.8)"/>
+<use href="#wave" transform="translate(380 244) scale(0.7)"/>
+
+<!-- matahari -->
+<g transform="translate(350 50)">
+<g stroke="#FFB627" stroke-width="5" stroke-linecap="round">
+<path d="M0 -32V-42M0 32V42M-32 0H-42M32 0H42M-23 -23L-30 -30M23 -23L30 -30M-23 23L-30 30M23 23L30 30"/>
+</g>
+<circle r="25" fill="#FFD54F"/>
+<circle cx="-8" cy="-8" r="7" fill="#FFE88A"/>
+</g>
+
+<!-- awan + camar -->
+<g fill="#FFFFFF">
+<circle cx="70" cy="36" r="12"/><circle cx="88" cy="30" r="15"/><circle cx="106" cy="38" r="10"/>
+<rect x="58" y="36" width="58" height="12" rx="6"/>
+</g>
+<path d="M150 36Q156 29 162 36Q168 29 174 36M196 26Q200 21 204 26Q208 21 212 26" stroke="#4E6A80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+<!-- pohon kelapa miring -->
+<path d="M66 398C64 350 54 296 44 238" stroke="#B5814B" stroke-width="13" stroke-linecap="round"/>
+<path d="M66 398C64 350 54 296 44 238" stroke="#8E5E30" stroke-width="13" stroke-dasharray="3 9"/>
+<g fill="#3FA34D">
+<use href="#frond" transform="translate(44 232) rotate(24) scale(0.8)"/>
+<use href="#frond" transform="translate(44 232) rotate(-36) scale(0.9)"/>
+<use href="#frond" transform="translate(44 232) rotate(-78) scale(0.8)"/>
+</g>
+<g fill="#4CB85A">
+<use href="#frond" transform="translate(44 232) scale(-0.75 0.75) rotate(-50)"/>
+<use href="#frond" transform="translate(44 232) scale(-0.7 0.7) rotate(10)"/>
+</g>
+<g fill="#7A4A22"><circle cx="38" cy="240" r="6"/><circle cx="50" cy="242" r="6"/><circle cx="44" cy="234" r="5.5"/></g>
+
+<!-- bintang laut -->
+<g transform="translate(350 350) rotate(12)">
+<path d="M0 -26L6.5 -8.9L24.7 -8L10.5 3.4L15.3 21L0 11L-15.3 21L-10.5 3.4L-24.7 -8L-6.5 -8.9Z" fill="#FF8A65" stroke="#FF8A65" stroke-width="7" stroke-linejoin="round"/>
+<g fill="#FFD3C2"><circle cy="-14" r="2"/><circle cx="13" cy="-4" r="2"/><circle cx="8" cy="11" r="2"/><circle cx="-8" cy="11" r="2"/><circle cx="-13" cy="-4" r="2"/><circle r="2.5"/></g>
+</g>
+<!-- kerang -->
+<g transform="translate(296 374) rotate(-10)">
+<path d="M-11 4C-14 -6 -8 -14 0 -14C8 -14 14 -6 11 4Z" fill="#FBB8C8"/>
+<path d="M0 -14V4M-6 -12L-4 4M6 -12L4 4" stroke="#EE8FA8" stroke-width="1.5"/>
+<rect x="-5" y="3" width="10" height="4" rx="2" fill="#EE8FA8"/>
+</g>
+
+<!-- kilau -->
+<circle cx="366" cy="220" r="3" fill="#FFFFFF"/>
+<circle cx="32" cy="160" r="4" fill="#FFFFFF"/>
+<circle cx="250" cy="30" r="3" fill="#FFFFFF"/>
+<circle cx="120" cy="370" r="3" fill="#FFFFFF"/>
+</svg>

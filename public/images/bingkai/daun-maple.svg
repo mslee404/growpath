@@ -1,0 +1,44 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<g id="mp">
+<path d="M0 -50L9 -32L20 -38L17 -16L40 -26L34 -10L46 -4L24 8L28 18L4 12L0 14L-4 12L-28 18L-24 8L-46 -4L-34 -10L-40 -26L-17 -16L-20 -38L-9 -32Z" stroke-width="5" stroke-linejoin="round"/>
+<path d="M0 12V36" stroke="#7A3A1A" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M0 10V-40M0 6L30 -18M0 6L-30 -18M0 10L20 12M0 10L-20 12" stroke="#000000" stroke-opacity="0.2" stroke-width="2.2" stroke-linecap="round"/>
+</g>
+</defs>
+
+<!-- pita bingkai -->
+<path fill-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z" fill="#EE8540" stroke="#BF5320" stroke-width="4"/>
+<path d="M30 180V320M370 80V220M160 30H280M120 370H240" stroke="#F8AE6E" stroke-width="5" stroke-linecap="round"/>
+
+<!-- daun kecil di pita -->
+<use href="#mp" fill="#D9452B" stroke="#D9452B" transform="translate(206 36) rotate(30) scale(0.22)"/>
+<use href="#mp" fill="#F6C343" stroke="#F6C343" transform="translate(366 160) rotate(-40) scale(0.2)"/>
+<use href="#mp" fill="#B8321F" stroke="#B8321F" transform="translate(34 230) rotate(60) scale(0.2)"/>
+<use href="#mp" fill="#F6C343" stroke="#F6C343" transform="translate(180 366) rotate(-20) scale(0.2)"/>
+<use href="#mp" fill="#D9452B" stroke="#D9452B" transform="translate(366 250) rotate(150) scale(0.18)"/>
+<use href="#mp" fill="#F6C343" stroke="#F6C343" transform="translate(120 32) rotate(-70) scale(0.17)"/>
+
+<!-- daun jatuh di luar pita -->
+<use href="#mp" fill="#C62F2A" stroke="#C62F2A" transform="translate(292 8) rotate(20) scale(0.2)"/>
+<use href="#mp" fill="#F2A12E" stroke="#F2A12E" transform="translate(392 210) rotate(-30) scale(0.2)"/>
+<use href="#mp" fill="#F6C343" stroke="#F6C343" transform="translate(8 160) rotate(40) scale(0.2)"/>
+<use href="#mp" fill="#D9452B" stroke="#D9452B" transform="translate(110 392) rotate(-60) scale(0.2)"/>
+
+<!-- gugus kiri atas -->
+<use href="#mp" fill="#F6C343" stroke="#F6C343" transform="translate(30 104) rotate(-70) scale(0.62)"/>
+<use href="#mp" fill="#9E3A1C" stroke="#9E3A1C" transform="translate(98 28) rotate(40) scale(0.6)"/>
+<use href="#mp" fill="#C62F2A" stroke="#C62F2A" transform="translate(48 48) rotate(-25) scale(0.95)"/>
+
+<!-- gugus kanan bawah -->
+<use href="#mp" fill="#9E3A1C" stroke="#9E3A1C" transform="translate(370 300) rotate(110) scale(0.62)"/>
+<use href="#mp" fill="#F6C343" stroke="#F6C343" transform="translate(300 374) rotate(-140) scale(0.6)"/>
+<use href="#mp" fill="#B8321F" stroke="#B8321F" transform="translate(352 352) rotate(155) scale(1)"/>
+
+<!-- kilau -->
+<circle cx="250" cy="30" r="3" fill="#FFFFFF"/>
+<circle cx="366" cy="40" r="4" fill="#FFFFFF"/>
+<circle cx="366" cy="120" r="3" fill="#FFFFFF"/>
+<circle cx="34" cy="300" r="4" fill="#FFFFFF"/>
+<circle cx="40" cy="364" r="3" fill="#FFFFFF"/>
+</svg>

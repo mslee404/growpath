@@ -249,23 +249,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
                 }
             })
-                .then(res => res.json())
-                .then(data => {
+                .then(res => res.json().then(data => ({ ok: res.ok, data })))
+                .then(({ ok, data }) => {
                     // Switch to result state
                     if (modalHarvestActions) modalHarvestActions.classList.add('hidden');
                     if (modalHarvestResultActions) modalHarvestResultActions.classList.remove('hidden');
+                    if (modalHarvestTitle) modalHarvestTitle.textContent = ok ? '🎉 Berhasil!' : 'Belum bisa panen';
+                    if (modalHarvestMessage) modalHarvestMessage.textContent = data.message || 'Terjadi kesalahan.';
 
-                    if (data.message) {
-                        if (modalHarvestTitle) modalHarvestTitle.textContent = '🎉 Berhasil!';
-                        if (modalHarvestMessage) modalHarvestMessage.textContent = data.message;
-
-                        // Update UI
-                        if (data.new_plant_url) {
-                            const img = document.getElementById('plant-image');
-                            if (img) img.src = data.new_plant_url;
-                        }
-
-                        // Hilangkan tombol panen di homepage
+                    if (ok) {
+                        const img = document.getElementById('plant-image');
+                        if (img && data.new_plant_url) img.src = data.new_plant_url;
                         if (btnHarvest) btnHarvest.remove();
                     }
                 })
@@ -327,5 +321,51 @@ document.addEventListener('DOMContentLoaded', () => {
                 motivationText.style.opacity = '1';
             }, 500); // Wait for fade out to complete
         }, 8000);
+    }
+
+    // ========== ANIMASI SIRAM (setelah centang habit/tugas) ==========
+    const plantStage = document.getElementById('plant-stage');
+    if (plantStage && plantStage.dataset.siram) {
+        const siram = JSON.parse(plantStage.dataset.siram);
+        const plantImg = document.getElementById('plant-image');
+        const finalSrc = plantImg ? plantImg.getAttribute('src') : null;
+        const grew = Boolean(siram.from && plantImg);
+        const xp = Number(siram.xp) || 0;
+
+        if (motivationText) motivationText.textContent = 'Segarnya~ makasih sudah menyiramku! 💧';
+
+        // Pengumuman untuk pembaca layar (animasinya sendiri disembunyikan dari mereka)
+        const status = document.createElement('p');
+        status.className = 'sr-only';
+        status.setAttribute('role', 'status');
+        status.textContent = `Tanaman disiram, +${xp} XP.` + (grew ? ` Tanaman tumbuh ke stage ${siram.stage}.` : '');
+        plantStage.appendChild(status);
+
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            if (grew) plantImg.src = siram.from; // tampilkan stage lama dulu, baru tumbuh
+
+            const fx = document.createElement('div');
+            fx.className = 'siram-fx';
+            fx.setAttribute('aria-hidden', 'true');
+            fx.innerHTML = '<div class="siram-pour">'
+                + `<img class="siram-can" src="${plantStage.dataset.gembor}" alt="">`
+                + '<div class="siram-rain">' + Array.from({ length: 9 }, (_, i) => `<span style="--i:${i}"></span>`).join('') + '</div>'
+                + `</div><span class="siram-xp">+${xp} XP</span>`;
+            plantStage.appendChild(fx);
+
+            if (grew) {
+                setTimeout(() => {
+                    plantImg.classList.add('plant-grow');
+                    setTimeout(() => { plantImg.src = finalSrc; }, 350);
+
+                    const badge = document.createElement('span');
+                    badge.className = 'siram-stage';
+                    badge.textContent = siram.stage >= 10 ? '🌟 Stage 10, siap panen!' : `🌱 Tumbuh ke stage ${siram.stage}!`;
+                    fx.appendChild(badge);
+                }, 2100);
+            }
+
+            setTimeout(() => fx.remove(), grew ? 5000 : 2900);
+        }
     }
 });

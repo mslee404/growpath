@@ -1,0 +1,79 @@
+<svg width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs><clipPath id="ido-c"><rect width="440" height="440" rx="24"/></clipPath></defs>
+<g clip-path="url(#ido-c)">
+<rect width="440" height="440" fill="#FFB3D3"/>
+<path d="M59.2 62.2L65.2 71.5L76.1 70.5L69.1 79L73.5 89.1L63.3 85.1L55 92.4L55.6 81.4L46.2 75.8L56.8 73Z" fill="#FFE27A"/>
+<path d="M394.5 84.3L396 92.4L403.9 94.7L396.7 98.7L396.9 107L390.9 101.3L383.1 104L386.6 96.6L381.6 90L389.8 91.1Z" fill="#FFFFFF" opacity="0.8"/>
+<path d="M58 260L60.6 266.4L67.5 266.9L62.3 271.4L63.9 278.1L58 274.5L52.1 278.1L53.7 271.4L48.5 266.9L55.4 266.4Z" fill="#FFFFFF" opacity="0.8"/>
+<path d="M405.7 318.1L407.8 326.1L415.8 327.9L408.9 332.4L409.6 340.6L403.2 335.3L395.7 338.6L398.7 330.9L393.2 324.7L401.5 325.2Z" fill="#FFE27A"/>
+<circle cx="120" cy="40" r="5" fill="#FFFFFF" opacity="0.55"/>
+<circle cx="330" cy="36" r="4" fill="#FFFFFF" opacity="0.55"/>
+<circle cx="40" cy="180" r="5" fill="#FFFFFF" opacity="0.55"/>
+<circle cx="410" cy="220" r="4" fill="#FFFFFF" opacity="0.55"/>
+<!-- rambut belakang -->
+<path d="M90 250C80 150 140 98 222 98C304 98 364 150 354 250C350 300 330 330 300 340H144C114 330 94 300 90 250Z" fill="#F7CF5A"/>
+<!-- baju idol -->
+<path d="M50 470C56 398 132 364 222 364C312 364 388 398 394 470Z" fill="#E8457F"/>
+<path d="M120 470C126 440 140 418 160 404M324 470C318 440 304 418 284 404" stroke="#FF77A6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M196 326H248V372C240 380 204 380 196 372Z" fill="#F3CDA1"/>
+<circle cx="156" cy="364.6" r="12" fill="#FFFFFF"/>
+<circle cx="172" cy="372" r="12" fill="#FFFFFF"/>
+<circle cx="188" cy="377.4" r="12" fill="#FFFFFF"/>
+<circle cx="204" cy="380.7" r="12" fill="#FFFFFF"/>
+<circle cx="220" cy="382" r="12" fill="#FFFFFF"/>
+<circle cx="236" cy="381.2" r="12" fill="#FFFFFF"/>
+<circle cx="252" cy="378.4" r="12" fill="#FFFFFF"/>
+<circle cx="268" cy="373.5" r="12" fill="#FFFFFF"/>
+<circle cx="284" cy="366.6" r="12" fill="#FFFFFF"/>
+<path d="M150 378C176 400 268 400 294 378" stroke="#FFD6E6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M222 396L200 384L202 408Z" fill="#FF5C9E"/>
+<path d="M222 396L244 384L242 408Z" fill="#FF5C9E"/>
+<circle cx="222" cy="396" r="6" fill="#D93A78"/>
+<!-- kuncir samping -->
+<path d="M318 132C370 120 410 160 404 214C398 254 372 270 384 310C396 350 420 380 398 420C390 436 372 446 356 444C372 420 368 396 354 370C338 340 334 310 344 280C354 250 352 220 320 196Z" fill="#F7CF5A"/>
+<path d="M380 180C390 210 372 240 366 270C360 300 380 330 384 360C388 388 378 410 370 426" stroke="#E0AE3A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M352 150C372 156 384 170 386 190" stroke="#FFF0A8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="100" cy="268" rx="20" ry="28" fill="#FFE6C9"/>
+<ellipse cx="344" cy="268" rx="20" ry="28" fill="#FFE6C9"/>
+<ellipse cx="102" cy="270" rx="9" ry="14" fill="#F3CDA1"/>
+<ellipse cx="342" cy="270" rx="9" ry="14" fill="#F3CDA1"/>
+<path d="M98 230C98 160 150 122 222 122C294 122 346 160 346 230C346 300 320 345 268 372C246 383 198 383 176 372C124 345 98 300 98 230Z" fill="#FFE6C9"/>
+<ellipse cx="168" cy="270" rx="22" ry="28" fill="#F2569A"/>
+<ellipse cx="168" cy="285" rx="16" ry="11" fill="#FF9DC6"/>
+<ellipse cx="168" cy="274" rx="12" ry="17" fill="#A11E5C"/>
+<path d="M161 251L163.9 257L170.5 257.9L165.8 262.5L166.9 269.1L161 266L155.1 269.1L156.2 262.5L151.5 257.9L158.1 257Z" fill="#FFFFFF"/>
+<circle cx="177" cy="281" r="3.5" fill="#FFFFFF"/>
+<path d="M142 254Q168 232 194 250" stroke="#4A2A3A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M142 254L133 247" stroke="#4A2A3A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M252 276Q276 250 300 276" stroke="#4A2A3A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M300 276L310 270M298 268L306 258" stroke="#4A2A3A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M150 222Q168 212 186 218M258 214Q276 206 294 214" stroke="#D9A43A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M219 302Q222 306 226 302" stroke="#E0A784" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="146" cy="306" rx="18" ry="9" fill="#FF7FA0" opacity="0.6"/>
+<ellipse cx="298" cy="306" rx="18" ry="9" fill="#FF7FA0" opacity="0.6"/>
+<path d="M206 322Q222 344 238 322Z" fill="#C2405A"/>
+<path d="M213 332Q222 327 231 332Q226 339 218 338Z" fill="#F48AA0"/>
+<!-- poni -->
+<path d="M88 250C80 150 140 102 222 102C304 102 364 150 356 246C348 226 338 212 326 204C330 220 328 232 322 240C306 214 284 196 258 190C270 206 274 220 270 232C246 206 214 196 182 200C196 210 202 222 200 234C176 216 154 214 136 220C148 228 152 238 150 248C136 240 124 246 122 262C116 290 120 320 112 344C100 330 92 300 88 250Z" fill="#F7CF5A"/>
+<path d="M156 140C184 122 220 116 252 120" stroke="#FFF0A8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M108 270C106 296 108 318 110 334" stroke="#E0AE3A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- ikat rambut + jepit bintang -->
+<ellipse cx="328" cy="146" rx="14" ry="18" fill="#FF5C9E" transform="rotate(-30 328 146)"/>
+<circle cx="332" cy="140" r="4" fill="#FFB3D3"/>
+<path d="M135.8 154.4L143.7 165.8L157.3 164L149 174.9L154.9 187.4L141.9 182.8L131.9 192.3L132.2 178.5L120.1 171.9L133.3 168Z" fill="#FF4F93"/>
+<path d="M138.1 165.2L141.6 170.3L147.8 169.5L144 174.4L146.7 180L140.8 178L136.3 182.2L136.5 176L131 173.1L137 171.3Z" fill="#FFD0E2"/>
+<!-- mic bunga -->
+<path d="M150 470L168 378" stroke="#F6F2FA" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M154 400L174 402" stroke="#FF5C9E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="138" y="414" width="42" height="34" rx="14" fill="#FFFFFF"/>
+<path d="M144 426H174M144 436H174" stroke="#F2D4E2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="170" cy="337" r="12" fill="#FFB0D0" stroke="#FF5C9E" stroke-width="2"/>
+<circle cx="183" cy="344.5" r="12" fill="#FFB0D0" stroke="#FF5C9E" stroke-width="2"/>
+<circle cx="183" cy="359.5" r="12" fill="#FFB0D0" stroke="#FF5C9E" stroke-width="2"/>
+<circle cx="170" cy="367" r="12" fill="#FFB0D0" stroke="#FF5C9E" stroke-width="2"/>
+<circle cx="157" cy="359.5" r="12" fill="#FFB0D0" stroke="#FF5C9E" stroke-width="2"/>
+<circle cx="157" cy="344.5" r="12" fill="#FFB0D0" stroke="#FF5C9E" stroke-width="2"/>
+<circle cx="170" cy="352" r="12" fill="#FFD54A"/>
+<path d="M163 347H177M162 353H178M163 359H177" stroke="#E0A93A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

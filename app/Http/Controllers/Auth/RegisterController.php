@@ -20,15 +20,7 @@ class RegisterController extends Controller
             'display_name'  => 'nullable|string|max:255',
         ]);
 
-        $idUser = 'U' . str_pad(
-            UserGrowpath::count() + 1,
-            3,
-            '0',
-            STR_PAD_LEFT
-        );
-
         $user = UserGrowpath::create([
-            'id_user'       => $idUser,
             'username'      => $request->username,
             'password'      => $request->password, 
             'display_name' => $request->display_name ?? $request->username,

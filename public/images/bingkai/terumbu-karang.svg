@@ -1,0 +1,71 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clipPath id="tk-b"><path clip-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z"/></clipPath>
+<linearGradient id="tk-w" x1="0" y1="20" x2="0" y2="380" gradientUnits="userSpaceOnUse">
+<stop stop-color="#3FD8CB"/><stop offset="1" stop-color="#139BB0"/>
+</linearGradient>
+<g id="tk-fish">
+<path d="M12 0L27 -11C25 -4 25 4 27 11Z" fill="currentColor"/>
+<path d="M-6 -10C0 -18 8 -16 10 -9Z" fill="currentColor"/>
+<ellipse cx="0" cy="0" rx="16" ry="11"/>
+<path d="M2 -10C-2 -4 -2 4 2 10" stroke="#FFFFFF" stroke-width="4"/>
+<circle cx="-8" cy="-3" r="3.5" fill="#FFFFFF"/><circle cx="-9" cy="-3" r="2" fill="#1D2A3A"/>
+</g>
+<g id="tk-bub" stroke="#FFFFFF" stroke-width="2.5"><circle r="7"/><path d="M-3 -4C-1 -5 1 -5 2 -4" stroke-linecap="round"/></g>
+</defs>
+
+<!-- pita laut toska -->
+<g clip-path="url(#tk-b)">
+<rect x="20" y="20" width="360" height="360" fill="url(#tk-w)"/>
+<path d="M60 20L30 80M120 20L100 60M200 20L182 58M280 20L262 58M360 20L330 80" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" opacity="0.15"/>
+<!-- rumput laut -->
+<path d="M34 330C26 300 42 280 34 250S40 210 32 190M366 330C374 300 358 280 366 250S360 214 368 196" stroke="#2E9E6B" stroke-width="6" stroke-linecap="round"/>
+<!-- dasar pasir -->
+<path d="M0 400V356C50 346 90 364 140 358S230 344 280 356S360 362 400 350V400Z" fill="#F6DCA0"/>
+<g fill="#E8C47E"><circle cx="150" cy="370" r="2.5"/><circle cx="196" cy="364" r="2"/><circle cx="244" cy="372" r="2.5"/></g>
+</g>
+<path fill-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z" stroke="#0E8A9C" stroke-width="4"/>
+
+<!-- karang kiri bawah -->
+<path d="M-6 404C-4 374 24 356 58 358C92 360 110 384 112 404Z" fill="#F6DCA0"/>
+<g transform="translate(30 372)">
+<path d="M0 0V-12" stroke="#E0621A" stroke-width="6" stroke-linecap="round"/>
+<path d="M0 -8C-26 -6 -46 -28 -40 -52C-34 -72 -12 -80 4 -70C22 -82 46 -66 42 -42C38 -18 22 -8 0 -8Z" fill="#FF8C42"/>
+<path d="M0 -10V-40M0 -24L-20 -46M0 -24L22 -44M-20 -46L-30 -56M-20 -46L-12 -64M22 -44L32 -54M22 -44L14 -62M0 -40L4 -66" stroke="#E0621A" stroke-width="2.5" stroke-linecap="round"/>
+<g fill="#FFC08A"><circle cx="-26" cy="-34" r="2.5"/><circle cx="12" cy="-30" r="2.5"/><circle cx="-8" cy="-54" r="2.5"/><circle cx="26" cy="-62" r="2"/></g>
+</g>
+<path d="M74 384V352M74 362L58 342V330M74 352L86 336V322M86 336L96 330M58 342L48 334" stroke="#FF6F91" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<g fill="#FFB0C4"><circle cx="58" cy="330" r="3"/><circle cx="86" cy="322" r="3"/><circle cx="96" cy="330" r="2.5"/><circle cx="48" cy="334" r="2.5"/></g>
+<path d="M2 400C2 380 14 370 30 370C46 370 58 380 58 400Z" fill="#A27BE8"/>
+<path d="M12 390C16 382 22 388 26 380S36 386 40 378S48 386 50 384" stroke="#7F55CC" stroke-width="2.5" stroke-linecap="round"/>
+
+<!-- karang kanan bawah -->
+<path d="M288 404C292 378 320 362 352 362C384 362 404 380 404 404Z" fill="#F6DCA0"/>
+<path d="M376 372C384 350 366 334 376 312S370 284 380 266" stroke="#38B07A" stroke-width="7" stroke-linecap="round"/>
+<path d="M322 386V360M322 368L308 352V340M322 360L334 346M334 346V334M334 346L344 340" stroke="#FF5E5E" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<g fill="#FFA3A3"><circle cx="308" cy="340" r="3"/><circle cx="334" cy="334" r="3"/><circle cx="344" cy="340" r="2.5"/></g>
+<g fill="#FFC83D">
+<rect x="346" y="348" width="14" height="44" rx="7"/><rect x="362" y="338" width="14" height="54" rx="7"/><rect x="378" y="356" width="12" height="36" rx="6"/>
+</g>
+<g fill="#E58A1F"><ellipse cx="353" cy="352" rx="4" ry="2.5"/><ellipse cx="369" cy="342" rx="4" ry="2.5"/><ellipse cx="384" cy="360" rx="3.5" ry="2"/></g>
+
+<!-- ikan -->
+<use href="#tk-fish" transform="translate(62 38) scale(1.3)" fill="#FFD23F" color="#2F7BD8"/>
+<use href="#tk-fish" transform="translate(342 34) scale(-1.05 1.05)" fill="#FF8FC7" color="#C964E0"/>
+<use href="#tk-fish" transform="translate(370 66) scale(-0.75 0.75)" fill="#5A8CFF" color="#3B5FD9"/>
+
+<!-- gelembung -->
+<use href="#tk-bub" transform="translate(30 120)"/>
+<use href="#tk-bub" transform="translate(42 96) scale(0.6)"/>
+<use href="#tk-bub" transform="translate(36 78) scale(0.45)"/>
+<use href="#tk-bub" transform="translate(366 150) scale(0.8)"/>
+<use href="#tk-bub" transform="translate(356 126) scale(0.5)"/>
+<use href="#tk-bub" transform="translate(150 30) scale(0.6)"/>
+<use href="#tk-bub" transform="translate(228 42) scale(0.45)"/>
+
+<!-- kilau -->
+<circle cx="190" cy="34" r="3" fill="#FFFFFF"/>
+<circle cx="40" cy="230" r="3" fill="#FFFFFF"/>
+<circle cx="364" cy="230" r="4" fill="#FFFFFF"/>
+<circle cx="200" cy="12" r="3" fill="#FFFFFF"/>
+</svg>

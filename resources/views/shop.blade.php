@@ -4,6 +4,9 @@
     <x-slot:assets>
         {{-- Load CSS & JS yang sudah disatukan --}}
         @vite(['resources/js/shop.js', 'resources/js/item-box.js', 'resources/js/app.js', 'resources/css/app.css'])
+        @if ($snapJs)
+            <script src="{{ $snapJs }}" data-client-key="{{ $snapClient }}" defer></script>
+        @endif
     </x-slot:assets>
 
     <x-navbar activePage="shop" />

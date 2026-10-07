@@ -1,0 +1,66 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<path id="arm" d="M0 0V-14M0 -8L-4 -12M0 -8L4 -12"/>
+<g id="flake" stroke-linecap="round" stroke-linejoin="round">
+<use href="#arm"/><use href="#arm" transform="rotate(60)"/><use href="#arm" transform="rotate(120)"/>
+<use href="#arm" transform="rotate(180)"/><use href="#arm" transform="rotate(240)"/><use href="#arm" transform="rotate(300)"/>
+</g>
+<path id="cap" d="M12 44C10 30 22 18 36 20C44 8 64 8 72 18C82 8 102 10 108 20C120 10 140 12 148 20C158 12 178 12 186 20C196 12 216 12 224 20C236 10 256 12 262 20C274 12 292 12 300 20C310 10 330 10 338 18C350 10 372 14 376 24C390 26 392 40 388 48C384 52 378 50 374 46C370 44 364 44 360 46C356 48 356 58 350 58C344 58 346 46 340 44C320 40 300 44 280 42C262 40 250 46 244 44C240 44 240 54 234 54C228 54 230 44 224 42C200 40 180 44 160 42C140 40 128 44 120 44C116 46 116 56 110 56C104 56 106 46 100 44C80 42 60 44 44 46C36 48 34 56 28 56C22 56 24 46 16 48Z"/>
+</defs>
+
+<!-- pita es -->
+<path fill-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z" fill="#AEDAF2" stroke="#7DB9DD" stroke-width="4"/>
+<path d="M30 90V200M370 90V200M110 370H230" stroke="#D6EFFB" stroke-width="5" stroke-linecap="round"/>
+
+<!-- es bergantung -->
+<path d="M126 55L131 76L136 55ZM142 55L146 68L150 55ZM254 55L259 78L264 55ZM270 55L274 68L278 55ZM290 55L294 72L298 55Z" fill="#E8F7FE" stroke="#A9D5EE" stroke-width="1.5" stroke-linejoin="round"/>
+
+<!-- tumpukan salju atas -->
+<use href="#cap" fill="#C9E3F3" transform="translate(0 4)"/>
+<use href="#cap" fill="#FFFFFF" stroke="#BCDDF0" stroke-width="1.5"/>
+<path d="M50 20C56 14 64 14 68 18M160 18C166 14 174 14 178 18M300 18C306 14 318 14 326 16" stroke="#E2F2FB" stroke-width="3" stroke-linecap="round"/>
+
+<!-- tumpukan salju bawah -->
+<path d="M0 374C18 364 46 366 66 376C78 382 86 390 90 400H0Z" fill="#FFFFFF" stroke="#BCDDF0" stroke-width="1.5"/>
+<path d="M232 400C240 382 268 372 300 376C326 364 372 362 400 370V400Z" fill="#C9E3F3"/>
+<path d="M236 400C246 384 272 376 302 380C328 368 372 366 400 374V400Z" fill="#FFFFFF" stroke="#BCDDF0" stroke-width="1.5"/>
+
+<!-- boneka salju -->
+<g transform="translate(346 346)">
+<circle cy="12" r="26" fill="#FFFFFF" stroke="#BCDDF0" stroke-width="1.5"/>
+<path d="M18 -6C30 6 26 30 6 36C22 26 24 8 18 -6Z" fill="#D6ECF8"/>
+<path d="M-24 0L-44 -14M-37 -9L-42 -2M24 -2L42 -18M35 -12L42 -10" stroke="#7A4A2B" stroke-width="3" stroke-linecap="round"/>
+<circle cy="-24" r="18" fill="#FFFFFF" stroke="#BCDDF0" stroke-width="1.5"/>
+<path d="M12 -36C20 -26 18 -14 8 -8C14 -16 16 -26 12 -36Z" fill="#D6ECF8"/>
+<path d="M-16 -12C-6 -6 6 -6 16 -12V-5C6 1 -6 1 -16 -5Z" fill="#E5484D"/>
+<path d="M6 -5L9 14L16 12L14 -7Z" fill="#C93A3F"/>
+<g fill="#3A3A4A"><circle cx="-6" cy="-27" r="2.4"/><circle cx="6" cy="-27" r="2.4"/><circle cy="6" r="2.4"/><circle cy="18" r="2.4"/></g>
+<path d="M0 -22L14 -19L0 -17Z" fill="#F28C28" stroke="#F28C28" stroke-width="1.5" stroke-linejoin="round"/>
+<g fill="#F7B6C2"><ellipse cx="-11" cy="-20" rx="3" ry="2"/><ellipse cx="11" cy="-20" rx="3" ry="2"/></g>
+<path d="M-15 -36C-15 -50 15 -50 15 -36Z" fill="#4A90D9"/>
+<rect x="-17" y="-38" width="34" height="6" rx="3" fill="#3A78BE"/>
+<circle cy="-50" r="5" fill="#FFFFFF"/>
+</g>
+
+<!-- kepingan salju -->
+<g stroke="#FFFFFF" stroke-width="2.5">
+<use href="#flake" transform="translate(34 118)"/>
+<use href="#flake" transform="translate(366 110) scale(1.2)"/>
+<use href="#flake" transform="translate(32 240) scale(0.75)"/>
+<use href="#flake" transform="translate(368 216) scale(0.7)"/>
+<use href="#flake" transform="translate(180 364) scale(0.8)"/>
+<use href="#flake" transform="translate(120 366) scale(0.55)"/>
+</g>
+<g stroke="#7EC3E8" stroke-width="2.5">
+<use href="#flake" transform="translate(8 190) scale(0.6)"/>
+<use href="#flake" transform="translate(392 290) scale(0.6)"/>
+<use href="#flake" transform="translate(40 30) scale(0.7)"/>
+<use href="#flake" transform="translate(240 28) scale(0.6)"/>
+<use href="#flake" transform="translate(40 386) scale(0.6)"/>
+</g>
+<g fill="#FFFFFF">
+<circle cx="40" cy="160" r="3"/><circle cx="28" cy="190" r="2.5"/><circle cx="42" cy="290" r="3"/><circle cx="30" cy="320" r="2"/>
+<circle cx="360" cy="160" r="3"/><circle cx="372" cy="260" r="2.5"/><circle cx="360" cy="290" r="2"/>
+<circle cx="150" cy="372" r="2.5"/><circle cx="220" cy="366" r="3"/><circle cx="76" cy="364" r="2"/>
+</g>
+</svg>

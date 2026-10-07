@@ -1,0 +1,63 @@
+<svg width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs><clipPath id="mik-c"><rect width="440" height="440" rx="24"/></clipPath></defs>
+<g clip-path="url(#mik-c)">
+<rect width="440" height="440" fill="#F8B4A2"/>
+<circle cx="60" cy="64" r="9" fill="#FFFFFF" opacity="0.55"/>
+<circle cx="392" cy="112" r="6" fill="#FFFFFF" opacity="0.55"/>
+<circle cx="368" cy="50" r="4" fill="#FFFFFF" opacity="0.55"/>
+<path d="M48 168Q70 167.7 74 146Q52 146.3 48 168Z" fill="#FFFFFF" opacity="0.5"/>
+<path d="M396 196Q395.4 215.2 414 220Q414.6 200.8 396 196Z" fill="#FFFFFF" opacity="0.5"/>
+<!-- rambut belakang -->
+<path d="M92 250C84 150 140 98 222 98C304 98 360 150 352 250L350 330C330 356 290 366 222 366C154 366 114 356 94 330Z" fill="#2B2633"/>
+<!-- gagang sapu bambu -->
+<path d="M300 470L398 292" stroke="#DDB86C" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M302 466L394 298" stroke="#F0D592" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M342 377L356 385" stroke="#A88340" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M369.4 327.2L383.4 335.2" stroke="#A88340" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M392 306L404 312" stroke="#D93A3A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- badan: kimono putih -->
+<path d="M50 470C56 396 132 360 222 360C312 360 388 396 394 470Z" fill="#FFFFFF"/>
+<path d="M90 470C96 432 116 408 144 394M354 470C348 432 328 408 300 394" stroke="#EFE6EC" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M184 356L222 420L260 356Z" fill="#FFE6C9"/>
+<path d="M176 352L224 430" stroke="#D93A3A" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M268 352L208 452" stroke="#D93A3A" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M282 360L222 452" stroke="#F0E6EE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M196 326H248V372C240 380 204 380 196 372Z" fill="#F3CDA1"/>
+<!-- rambut diikat rendah + pita merah-putih -->
+<path d="M116 326C152 330 170 360 166 394C162 422 154 446 156 470H98C100 440 106 414 108 390C110 362 104 338 116 326Z" fill="#2B2633"/>
+<path d="M146 344C154 380 146 430 140 462" stroke="#4A4458" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M104 382L168 388L166 404L102 398Z" fill="#FFFFFF"/>
+<path d="M103 390L167 396" stroke="#D93A3A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M132 394C112 372 88 376 92 394C96 408 116 406 132 394Z" fill="#D93A3A"/>
+<path d="M136 396C152 374 176 378 174 396C172 410 152 408 136 396Z" fill="#D93A3A"/>
+<path d="M128 400L118 430L128 433L138 404Z" fill="#FFFFFF"/>
+<path d="M140 402L150 430L159 426L146 400Z" fill="#D93A3A"/>
+<circle cx="134" cy="396" r="7" fill="#B82E33"/>
+<!-- wajah -->
+<path d="M98 230C98 160 150 122 222 122C294 122 346 160 346 230C346 300 320 345 268 372C246 383 198 383 176 372C124 345 98 300 98 230Z" fill="#FFE6C9"/>
+<ellipse cx="168" cy="270" rx="22" ry="28" fill="#D2464A"/>
+<ellipse cx="168" cy="285" rx="16" ry="11" fill="#F59A8E"/>
+<ellipse cx="168" cy="274" rx="12" ry="17" fill="#7C1A22"/>
+<circle cx="160" cy="266" r="7" fill="#FFFFFF"/>
+<circle cx="177" cy="281" r="3.5" fill="#FFFFFF"/>
+<ellipse cx="276" cy="270" rx="22" ry="28" fill="#D2464A"/>
+<ellipse cx="276" cy="285" rx="16" ry="11" fill="#F59A8E"/>
+<ellipse cx="276" cy="274" rx="12" ry="17" fill="#7C1A22"/>
+<circle cx="268" cy="266" r="7" fill="#FFFFFF"/>
+<circle cx="285" cy="281" r="3.5" fill="#FFFFFF"/>
+<path d="M140 236H196V264Q168 246 140 264Z" fill="#FFE6C9"/>
+<path d="M141 264Q168 246 195 262" stroke="#2B2633" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M141 264L131 256" stroke="#2B2633" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M248 236H304V264Q276 246 248 264Z" fill="#FFE6C9"/>
+<path d="M303 264Q276 246 249 262" stroke="#2B2633" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M303 264L313 256" stroke="#2B2633" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M219 302Q222 306 226 302" stroke="#E0A784" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="146" cy="306" rx="18" ry="9" fill="#F59090" opacity="0.55"/>
+<ellipse cx="298" cy="306" rx="18" ry="9" fill="#F59090" opacity="0.55"/>
+<path d="M206 324Q222 336 238 324" stroke="#C2524A" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- rambut depan (poni rata) -->
+<path d="M96 356L92 250C86 156 142 100 222 100C302 100 358 156 352 250L348 356H322L320 238L312 232H264L256 220L248 232H198L190 220L182 232H134L124 238L122 356Z" fill="#2B2633"/>
+<path d="M142 150C176 126 268 126 302 150" stroke="#4A4458" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M108 260V340M336 260V340" stroke="#4A4458" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

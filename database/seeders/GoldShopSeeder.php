@@ -46,9 +46,7 @@ class GoldShopSeeder extends Seeder
         ];
 
         foreach ($goldPackages as $package) {
-            GoldShop::create($package);
+            GoldShop::updateOrCreate(['name' => $package['name']], $package);
         }
-
-        $this->command->info('Gold shop packages seeded successfully!');
     }
 }

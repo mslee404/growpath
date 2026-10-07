@@ -1,0 +1,80 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clipPath id="bc"><path clip-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z"/></clipPath>
+<g id="fl">
+<circle cy="-5" r="4.2"/><circle cx="4.8" cy="-1.5" r="4.2"/><circle cx="3" cy="4" r="4.2"/>
+<circle cx="-3" cy="4" r="4.2"/><circle cx="-4.8" cy="-1.5" r="4.2"/>
+<circle r="2.6" fill="#F6B81E"/>
+</g>
+<path id="st" d="M0 0V16" stroke="#4E8A33" stroke-width="2.5" stroke-linecap="round"/>
+<g id="daisy">
+<g fill="#FFFFFF">
+<ellipse cy="-11" rx="4.5" ry="8"/>
+<ellipse cy="-11" rx="4.5" ry="8" transform="rotate(45)"/>
+<ellipse cy="-11" rx="4.5" ry="8" transform="rotate(90)"/>
+<ellipse cy="-11" rx="4.5" ry="8" transform="rotate(135)"/>
+<ellipse cy="-11" rx="4.5" ry="8" transform="rotate(180)"/>
+<ellipse cy="-11" rx="4.5" ry="8" transform="rotate(225)"/>
+<ellipse cy="-11" rx="4.5" ry="8" transform="rotate(270)"/>
+<ellipse cy="-11" rx="4.5" ry="8" transform="rotate(315)"/>
+</g>
+<circle r="6" fill="#FFC93C"/>
+</g>
+<g id="bfly">
+<path d="M0 -2C-8 -22 -30 -26 -32 -14C-34 -4 -16 2 0 0ZM0 -2C8 -22 30 -26 32 -14C34 -4 16 2 0 0ZM0 0C-14 2 -26 10 -22 20C-18 28 -6 20 0 4ZM0 0C14 2 26 10 22 20C18 28 6 20 0 4Z"/>
+<path d="M0 0C-14 2 -26 10 -22 20C-18 28 -6 20 0 4ZM0 0C14 2 26 10 22 20C18 28 6 20 0 4Z" fill="#FFFFFF" opacity="0.35"/>
+<g fill="#FFFFFF"><circle cx="-22" cy="-14" r="3.5"/><circle cx="22" cy="-14" r="3.5"/><circle cx="-14" cy="14" r="2.5"/><circle cx="14" cy="14" r="2.5"/></g>
+<g fill="#8A4A1C"><circle cx="-28" cy="-8" r="2"/><circle cx="28" cy="-8" r="2"/></g>
+<rect x="-3" y="-12" width="6" height="26" rx="3" fill="#5A3A22"/>
+<path d="M-1 -11C-4 -18 -8 -22 -12 -22M1 -11C4 -18 8 -22 12 -22" stroke="#5A3A22" stroke-width="2" stroke-linecap="round"/>
+<circle cx="-12" cy="-22" r="2" fill="#5A3A22"/><circle cx="12" cy="-22" r="2" fill="#5A3A22"/>
+</g>
+</defs>
+
+<!-- pita bingkai -->
+<path fill-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z" fill="#A8D672"/>
+<g clip-path="url(#bc)">
+<path d="M0 352C40 340 80 350 120 344C160 338 200 350 240 344C280 338 330 348 400 340V400H0Z" fill="#82BC55"/>
+<path d="M0 300C10 300 20 310 30 330L50 400H0ZM400 290C390 292 376 304 370 330L350 400H400Z" fill="#82BC55"/>
+<path d="M30 140V200M370 70V170M120 30H260" stroke="#C6E79A" stroke-width="5" stroke-linecap="round"/>
+</g>
+<path fill-rule="evenodd" d="M360 20C371 20 380 29 380 40V360C380 371 371 380 360 380H40C29 380 20 371 20 360V40C20 29 29 20 40 20H360ZM70 55C62 55 55 62 55 70V330C55 338 62 345 70 345H330C338 345 345 338 345 330V70C345 62 338 55 330 55H70Z" stroke="#6E9A45" stroke-width="4"/>
+
+<!-- rumput di tepi bawah -->
+<path d="M18 384L22 366L28 384L34 362L40 384L46 370L52 384M120 386L124 370L130 386M196 388L200 372L206 388L212 376L216 388M286 386L290 370L296 386M348 384L354 364L360 384L366 370L372 384L378 362L382 384" stroke="#5E9A3A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+<!-- padang bunga mini -->
+<g>
+<use href="#st" transform="translate(40 352)"/><use href="#fl" fill="#FF8FB1" transform="translate(40 352)"/>
+<use href="#st" transform="translate(64 362)"/><use href="#fl" fill="#FFFFFF" transform="translate(64 362)"/>
+<use href="#st" transform="translate(88 354)"/><use href="#fl" fill="#B39DDB" transform="translate(88 354)"/>
+<use href="#st" transform="translate(112 364)"/><use href="#fl" fill="#FF7A59" transform="translate(112 364)"/>
+<use href="#st" transform="translate(136 356)"/><use href="#fl" fill="#FFE066" transform="translate(136 356)"/>
+<use href="#st" transform="translate(160 366)"/><use href="#fl" fill="#7FC8F8" transform="translate(160 366)"/>
+<use href="#st" transform="translate(184 356)"/><use href="#fl" fill="#FF8FB1" transform="translate(184 356)"/>
+<use href="#st" transform="translate(208 366)"/><use href="#fl" fill="#FFFFFF" transform="translate(208 366)"/>
+<use href="#st" transform="translate(232 356)"/><use href="#fl" fill="#FF7A59" transform="translate(232 356)"/>
+<use href="#st" transform="translate(256 366)"/><use href="#fl" fill="#B39DDB" transform="translate(256 366)"/>
+<use href="#st" transform="translate(280 356)"/><use href="#fl" fill="#FFE066" transform="translate(280 356)"/>
+<use href="#st" transform="translate(304 366)"/><use href="#fl" fill="#7FC8F8" transform="translate(304 366)"/>
+<use href="#st" transform="translate(328 356)"/><use href="#fl" fill="#FF8FB1" transform="translate(328 356)"/>
+<use href="#st" transform="translate(30 320)"/><use href="#fl" fill="#FFE066" transform="translate(30 320)"/>
+<use href="#st" transform="translate(42 294)"/><use href="#fl" fill="#FF7A59" transform="translate(42 294) scale(0.8)"/>
+<use href="#st" transform="translate(370 318)"/><use href="#fl" fill="#B39DDB" transform="translate(370 318)"/>
+<use href="#st" transform="translate(358 290)"/><use href="#fl" fill="#FFFFFF" transform="translate(358 290) scale(0.8)"/>
+</g>
+<use href="#daisy" transform="translate(30 370) scale(1.1)"/>
+<use href="#daisy" transform="translate(366 362) scale(1.3)"/>
+<use href="#daisy" transform="translate(338 384) scale(0.8)"/>
+
+<!-- kupu-kupu -->
+<path d="M186 40C210 22 240 50 264 36C282 26 290 40 306 40" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2 7"/>
+<use href="#bfly" fill="#FF9F43" transform="translate(348 46) rotate(18) scale(1.3)"/>
+<use href="#bfly" fill="#F57FB0" transform="translate(42 60) rotate(-20) scale(0.75)"/>
+
+<!-- kilau -->
+<circle cx="120" cy="36" r="3" fill="#FFFFFF"/>
+<circle cx="366" cy="130" r="4" fill="#FFFFFF"/>
+<circle cx="34" cy="220" r="4" fill="#FFFFFF"/>
+<circle cx="372" cy="222" r="3" fill="#FFFFFF"/>
+</svg>
